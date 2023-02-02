@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <Box className={styles.parallax}>
         <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end">
-          <Grid item xs={3} sm={2} md={2}  >
+          <Grid item xs={4} sm={3} md={2}  >
             <div className={`${styles.centered_flexbox} ${styles.margin_20}`}>
               <Image
                 src="/mustbe_architecture_logo.png"
@@ -29,7 +29,7 @@ export default function Home() {
               />
             </div>
           </Grid>
-          <Grid item xs={6} sm={3} md={3}>
+          <Grid item xs={7} sm={4} md={3}>
           <span className={`${catamaranLight.className} ${styles.contact}`}>Contact</span>
           </Grid>
         </Grid>
@@ -37,13 +37,13 @@ export default function Home() {
           <Grid item xs={12}>
             <hr className={styles.hr_style}></hr>
           </Grid>
-          <Grid item xs={3} sm={2} md={2}>
+          <Grid item xs={4} sm={3} md={2}>
             <div className={styles.centered_flexbox}>
               <span className={`${catamaran.className} ${styles.logo_main}`}>MUST BE</span>
               <span className={`${catamaranLight.className} ${styles.logo_second}`}>architecture</span>
             </div>
           </Grid>
-          <Grid item xs={6} sm={3} md={3}>
+          <Grid item xs={7} sm={4} md={3}>
             <div className={styles.display_flex_column}>
               <span className={`${catamaranLight.className} ${styles.contact}`}>info@mustbe-architecture.lv</span>
               <span className={`${catamaranLight.className} ${styles.contact}`}>+371 29121613</span>
