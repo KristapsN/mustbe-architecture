@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mustbe architecture</title>
-        <meta name="mustbe architecture" content="architecture" />
+        <title>MUST BE architecture</title>
+        <meta name="MUST BE architecture" content="architecture" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -22,10 +22,10 @@ export default function Home() {
           <Grid item xs={3} sm={2} md={2}  >
             <div className={`${styles.centered_flexbox} ${styles.margin_20}`}>
               <Image
-                src="/mustbe_architecture_logo.svg"
+                src="/mustbe_architecture_logo.png"
                 alt="Picture of the author"
-                width={60}
-                height={60}
+                width={90}
+                height={90}
               />
             </div>
           </Grid>
@@ -52,7 +52,7 @@ export default function Home() {
           </Grid>
           <Grid item xs={12}>
             <div className={`${styles.centered_flexbox} ${styles.height_500}`}>
-              <h1 className={`${catamaranLight.className} ${styles.font_size_28}`}>under construction...</h1>
+              <h1 className={`${catamaranLight.className} ${styles.font_size_28} ${styles.white_text}`}>under construction...</h1>
             </div>
           </Grid>
         </Grid>
