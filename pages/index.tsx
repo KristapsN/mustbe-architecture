@@ -175,12 +175,6 @@ export default function Home() {
               <Grid item xs={12}>
                 <Grid container spacing={2}>
                   <Grid item xs={12} md={8}>
-                    {/* <Box
-                      className={styles.project_thumbnail}
-                      sx={{ backgroundImage: `url(${activeImage})` }}
-                    >
-                      <span className={`${styles.thumbnail_title} ${catamaran.className}`}>Name of project</span>
-                    </Box> */}
                     <NextJsCarousel />
                   </Grid>
                   <Grid item xs={12} md={4}>
@@ -220,12 +214,7 @@ export default function Home() {
               <Grid item xs={12}>
                 <Grid container spacing={2}>
                   <Grid item xs={12} md={8}>
-                    <Box
-                      className={styles.project_thumbnail}
-                      sx={{ backgroundImage: `url(${activeImage})` }}
-                    >
-                      <span className={`${styles.thumbnail_title} ${catamaran.className}`}>Name of project</span>
-                    </Box>
+                    <NextJsCarousel />
                   </Grid>
                   <Grid item xs={12} md={4}>
                     <Box>
@@ -263,12 +252,7 @@ export default function Home() {
               <Grid item xs={12}>
                 <Grid container spacing={2}>
                   <Grid item xs={12} md={8}>
-                    <Box
-                      className={styles.project_thumbnail}
-                      sx={{ backgroundImage: `url(${activeImage})` }}
-                    >
-                      <span className={`${styles.thumbnail_title} ${catamaran.className}`}>Name of project</span>
-                    </Box>
+                    <NextJsCarousel />
                   </Grid>
                   <Grid item xs={12} md={4}>
                     <Box>
