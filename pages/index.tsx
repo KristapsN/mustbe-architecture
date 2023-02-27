@@ -339,7 +339,6 @@ export default function Home() {
             <Grid container>
               <Box
                 className={styles.address_image}
-                sx={{ backgroundImage: 'url("/address_image.jpg")' }}
               />
             </Grid>
           </Grid>
