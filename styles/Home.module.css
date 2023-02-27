@@ -12,6 +12,8 @@
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
+  /* transition: all 5s;
+  transform: scale(1.5); */
 }
 .logo_wrapper {
   display: flex;
@@ -26,6 +28,64 @@
   align-items: flex-end;
   margin-top: 10px;
 }
+.menu_wrapper{
+  display: flex;
+flex-direction: row;
+}
+.project_thumbnail{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-blend-mode: multiply;
+  /* padding: 7rem 6rem;; */
+  padding-top: 65.52%;
+  position: relative;
+  transition: all .5s;
+}
+.project_thumbnail:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all .5s;
+  transform: scale(1.1);
+}
+.thumbnail_title{
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0;
+  border-bottom: 1px solid white;
+  padding-left: 2.5rem;
+}
+.project_thumbnail:hover .thumbnail_title{
+  opacity: 1;
+  transition: all .5s;
+}
+.thumbnail_subtitle{
+  color: white;
+  width: 100%;
+  top: 22%;
+  font-size: 1rem;
+  position: absolute;
+  opacity: 0;
+  padding-left: 2.5rem;
+}
+.project_thumbnail:hover .thumbnail_subtitle{
+  opacity: 1;
+  transition: all .5s;
+}
+.address_image{
+  padding-top: 125%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-blend-mode: multiply;
+}
 .margin_20{
   margin: 20px 20px 20px 4vw;
 }
@@ -39,12 +99,18 @@
 .padding_top_0 {
   padding-top: 0px;
 }
-.contact {
-  font-size: calc(9px + 0.8rem);
-  line-height: calc(9px + 0.8rem);
+.nav_link{
+  font-size: 1.5rem;
   color: white;
   text-align: right;
-  margin-right: 4vw;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 300;
+}
+.nav_link:hover{
+  font-weight: 700;
+  transition: 0.5s;
 }
 .under_construction {
   color: white;
