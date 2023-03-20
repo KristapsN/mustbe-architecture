@@ -1,6 +1,6 @@
 .parallax {
   /* The image used */
-  background: url("/mustbe_architecture_hero.jpg") rgba(0, 0, 0, 0.3);
+  background: url("/mustbe_architecture_hero.jpg");
   background-blend-mode: multiply;
 
   /* Set a specific height */
@@ -22,6 +22,11 @@
   margin-left: 4vw;
   margin-top: 10px;
 }
+.center_flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .display_flex_column {
   display: flex;
   flex-direction: column;
@@ -30,7 +35,10 @@
 }
 .menu_wrapper{
   display: flex;
-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 4vw;
 }
 .project_image{
   display: flex;
@@ -62,7 +70,7 @@ flex-direction: row;
 .project_thumbnail:hover{
   background-color: rgba(0, 0, 0, 0.3);
   transition: all .5s;
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 .thumbnail_title{
   width: 100%;
@@ -100,6 +108,15 @@ flex-direction: row;
   background-blend-mode: multiply;
   background-image: url("/address_image.jpg");
 }
+.profile_image{
+  padding-top: 65.61%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-blend-mode: multiply;
+  background-image: url("/profile.jpg");
+}
 .margin_20{
   margin: 20px 20px 20px 4vw;
 }
@@ -113,17 +130,29 @@ flex-direction: row;
 .padding_top_0 {
   padding-top: 0px;
 }
+.nav_link_wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav_arrow{
+  display: none;
+
+}
+.nav_link_wrapper:hover .nav_arrow{
+ display: block;
+}
 .nav_link{
-  font-size: 1.5rem;
-  color: white;
+  font-size: 1rem;
+  color: rgb(26, 26, 26);
   text-align: right;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   text-decoration: none;
   font-family: 'Catamaran', sans-serif;
   font-weight: 300;
 }
 .nav_link:hover{
-  font-weight: 700;
+  /* font-weight: 700; */
   transition: 0.5s;
 }
 .under_construction {
@@ -135,4 +164,30 @@ flex-direction: row;
   flex-direction: column;
   align-items: center;
   margin-bottom: 4vh;
+}
+.social_icon{
+  padding: 10px;
+}
+.margin_bottom{
+  margin-bottom: 20px;
+}
+.go_up_wrapper{
+display: flex;
+}
+.go_up{
+  position: sticky;
+  bottom: 1rem;
+  right: 1rem;
+  align-self: flex-end;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 5px;
+}
+.go_up:hover{
+  background-color: rgb(128, 128, 128);
+  cursor: pointer;
+  transition: .5s;
+}
+.go_up_image{
+  rotate: 180deg;
 }

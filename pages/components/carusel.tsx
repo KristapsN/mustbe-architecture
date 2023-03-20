@@ -9,19 +9,19 @@ const NextJsCarousel = () => {
       <div>
         <Carousel showStatus={false} showThumbs={false}>
           <div>
-            <img src="/thumbnail_1.jpg" alt="image1" />
+            <img src="/01_main.jpg" alt="image1" />
           </div>
           <div>
-            <img src="/thumbnail_1.jpg"  alt="image2" />
+            <img src="/02_main.jpg"  alt="image2" />
           </div>
           <div>
-            <img src="/thumbnail_1.jpg" alt="image3" />
+            <img src="/03_main.jpg" alt="image3" />
           </div>
           <div>
-            <img src="/thumbnail_1.jpg" alt="image4" />
+            <img src="/04_main.jpg" alt="image4" />
           </div>
           <div>
-            <img src="/thumbnail_1.jpg" alt="image5" />
+            <img src="/05_main.jpg" alt="image5" />
           </div>
         </Carousel>
       </div>

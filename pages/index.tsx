@@ -14,25 +14,20 @@ const catamaran = Catamaran({ subsets: ['latin'], weight: '500' })
 export const catamaranLight = Catamaran({ subsets: ['latin'], weight: '300' })
 
 const thumbnailImages = [
-  { number: 0, image: "/thumbnail_1.jpg" },
-  { number: 1, image: "/thumbnail_1.jpg" },
-  { number: 2, image: "/thumbnail_1.jpg" },
-  { number: 3, image: "/thumbnail_1.jpg" },
-  { number: 4, image: "/thumbnail_1.jpg" },
-  { number: 5, image: "/thumbnail_1.jpg" },
-  { number: 6, image: "/thumbnail_1.jpg" },
-  { number: 7, image: "/thumbnail_1.jpg" },
-  { number: 8, image: "/thumbnail_1.jpg" },]
+  { number: 0, image: "/01_main.jpg" },
+  { number: 1, image: "/02_main.jpg" },
+  { number: 2, image: "/03_main.jpg" },
+  { number: 3, image: "/04_main.jpg" },
+  { number: 4, image: "/05_main.jpg" },
+  { number: 5, image: "/06_main.jpg" },
+  { number: 6, image: "/07_main.jpg" },
+  { number: 7, image: "/08_main.jpg" },
+  { number: 8, image: "/09_main.jpg" },]
 
 
 export default function Home() {
   const [activeThumbnail, setActiveThumbnail] = useState<number>()
   const [activeImage, setActiveImage] = useState<string>()
-  // const [anchorTarget, setAnchorTarget] = useState(null);
-
-  // useEffect(() => {
-  //   setAnchorTarget(document.getElementById(itemName));
-  // }, [itemName]);
 
 
   const handleThumbnailClick = (index: number, image: string) => {
@@ -40,11 +35,11 @@ export default function Home() {
     setActiveImage(image)
   }
 
-  // const handleLinkClick = (event: { preventDefault: () => void; }) => {
-  //   event.preventDefault();
-  //   // @ts-ignore
-  //   anchorTarget && anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // };
+  const handleLinkClick = (event: { preventDefault: () => void; }, value: string) => {
+    event.preventDefault();
+    const element = document.getElementById(value);
+    element && element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <>
@@ -55,58 +50,93 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box sx={{ overflow: 'hidden' }}>
-        <Grid container sx={{ flexGrow: 1 }} className={styles.parallax}>
+        <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
           <Grid item xs={12}>
-            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end">
+            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
               <Grid item xs={4} sm={3} md={2}  >
-                <div className={styles.margin_20}>
-                  <Image
-                    src="/mustbe_architecture_logo.png"
-                    alt="MUST BE architecture"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={7} sm={4} md={3}>
-                <div className={styles.menu_wrapper}>
-                  {/* <span className={`${catamaranLight.className} ${styles.contact}`}>Contact</span> */}
-                  <Link
-                    className={`${styles.nav_link}`}
-                    href="#projects"
-                  // onClick={handleLinkClick}
-                  >
-                    Projekti
-                  </Link>
-                  <Link
-                    className={`${styles.nav_link}`}
-                    href="#about-us"
-                  // onClick={handleLinkClick}
-                  >
-                    Par mums
-                  </Link>
-                  <Link
-                    className={`${styles.nav_link}`}
-                    href="#contacts"
-                  // onClick={handleLinkClick}
-                  >
-                    Kontakti
-                  </Link>
-                </div>
-              </Grid>
-            </Grid>
-            <Grid container spacing={0} justifyContent="space-between">
-              <Grid item xs={12}>
-                <hr className={styles.hr_style}></hr>
-              </Grid>
-              <Grid item xs={4} sm={3} md={2}>
                 <div className={styles.logo_wrapper}>
                   <Image
-                    src="/logo_text.svg"
+                    src="/logo.png"
                     alt="MUST BE architecture"
-                    width={100}
-                    height={35}
+                    width={150}
+                    height={63}
                   />
+                </div>
+              </Grid>
+              <Grid item xs={7} sm={4} md={4}>
+                <div className={styles.menu_wrapper}>
+                  {/* <span className={`${catamaranLight.className} ${styles.contact}`}>Contact</span> */}
+                  <Box className={styles.nav_link_wrapper}>
+                    <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
+                    </svg>
+
+                    <Link
+                      className={`${styles.nav_link}`}
+                      href="#projects"
+                      onClick={(e) => handleLinkClick(e, 'projects')}
+                    >
+                      Projekti
+                    </Link>
+                  </Box>
+                  <Box className={styles.nav_link_wrapper}>
+                    <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
+                    </svg>
+                    <Link
+                      className={`${styles.nav_link}`}
+                      href="#about-us"
+                      onClick={(e) => handleLinkClick(e, 'about-us')}                    >
+                      Par mums
+                    </Link>
+                  </Box>
+                  <Box className={styles.nav_link_wrapper}>
+                    <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
+                    </svg>
+                    <Link
+                      className={`${styles.nav_link}`}
+                      href="#contacts"
+                      onClick={(e) => handleLinkClick(e, 'contacts')}
+                    >
+                      Kontakti
+                    </Link>
+                  </Box>
+                  <Box className={styles.center_flex}>
+                    <Link
+                      className={styles.social_icon}
+                      href="https://www.facebook.com/"
+                    >
+                      <Image
+                        src="/facebook.svg"
+                        alt="MUST BE architecture"
+                        width={20}
+                        height={20}
+                      />
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/"
+                      className={styles.social_icon}
+                    >
+                      <Image
+                        src="/instagram.svg"
+                        alt="MUST BE architecture"
+                        width={20}
+                        height={20}
+                      />
+                    </Link>
+                    <Link
+                      className={styles.social_icon}
+                      href="https://www.linkedin.com/"
+                    >
+                      <Image
+                        src="/linkedin.svg"
+                        alt="MUST BE architecture"
+                        width={15}
+                        height={15}
+                      />
+                    </Link>
+                  </Box>
                 </div>
               </Grid>
             </Grid>
@@ -127,60 +157,61 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-      <Grid container sx={{ flexGrow: 1, padding: "20px 100px" }} >
-        <Grid
-          container
-          justifyContent="space-around"
-          alignItems="center"
-          spacing={1}
-        // sx={{ margin: "20px" }}
-        >
+      <Box className={styles.go_up_wrapper} >
+        <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
+          <Grid
+            container
+            justifyContent="space-around"
+            alignItems="center"
+            spacing={1}
+          // sx={{ margin: "20px" }}
+          >
 
-          <Grid item xs={4}>
-            <Grid container>
-              <Paragraph
-                text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
+            <Grid item xs={4}>
+              <Grid container>
+                <Paragraph
+                  text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
                 cilvēka labsajūtu, tādēļ tās veidosanai ir liela nozīme ar ilgstosu iedarbību uz sabiedrību. (ūdens
                 turpināsies / koriģēsies). Plānotais garums – 4-5 teikumi"
-              />
+                />
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={4} >
-            <Grid container>
+            <Grid item xs={4} >
+              <Grid container>
 
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={4} >
-            <Grid container>
-              <Paragraph
-                text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis un arhitekts
+            <Grid item xs={4} >
+              <Grid container>
+                <Paragraph
+                  text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis un arhitekts
                 Kristiāns Beķeris. Veidojot komandu ar inženieriem mēs nodrošinām projektēšanas pakalpojumus sākot
                 no koncepcijas stadijas līdz būvprojekta iztrādei un autoruzraudzībai būvniecibas laikā, kā arī
                 piedāvājam sagatavot interjera dizaina projektus sadarbībā ar Donna Victoria Design."
-              />
+                />
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        <Grid item xs={12}><h1 className={catamaranLight.className} id="projects">PROJEKT</h1></Grid>
-        <Grid
-          container
-          // justifyContent="space-around"
-          // alignItems="center"
-          spacing={1}
-          sx={{ flexGrow: 1 }}
-        >
-          <>
+          <Grid item xs={12}><h1 className={catamaranLight.className} id="projects">PROJEKT</h1></Grid>
+          <Grid
+            container
+            // justifyContent="space-around"
+            // alignItems="center"
+            spacing={1}
+            sx={{ flexGrow: 1, marginBottom: '20px' }}
+          >
+            <>
 
-            {activeThumbnail !== undefined && activeThumbnail < 3 &&
-              <Grid item xs={12}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} md={8}>
-                    <NextJsCarousel />
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Box>
-                      <Paragraph
-                        text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
+              {activeThumbnail !== undefined && activeThumbnail < 3 &&
+                <Grid item xs={12}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} md={8}>
+                      <NextJsCarousel />
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                      <Box>
+                        <Paragraph
+                          text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown
                 printer took a galley of type and scrambled it to make a
@@ -189,37 +220,37 @@ export default function Home() {
                 It was popularised in the 1960s with the release of Letraset sheets containing
                 Lorem Ipsum passages, and more recently with desktop publishing software
                 like Aldus PageMaker including versions of Lorem Ipsum`
-                        }
-                      />
+                          }
+                        />
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              }
+              {thumbnailImages.filter(({ number }) => number < 3).map(({ number, image }) =>
+                <Grid item xs={12} md={4} key={number}>
+                  <Box sx={{ overflow: 'hidden' }}>
+                    <Box
+                      className={styles.project_thumbnail}
+                      sx={{ backgroundImage: `url(${image})` }}
+                      onClick={() => handleThumbnailClick(number, image)}
+                    >
+                      <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
+                      <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span>
                     </Box>
-                  </Grid>
-                </Grid>
-              </Grid>
-            }
-            {thumbnailImages.filter(({ number }) => number < 3).map(({ number, image }) =>
-              <Grid item xs={12} md={4} key={number}>
-                <Box sx={{ overflow: 'hidden' }}>
-                  <Box
-                    className={styles.project_thumbnail}
-                    sx={{ backgroundImage: `url(${image})` }}
-                    onClick={() => handleThumbnailClick(number, image)}
-                  >
-                    <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
-                    <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span>
                   </Box>
-                </Box>
-              </Grid>
-            )}
-            {activeThumbnail !== undefined && activeThumbnail >= 3 && activeThumbnail < 6 &&
-              <Grid item xs={12}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} md={8}>
-                    <NextJsCarousel />
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Box>
-                      <Paragraph
-                        text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
+                </Grid>
+              )}
+              {activeThumbnail !== undefined && activeThumbnail >= 3 && activeThumbnail < 6 &&
+                <Grid item xs={12}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} md={8}>
+                      <NextJsCarousel />
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                      <Box>
+                        <Paragraph
+                          text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown
                 printer took a galley of type and scrambled it to make a
@@ -228,36 +259,36 @@ export default function Home() {
                 It was popularised in the 1960s with the release of Letraset sheets containing
                 Lorem Ipsum passages, and more recently with desktop publishing software
                 like Aldus PageMaker including versions of Lorem Ipsum`
-                        }
-                      />                  </Box>
+                          }
+                        />                  </Box>
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
-            }
-            {thumbnailImages.filter(({ number }) => number >= 3 && number < 6).map(({ number, image }) =>
-              <Grid item xs={12} md={4} key={number}>
-                <Box sx={{ overflow: 'hidden' }}>
-                  <Box
-                    className={styles.project_thumbnail}
-                    sx={{ backgroundImage: `url(${image})` }}
-                    onClick={() => handleThumbnailClick(number, image)}
-                  >
-                    <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
-                    <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span>
+              }
+              {thumbnailImages.filter(({ number }) => number >= 3 && number < 6).map(({ number, image }) =>
+                <Grid item xs={12} md={4} key={number}>
+                  <Box sx={{ overflow: 'hidden' }}>
+                    <Box
+                      className={styles.project_thumbnail}
+                      sx={{ backgroundImage: `url(${image})` }}
+                      onClick={() => handleThumbnailClick(number, image)}
+                    >
+                      <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
+                      <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span>
+                    </Box>
                   </Box>
-                </Box>
-              </Grid>
-            )}
-            {activeThumbnail !== undefined && activeThumbnail >= 6 &&
-              <Grid item xs={12}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} md={8}>
-                    <NextJsCarousel />
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Box>
-                      <Paragraph
-                        text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
+                </Grid>
+              )}
+              {activeThumbnail !== undefined && activeThumbnail >= 6 &&
+                <Grid item xs={12}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} md={8}>
+                      <NextJsCarousel />
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                      <Box>
+                        <Paragraph
+                          text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown
                 printer took a galley of type and scrambled it to make a
@@ -266,51 +297,74 @@ export default function Home() {
                 It was popularised in the 1960s with the release of Letraset sheets containing
                 Lorem Ipsum passages, and more recently with desktop publishing software
                 like Aldus PageMaker including versions of Lorem Ipsum`
-                        }
-                      />                  </Box>
+                          }
+                        />                  </Box>
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
-            }
-            {thumbnailImages.filter(({ number }) => number >= 6).map(({ number, image }) =>
-              <Grid item xs={12} md={4} key={number}>
-                <Box sx={{ overflow: 'hidden' }}>
-                  <Box
-                    className={styles.project_thumbnail}
-                    sx={{ backgroundImage: `url(${image})` }}
-                    onClick={() => handleThumbnailClick(number, image)}
-                  >
-                    <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
-                    <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span>
+              }
+              {thumbnailImages.filter(({ number }) => number >= 6).map(({ number, image }) =>
+                <Grid item xs={12} md={4} key={number}>
+                  <Box sx={{ overflow: 'hidden' }}>
+                    <Box
+                      className={styles.project_thumbnail}
+                      sx={{ backgroundImage: `url(${image})` }}
+                      onClick={() => handleThumbnailClick(number, image)}
+                    >
+                      <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
+                      <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span>
+                    </Box>
                   </Box>
-                </Box>
+                </Grid>
+              )}
+
+            </>
+          </Grid>
+          <Grid item xs={12}><h1 className={catamaranLight.className} id="about-us">PAR MUMS</h1></Grid>
+
+          <Grid
+            container
+            justifyContent="space-between"
+            alignItems="center"
+            sx={{ marginBottom: '20px' }}
+          >
+            <Grid item xs={6}>
+              <Grid container>
+                <Box
+                  className={styles.profile_image}
+                />
               </Grid>
-            )}
+            </Grid>
+            <Grid item xs={6}>
+              <Grid container>
+                <Box
+                  className={styles.profile_image}
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid
+            container
+            justifyContent="space-between"
+            alignItems="center"
+            sx={{ marginBottom: "20px" }}
+          // spacing={1}
+          // sx={{ margin: "20px" }}
+          >
 
-            <Grid item xs={12}><h1 className={catamaranLight.className} id="about-us">PAR MUMS</h1></Grid>
-          </>
-        </Grid>
-        <Grid
-          container
-          justifyContent="space-between"
-          alignItems="center"
-        // spacing={1}
-        // sx={{ margin: "20px" }}
-        >
-
-          <Grid item xs={5}>
-            <Grid container>
-              <Paragraph
-                text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos. MUST BE architecture darbība
+            <Grid item xs={5}>
+              <Grid container>
+                <Paragraph
+                  text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos. MUST BE architecture darbība
                 aizsākusies 2019. gadā un kopš tā laika ir izstrādāti dažāda mēroga objekti un izveidoti veiksmīgi
                 sadarbības partneri."
-              />
+                />
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={5} >
-            <Grid container>
-              <Paragraph
-                text="Sadarbības partneri:
+            <Grid item xs={5} >
+              <Grid container>
+                <Paragraph
+                  text="Sadarbības partneri:
                 Donna Victoria Design - interjera dizains un teritorijas labiekārtojums
                 Rinalds Petjukevičs - 3D modelēšanas un BIM speciālists
                 Uldis Jaunsubrēns - tehnisko risinājumu konsultants
@@ -320,86 +374,142 @@ export default function Home() {
                 Jānis Atelbauers - arhitekts
                 Būvdizains SIA - arhitektu birojs
                 Aver brokerage - nekustamo īpašumu aģentūra"
-              />
-            </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid item xs={12}><h1 className={catamaranLight.className} id="contacts">KONTAKTI</h1></Grid>
-
-        <Grid
-          container
-          justifyContent="space-around"
-          alignItems="center"
-          spacing={2}
-        // sx={{ margin: "20px" }}
-        >
-
-          <Grid item xs={6}>
-            <Grid container>
-              <Box
-                className={styles.address_image}
-              />
-            </Grid>
-          </Grid>
-          <Grid item xs={6} >
-            <Grid container >
-              <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                <Paragraph
-                  text="Saziņa:
-                "
                 />
-                <Paragraph
-                  text="
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12}><h1 className={catamaranLight.className} id="contacts">KONTAKTI</h1></Grid>
+
+          <Grid
+            container
+            justifyContent="space-around"
+            alignItems="center"
+            spacing={2}
+            sx={{ marginBottom: "20px" }}
+          >
+
+            <Grid item xs={6}>
+              <Grid container>
+                {/* <Box
+                className={styles.address_image}
+              /> */}
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                  <Paragraph
+                    text="Saziņa:
+                "
+                  />
+                  <Paragraph
+                    text="
                 A: Torņa iela 4-2c, Vecrīga
                 "
-                />
-                <Paragraph
-                  text="
+                  />
+                  <Paragraph
+                    text="
                 M: info@mustbe-architecture.lv
                 "
-                />
-                <Paragraph
-                  text="
+                  />
+                  <Paragraph
+                    text="
                 T: +371 29121613
                 "
-                />
-                <Paragraph
-                  text="
+                  />
+                  <Paragraph
+                    text="
                 (starpā ikonas - fb, insta, linkdin)
                 "
-                />
-              </Box>
-              <br />
-              <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                <Paragraph
-                  text="Rekvizīti:"
-                />
-                <Paragraph
-                  text="
+                  />
+                </Box>
+                <br />
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                  <Paragraph
+                    text="Rekvizīti:"
+                  />
+                  <Paragraph
+                    text="
                 N: MUST BE architecture SIA"
-                />
-                <Paragraph
-                  text="
+                  />
+                  <Paragraph
+                    text="
                 R: 40103354466"
-                />
-                <Paragraph
-                  text="
+                  />
+                  <Paragraph
+                    text="
                 PVN: LV40103354466"
-                />
-                <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008"/>
+                  />
+                  <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
+                </Box>
+              </Grid>
+            </Grid>
+            <Grid item xs={6} >
+              <Grid container >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
+                  width="100%" height="300px"
+                  style={{ border: 0, filter: 'grayscale(100%)' }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"></iframe>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid container sx={{ marginBottom: "20px" }}>
+            <Grid item xs={12}>
+              <Box className={styles.center_flex}>
+                <Link
+                  className={styles.social_icon}
+                  href="https://www.facebook.com/"
+                >
+                  <Image
+                    src="/facebook.svg"
+                    alt="MUST BE architecture"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/"
+                  className={styles.social_icon}
+                >
+                  <Image
+                    src="/instagram.svg"
+                    alt="MUST BE architecture"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <Link
+                  className={styles.social_icon}
+                  href="https://www.linkedin.com/"
+                >
+                  <Image
+                    src="/linkedin.svg"
+                    alt="MUST BE architecture"
+                    width={15}
+                    height={15}
+                  />
+                </Link>
               </Box>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
-                width="100%" height="300px"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <Box className={styles.center_flex}>
+                <p>© MUSTBE architecture </p>
+              </Box>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
+
+        <button
+          onClick={(e) => handleLinkClick(e, 'top')}
+          className={styles.go_up}
+        >
+          <Image
+            src="/arrow_down.svg"
+            alt="Arrow down"
+            width={30}
+            height={10}
+            className={styles.go_up_image}
+          />
+        </button>
+      </Box>
     </>
   )
 }
