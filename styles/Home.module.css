@@ -68,19 +68,20 @@
   transition: all .5s;
 }
 .project_thumbnail:hover{
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3); */
   transition: all .5s;
   transform: scale(1.02);
 }
 .thumbnail_title{
-  width: 100%;
+  font-size: 1rem;
+  /* width: 100%;
   position: absolute;
   top: 10%;
   color: white;
   font-size: 1.5rem;
   opacity: 0;
   border-bottom: 1px solid white;
-  padding-left: 2.5rem;
+  padding-left: 2.5rem; */
 }
 .project_thumbnail:hover .thumbnail_title{
   opacity: 1;
@@ -137,13 +138,12 @@
 }
 .nav_arrow{
   display: none;
-
 }
 .nav_link_wrapper:hover .nav_arrow{
  display: block;
 }
 .nav_link{
-  font-size: 1rem;
+  font-size: 14px;
   color: rgb(26, 26, 26);
   text-align: right;
   /* margin-left: 1rem; */
