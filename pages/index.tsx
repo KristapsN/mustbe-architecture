@@ -13,16 +13,28 @@ import NextJsCarousel from './components/carusel';
 const catamaran = Catamaran({ subsets: ['latin'], weight: '500' })
 export const catamaranLight = Catamaran({ subsets: ['latin'], weight: '300' })
 
+// const thumbnailImages = [
+//   { number: 0, images: ["/01_main.jpg" ]},
+//   { number: 1, images: ["/02_main.jpg"] },
+//   { number: 2, images: ["/03_main.jpg"] },
+//   { number: 3, images: ["/04_main.jpg"] },
+//   { number: 4, images: ["/05_main.jpg" ]},
+//   { number: 5, images: ["/06_main.jpg" ]},
+//   { number: 6, images: ["/07_main.jpg" ]},
+//   { number: 7, images: ["/08_main.jpg"] },
+//   { number: 8, images: ["/09_main.jpg" ]},]
+
 const thumbnailImages = [
-  { number: 0, image: "/01_main.jpg" },
-  { number: 1, image: "/02_main.jpg" },
-  { number: 2, image: "/03_main.jpg" },
-  { number: 3, image: "/04_main.jpg" },
-  { number: 4, image: "/05_main.jpg" },
-  { number: 5, image: "/06_main.jpg" },
-  { number: 6, image: "/07_main.jpg" },
-  { number: 7, image: "/08_main.jpg" },
-  { number: 8, image: "/09_main.jpg" },]
+  ["/01_main.jpg", "/02_main.jpg" ],
+  ["/02_main.jpg", "/04_main.jpg" ],
+  ["/03_main.jpg", "/04_main.jpg" ],
+  ["/04_main.jpg", "/04_main.jpg" ],
+  ["/05_main.jpg", "/04_main.jpg" ],
+  ["/06_main.jpg", "/04_main.jpg" ],
+  ["/07_main.jpg", "/04_main.jpg" ],
+  ["/08_main.jpg", "/04_main.jpg" ],
+  ["/09_main.jpg", "/04_main.jpg" ],
+]
 
 
 export default function Home() {
@@ -150,7 +162,7 @@ export default function Home() {
         <Box sx={{ overflow: 'hidden' }}>
           <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
 
-
+{/* <Box  className={`${styles.parallax_layer} ${styles.layer1}`}> */}
             <Grid container sx={{ flexGrow: 1 }}>
               <Grid item xs={12} sx={{ display: 'flex', alignItems: "flex-end", justifyContent: 'center' }}>
                 <div className={`${styles.under_construction_wrapper} `}>
@@ -164,6 +176,7 @@ export default function Home() {
                 </div>
               </Grid>
             </Grid>
+            {/* </Box> */}
           </Grid>
         </Box>
         <Box className={styles.go_up_wrapper} >
@@ -201,17 +214,17 @@ export default function Home() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12}><h1 className={catamaranLight.className} id="projects">PROJEKT</h1></Grid>
+            <Grid item xs={12}><h1 className={`${catamaranLight.className} ${styles.margin_bottom}`} id="projects">PROJEKT</h1></Grid>
             <Grid
               container
               // justifyContent="space-around"
               // alignItems="center"
-              spacing={1}
+              spacing={4}
               sx={{ flexGrow: 1, marginBottom: '20px' }}
             >
               <>
 
-                {activeThumbnail !== undefined && activeThumbnail < 3 &&
+                {/* {activeThumbnail !== undefined && activeThumbnail < 3 &&
                   <Grid item xs={12}>
                     <Grid container spacing={2}>
                       <Grid item xs={12} md={8}>
@@ -235,25 +248,19 @@ export default function Home() {
                       </Grid>
                     </Grid>
                   </Grid>
-                }
-                {thumbnailImages.filter(({ number }) => number < 3).map(({ number, image }) =>
-                  <Grid item xs={12} md={6} key={number}>
+                } */}
+                {thumbnailImages.map((images, index) =>
+                  <Grid item xs={12} md={6} key={index}>
                     <Box>
-                      <h1 className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project / 2019"}</h1>
+                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project / 2019"}</h1>
                     </Box>
                     <Box sx={{ overflow: 'hidden' }}>
-                      <Box
-                        className={styles.project_thumbnail}
-                        sx={{ backgroundImage: `url(${image})` }}
-                        onClick={() => handleThumbnailClick(number, image)}
-                      >
-                        {/* <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
-                        <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span> */}
-                      </Box>
+                      {/* @ts-ignore */}
+                        <NextJsCarousel images={images} />
                     </Box>
                   </Grid>
                 )}
-                {activeThumbnail !== undefined && activeThumbnail >= 3 && activeThumbnail < 6 &&
+                {/* {activeThumbnail !== undefined && activeThumbnail >= 3 && activeThumbnail < 6 &&
                   <Grid item xs={12}>
                     <Grid container spacing={2}>
                       <Grid item xs={12} md={8}>
@@ -276,11 +283,11 @@ export default function Home() {
                       </Grid>
                     </Grid>
                   </Grid>
-                }
-                {thumbnailImages.filter(({ number }) => number >= 3 && number < 6).map(({ number, image }) =>
+                } */}
+                {/* {thumbnailImages.filter(({ number }) => number >= 3 && number < 6).map(({ number, image }) =>
                   <Grid item xs={12} md={6} key={number}>
                     <Box>
-                      <h1 className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project / 2019"}</h1>
+                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project / 2019"}</h1>
                     </Box>
                     <Box sx={{ overflow: 'hidden' }}>
                       <Box
@@ -288,13 +295,11 @@ export default function Home() {
                         sx={{ backgroundImage: `url(${image})` }}
                         onClick={() => handleThumbnailClick(number, image)}
                       >
-                        {/* <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
-                        <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span> */}
                       </Box>
                     </Box>
                   </Grid>
-                )}
-                {activeThumbnail !== undefined && activeThumbnail >= 6 &&
+                )} */}
+                {/* {activeThumbnail !== undefined && activeThumbnail >= 6 &&
                   <Grid item xs={12}>
                     <Grid container spacing={2}>
                       <Grid item xs={12} md={8}>
@@ -321,20 +326,20 @@ export default function Home() {
                 {thumbnailImages.filter(({ number }) => number >= 6).map(({ number, image }) =>
                   <Grid item xs={12} md={6} key={number}>
                     <Box>
-                      <h1 className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project / 2019"}</h1>
+                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project / 2019"}</h1>
                     </Box>
                     <Box sx={{ overflow: 'hidden' }}>
                       <Box
                         className={styles.project_thumbnail}
                         sx={{ backgroundImage: `url(${image})` }}
                         onClick={() => handleThumbnailClick(number, image)}
-                      >
+                      > */}
                         {/* <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
                         <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span> */}
-                      </Box>
+                      {/* </Box>
                     </Box>
-                  </Grid>
-                )}
+                  </Grid> */}
+                {/* )} */}
 
               </>
             </Grid>
@@ -381,45 +386,37 @@ export default function Home() {
               </Grid>
               <Grid item xs={5} >
                 <Grid container>
-                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                  <Paragraph
-                    text="Sadarbības partneri:"
-                  />
-                  <Paragraph
-                    text=" Donna Victoria Design - interjera dizains un teritorijas labiekārtojums"
-                  />
-                                    <Paragraph
-                    text="
-                Rinalds Petjukevičs - 3D modelēšanas un BIM speciālists"
-                  />
-                                    <Paragraph
-                    text="
-                Uldis Jaunsubrēns - tehnisko risinājumu konsultants"
-                  />
-                                    <Paragraph
-                    text="
-                Reinis Jansons - 3D vizualizācijas"
-                  />
-                                    <Paragraph
-                    text="
-                Aigars Tereško - arhitekts"
-                  />
-                                    <Paragraph
-                    text="
-                Mikus Druviņš - arhitekts"
-                  />
-                                    <Paragraph
-                    text="
-                Jānis Atelbauers - arhitekts"
-                  />
-                                    <Paragraph
-                    text="
-                Būvdizains SIA - arhitektu birojs"
-                  />
-                                    <Paragraph
-                    text="
-                Aver brokerage - nekustamo īpašumu aģentūra"
-                  />
+                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                    <Paragraph
+                      text="Sadarbības partneri:"
+                    />
+                    <Paragraph
+                      text="Donna Victoria Design - interjera dizains un teritorijas labiekārtojums"
+                    />
+                    <Paragraph
+                      text="Rinalds Petjukevičs - 3D modelēšanas un BIM speciālists"
+                    />
+                    <Paragraph
+                      text="Uldis Jaunsubrēns - tehnisko risinājumu konsultants"
+                    />
+                    <Paragraph
+                      text="Reinis Jansons - 3D vizualizācijas"
+                    />
+                    <Paragraph
+                      text="Aigars Tereško - arhitekts"
+                    />
+                    <Paragraph
+                      text="Mikus Druviņš - arhitekts"
+                    />
+                    <Paragraph
+                      text="Jānis Atelbauers - arhitekts"
+                    />
+                    <Paragraph
+                      text="Būvdizains SIA - arhitektu birojs"
+                    />
+                    <Paragraph
+                      text="Aver brokerage - nekustamo īpašumu aģentūra"
+                    />
                   </Box>
                 </Grid>
               </Grid>
@@ -440,58 +437,48 @@ export default function Home() {
                   {/* <Box
                 className={styles.address_image}
               /> */}
+              <Box sx={{ display: 'flex'}}>
                   <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
                     <Paragraph
-                      text="Saziņa:
-                "
+                      text="Saziņa:"
                     />
                     <Paragraph
-                      text="
-                A: Torņa iela 4-2c, Vecrīga
-                "
+                      text="A: Torņa iela 4-2c, Vecrīga"
                     />
                     <Paragraph
-                      text="
-                M: info@mustbe-architecture.lv
-                "
+                      text=" M: info@mustbe-architecture.lv"
                     />
                     <Paragraph
-                      text="
-                T: +371 29121613
-                "
+                      text="T: +371 29121613"
                     />
                     <Paragraph
-                      text="
-                (starpā ikonas - fb, insta, linkdin)
-                "
+                      text="(starpā ikonas - fb, insta, linkdin)"
                     />
                   </Box>
                   <br />
-                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem', marginLeft: '1rem' }}>
                     <Paragraph
                       text="Rekvizīti:"
                     />
                     <Paragraph
-                      text="
-                N: MUST BE architecture SIA"
+                      text="N: MUST BE architecture SIA"
                     />
                     <Paragraph
-                      text="
-                R: 40103354466"
+                      text="R: 40103354466"
                     />
                     <Paragraph
-                      text="
-                PVN: LV40103354466"
+                      text="PVN: LV40103354466"
                     />
                     <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
                   </Box>
+                </Box>
                 </Grid>
               </Grid>
               <Grid item xs={6} >
                 <Grid container >
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
-                    width="100%" height="300px"
+                    width="100%" height="438px"
                     style={{ border: 0, filter: 'grayscale(100%)' }}
                     allowFullScreen={true}
                     loading="lazy"
