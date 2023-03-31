@@ -13,16 +13,6 @@ import NextJsCarousel from './components/carusel';
 const catamaran = Catamaran({ subsets: ['latin'], weight: '500' })
 export const catamaranLight = Catamaran({ subsets: ['latin'], weight: '300' })
 
-// const thumbnailImages = [
-//   { number: 0, images: ["/01_main.jpg" ]},
-//   { number: 1, images: ["/02_main.jpg"] },
-//   { number: 2, images: ["/03_main.jpg"] },
-//   { number: 3, images: ["/04_main.jpg"] },
-//   { number: 4, images: ["/05_main.jpg" ]},
-//   { number: 5, images: ["/06_main.jpg" ]},
-//   { number: 6, images: ["/07_main.jpg" ]},
-//   { number: 7, images: ["/08_main.jpg"] },
-//   { number: 8, images: ["/09_main.jpg" ]},]
 
 const thumbnailImages = [
   ["/01_main.jpg", "/02_main.jpg" ],
