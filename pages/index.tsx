@@ -4,44 +4,89 @@ import { Catamaran } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import { useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Paragraph from './components/paragrah';
-import { display } from '@mui/system';
 import NextJsCarousel from './components/carusel';
+import { debounce } from '@mui/material/utils';
+import AnimateIn from './components/animateIn';
 
 const catamaran = Catamaran({ subsets: ['latin'], weight: '500' })
 export const catamaranLight = Catamaran({ subsets: ['latin'], weight: '300' })
 
-
 const thumbnailImages = [
-  ["/01_main.jpg", "/02_main.jpg" ],
-  ["/02_main.jpg", "/04_main.jpg" ],
-  ["/03_main.jpg", "/04_main.jpg" ],
-  ["/04_main.jpg", "/04_main.jpg" ],
-  ["/05_main.jpg", "/04_main.jpg" ],
-  ["/06_main.jpg", "/04_main.jpg" ],
-  ["/07_main.jpg", "/04_main.jpg" ],
-  ["/08_main.jpg", "/04_main.jpg" ],
-  ["/09_main.jpg", "/04_main.jpg" ],
+  ["/01_main.jpg", "profile.jpg", "/02_main.jpg" ],
+  ["/02_main.jpg", "profile.jpg", "/04_main.jpg" ],
+  ["/03_main.jpg", "profile.jpg", "/04_main.jpg" ],
+  ["/04_main.jpg", "profile.jpg", "/04_main.jpg" ],
+  ["/05_main.jpg", "profile.jpg", "/04_main.jpg" ],
+  ["/06_main.jpg", "profile.jpg", "/04_main.jpg" ],
+  ["/07_main.jpg", "profile.jpg", "/04_main.jpg" ],
+  ["/08_main.jpg", "profile.jpg", "/04_main.jpg" ],
 ]
+
+const thumbnailText = [
+  "Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos. MUST BE architecture darbība aizsākusies 2019. gadā un kopš tā laika ir izstrādāti dažāda mēroga objekti un izveidoti veiksmīgi sadarbības partneri.",
+  'Second longer text',
+  'Next longer text',
+  'Next longer text',
+  'Next longer text',
+  'Next longer text',
+  'Next longer text',
+  'Last longer text',
+]
+
+export const useElementOnScreen = (
+  ref: RefObject<Element>,
+  rootMargin = "-50px",
+) => {
+  const [isIntersecting, setIsIntersecting] = useState(true);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      { rootMargin }
+    );
+  if (ref.current) {
+    observer.observe(ref.current);
+  }
+  return () => {
+    if (ref.current) {
+      observer.unobserve(ref.current);
+    }
+  };
+}, []);
+  return isIntersecting;
+}
 
 
 export default function Home() {
-  const [activeThumbnail, setActiveThumbnail] = useState<number>()
-  const [activeImage, setActiveImage] = useState<string>()
-
-
-  const handleThumbnailClick = (index: number, image: string) => {
-    setActiveThumbnail(index)
-    setActiveImage(image)
-  }
-
   const handleLinkClick = (event: { preventDefault: () => void; }, value: string) => {
     event.preventDefault();
     const element = document.getElementById(value);
     element && element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset;
+
+    setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
+
+    setPrevScrollPos(currentScrollPos);
+  }, 100);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+
+  }, [prevScrollPos, visible, handleScroll]);
+
+  console.log(visible)
 
   return (
     <>
@@ -52,13 +97,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <Grid container sx={{ position: 'fixed', top: 0, zIndex: 100 }}>
+        <Grid container sx={{ position: 'fixed', zIndex: 100, top: visible ? 0 : '-75px', transition: 'top 0.4s' }}>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
-              <Grid item xs={4} sm={3} md={2}  >
+              <Grid item xs={4} sm={3} md={2}>
                 <div className={styles.logo_wrapper}>
                   <Image
-                    src="/logo.png"
+                    src="/logo.svg"
                     alt="MUST BE architecture"
                     width={150}
                     height={63}
@@ -151,8 +196,6 @@ export default function Home() {
         </Grid>
         <Box sx={{ overflow: 'hidden' }}>
           <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
-
-{/* <Box  className={`${styles.parallax_layer} ${styles.layer1}`}> */}
             <Grid container sx={{ flexGrow: 1 }}>
               <Grid item xs={12} sx={{ display: 'flex', alignItems: "flex-end", justifyContent: 'center' }}>
                 <div className={`${styles.under_construction_wrapper} `}>
@@ -166,20 +209,18 @@ export default function Home() {
                 </div>
               </Grid>
             </Grid>
-            {/* </Box> */}
           </Grid>
         </Box>
         <Box className={styles.go_up_wrapper} >
           <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
+            <AnimateIn>
             <Grid
               container
               justifyContent="space-around"
               alignItems="center"
-              spacing={1}
-            // sx={{ margin: "20px" }}
+              spacing={4}
             >
-
-              <Grid item xs={4}>
+              <Grid item xs={6}>
                 <Grid container>
                   <Paragraph
                     text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
@@ -188,12 +229,7 @@ export default function Home() {
                   />
                 </Grid>
               </Grid>
-              <Grid item xs={4} >
-                <Grid container>
-
-                </Grid>
-              </Grid>
-              <Grid item xs={4} >
+              <Grid item xs={6} >
                 <Grid container>
                   <Paragraph
                     text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis un arhitekts
@@ -204,7 +240,10 @@ export default function Home() {
                 </Grid>
               </Grid>
             </Grid>
+            </AnimateIn>
+            <AnimateIn>
             <Grid item xs={12}><h1 className={`${catamaranLight.className} ${styles.margin_bottom}`} id="projects">PROJEKT</h1></Grid>
+            </AnimateIn>
             <Grid
               container
               // justifyContent="space-around"
@@ -213,159 +252,60 @@ export default function Home() {
               sx={{ flexGrow: 1, marginBottom: '20px' }}
             >
               <>
-
-                {/* {activeThumbnail !== undefined && activeThumbnail < 3 &&
-                  <Grid item xs={12}>
-                    <Grid container spacing={2}>
-                      <Grid item xs={12} md={8}>
-                        <NextJsCarousel />
-                      </Grid>
-                      <Grid item xs={12} md={4}>
-                        <Box>
-                          <Paragraph
-                            text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries,
-                but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing
-                Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum`
-                            }
-                          />
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                } */}
                 {thumbnailImages.map((images, index) =>
-                  <Grid item xs={12} md={6} key={index}>
-                    <Box>
+                  <Grid item xs={12} md={6} key={index} className={styles.thumbnail_content}>
+                    <Box className={styles.thumbnail_title_wrapper} >
                       <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project / 2019"}</h1>
                     </Box>
                     <Box sx={{ overflow: 'hidden' }}>
                       {/* @ts-ignore */}
-                        <NextJsCarousel images={images} />
+                        <NextJsCarousel images={images} text={thumbnailText} index={index}/>
                     </Box>
                   </Grid>
                 )}
-                {/* {activeThumbnail !== undefined && activeThumbnail >= 3 && activeThumbnail < 6 &&
-                  <Grid item xs={12}>
-                    <Grid container spacing={2}>
-                      <Grid item xs={12} md={8}>
-                        <NextJsCarousel />
-                      </Grid>
-                      <Grid item xs={12} md={4}>
-                        <Box>
-                          <Paragraph
-                            text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries,
-                but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing
-                Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum`
-                            }
-                          />                  </Box>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                } */}
-                {/* {thumbnailImages.filter(({ number }) => number >= 3 && number < 6).map(({ number, image }) =>
-                  <Grid item xs={12} md={6} key={number}>
-                    <Box>
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project / 2019"}</h1>
-                    </Box>
-                    <Box sx={{ overflow: 'hidden' }}>
-                      <Box
-                        className={styles.project_thumbnail}
-                        sx={{ backgroundImage: `url(${image})` }}
-                        onClick={() => handleThumbnailClick(number, image)}
-                      >
-                      </Box>
-                    </Box>
-                  </Grid>
-                )} */}
-                {/* {activeThumbnail !== undefined && activeThumbnail >= 6 &&
-                  <Grid item xs={12}>
-                    <Grid container spacing={2}>
-                      <Grid item xs={12} md={8}>
-                        <NextJsCarousel />
-                      </Grid>
-                      <Grid item xs={12} md={4}>
-                        <Box>
-                          <Paragraph
-                            text={`Some thext about project ${activeThumbnail}. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries,
-                but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing
-                Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum`
-                            }
-                          />                  </Box>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                }
-                {thumbnailImages.filter(({ number }) => number >= 6).map(({ number, image }) =>
-                  <Grid item xs={12} md={6} key={number}>
-                    <Box>
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project / 2019"}</h1>
-                    </Box>
-                    <Box sx={{ overflow: 'hidden' }}>
-                      <Box
-                        className={styles.project_thumbnail}
-                        sx={{ backgroundImage: `url(${image})` }}
-                        onClick={() => handleThumbnailClick(number, image)}
-                      > */}
-                        {/* <span className={`${styles.thumbnail_title} ${catamaran.className}`}>{"Name of project"}</span>
-                        <span className={`${styles.thumbnail_subtitle} ${catamaranLight.className}`}>{"2021"}</span> */}
-                      {/* </Box>
-                    </Box>
-                  </Grid> */}
-                {/* )} */}
 
               </>
             </Grid>
-            <Grid item xs={12}><h1 className={catamaranLight.className} id="about-us">PAR MUMS</h1></Grid>
+            <AnimateIn>
+              <Grid item xs={12}><h1 className={catamaranLight.className} id="about-us">PAR MUMS</h1></Grid>
+            </AnimateIn>
 
             <Grid
               container
               justifyContent="space-between"
               alignItems="center"
+              spacing={4}
               sx={{ marginBottom: '20px' }}
             >
               <Grid item xs={6}>
+              <AnimateIn>
                 <Grid container>
+                  <Paragraph text={'Monvīds Bekmanis'}/>
                   <Box
                     className={styles.profile_image}
                   />
                 </Grid>
+              </AnimateIn>
               </Grid>
               <Grid item xs={6}>
+              <AnimateIn>
+              <Paragraph text={'Kristiāns Beķeris'}/>
                 <Grid container>
                   <Box
                     className={styles.profile_image}
                   />
                 </Grid>
+              </AnimateIn>
               </Grid>
             </Grid>
             <Grid
               container
-              justifyContent="space-between"
-              alignItems="center"
+              spacing={4}
               sx={{ marginBottom: "20px" }}
-            // spacing={1}
-            // sx={{ margin: "20px" }}
             >
 
-              <Grid item xs={5}>
+              <Grid item xs={6}>
+              <AnimateIn>
                 <Grid container>
                   <Paragraph
                     text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos. MUST BE architecture darbība
@@ -373,8 +313,10 @@ export default function Home() {
                 sadarbības partneri."
                   />
                 </Grid>
+                </AnimateIn>
               </Grid>
-              <Grid item xs={5} >
+              <Grid item xs={6} >
+              <AnimateIn>
                 <Grid container>
                   <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
                     <Paragraph
@@ -409,6 +351,7 @@ export default function Home() {
                     />
                   </Box>
                 </Grid>
+                </AnimateIn>
               </Grid>
             </Grid>
 
@@ -416,17 +359,10 @@ export default function Home() {
 
             <Grid
               container
-              justifyContent="space-around"
-              alignItems="center"
-              spacing={2}
               sx={{ marginBottom: "20px" }}
             >
-
               <Grid item xs={6}>
-                <Grid container>
-                  {/* <Box
-                className={styles.address_image}
-              /> */}
+              <AnimateIn>
               <Box sx={{ display: 'flex'}}>
                   <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
                     <Paragraph
@@ -462,9 +398,10 @@ export default function Home() {
                     <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
                   </Box>
                 </Box>
-                </Grid>
+                </AnimateIn>
               </Grid>
               <Grid item xs={6} >
+              <AnimateIn>
                 <Grid container >
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
@@ -474,6 +411,7 @@ export default function Home() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </Grid>
+                </AnimateIn>
               </Grid>
             </Grid>
             <Grid container sx={{ marginBottom: "20px" }}>
