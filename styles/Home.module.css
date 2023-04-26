@@ -148,6 +148,9 @@ display: flex;
   opacity: 0;
   translate: 0 14px;
 }
+.thumbnail_content:hover{
+  cursor: pointer;
+}
 .thumbnail_content:hover .thumbnail_title_wrapper{
   translate: none;
   transition: 600ms ease-in-out;

@@ -35,18 +35,28 @@ type CarouselProps = {
 }
 
 const NextJsCarousel = ({ images, text, index }: CarouselProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const baseChildren = <div>{images && images.map((image, imageIndex) => createCarouselItemImage(image, text[index], imageIndex))}</div>;
+  // const [currentSlide, setCurrentSlide] = useState(0)
+
+  const baseChildren = <div>{images &&
+    images.map((image, imageIndex) => createCarouselItemImage(image, text[index], imageIndex))
+  }</div>;
+
   return (
     <>
       <Carousel
         showStatus={false}
         showThumbs={false}
         showIndicators={false}
-        showArrows={false}
+        showArrows={true}
         infiniteLoop={true}
-        onClickItem={(index) => setCurrentSlide(index + 1)}
-        selectedItem={currentSlide}
+        swipeable={false}
+        // autoPlay={true}
+        // interval={3000}
+        transitionTime={500}
+        // onClickItem={(index) => setCurrentSlide(index + 1)}
+        animationHandler='fade'
+        // animationHandler={fadeAnimationHandler}
+        // selectedItem={currentSlide}
         emulateTouch
       >
         {baseChildren.props.children}

@@ -8,7 +8,6 @@ import { RefObject, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Paragraph from './components/paragrah';
 import NextJsCarousel from './components/carusel';
-import { debounce } from '@mui/material/utils';
 import AnimateIn from './components/animateIn';
 
 const catamaran = Catamaran({ subsets: ['latin'], weight: '500' })
@@ -60,33 +59,16 @@ export const useElementOnScreen = (
   return isIntersecting;
 }
 
-
 export default function Home() {
   const handleLinkClick = (event: { preventDefault: () => void; }, value: string) => {
     event.preventDefault();
     const element = document.getElementById(value);
-    element && element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    element && element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+  });
   };
 
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
-
-  const handleScroll = debounce(() => {
-    const currentScrollPos = window.pageYOffset;
-
-    setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos < 10);
-
-    setPrevScrollPos(currentScrollPos);
-  }, 100);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-
-  }, [prevScrollPos, visible, handleScroll]);
-
-  console.log(visible)
 
   return (
     <>
@@ -97,7 +79,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <Grid container sx={{ position: 'fixed', zIndex: 100, top: visible ? 0 : '-75px', transition: 'top 0.4s' }}>
+        <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
               <Grid item xs={4} sm={3} md={2}>
