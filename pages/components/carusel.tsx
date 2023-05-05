@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { catamaranLight } from '..';
@@ -35,7 +35,6 @@ type CarouselProps = {
 }
 
 const NextJsCarousel = ({ images, text, index }: CarouselProps) => {
-  // const [currentSlide, setCurrentSlide] = useState(0)
 
   const baseChildren = <div>{images &&
     images.map((image, imageIndex) => createCarouselItemImage(image, text[index], imageIndex))
@@ -50,13 +49,8 @@ const NextJsCarousel = ({ images, text, index }: CarouselProps) => {
         showArrows={true}
         infiniteLoop={true}
         swipeable={false}
-        // autoPlay={true}
-        // interval={3000}
         transitionTime={500}
-        // onClickItem={(index) => setCurrentSlide(index + 1)}
         animationHandler='fade'
-        // animationHandler={fadeAnimationHandler}
-        // selectedItem={currentSlide}
         emulateTouch
       >
         {baseChildren.props.children}

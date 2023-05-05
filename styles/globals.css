@@ -21,8 +21,18 @@ body {
     font-size: calc((100vw / 1920) * 16)
   }
 }
-p{
+p {
   font-family: 'Catamaran', sans-serif;
+}
+.control-next{
+  width: 100%;
+  /* visibility: hidden; */
+}
+.control-prev{
+  display: none;
+}
+.carousel.control-next{
+  opacity: 0;
 }
 
 /* body {
@@ -45,3 +55,31 @@ a {
     color-scheme: dark;
   }
 } */
+
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow:hover{
+  background-color: transparent;
+  /* opacity: 0; */
+}
+
+.carousel .control-next.control-arrow, .carousel .control-next.control-arrow:hover{
+  background-color: transparent;
+  /* opacity: 0; */
+}
+
+.carousel .control-prev.control-arrow, .carousel .control-prev.control-arrow:hover {
+  background-color: transparent;
+  /* opacity: 0; */
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow{
+  opacity: 0;
+}
+
+.carousel .control-next.control-arrow:before {
+  opacity: 0;
+}
+
+.carousel .control-prev.control-arrow:before {
+  opacity: 0;
+}
