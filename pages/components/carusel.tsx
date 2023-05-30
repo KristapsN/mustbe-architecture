@@ -1,27 +1,83 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { catamaranLight } from '..';
 import AnimateIn from './animateIn';
+import styles from '@/styles/Home.module.css'
+import Box from '@mui/material/Box';
 
-const createCarouselItemImage = (image: string, text: string, imageIndex: number) => (
+
+const createCarouselItemImage = (image: string, texts: string[] | undefined, imageIndex: number | undefined) => (
   <React.Fragment key={image}>
     <AnimateIn>
       <div>
         <img src={image} />
         {imageIndex === 1 &&
-          <p
-            style={{
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              margin: '0 auto',
-              top: 10,
-              padding: 20
-            }}
-            className={`${catamaranLight.className}`}>
-            {text}
-          </p>
+          <div className={styles.project_description}>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Autors:
+              </p>
+              <p>
+                {texts ? texts[0] : '-'}
+              </p>
+            </Box>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Vizuālizācijas:
+              </p>
+              <p>
+                {texts ? texts[1] : '-'}
+              </p>
+            </Box>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Adrese:
+              </p>
+              <p>
+                {texts ? texts[2] : '-'}
+              </p>
+            </Box>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Vizuālizācijas:
+              </p>
+              <p>
+                {texts ? texts[3] : '-'}
+              </p>
+            </Box>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Statuss:
+              </p>
+              <p>
+                {texts ? texts[4] : '-'}
+              </p>
+            </Box>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Statuss:
+              </p>
+              <p>
+                {texts ? texts[5] : '-'}
+              </p>
+            </Box>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Statuss:
+              </p>
+              <p>
+                {texts ? texts[6] : '-'}
+              </p>
+            </Box>
+            <Box marginBottom={2}>
+              <p className={styles.project_description_title}>
+                Statuss:
+              </p>
+              <p>
+                {texts ? texts[6] : '-'}
+              </p>
+            </Box>
+          </div>
         }
       </div>
     </AnimateIn>
@@ -30,12 +86,12 @@ const createCarouselItemImage = (image: string, text: string, imageIndex: number
 
 type CarouselProps = {
   images: string[]
-  text: string[]
+  text: string[][]
   index: number
 }
 
 const NextJsCarousel = ({ images, text, index }: CarouselProps) => {
-
+  console.log(index, (index && text) && text[index])
   const baseChildren = <div>{images &&
     images.map((image, imageIndex) => createCarouselItemImage(image, text[index], imageIndex))
   }</div>;

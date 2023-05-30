@@ -9,38 +9,60 @@ import Link from 'next/link';
 import Paragraph from './components/paragrah';
 import NextJsCarousel from './components/carusel';
 import AnimateIn from './components/animateIn';
-import { FormControl, Select, MenuItem, SelectChangeEvent, styled, InputBase } from '@mui/material';
+import { FormControl, Select, MenuItem, SelectChangeEvent, styled, InputBase, Divider, Button, ButtonProps } from '@mui/material';
 
-const catamaran = Catamaran({ subsets: ['latin'], weight: '500' })
+const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  color: 'black',
+  minWidth: 0,
+  paddingRight: 0,
+  '&:hover': {
+    backgroundColor: 'transparent',
+  },
+}));
+
 export const catamaranLight = Catamaran({ subsets: ['latin'], weight: '300' })
 
 const thumbnailImages = [
-  ["/01_main.jpg", "profile.jpg", "/02_main.jpg"],
-  ["/02_main.jpg", "profile.jpg", "/04_main.jpg"],
-  ["/03_main.jpg", "profile.jpg", "/04_main.jpg"],
-  ["/04_main.jpg", "profile.jpg", "/04_main.jpg"],
-  ["/05_main.jpg", "profile.jpg", "/04_main.jpg"],
-  ["/06_main.jpg", "profile.jpg", "/04_main.jpg"],
-  ["/07_main.jpg", "profile.jpg", "/04_main.jpg"],
-  ["/08_main.jpg", "profile.jpg", "/04_main.jpg"],
+  ["/01_main.jpg", "white.jpg", "/02_main.jpg"],
+  ["/02_main.jpg", "white.jpg", "/04_main.jpg"],
+  ["/03_main.jpg", "white.jpg", "/04_main.jpg"],
+  ["/04_main.jpg", "white.jpg", "/04_main.jpg"],
+  ["/05_main.jpg", "white.jpg", "/04_main.jpg"],
+  ["/06_main.jpg", "white.jpg", "/04_main.jpg"],
+  ["/07_main.jpg", "white.jpg", "/04_main.jpg"],
+  ["/08_main.jpg", "white.jpg", "/04_main.jpg"],
+]
+
+const projectDescription = [
+ 'MONVIDS BEKMANIS',
+ 'REINIS JANSONS',
+ 'OGRES NOVADS',
+ 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ',
+ 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ',
+ 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ',
+ 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ'
 ]
 
 const thumbnailText = [
-  "Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos. MUST BE architecture darbība aizsākusies 2019. gadā un kopš tā laika ir izstrādāti dažāda mēroga objekti un izveidoti veiksmīgi sadarbības partneri.",
-  'Second longer text',
-  'Next longer text',
-  'Next longer text',
-  'Next longer text',
-  'Next longer text',
-  'Next longer text',
-  'Last longer text',
+projectDescription,
+projectDescription,
+projectDescription,
+projectDescription,
+projectDescription,
+projectDescription,
+projectDescription,
+projectDescription,
+projectDescription
 ]
+
+
 
 export const useElementOnScreen = (
   ref: RefObject<Element>,
   rootMargin = "-50px",
 ) => {
   const [isIntersecting, setIsIntersecting] = useState(true);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -70,11 +92,21 @@ export default function Home() {
     });
   };
 
-  const [age, setAge] = useState('lv');
+  const [language, setLanguage] = useState('LV');
+  const [showLoader, setShowLoader] = useState(true)
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+
+  const handleChange = () => {
+    language === 'LV'
+    ? setLanguage('ENG')
+    : setLanguage('LV')
   };
+
+  const loaderHandler = () => {
+    setShowLoader(false)
+  }
+
+  setTimeout(loaderHandler, 2000)
 
   return (
     <>
@@ -85,6 +117,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
+        <Box sx={{ }} className={`${!showLoader && styles.preloader_fade}`}>
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            sx={{ flexGrow: 1 }}
+            className={`${styles.preloader}`}
+          >
+
+              <Image
+                src="/logo-loader.svg"
+                alt="MUST BE architecture"
+                width={400}
+                height={94}
+              />
+          </Grid>
+        </Box>
+
         <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
@@ -95,6 +145,7 @@ export default function Home() {
                     alt="MUST BE architecture"
                     width={400}
                     height={94}
+                    onClick={(e) => handleLinkClick(e, 'top')}
                   />
                 </div>
               </Grid>
@@ -165,39 +216,47 @@ export default function Home() {
                         height={20}
                       />
                     </Link>
-                  </Box>
-                  <Box sx={{ minWidth: 50 }} className={styles.nav_link_wrapper}>
-                    <FormControl fullWidth variant="standard">
-                      <Select
-                        labelId="demo-customized-select-label"
-                        id="demo-customized-select"
-                        value={age}
-                        label="Age"
-                        onChange={handleChange}
-                        className={catamaranLight.className}
-                        disableUnderline
-                        sx={{
-                          fontSize: '14px',
-                          boxShadow: 'none',
-                        }}
-                      >
-                        <MenuItem className={catamaranLight.className} value={'lv'} sx={{ fontSize: '14px'}}>LV</MenuItem>
-                        <MenuItem className={catamaranLight.className} value={'eng'} sx={{ fontSize: '14px'}}>ENG</MenuItem>
-                      </Select>
-                    </FormControl>
+                    <LanguageButton onClick={() => handleChange()}>{language}</LanguageButton>
                   </Box>
                 </div>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Box sx={{ overflow: 'hidden' }}>
+        <Box sx={{ overflow: 'hidden', minHeight: '100vh' }}>
           <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
           </Grid>
+          <Grid
+                container
+                justifyContent="space-around"
+                alignItems="flex-start"
+                spacing={4}
+                sx={{ padding: "20px 8vw"  }}
+              >
+                <Grid item xs={6}>
+                  <Grid container>
+                    <Paragraph
+                      text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
+                cilvēka labsajūtu, tādēļ tās veidosanai ir liela nozīme ar ilgstosu iedarbību uz sabiedrību. (ūdens
+                turpināsies / koriģēsies). Plānotais garums – 4-5 teikumi"
+                    />
+                  </Grid>
+                </Grid>
+                <Grid item xs={6} >
+                  <Grid container>
+                    <Paragraph
+                      text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis un arhitekts
+                Kristiāns Beķeris. Veidojot komandu ar inženieriem mēs nodrošinām projektēšanas pakalpojumus sākot
+                no koncepcijas stadijas līdz būvprojekta iztrādei un autoruzraudzībai būvniecibas laikā, kā arī
+                piedāvājam sagatavot interjera dizaina projektus sadarbībā ar Donna Victoria Design."
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
         </Box>
         <Box className={styles.go_up_wrapper} >
           <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
-            <AnimateIn>
+            {/* <AnimateIn>
               <Grid
                 container
                 justifyContent="space-around"
@@ -225,7 +284,7 @@ export default function Home() {
                   </Grid>
                 </Grid>
               </Grid>
-            </AnimateIn>
+            </AnimateIn> */}
             <AnimateIn>
               <Grid item xs={12}><h1 className={`${catamaranLight.className} ${styles.margin_bottom}`} id="projects">PROJEKT</h1></Grid>
             </AnimateIn>
@@ -240,10 +299,13 @@ export default function Home() {
                 {thumbnailImages.map((images, index) =>
                   <Grid item xs={12} md={6} key={index} className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project / 2019"}</h1>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project "}</h1>
+                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"2019"}</h1>
+                      </Box>
+                      <Divider sx={{marginBottom: 1, backgroundColor: 'rgb(26, 26, 26)' }} />
                     </Box>
                     <Box sx={{ overflow: 'hidden' }}>
-                      {/* @ts-ignore */}
                       <NextJsCarousel images={images} text={thumbnailText} index={index} />
                     </Box>
                   </Grid>
@@ -255,42 +317,6 @@ export default function Home() {
               <Grid item xs={12}><h1 className={`${catamaranLight.className} ${styles.margin_bottom}`} id="about-us">PAR MUMS</h1></Grid>
             </AnimateIn>
 
-            <Grid
-              container
-              justifyContent="space-between"
-              alignItems="center"
-              spacing={4}
-              sx={{ marginBottom: '40px' }}
-            >
-              <Grid item xs={6}>
-                <AnimateIn>
-                  <Grid container className={styles.thumbnail_content}>
-                    <Box className={styles.thumbnail_title_wrapper} >
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>
-                        {"Monvīds Bekmanis"}
-                      </h1>
-                    </Box>
-                    <Box
-                      className={styles.profile_image}
-                    />
-                  </Grid>
-                </AnimateIn>
-              </Grid>
-              <Grid item xs={6}>
-                <AnimateIn>
-                  <Grid item className={styles.thumbnail_content}>
-                    <Box className={styles.thumbnail_title_wrapper} >
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>
-                        {"Kristiāns Beķeris"}
-                      </h1>
-                    </Box>
-                    <Box
-                      className={styles.profile_image}
-                    />
-                  </Grid>
-                </AnimateIn>
-              </Grid>
-            </Grid>
             <Grid
               container
               spacing={4}
@@ -343,6 +369,43 @@ export default function Home() {
                         text="Aver brokerage - nekustamo īpašumu aģentūra"
                       />
                     </Box>
+                  </Grid>
+                </AnimateIn>
+              </Grid>
+            </Grid>
+
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              spacing={4}
+              sx={{ marginBottom: '40px' }}
+            >
+              <Grid item xs={6}>
+                <AnimateIn>
+                  <Grid container className={styles.thumbnail_content}>
+                    <Box className={styles.thumbnail_title_wrapper} >
+                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>
+                        {"Monvīds Bekmanis"}
+                      </h1>
+                    </Box>
+                    <Box
+                      className={styles.profile_image}
+                    />
+                  </Grid>
+                </AnimateIn>
+              </Grid>
+              <Grid item xs={6}>
+                <AnimateIn>
+                  <Grid item className={styles.thumbnail_content}>
+                    <Box className={styles.thumbnail_title_wrapper} >
+                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>
+                        {"Kristiāns Beķeris"}
+                      </h1>
+                    </Box>
+                    <Box
+                      className={styles.profile_image}
+                    />
                   </Grid>
                 </AnimateIn>
               </Grid>
