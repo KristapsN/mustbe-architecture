@@ -59,29 +59,36 @@ a {
 
 .carousel .control-arrow, .carousel.carousel-slider .control-arrow:hover{
   background-color: transparent !important;
-  /* opacity: 0; */
 }
 
 .carousel .control-next.control-arrow, .carousel .control-next.control-arrow:hover{
   background-color: transparent !important;
-  /* opacity: 0; */
 }
 
 .carousel .control-prev.control-arrow, .carousel .control-prev.control-arrow:hover {
   background-color: transparent !important;
-  /* opacity: 0; */
+
 }
 
-.carousel .control-arrow, .carousel.carousel-slider .control-arrow{
+/* .carousel .control-arrow, .carousel.carousel-slider .control-arrow{
   opacity: 0 !important;
-}
+} */
 
 .carousel .control-next.control-arrow:before {
+  border: none !important;
+}
+/*
+.carousel .control-next.control-arrow:before {
   opacity: 0 !important;
+  content: none;
 }
 .carousel .control-next.control-arrow:before:hover {
   opacity: 0 !important;
 }
 .carousel .control-prev.control-arrow:before {
   opacity: 0 !important;
+  content: none;
 }
+.carousel .control-arrow:before .carousel.carousel-slider .control-arrow:before {
+  content: none !important;
+} */
