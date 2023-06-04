@@ -14,7 +14,7 @@ const createCarouselItemImage = (image: string, texts: string[], descriptionTitl
         {imageIndex === 1 &&
           <div className={styles.project_description}>
             {texts.map((text, index) => (
-              <Box marginBottom={2}>
+              <Box marginBottom={2} key={index}>
                 <>
                   <p className={styles.project_description_title}>
                     {descriptionTitles[index]}

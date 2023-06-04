@@ -1,6 +1,5 @@
 import { Catamaran } from "@next/font/google";
 import { FC } from "react";
-import { catamaranLight } from "..";
 
 export const catamaranNormal = Catamaran({ subsets: ['latin-ext'], weight: '300' })
 
