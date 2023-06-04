@@ -9,7 +9,7 @@ import Link from 'next/link';
 import Paragraph from './components/paragrah';
 import NextJsCarousel from './components/carusel';
 import AnimateIn from './components/animateIn';
-import { FormControl, Select, MenuItem, SelectChangeEvent, styled, InputBase, Divider, Button, ButtonProps } from '@mui/material';
+import { styled, Divider, Button, ButtonProps } from '@mui/material';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -20,41 +20,177 @@ const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   },
 }));
 
-export const catamaranLight = Catamaran({ subsets: ['latin'], weight: '300' })
-
 const thumbnailImages = [
-  ["/01_main.jpg", "white.jpg", "/02_main.jpg"],
-  ["/02_main.jpg", "white.jpg", "/04_main.jpg"],
-  ["/03_main.jpg", "white.jpg", "/04_main.jpg"],
-  ["/04_main.jpg", "white.jpg", "/04_main.jpg"],
-  ["/05_main.jpg", "white.jpg", "/04_main.jpg"],
-  ["/06_main.jpg", "white.jpg", "/04_main.jpg"],
-  ["/07_main.jpg", "white.jpg", "/04_main.jpg"],
-  ["/08_main.jpg", "white.jpg", "/04_main.jpg"],
+  ["01_Birojs/01_main.jpg", "white.jpg", "01_Birojs/03_main.jpg", "01_Birojs/04_main.jpg", "01_Birojs/05_main.jpg", "01_Birojs/06_main.jpg"],
+  ["02_Ogre/01_main.jpg", "white.jpg", "02_Ogre/02_main.jpg", "02_Ogre/03_main.jpg", "02_Ogre/04_main.jpg"],
+  ["03_Olaine/01_main.jpg", "white.jpg", "03_Olaine/02_main.jpg", "03_Olaine/03_main.jpg", "03_Olaine/04_main.jpg", "03_Olaine/05_main.jpg", "03_Olaine/06_main.jpg", "03_Olaine/07_main.jpg", "03_Olaine/08_main.jpg", "03_Olaine/09_main.jpg"],
+  ["04_R47/01_main.jpg", "white.jpg", "04_R47/02_main.jpg", "04_R47/03_main.jpg", "04_R47/04_main.jpg", "04_R47/05_main.jpg", "04_R47/06_main.jpg", "04_R47/07_main.jpg", "04_R47/08_main.jpg", "04_R47/09_main.jpg"],
+  ["05_Bergi/01_main.jpg", "white.jpg", "05_Bergi/02_main.jpg", "05_Bergi/03_main.jpg"],
+  ["06_Graudi/01_main.jpg", "white.jpg", "06_Graudi/02_main.jpg"],
+  ["07_Nometnu/01_main.jpg", "white.jpg", "07_Nometnu/02_main.jpg", "07_Nometnu/03_main.jpg", "07_Nometnu/04_main.jpg", "07_Nometnu/05_main.jpg", "07_Nometnu/06_main.jpg"],
+  ["09_Garkalne/01_main.jpg", "white.jpg", "09_Garkalne/02_main.jpg", "09_Garkalne/03_main.jpg", "09_Garkalne/04_main.jpg", "09_Garkalne/06_main.jpg", "09_Garkalne/07_main.jpg", "09_Garkalne/08_main.jpg", "09_Garkalne/09_main.jpg", "09_Garkalne/10_main.jpg", "09_Garkalne/11_main.jpg"]
 ]
 
-const projectDescription = [
- 'MONVIDS BEKMANIS',
- 'REINIS JANSONS',
- 'OGRES NOVADS',
- 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ',
- 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ',
- 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ',
- 'BŪVOBJEKTS MINIMĀLĀ SASTĀVĀ'
+
+const firstDescriptionTitles = [
+  'Autors:',
+  'Vizuālizācijas:',
+  'Adrese:',
+  'Apjoms:',
+  'Statuss:'
 ]
 
-const thumbnailText = [
-projectDescription,
-projectDescription,
-projectDescription,
-projectDescription,
-projectDescription,
-projectDescription,
-projectDescription,
-projectDescription,
-projectDescription
+const secondDescriptionTitles = [
+  'Komanda:',
+  'Interjera dizains un labiekārtojums:',
+  'Vizualizācijas:',
+  'Sadarbības partneris:',
+  'Apjoms:',
+  'Adrese:',
+  'Statuss:'
 ]
 
+const thirdDescriptionTitles = [
+  'Komanda:',
+  'Interjera dizains:',
+  'Vizualizācija:',
+  'Sadarbības partneris:',
+  'Adrese:',
+  'Apjoms:',
+  'Statuss:'
+]
+
+const fourthDescriptionTitles = [
+  'Komanda:',
+  'Vizuālizācijas:',
+  'Adrese:',
+  'Apjoms:',
+  'Statuss:'
+]
+
+const fifthDescriptionTitles = [
+  'Komanda:',
+  'Labiekārtojums un interjera dizains',
+  'Vizualizācijas',
+  'Adrese',
+  'Apjoms',
+  'Statuss',
+]
+
+const allDescriptionTitles = [
+  firstDescriptionTitles,
+  firstDescriptionTitles,
+  secondDescriptionTitles,
+  thirdDescriptionTitles,
+  firstDescriptionTitles,
+  fourthDescriptionTitles,
+  fourthDescriptionTitles,
+  fifthDescriptionTitles
+]
+
+const firstProjectDescription = [
+  'MONVIDS BEKMANIS',
+  'Donna Victoria Design',
+  'Toma iela 3, Rīga',
+  '1950 m2',
+  'Meta stadija'
+]
+
+const secondProjectDescription = [
+  'Monvīds Bekmanis',
+  'Reinis Jansons / Regger /',
+  'Ogres novads',
+  '230 m2',
+  'Būvprojekts minimālā sastāvā',
+ ]
+
+ const thirdProjectDescription = [
+  'Monvīds Bekmanis, Kristiāns Beķeris',
+  'Donna Victoria Design',
+  'Reinis Jansons / Regger /,  Donna Victoria Design',
+  'SIA "Būvdizains"',
+  '5080 m2',
+  'Jelgavas iela 23, Olaine',
+  'Meta konkurss',
+]
+
+const fourthProjectDescription = [
+  'Monvīds Bekmanis, Kristiāns Beķeris',
+  'Donna Victoria Design',
+  'Reinis Jansons / Regger /, Donna Victoria Design',
+  'SIA "Būvdizains"',
+  'Rīgas iela 47, Jūrmala',
+  '2630 m2',
+  'Pabeigta būvniecība',
+ ]
+
+ const fifthProjectDescription = [
+  'Monvīds Bekmanis',
+  'Reinis Jansons / Regger /',
+  'Pastaigu iela 6, Berģi',
+  '265 m2',
+  'Būvprojekts',
+]
+
+const sixtProjectDescription = [
+  'Kristiāns Beķeris, Monvīds Bekmanis',
+  'Vinalds Petjukevičs',
+  '"Rūķīši" 1, Vecsaule, Vecsaules pagasts',
+  '1770 m2',
+  'Pabeigta būvniecība',
+]
+
+const seventhProjectDescription = [
+  'Monvīds Bekmanis, Kristiāns Beķeris',
+  'Rinalds Petjukevičs',
+  'Mazā Nometņu iela 80, Rīga',
+  '905 m2',
+  'Meta stadija',
+]
+
+const eightProjectDescription = [
+  'Monvīds Bekmanis, Kristiāns Beķeris',
+  'Donna Victoria Design',
+  'Reinis Jansons / Regger /,  Donna Victoria Design',
+  'Vidzemes šoseja 34A, 38A, Garkalne',
+  '3320 m2',
+  'Meta konkurss',
+]
+
+
+  const thumbnailText = [
+    firstProjectDescription,
+    secondProjectDescription,
+    thirdProjectDescription,
+    fourthProjectDescription,
+    fifthProjectDescription,
+    sixtProjectDescription,
+    seventhProjectDescription,
+    eightProjectDescription
+  ]
+
+  const projectTitles = [
+    'CLT PANEĻU BIROJA ĒJA',
+    'PRIVĀTMĀJA OGRĒ',
+    'MULTIFUNKCIONĀLAS CENTRS',
+    'DAUDZDZĪVOKĻU ĒKA JŪRMALĀ',
+    'PRIVĀTMĀJA BERĢOS',
+    'GRAUDU PIRMSAPSTRĀDES KOMPLEKSS',
+    'DAUDZDZĪVOKĻU ĒKA PĀRDAUGAVĀ',
+    'PIRMSKOLAS IZGLĪTĪBAS IESTĀDE'
+
+  ]
+
+  const projectYear = [
+    '2020',
+    '2020',
+    '2020',
+    '2019-2020',
+    '2020-2022',
+    '2019-2020',
+    '2021',
+    '2021'
+  ]
 
 
 export const useElementOnScreen = (
@@ -238,7 +374,7 @@ export default function Home() {
                     <Paragraph
                       text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
                 cilvēka labsajūtu, tādēļ tās veidosanai ir liela nozīme ar ilgstosu iedarbību uz sabiedrību. (ūdens
-                turpināsies / koriģēsies). Plānotais garums – 4-5 teikumi"
+                turpināsies / koriģēsies). Plānotais garums - 4-5 teikumi"
                     />
                   </Grid>
                 </Grid>
@@ -269,7 +405,7 @@ export default function Home() {
                     <Paragraph
                       text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
                 cilvēka labsajūtu, tādēļ tās veidosanai ir liela nozīme ar ilgstosu iedarbību uz sabiedrību. (ūdens
-                turpināsies / koriģēsies). Plānotais garums – 4-5 teikumi"
+                turpināsies / koriģēsies). Plānotais garums - 4-5 teikumi"
                     />
                   </Grid>
                 </Grid>
@@ -286,7 +422,7 @@ export default function Home() {
               </Grid>
             </AnimateIn> */}
             <AnimateIn>
-              <Grid item xs={12}><h1 className={`${catamaranLight.className} ${styles.margin_bottom}`} id="projects">PROJEKT</h1></Grid>
+              <Grid item xs={12}><h1 className={styles.margin_bottom} id="projects">PROJEKT</h1></Grid>
             </AnimateIn>
             <Grid
               container
@@ -300,13 +436,13 @@ export default function Home() {
                   <Grid item xs={12} md={6} key={index} className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"Name of project "}</h1>
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>{"2019"}</h1>
+                      <h1 className={styles.thumbnail_title}>{projectTitles[index]}</h1>
+                      <h1 className={styles.thumbnail_title}>{projectYear[index]}</h1>
                       </Box>
                       <Divider sx={{marginBottom: 1, backgroundColor: 'rgb(26, 26, 26)' }} />
                     </Box>
                     <Box sx={{ overflow: 'hidden' }}>
-                      <NextJsCarousel images={images} text={thumbnailText} index={index} />
+                      <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
                     </Box>
                   </Grid>
                 )}
@@ -314,7 +450,7 @@ export default function Home() {
               </>
             </Grid>
             <AnimateIn>
-              <Grid item xs={12}><h1 className={`${catamaranLight.className} ${styles.margin_bottom}`} id="about-us">PAR MUMS</h1></Grid>
+              <Grid item xs={12}><h1 className={styles.margin_bottom} id="about-us">PAR MUMS</h1></Grid>
             </AnimateIn>
 
             <Grid
@@ -385,7 +521,7 @@ export default function Home() {
                 <AnimateIn>
                   <Grid container className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>
+                      <h1 className={styles.thumbnail_title}>
                         {"Monvīds Bekmanis"}
                       </h1>
                     </Box>
@@ -399,7 +535,7 @@ export default function Home() {
                 <AnimateIn>
                   <Grid item className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
-                      <h1 className={`${styles.thumbnail_title} ${catamaranLight.className}`}>
+                      <h1 className={styles.thumbnail_title}>
                         {"Kristiāns Beķeris"}
                       </h1>
                     </Box>
@@ -411,7 +547,7 @@ export default function Home() {
               </Grid>
             </Grid>
 
-            <Grid item xs={12}><h1 className={catamaranLight.className} id="contacts">KONTAKTI</h1></Grid>
+            <Grid item xs={12}><h1 id="contacts">KONTAKTI</h1></Grid>
 
             <Grid
               container
