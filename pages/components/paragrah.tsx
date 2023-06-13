@@ -3,7 +3,6 @@ import { FC } from "react";
 
 export const catamaranNormal = Catamaran({ subsets: ['latin-ext'], weight: '300' })
 
-
 type ParagraphProps = {
   text: string
 }

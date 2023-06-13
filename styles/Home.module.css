@@ -183,7 +183,7 @@
 
 .thumbnail_content:hover .thumbnail_title_wrapper {
   translate: none;
-  transition: 600ms ease-in-out;
+  transition: 500ms;
   opacity: 1;
   /* margin-bottom: 10px */
 }
@@ -207,7 +207,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  padding: 20px;
+  padding-top: 20px;
   width: 100%;
   text-align: left;
   font-family: 'Catamaran', sans-serif;

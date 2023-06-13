@@ -54,7 +54,7 @@ const NextJsCarousel = ({ images, text, index, descriptionTitles }: CarouselProp
         showArrows={true}
         infiniteLoop={true}
         swipeable={false}
-        transitionTime={500}
+        transitionTime={200}
         animationHandler='fade'
         emulateTouch
       >

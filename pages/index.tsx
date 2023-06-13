@@ -16,7 +16,7 @@ const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   paddingRight: 0,
   '&:hover': {
     backgroundColor: 'transparent',
-  },
+  }
 }));
 
 const thumbnailImages = [
@@ -101,9 +101,9 @@ const secondProjectDescription = [
   'Ogres novads',
   '230 m2',
   'Būvprojekts minimālā sastāvā',
- ]
+]
 
- const thirdProjectDescription = [
+const thirdProjectDescription = [
   'Monvīds Bekmanis, Kristiāns Beķeris',
   'Donna Victoria Design',
   'Reinis Jansons / Regger /,  Donna Victoria Design',
@@ -121,9 +121,9 @@ const fourthProjectDescription = [
   'Rīgas iela 47, Jūrmala',
   '2630 m2',
   'Pabeigta būvniecība',
- ]
+]
 
- const fifthProjectDescription = [
+const fifthProjectDescription = [
   'Monvīds Bekmanis',
   'Reinis Jansons / Regger /',
   'Pastaigu iela 6, Berģi',
@@ -157,39 +157,39 @@ const eightProjectDescription = [
 ]
 
 
-  const thumbnailText = [
-    firstProjectDescription,
-    secondProjectDescription,
-    thirdProjectDescription,
-    fourthProjectDescription,
-    fifthProjectDescription,
-    sixtProjectDescription,
-    seventhProjectDescription,
-    eightProjectDescription
-  ]
+const thumbnailText = [
+  firstProjectDescription,
+  secondProjectDescription,
+  thirdProjectDescription,
+  fourthProjectDescription,
+  fifthProjectDescription,
+  sixtProjectDescription,
+  seventhProjectDescription,
+  eightProjectDescription
+]
 
-  const projectTitles = [
-    'CLT PANEĻU BIROJA ĒJA',
-    'PRIVĀTMĀJA OGRĒ',
-    'MULTIFUNKCIONĀLAS CENTRS',
-    'DAUDZDZĪVOKĻU ĒKA JŪRMALĀ',
-    'PRIVĀTMĀJA BERĢOS',
-    'GRAUDU PIRMSAPSTRĀDES KOMPLEKSS',
-    'DAUDZDZĪVOKĻU ĒKA PĀRDAUGAVĀ',
-    'PIRMSKOLAS IZGLĪTĪBAS IESTĀDE'
+const projectTitles = [
+  'CLT PANEĻU BIROJA ĒJA',
+  'PRIVĀTMĀJA OGRĒ',
+  'MULTIFUNKCIONĀLAS CENTRS',
+  'DAUDZDZĪVOKĻU ĒKA JŪRMALĀ',
+  'PRIVĀTMĀJA BERĢOS',
+  'GRAUDU PIRMSAPSTRĀDES KOMPLEKSS',
+  'DAUDZDZĪVOKĻU ĒKA PĀRDAUGAVĀ',
+  'PIRMSKOLAS IZGLĪTĪBAS IESTĀDE'
 
-  ]
+]
 
-  const projectYear = [
-    '2020',
-    '2020',
-    '2020',
-    '2019-2020',
-    '2020-2022',
-    '2019-2020',
-    '2021',
-    '2021'
-  ]
+const projectYear = [
+  '2020',
+  '2020',
+  '2020',
+  '2019-2020',
+  '2020-2022',
+  '2019-2020',
+  '2021',
+  '2021'
+]
 
 
 export const useElementOnScreen = (
@@ -233,8 +233,8 @@ export default function Home() {
 
   const handleChange = () => {
     language === 'LV'
-    ? setLanguage('ENG')
-    : setLanguage('LV')
+      ? setLanguage('EN')
+      : setLanguage('LV')
   };
 
   const loaderHandler = () => {
@@ -252,7 +252,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <Box sx={{ }} className={`${!showLoader && styles.preloader_fade}`}>
+        <Box sx={{}} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
             justifyContent="center"
@@ -261,12 +261,12 @@ export default function Home() {
             className={`${styles.preloader}`}
           >
 
-              <Image
-                src="/logo-loader.svg"
-                alt="MUST BE architecture"
-                width={400}
-                height={94}
-              />
+            <Image
+              src="/logo-loader.svg"
+              alt="MUST BE architecture"
+              width={400}
+              height={94}
+            />
           </Grid>
         </Box>
 
@@ -351,7 +351,7 @@ export default function Home() {
                         height={20}
                       />
                     </Link>
-                    <LanguageButton onClick={() => handleChange()}>{language}</LanguageButton>
+                    <LanguageButton disableRipple sx={{ width: 30, }} onClick={() => handleChange()}>{language}</LanguageButton>
                   </Box>
                 </div>
               </Grid>
@@ -362,32 +362,32 @@ export default function Home() {
           <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
           </Grid>
           <Grid
-                container
-                justifyContent="space-around"
-                alignItems="flex-start"
-                spacing={4}
-                sx={{ padding: "20px 8vw"  }}
-              >
-                <Grid item xs={6}>
-                  <Grid container>
-                    <Paragraph
-                      text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
+            container
+            justifyContent="space-around"
+            alignItems="flex-start"
+            spacing={4}
+            sx={{ padding: "20px 8vw" }}
+          >
+            <Grid item xs={6}>
+              <Grid container>
+                <Paragraph
+                  text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
                 cilvēka labsajūtu, tādēļ tās veidosanai ir liela nozīme ar ilgstosu iedarbību uz sabiedrību. (ūdens
                 turpināsies / koriģēsies). Plānotais garums - 4-5 teikumi"
-                    />
-                  </Grid>
-                </Grid>
-                <Grid item xs={6} >
-                  <Grid container>
-                    <Paragraph
-                      text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis un arhitekts
+                />
+              </Grid>
+            </Grid>
+            <Grid item xs={6} >
+              <Grid container>
+                <Paragraph
+                  text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis un arhitekts
                 Kristiāns Beķeris. Veidojot komandu ar inženieriem mēs nodrošinām projektēšanas pakalpojumus sākot
                 no koncepcijas stadijas līdz būvprojekta iztrādei un autoruzraudzībai būvniecibas laikā, kā arī
                 piedāvājam sagatavot interjera dizaina projektus sadarbībā ar Donna Victoria Design."
-                    />
-                  </Grid>
-                </Grid>
+                />
               </Grid>
+            </Grid>
+          </Grid>
         </Box>
         <Box className={styles.go_up_wrapper} >
           <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
@@ -434,11 +434,11 @@ export default function Home() {
                 {thumbnailImages.map((images, index) =>
                   <Grid item xs={12} md={6} key={index} className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                      <h1 className={styles.thumbnail_title}>{projectTitles[index]}</h1>
-                      <h1 className={styles.thumbnail_title}>{projectYear[index]}</h1>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <h1 className={styles.thumbnail_title}>{projectTitles[index]}</h1>
+                        <h1 className={styles.thumbnail_title}>{projectYear[index]}</h1>
                       </Box>
-                      <Divider sx={{marginBottom: 1, backgroundColor: 'rgb(26, 26, 26)' }} />
+                      <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)' }} />
                     </Box>
                     <Box sx={{ overflow: 'hidden' }}>
                       <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
