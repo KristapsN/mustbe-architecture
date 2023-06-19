@@ -17,7 +17,7 @@
   flex-direction: column;
   margin-left: 8vw;
   margin-top: 10px;
-  margin-bottom: -30px;
+  margin-bottom: -28px;
   cursor: pointer;
 }
 
@@ -75,6 +75,7 @@
   background-size: contain;
   background-blend-mode: multiply;
   background-image: url("/profile.jpg");
+  z-index: 80;
 }
 
 .hr_style {
@@ -172,8 +173,8 @@
 }
 
 .thumbnail_title_wrapper {
-  opacity: 0;
-  translate: 0 14px;
+  /* opacity: 0; */
+  translate: 0 24px;
   /* height: 1rem; */
 }
 
@@ -184,7 +185,7 @@
 .thumbnail_content:hover .thumbnail_title_wrapper {
   translate: none;
   transition: 500ms;
-  opacity: 1;
+  /* opacity: 1; */
   /* margin-bottom: 10px */
 }
 

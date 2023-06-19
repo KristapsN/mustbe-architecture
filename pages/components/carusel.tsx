@@ -40,7 +40,6 @@ type CarouselProps = {
 }
 
 const NextJsCarousel = ({ images, text, index, descriptionTitles }: CarouselProps) => {
-  console.log(index, (index && text) && text[index])
   const baseChildren = <div>{images &&
     images.map((image, imageIndex) => createCarouselItemImage(image, text[index], descriptionTitles[index], imageIndex))
   }</div>;

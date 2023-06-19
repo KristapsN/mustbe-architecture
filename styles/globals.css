@@ -39,6 +39,9 @@ h1 {
 .carousel.control-next{
   opacity: 0;
 }
+.carousel{
+  z-index: 80;
+}
 
 /* body {
   color: rgb(var(--foreground-rgb));
