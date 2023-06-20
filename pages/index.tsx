@@ -352,7 +352,7 @@ export default function Home() {
                         height={20}
                       />
                     </Link>
-                    <LanguageButton disableRipple sx={{ width: 30, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
+                    <LanguageButton disableRipple sx={{ width: 20, height:20, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
                   </Box>
                 </div>
               </Grid>
@@ -360,11 +360,11 @@ export default function Home() {
           </Grid>
         </Grid>
         <Box sx={{ overflow: 'hidden', minHeight: '100vh' }}>
-          <Parallax speed={-20}>
+          <Parallax speed={0}>
           <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
           </Grid>
           </Parallax>
-          <Parallax>
+          <Parallax speed={-5}>
           <Grid
             container
             justifyContent="space-around"
@@ -375,19 +375,20 @@ export default function Home() {
             <Grid item xs={6}>
               <Grid container>
                 <Paragraph
-                  text="Telpa tiek uztverta ne tikai fiziski, bet arī emocionāli. Telpa, vide kurā dzīvojam, arhitektūra ietekmē
-                cilvēka labsajūtu, tādēļ tās veidosanai ir liela nozīme ar ilgstosu iedarbību uz sabiedrību. (ūdens
-                turpināsies / koriģēsies). Plānotais garums - 4-5 teikumi"
+                  text="Telpa, vide, arhitektūra ir neatņemama ikdienas sastāvdaļa,
+                  daļa no mums pašiem, daļa no sabiedrības veidotāja, tādēļ tās radīšanas procesam
+                  ir jābūt rūpīgi pārdomātam, veidojot funkcionāli ērtu, energo gudru, ilgstpējīgu un vienlaikus
+                  labklājības veicinošu fizikālu un emocionālu kopumu."
                 />
               </Grid>
             </Grid>
             <Grid item xs={6} >
               <Grid container>
                 <Paragraph
-                  text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis un arhitekts
-                Kristiāns Beķeris. Veidojot komandu ar inženieriem mēs nodrošinām projektēšanas pakalpojumus sākot
-                no koncepcijas stadijas līdz būvprojekta iztrādei un autoruzraudzībai būvniecibas laikā, kā arī
-                piedāvājam sagatavot interjera dizaina projektus sadarbībā ar Donna Victoria Design."
+                  text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis
+                  un arhitekts Kristiāns Beķeris. Veidojot komandu ar dažādu profesiju speciālistiem
+                  mēs nodrošinām projektēšanas pakalpojumus sākot no koncepcijas stadijas
+                  līdz būvprojekta izstrādei un autoruzraudzībai būvniecības laikā. "
                 />
               </Grid>
             </Grid>

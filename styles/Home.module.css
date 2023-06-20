@@ -2,7 +2,7 @@
   background: url("/mustbe_architecture_hero.jpg");
   background-blend-mode: multiply;
 
-  min-height: 85vh;
+  min-height: 90vh;
 
 
   background-attachment: fixed;
@@ -214,6 +214,6 @@
   font-family: 'Catamaran', sans-serif;
 }
 .project_description_title{
-  font-size: 14px;
+  font-size: 16px;
   line-height: 10px;
 }
