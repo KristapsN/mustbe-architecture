@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 const createCarouselItemImage = (image: string, texts: string[], descriptionTitles: string[], imageIndex: number | undefined) => (
   <React.Fragment key={image}>
     <AnimateIn>
-      <div>
+      <Box width={'689px'} height={'452px'}>
         <img src={image} />
         {imageIndex === 1 &&
           <div className={styles.project_description}>
@@ -27,7 +27,7 @@ const createCarouselItemImage = (image: string, texts: string[], descriptionTitl
             ))}
           </div>
         }
-      </div>
+      </Box>
     </AnimateIn>
   </React.Fragment>
 );
@@ -40,9 +40,9 @@ type CarouselProps = {
 }
 
 const NextJsCarousel = ({ images, text, index, descriptionTitles }: CarouselProps) => {
-  const baseChildren = <div>{images &&
+  const baseChildren = <Box>{images &&
     images.map((image, imageIndex) => createCarouselItemImage(image, text[index], descriptionTitles[index], imageIndex))
-  }</div>;
+  }</Box>;
 
   return (
     <>
