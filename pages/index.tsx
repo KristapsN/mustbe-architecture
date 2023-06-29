@@ -359,13 +359,14 @@ export default function Home() {
             </Grid>
           </Grid>
         </Grid>
-        <Box sx={{ overflow: 'hidden', minHeight: '100vh' }}>
-          <Parallax speed={0}>
+        <Box sx={{ overflow: 'hidden', minHeight: '85vh' }}>
+          <Parallax speed={-50}>
           <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
           </Grid>
           </Parallax>
-          <Parallax speed={-5}>
-          <Grid
+        </Box>
+        <Box sx={{ overflow: 'hidden', minHeight: '15vh' }}>
+        <Grid
             container
             justifyContent="space-around"
             alignItems="flex-start"
@@ -393,7 +394,6 @@ export default function Home() {
               </Grid>
             </Grid>
           </Grid>
-          </Parallax>
         </Box>
         <Box className={styles.go_up_wrapper} >
           <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
