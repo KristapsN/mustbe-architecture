@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 const createCarouselItemImage = (image: string, texts: string[], descriptionTitles: string[], imageIndex: number | undefined) => (
   <React.Fragment key={image}>
     <AnimateIn>
-      <Box width={'689px'} height={'452px'}>
+      <Box>
         <img src={image} />
         {imageIndex === 1 &&
           <div className={styles.project_description}>
