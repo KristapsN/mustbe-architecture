@@ -10,7 +10,8 @@ const createCarouselItemImage = (image: string, texts: string[], descriptionTitl
   <React.Fragment key={image}>
     <AnimateIn>
       <Box>
-        <img src={image} />
+      <Box className={styles.project_image} sx={{ backgroundImage:`url(${image})` }}/>
+        {/* <img src={image} /> */}
         {imageIndex === 1 &&
           <div className={styles.project_description}>
             {texts.map((text, index) => (

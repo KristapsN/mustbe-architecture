@@ -50,7 +50,7 @@
   align-items: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-blend-mode: multiply;
   /* padding: 7rem 6rem;; */
   padding-top: 65.6003%;
