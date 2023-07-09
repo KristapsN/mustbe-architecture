@@ -10,6 +10,7 @@ import NextJsCarousel from './components/carusel';
 import AnimateIn from './components/animateIn';
 import { styled, Divider, Button, ButtonProps } from '@mui/material';
 import { Parallax } from 'react-scroll-parallax';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -242,7 +243,7 @@ export default function Home() {
     setShowLoader(false)
   }
 
-  setTimeout(loaderHandler, 2000)
+  setTimeout(loaderHandler, 3700)
 
   return (
     <>
@@ -261,13 +262,12 @@ export default function Home() {
             sx={{ flexGrow: 1 }}
             className={`${styles.preloader}`}
           >
-
-            <Image
-              src="/logo-loader.svg"
-              alt="MUST BE architecture"
-              width={400}
-              height={94}
-            />
+            <Player
+              autoplay
+              keepLastFrame
+              src="/logo_loader/logo_loader.json"
+            >
+            </Player>
           </Grid>
         </Box>
 
@@ -352,7 +352,7 @@ export default function Home() {
                         height={18}
                       />
                     </Link>
-                    <LanguageButton disableRipple sx={{ width: 20, height:20, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
+                    <LanguageButton disableRipple sx={{ width: 20, height: 20, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
                   </Box>
                 </div>
               </Grid>
@@ -361,12 +361,12 @@ export default function Home() {
         </Grid>
         <Box sx={{ overflow: 'hidden', minHeight: '85vh' }}>
           <Parallax speed={-50}>
-          <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
-          </Grid>
+            <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
+            </Grid>
           </Parallax>
         </Box>
         <Box sx={{ overflow: 'hidden', minHeight: '15vh' }}>
-        <Grid
+          <Grid
             container
             justifyContent="space-around"
             alignItems="flex-start"
@@ -409,7 +409,7 @@ export default function Home() {
             >
               <>
                 {thumbnailImages.map((images, index) =>
-                  <Grid item xs={12} md={6} key={index} sx={{marginTop: 3}} className={styles.thumbnail_content}>
+                  <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <h1 className={styles.thumbnail_title}>{projectTitles[index]}</h1>
