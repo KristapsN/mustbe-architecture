@@ -10,7 +10,7 @@ import NextJsCarousel from './components/carusel';
 import AnimateIn from './components/animateIn';
 import { styled, Divider, Button, ButtonProps } from '@mui/material';
 import { Parallax } from 'react-scroll-parallax';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -266,6 +266,7 @@ export default function Home() {
               autoplay
               keepLastFrame
               src="/logo_loader/logo_loader.json"
+              style={{ height: '600px' }}
             >
             </Player>
           </Grid>
