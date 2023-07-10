@@ -1,2 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"/></svg>
+<svg width="296" height="541" viewBox="0 0 296 541" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_602_7)">
+<path d="M292 0.0969136L211.989 0C134.399 0 84.277 51.4587 84.277 131.191V191.638H4V301.024H84.277L84.1802 533H196.5L196.597 301.024H288.709L288.636 191.662H196.597V140.373C196.597 115.709 202.43 103.232 234.497 103.232L291.758 103.208L292 0.0969136Z" fill="black"/>
+</g>
+<defs>
+<filter id="filter0_d_602_7" x="0" y="0" width="296" height="541" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_602_7"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_602_7" result="shape"/>
+</filter>
+</defs>
+</svg>

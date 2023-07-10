@@ -338,7 +338,7 @@ export default function Home() {
                         src="/facebook.svg"
                         alt="MUST BE architecture"
                         width={20}
-                        height={18}
+                        height={12}
                       />
                     </Link>
                     <Link
@@ -349,7 +349,7 @@ export default function Home() {
                         src="/instagram.svg"
                         alt="MUST BE architecture"
                         width={20}
-                        height={18}
+                        height={12}
                       />
                     </Link>
                     <LanguageButton disableRipple sx={{ width: 20, height: 20, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
