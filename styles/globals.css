@@ -28,6 +28,11 @@ p {
 h1 {
   font-family: 'Catamaran', sans-serif;
   font-weight: 300;
+  font-size: 18px;
+}
+h2 {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 300;
   font-size: 16px;
 }
 .control-next{
@@ -78,4 +83,13 @@ a {
 }
 .carousel .control-next.control-arrow:before {
   border: none !important;
+}
+#projects {
+  scroll-margin: 80px;
+}
+#about-us {
+  scroll-margin: 80px;
+}
+#contacts {
+  scroll-margin: 80px;
 }

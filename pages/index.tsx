@@ -225,7 +225,7 @@ export default function Home() {
     const element = document.getElementById(value);
     element && element.scrollIntoView({
       behavior: 'smooth',
-      block: 'center',
+      block: 'start',
     });
   };
 
@@ -413,8 +413,8 @@ export default function Home() {
                   <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <h1 className={styles.thumbnail_title}>{projectTitles[index]}</h1>
-                        <h1 className={styles.thumbnail_title}>{projectYear[index]}</h1>
+                        <h2 className={styles.thumbnail_title}>{projectTitles[index]}</h2>
+                        <h2 className={styles.thumbnail_title}>{projectYear[index]}</h2>
                       </Box>
                       <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)' }} />
                     </Box>
@@ -440,9 +440,10 @@ export default function Home() {
                 <AnimateIn>
                   <Grid container>
                     <Paragraph
-                      text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos. MUST BE architecture darbība
-                aizsākusies 2019. gadā un kopš tā laika ir izstrādāti dažāda mēroga objekti un izveidoti veiksmīgi
-                sadarbības partneri."
+                      text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos,
+                      darbojoties ar dažāda mēroga ēku koncepciju izstrādi, ēku projektēšanu un projekta vadību.
+                      MUST BE architecture darbība aizsākusies 2019. gadā un veidojot sadarbību ar dažādu profesiju
+                      speciālistiem mēs palīdzam transformēt klienta velmes no idejām līdz objekta realizēšanai."
                     />
                   </Grid>
                 </AnimateIn>
@@ -455,31 +456,28 @@ export default function Home() {
                         text="Sadarbības partneri:"
                       />
                       <Paragraph
-                        text="Donna Victoria Design - interjera dizains un teritorijas labiekārtojums"
+                        text="Interjera dizainere: Donna Victoria Design"
                       />
                       <Paragraph
-                        text="Rinalds Petjukevičs - 3D modelēšanas un BIM speciālists"
+                        text="Arhitekti: Aigars Tereško, Mikus Druviņš, Toms Ambrozs "
                       />
                       <Paragraph
                         text="Uldis Jaunsubrēns - tehnisko risinājumu konsultants"
                       />
                       <Paragraph
-                        text="Reinis Jansons - 3D vizualizācijas"
+                        text="BIM speciālists: Rinalds Petjukēvičš"
                       />
                       <Paragraph
-                        text="Aigars Tereško - arhitekts"
+                        text="Vizualizāciju speciālists: Reinis Janson"
                       />
                       <Paragraph
-                        text="Mikus Druviņš - arhitekts"
+                        text="Inženieri: Miķelis Siliņš, Pāvels Stepanovs, Māris Arnavs, Kārlis Mūrnieks, Dāvis Vecbaštiks"
                       />
                       <Paragraph
-                        text="Jānis Atelbauers - arhitekts"
+                        text="Konsultants: Uldis Jaunsubrēns"
                       />
                       <Paragraph
-                        text="Būvdizains SIA - arhitektu birojs"
-                      />
-                      <Paragraph
-                        text="Aver brokerage - nekustamo īpašumu aģentūra"
+                        text="Uzņēmumi: Būvdizains, AZ Service, Aver Brokarage"
                       />
                     </Box>
                   </Grid>
@@ -498,9 +496,9 @@ export default function Home() {
                 <AnimateIn>
                   <Grid container className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
-                      <h1 className={styles.thumbnail_title}>
+                      <h2 className={styles.thumbnail_title}>
                         {"Monvīds Bekmanis"}
-                      </h1>
+                      </h2>
                     </Box>
                     <Box
                       className={styles.profile_image}
@@ -512,9 +510,9 @@ export default function Home() {
                 <AnimateIn>
                   <Grid container className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
-                      <h1 className={styles.thumbnail_title}>
+                      <h2 className={styles.thumbnail_title}>
                         {"Kristiāns Beķeris"}
-                      </h1>
+                      </h2>
                     </Box>
                     <Box
                       className={styles.profile_image}
