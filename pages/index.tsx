@@ -11,6 +11,8 @@ import AnimateIn from './components/animateIn';
 import { styled, Divider, Button, ButtonProps } from '@mui/material';
 import { Parallax } from 'react-scroll-parallax';
 import { Player } from '@lottiefiles/react-lottie-player';
+import { client, getStaticProps } from '@/sanity/lib/client';
+import { urlForImage } from '@/sanity/lib/image';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -231,6 +233,16 @@ export default function Home() {
 
   const [language, setLanguage] = useState('LV');
   const [showLoader, setShowLoader] = useState(true)
+  const [intro, setIntro] = useState({first: '', second: ''})
+  const [mainImage, setMainImage] = useState('')
+
+  useEffect(() => {
+    getStaticProps().then(({props}) => {
+      setIntro({first: props.intro[0].first, second: props.intro[0].second})
+      setMainImage(urlForImage(props.main[0].hero).url())
+    })
+
+  },[])
 
 
   const handleChange = () => {
@@ -362,7 +374,7 @@ export default function Home() {
         </Grid>
         <Box sx={{ overflow: 'hidden', minHeight: '85vh' }}>
           <Parallax speed={-50}>
-            <Grid container sx={{ flexGrow: 1 }} className={styles.parallax} id='top'>
+            <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>
             </Grid>
           </Parallax>
         </Box>
@@ -377,20 +389,14 @@ export default function Home() {
             <Grid item xs={6}>
               <Grid container>
                 <Paragraph
-                  text="Telpa, vide, arhitektūra ir neatņemama ikdienas sastāvdaļa,
-                  daļa no mums pašiem, daļa no sabiedrības veidotāja, tādēļ tās radīšanas procesam
-                  ir jābūt rūpīgi pārdomātam, veidojot funkcionāli ērtu, energo gudru, ilgstpējīgu un vienlaikus
-                  labklājības veicinošu fizikālu un emocionālu kopumu."
+                  text={intro.first}
                 />
               </Grid>
             </Grid>
             <Grid item xs={6} >
               <Grid container>
                 <Paragraph
-                  text="MUST BE architecture ir Rīgā bāzēts uzņēmums, kuru vada arhitekts Monvīds Bekmanis
-                  un arhitekts Kristiāns Beķeris. Veidojot komandu ar dažādu profesiju speciālistiem
-                  mēs nodrošinām projektēšanas pakalpojumus sākot no koncepcijas stadijas
-                  līdz būvprojekta izstrādei un autoruzraudzībai būvniecības laikā. "
+                  text={intro.first}
                 />
               </Grid>
             </Grid>
@@ -632,7 +638,3 @@ export default function Home() {
     </>
   )
 }
-function useCallback(arg0: (event: any) => void, arg1: never[]) {
-  throw new Error('Function not implemented.');
-}
-

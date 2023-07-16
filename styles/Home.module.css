@@ -1,5 +1,5 @@
 .parallax {
-  background: url("/mustbe_architecture_hero.jpg");
+  /* background: url("/mustbe_architecture_hero.jpg"); */
   background-blend-mode: multiply;
 
   min-height: 90vh;
