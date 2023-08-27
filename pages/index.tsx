@@ -233,16 +233,21 @@ export default function Home() {
 
   const [language, setLanguage] = useState('LV');
   const [showLoader, setShowLoader] = useState(true)
-  const [intro, setIntro] = useState({first: '', second: ''})
+  const [intro, setIntro] = useState({ first: '', second: '' })
   const [mainImage, setMainImage] = useState('')
+  const [openMenu, setOpenMenu] = useState(false)
 
   useEffect(() => {
-    getStaticProps().then(({props}) => {
-      setIntro({first: props.intro[0].first, second: props.intro[0].second})
+    getStaticProps().then(({ props }) => {
+      setIntro({ first: props.intro[0].first, second: props.intro[0].second })
       setMainImage(urlForImage(props.main[0].hero).url())
     })
 
-  },[])
+  }, [])
+
+  const handleMenuClick = () => {
+    setOpenMenu(!openMenu)
+  }
 
 
   const handleChange = () => {
@@ -287,21 +292,39 @@ export default function Home() {
         <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
-              <Grid item xs={4} sm={3} md={2}>
-                <div className={styles.logo_wrapper}>
+              <Grid item xs={6} sm={4} md={4}>
+                <Box className={styles.logo_wrapper}>
                   <Image
                     src="/logo.svg"
                     alt="MUST BE architecture"
-                    width={400}
-                    height={94}
+                    fill
                     onClick={(e) => handleLinkClick(e, 'top')}
                   />
-                </div>
+                </Box>
               </Grid>
-              <Grid item xs={7} sm={4} md={4}>
-                <div className={styles.menu_wrapper}>
+              <Grid item xs={2} sm={7} md={5} lg={4}>
+                <Box className={styles.mobile_menu_burger}>
+                  {!openMenu ?
+                    <Image
+                      src="/menu.svg"
+                      alt="menu"
+                      height={50}
+                      width={50}
+                      onClick={handleMenuClick}
+                    />
+                    :
+                    <Image
+                      src="/close.svg"
+                      alt="menu"
+                      height={25}
+                      width={25}
+                      onClick={handleMenuClick}
+                    />
+                  }
+                </Box>
+                <Box className={styles.menu_wrapper}>
                   <Box className={styles.nav_link_wrapper}>
-                    <Box sx={{ height: '4px' }}>
+                    <Box sx={{ height: '4px', marginBottom: '4px' }}>
                       <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                       </svg>
@@ -316,7 +339,7 @@ export default function Home() {
                     </Link>
                   </Box>
                   <Box className={styles.nav_link_wrapper}>
-                    <Box sx={{ height: '4px' }}>
+                    <Box sx={{ height: '4px', marginBottom: '4px' }}>
                       <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                       </svg>
@@ -329,7 +352,7 @@ export default function Home() {
                     </Link>
                   </Box>
                   <Box className={styles.nav_link_wrapper}>
-                    <Box sx={{ height: '4px' }}>
+                    <Box sx={{ height: '4px', marginBottom: '4px' }}>
                       <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                       </svg>
@@ -365,11 +388,38 @@ export default function Home() {
                         height={12}
                       />
                     </Link>
-                    <LanguageButton disableRipple sx={{ width: 20, height: 20, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
+                    <LanguageButton disableRipple sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
                   </Box>
-                </div>
+                </Box>
               </Grid>
             </Grid>
+            {openMenu &&
+              <Grid container spacing={0} sx={{ backgroundColor: 'white' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }}>
+                  <Link
+                    className={`${styles.nav_link} ${styles.mobile_nav_link}`}
+                    href="#projects"
+                    onClick={(e) => handleLinkClick(e, 'projects')}
+                  >
+                    Projekti
+                  </Link>
+                  <Link
+                    className={`${styles.nav_link} ${styles.mobile_nav_link}`}
+                    href="#about-us"
+                    onClick={(e) => handleLinkClick(e, 'about-us')}
+                  >
+                    Par mums
+                  </Link>
+                  <Link
+                    className={`${styles.nav_link} ${styles.mobile_nav_link}`}
+                    href="#contacts"
+                    onClick={(e) => handleLinkClick(e, 'contacts')}
+                  >
+                    Kontakti
+                  </Link>
+                </Box>
+              </Grid>
+            }
           </Grid>
         </Grid>
         <Box sx={{ overflow: 'hidden', minHeight: '85vh' }}>
@@ -386,14 +436,14 @@ export default function Home() {
             spacing={4}
             sx={{ padding: "20px 8vw", backgroundColor: 'white' }}
           >
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Grid container>
                 <Paragraph
                   text={intro.first}
                 />
               </Grid>
             </Grid>
-            <Grid item xs={6} >
+            <Grid item xs={12} md={6}>
               <Grid container>
                 <Paragraph
                   text={intro.first}
@@ -442,7 +492,7 @@ export default function Home() {
               sx={{ marginBottom: "40px" }}
             >
 
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <AnimateIn>
                   <Grid container>
                     <Paragraph
@@ -454,7 +504,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item xs={6} >
+              <Grid item xs={12} md={6} >
                 <AnimateIn>
                   <Grid container>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
@@ -535,7 +585,7 @@ export default function Home() {
               sx={{ marginBottom: "40px" }}
               spacing={4}
             >
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <AnimateIn>
                   <Box sx={{ display: 'flex' }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
@@ -574,7 +624,7 @@ export default function Home() {
                   </Box>
                 </AnimateIn>
               </Grid>
-              <Grid item xs={6} >
+              <Grid item xs={12} md={6} >
                 <AnimateIn>
                   <Grid container >
                     <iframe
