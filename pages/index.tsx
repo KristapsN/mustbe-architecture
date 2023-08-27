@@ -229,6 +229,7 @@ export default function Home() {
       behavior: 'smooth',
       block: 'start',
     });
+    setOpenMenu(false)
   };
 
   const [language, setLanguage] = useState('LV');
