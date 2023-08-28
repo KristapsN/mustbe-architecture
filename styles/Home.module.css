@@ -49,11 +49,10 @@
 }
 
 .mobile_menu_burger {
-  height: 50px;
-  width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  min-height: 1.2rem;
+  margin-right: 8vw;
+  margin-bottom: 0.7rem;
 }
 
 @media screen and (min-width: 599px) {

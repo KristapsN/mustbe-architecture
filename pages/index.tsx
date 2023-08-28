@@ -293,7 +293,7 @@ export default function Home() {
         <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
-              <Grid item xs={6} sm={4} md={4}>
+              <Grid item xs={8} sm={4} md={4}>
                 <Box className={styles.logo_wrapper}>
                   <Image
                     src="/logo.svg"
@@ -303,22 +303,20 @@ export default function Home() {
                   />
                 </Box>
               </Grid>
-              <Grid item xs={2} sm={7} md={5} lg={4}>
+              <Grid item xs={3} sm={7} md={5} lg={4}>
                 <Box className={styles.mobile_menu_burger}>
                   {!openMenu ?
                     <Image
                       src="/menu.svg"
                       alt="menu"
-                      height={50}
-                      width={50}
+                      fill
                       onClick={handleMenuClick}
                     />
                     :
                     <Image
                       src="/close.svg"
                       alt="menu"
-                      height={25}
-                      width={25}
+                      fill
                       onClick={handleMenuClick}
                     />
                   }
