@@ -12,11 +12,15 @@ export const client = createClient({
 export async function getStaticProps() {
   const main = await client.fetch(`*[_type == "main"]`);
   const intro = await client.fetch(`*[_type == "intro"]`);
+  const projects_images = await client.fetch(`*[_type == "projects_images"]`);
+  const projects_descriptions = await client.fetch(`*[_type == "projects_descriptions"]`);
 
   return {
     props: {
       main,
-      intro
+      intro,
+      projects_images,
+      projects_descriptions
     }
   };
 }

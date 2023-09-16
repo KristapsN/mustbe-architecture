@@ -11,7 +11,7 @@ import AnimateIn from './components/animateIn';
 import { styled, Divider, Button, ButtonProps } from '@mui/material';
 import { Parallax } from 'react-scroll-parallax';
 import { Player } from '@lottiefiles/react-lottie-player';
-import { client, getStaticProps } from '@/sanity/lib/client';
+import { getStaticProps } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
@@ -22,155 +22,6 @@ const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
     backgroundColor: 'transparent',
   }
 }));
-
-const thumbnailImages = [
-  ["01_Birojs/01_main.jpg", "white.jpg", "01_Birojs/03_main.jpg", "01_Birojs/04_main.jpg", "01_Birojs/05_main.jpg", "01_Birojs/06_main.jpg"],
-  ["02_Ogre/01_main.jpg", "white.jpg", "02_Ogre/02_main.jpg", "02_Ogre/03_main.jpg", "02_Ogre/04_main.jpg"],
-  ["03_Olaine/01_main.jpg", "white.jpg", "03_Olaine/02_main.jpg", "03_Olaine/03_main.jpg", "03_Olaine/04_main.jpg", "03_Olaine/05_main.jpg", "03_Olaine/06_main.jpg", "03_Olaine/07_main.jpg", "03_Olaine/08_main.jpg", "03_Olaine/09_main.jpg"],
-  ["04_R47/01_main.jpg", "white.jpg", "04_R47/02_main.jpg", "04_R47/03_main.jpg", "04_R47/04_main.jpg", "04_R47/05_main.jpg", "04_R47/06_main.jpg", "04_R47/07_main.jpg", "04_R47/08_main.jpg", "04_R47/09_main.jpg"],
-  ["05_Bergi/01_main.jpg", "white.jpg", "05_Bergi/02_main.jpg", "05_Bergi/03_main.jpg"],
-  ["06_Graudi/01_main.jpg", "white.jpg", "06_Graudi/02_main.jpg"],
-  ["07_Nometnu/01_main.jpg", "white.jpg", "07_Nometnu/02_main.jpg", "07_Nometnu/03_main.jpg", "07_Nometnu/04_main.jpg", "07_Nometnu/05_main.jpg", "07_Nometnu/06_main.jpg"],
-  ["09_Garkalne/01_main.jpg", "white.jpg", "09_Garkalne/02_main.jpg", "09_Garkalne/03_main.jpg", "09_Garkalne/04_main.jpg", "09_Garkalne/06_main.jpg", "09_Garkalne/07_main.jpg", "09_Garkalne/08_main.jpg", "09_Garkalne/09_main.jpg", "09_Garkalne/10_main.jpg", "09_Garkalne/11_main.jpg"]
-]
-
-
-const firstDescriptionTitles = [
-  'Autors:',
-  'Vizuālizācijas:',
-  'Adrese:',
-  'Apjoms:',
-  'Statuss:'
-]
-
-const secondDescriptionTitles = [
-  'Komanda:',
-  'Interjera dizains un labiekārtojums:',
-  'Vizualizācijas:',
-  'Sadarbības partneris:',
-  'Apjoms:',
-  'Adrese:',
-  'Statuss:'
-]
-
-const thirdDescriptionTitles = [
-  'Komanda:',
-  'Interjera dizains:',
-  'Vizualizācija:',
-  'Sadarbības partneris:',
-  'Adrese:',
-  'Apjoms:',
-  'Statuss:'
-]
-
-const fourthDescriptionTitles = [
-  'Komanda:',
-  'Vizuālizācijas:',
-  'Adrese:',
-  'Apjoms:',
-  'Statuss:'
-]
-
-const fifthDescriptionTitles = [
-  'Komanda:',
-  'Labiekārtojums un interjera dizains',
-  'Vizualizācijas',
-  'Adrese',
-  'Apjoms',
-  'Statuss',
-]
-
-const allDescriptionTitles = [
-  firstDescriptionTitles,
-  firstDescriptionTitles,
-  secondDescriptionTitles,
-  thirdDescriptionTitles,
-  firstDescriptionTitles,
-  fourthDescriptionTitles,
-  fourthDescriptionTitles,
-  fifthDescriptionTitles
-]
-
-const firstProjectDescription = [
-  'MONVIDS BEKMANIS',
-  'Donna Victoria Design',
-  'Toma iela 3, Rīga',
-  '1950 m2',
-  'Meta stadija'
-]
-
-const secondProjectDescription = [
-  'Monvīds Bekmanis',
-  'Reinis Jansons / Regger /',
-  'Ogres novads',
-  '230 m2',
-  'Būvprojekts minimālā sastāvā',
-]
-
-const thirdProjectDescription = [
-  'Monvīds Bekmanis, Kristiāns Beķeris',
-  'Donna Victoria Design',
-  'Reinis Jansons / Regger /,  Donna Victoria Design',
-  'SIA "Būvdizains"',
-  '5080 m2',
-  'Jelgavas iela 23, Olaine',
-  'Meta konkurss',
-]
-
-const fourthProjectDescription = [
-  'Monvīds Bekmanis, Kristiāns Beķeris',
-  'Donna Victoria Design',
-  'Reinis Jansons / Regger /, Donna Victoria Design',
-  'SIA "Būvdizains"',
-  'Rīgas iela 47, Jūrmala',
-  '2630 m2',
-  'Pabeigta būvniecība',
-]
-
-const fifthProjectDescription = [
-  'Monvīds Bekmanis',
-  'Reinis Jansons / Regger /',
-  'Pastaigu iela 6, Berģi',
-  '265 m2',
-  'Būvprojekts',
-]
-
-const sixtProjectDescription = [
-  'Kristiāns Beķeris, Monvīds Bekmanis',
-  'Vinalds Petjukevičs',
-  '"Rūķīši" 1, Vecsaule, Vecsaules pagasts',
-  '1770 m2',
-  'Pabeigta būvniecība',
-]
-
-const seventhProjectDescription = [
-  'Monvīds Bekmanis, Kristiāns Beķeris',
-  'Rinalds Petjukevičs',
-  'Mazā Nometņu iela 80, Rīga',
-  '905 m2',
-  'Meta stadija',
-]
-
-const eightProjectDescription = [
-  'Monvīds Bekmanis, Kristiāns Beķeris',
-  'Donna Victoria Design',
-  'Reinis Jansons / Regger /,  Donna Victoria Design',
-  'Vidzemes šoseja 34A, 38A, Garkalne',
-  '3320 m2',
-  'Meta konkurss',
-]
-
-
-const thumbnailText = [
-  firstProjectDescription,
-  secondProjectDescription,
-  thirdProjectDescription,
-  fourthProjectDescription,
-  fifthProjectDescription,
-  sixtProjectDescription,
-  seventhProjectDescription,
-  eightProjectDescription
-]
 
 const projectTitles = [
   'CLT PANEĻU BIROJA ĒJA',
@@ -195,6 +46,20 @@ const projectYear = [
   '2021'
 ]
 
+interface ProjectProps {
+  order_number: number
+}
+interface ContentProps {
+  title: string
+  content: string
+}
+interface DescriptionsProps {
+  descriptions: ContentProps[]
+}
+
+interface ImagesProps {
+  images: string[]
+}
 
 export const useElementOnScreen = (
   ref: RefObject<Element>,
@@ -235,13 +100,37 @@ export default function Home() {
   const [language, setLanguage] = useState('LV');
   const [showLoader, setShowLoader] = useState(true)
   const [intro, setIntro] = useState({ first: '', second: '' })
+  const [allDescriptionTitles, setAllDescriptionTitles] = useState<string[][]>([[]])
+  const [thumbnailText, setThumbnailText] = useState<string[][]>([[]])
   const [mainImage, setMainImage] = useState('')
   const [openMenu, setOpenMenu] = useState(false)
+  const [thumbnailImages, setThumbnailImages] = useState<string[][]>([])
 
   useEffect(() => {
     getStaticProps().then(({ props }) => {
       setIntro({ first: props.intro[0].first, second: props.intro[0].second })
       setMainImage(urlForImage(props.main[0].hero).url())
+
+      const project_titles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+        a.order_number - b.order_number).map(({ descriptions }: DescriptionsProps) =>
+          descriptions.map(({ title }) => title)
+      )
+
+      setAllDescriptionTitles(project_titles)
+
+      const project_content = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+        a.order_number - b.order_number).map(({ descriptions }: DescriptionsProps) =>
+          descriptions.map(({ content }) => content)
+      )
+      setThumbnailText(project_content)
+
+      const project_images = props.projects_images.sort((a: ProjectProps, b: ProjectProps) =>
+        a.order_number - b.order_number).map(({images}: ImagesProps) =>
+          images.map((image) => urlForImage(image).url())
+      )
+
+      setThumbnailImages(project_images)
+
     })
 
   }, [])

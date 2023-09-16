@@ -6,22 +6,21 @@ import styles from '@/styles/Home.module.css'
 import Box from '@mui/material/Box';
 
 
-const createCarouselItemImage = (image: string, texts: string[], descriptionTitles: string[], imageIndex: number | undefined) => (
+const createCarouselItemImage = (image: string, texts: string[] | undefined, descriptionTitles: string[] | undefined, imageIndex: number | undefined) => (
   <React.Fragment key={image}>
     <AnimateIn>
       <Box>
       <Box className={styles.project_image} sx={{ backgroundImage:`url(${image})` }}/>
-        {/* <img src={image} /> */}
         {imageIndex === 1 &&
           <div className={styles.project_description}>
-            {texts.map((text, index) => (
+            {texts?.map((text, index) => (
               <Box marginBottom={2} key={index}>
                 <>
                   <p className={styles.project_description_title}>
-                    {descriptionTitles[index]}
+                    {descriptionTitles === undefined ? '' : descriptionTitles[index]}
                   </p>
                   <p>
-                    {text.toUpperCase()}
+                    {text === undefined ? '' : text.toUpperCase()}
                   </p>
                 </>
               </Box>

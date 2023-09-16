@@ -21,7 +21,7 @@
 .center_flex {
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .display_flex_column {
@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin-right: 8vw;
   margin-bottom: 0.5rem;
   line-height: 12px;
