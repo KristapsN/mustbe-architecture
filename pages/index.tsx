@@ -21,39 +21,19 @@ const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   '&:hover': {
     backgroundColor: 'transparent',
   }
-}));
-
-const projectTitles = [
-  'CLT PANEĻU BIROJA ĒJA',
-  'PRIVĀTMĀJA OGRĒ',
-  'MULTIFUNKCIONĀLAS CENTRS',
-  'DAUDZDZĪVOKĻU ĒKA JŪRMALĀ',
-  'PRIVĀTMĀJA BERĢOS',
-  'GRAUDU PIRMSAPSTRĀDES KOMPLEKSS',
-  'DAUDZDZĪVOKĻU ĒKA PĀRDAUGAVĀ',
-  'PIRMSKOLAS IZGLĪTĪBAS IESTĀDE'
-
-]
-
-const projectYear = [
-  '2020',
-  '2020',
-  '2020',
-  '2019-2020',
-  '2020-2022',
-  '2019-2020',
-  '2021',
-  '2021'
-]
+}))
 
 interface ProjectProps {
   order_number: number
+  project_name: string
 }
 interface ContentProps {
   title: string
   content: string
 }
 interface DescriptionsProps {
+  project_name: string
+  year: string
   descriptions: ContentProps[]
 }
 
@@ -105,31 +85,46 @@ export default function Home() {
   const [mainImage, setMainImage] = useState('')
   const [openMenu, setOpenMenu] = useState(false)
   const [thumbnailImages, setThumbnailImages] = useState<string[][]>([])
+  const [projectTitles, setProjectTitles] = useState<string[]>([])
+  const [projectYears, setProjectYears] = useState<string[]>([])
 
   useEffect(() => {
     getStaticProps().then(({ props }) => {
       setIntro({ first: props.intro[0].first, second: props.intro[0].second })
       setMainImage(urlForImage(props.main[0].hero).url())
 
-      const project_titles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+      const projectTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+        a.order_number - b.order_number).map(({ project_name }: DescriptionsProps) =>
+          project_name)
+
+      setProjectTitles(projectTitles)
+
+      const projectYears = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+        a.order_number - b.order_number).map(({ year }: DescriptionsProps) =>
+          year)
+
+      setProjectYears(projectYears)
+
+
+      const projectDescriptionTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ descriptions }: DescriptionsProps) =>
           descriptions.map(({ title }) => title)
-      )
+        )
 
-      setAllDescriptionTitles(project_titles)
+      setAllDescriptionTitles(projectDescriptionTitles)
 
-      const project_content = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+      const projectContent = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ descriptions }: DescriptionsProps) =>
           descriptions.map(({ content }) => content)
-      )
-      setThumbnailText(project_content)
+        )
+      setThumbnailText(projectContent)
 
-      const project_images = props.projects_images.sort((a: ProjectProps, b: ProjectProps) =>
-        a.order_number - b.order_number).map(({images}: ImagesProps) =>
+      const projectImages = props.projects_images.sort((a: ProjectProps, b: ProjectProps) =>
+        a.order_number - b.order_number).map(({ images }: ImagesProps) =>
           images.map((image) => urlForImage(image).url())
-      )
+        )
 
-      setThumbnailImages(project_images)
+      setThumbnailImages(projectImages)
 
     })
 
@@ -358,7 +353,7 @@ export default function Home() {
                     <Box className={styles.thumbnail_title_wrapper} >
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <h2 className={styles.thumbnail_title}>{projectTitles[index]}</h2>
-                        <h2 className={styles.thumbnail_title}>{projectYear[index]}</h2>
+                        <h2 className={styles.thumbnail_title}>{projectYears[index]}</h2>
                       </Box>
                       <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)' }} />
                     </Box>

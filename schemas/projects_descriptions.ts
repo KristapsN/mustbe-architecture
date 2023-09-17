@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'year',
+      title: 'Project year',
+      type: 'string',
+    },
+    {
       name: 'order_number',
       title: 'Order number',
       type: 'number',
