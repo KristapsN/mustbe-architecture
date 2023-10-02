@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Paragraph from './components/paragrah';
 import NextJsCarousel from './components/carusel';
@@ -13,6 +13,7 @@ import { Parallax } from 'react-scroll-parallax';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { getStaticProps } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
+import { CSSTransition } from 'react-transition-group';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -87,6 +88,8 @@ export default function Home() {
   const [thumbnailImages, setThumbnailImages] = useState<string[][]>([])
   const [projectTitles, setProjectTitles] = useState<string[]>([])
   const [projectYears, setProjectYears] = useState<string[]>([])
+
+  const nodeRef = useRef(null);
 
   useEffect(() => {
     getStaticProps().then(({ props }) => {
@@ -184,10 +187,18 @@ export default function Home() {
                     alt="MUST BE architecture"
                     fill
                     onClick={(e) => handleLinkClick(e, 'top')}
+                    className={styles.desktop_logo}
+                  />
+                  <Image
+                    src="/mobile_logo.svg"
+                    alt="MUST BE architecture"
+                    fill
+                    onClick={(e) => handleLinkClick(e, 'top')}
+                    className={styles.mobile_logo}
                   />
                 </Box>
               </Grid>
-              <Grid item xs={3} sm={7} md={5} lg={4}>
+              <Grid item xs={2} sm={7} md={5} lg={4}>
                 <Box className={styles.mobile_menu_burger}>
                   {!openMenu ?
                     <Image
@@ -276,33 +287,35 @@ export default function Home() {
                 </Box>
               </Grid>
             </Grid>
-            {openMenu &&
-              <Grid container spacing={0} sx={{ backgroundColor: 'white' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }}>
-                  <Link
-                    className={`${styles.nav_link} ${styles.mobile_nav_link}`}
-                    href="#projects"
-                    onClick={(e) => handleLinkClick(e, 'projects')}
-                  >
-                    Projekti
-                  </Link>
-                  <Link
-                    className={`${styles.nav_link} ${styles.mobile_nav_link}`}
-                    href="#about-us"
-                    onClick={(e) => handleLinkClick(e, 'about-us')}
-                  >
-                    Par mums
-                  </Link>
-                  <Link
-                    className={`${styles.nav_link} ${styles.mobile_nav_link}`}
-                    href="#contacts"
-                    onClick={(e) => handleLinkClick(e, 'contacts')}
-                  >
-                    Kontakti
-                  </Link>
-                </Box>
-              </Grid>
-            }
+            {/* {openMenu && */}
+            {/* <Grid container spacing={0} className={styles.mobile_wrapper}> */}
+            <CSSTransition nodeRef={nodeRef} in={openMenu} timeout={300} classNames="my-node">
+              <Box ref={nodeRef} sx={{ backgroundColor: 'white', opacity: 0, display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }} >
+                <Link
+                  className={`${styles.nav_link} ${styles.mobile_nav_link}`}
+                  href="#projects"
+                  onClick={(e) => handleLinkClick(e, 'projects')}
+                >
+                  Projekti
+                </Link>
+                <Link
+                  className={`${styles.nav_link} ${styles.mobile_nav_link}`}
+                  href="#about-us"
+                  onClick={(e) => handleLinkClick(e, 'about-us')}
+                >
+                  Par mums
+                </Link>
+                <Link
+                  className={`${styles.nav_link} ${styles.mobile_nav_link}`}
+                  href="#contacts"
+                  onClick={(e) => handleLinkClick(e, 'contacts')}
+                >
+                  Kontakti
+                </Link>
+              </Box>
+            </CSSTransition>
+            {/* </Grid> */}
+            {/* } */}
           </Grid>
         </Grid>
         <Box sx={{ overflow: 'hidden', minHeight: '85vh' }}>
@@ -338,7 +351,10 @@ export default function Home() {
         <Box className={styles.go_up_wrapper} >
           <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
             <AnimateIn>
-              <Grid item xs={12}><h1 className={styles.margin_bottom} id="projects">PROJEKT</h1></Grid>
+              <Grid item xs={12} sx={{ marginBottom: '1rem' }}>
+                <h1 className={styles.margin_bottom} id="projects">PROJEKT</h1>
+                <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)', width: '84vw' }} />
+              </Grid>
             </AnimateIn>
             <Grid
               container
@@ -366,7 +382,10 @@ export default function Home() {
               </>
             </Grid>
             <AnimateIn>
-              <Grid item xs={12}><h1 className={styles.margin_bottom} id="about-us">PAR MUMS</h1></Grid>
+              <Grid item xs={12} sx={{ marginBottom: '1rem' }}>
+                <h1 className={styles.margin_bottom} id="projects">PAR MUMS</h1>
+                <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)', width: '84vw' }} />
+              </Grid>
             </AnimateIn>
 
             <Grid
@@ -428,13 +447,13 @@ export default function Home() {
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={4}
+              spacing={1}
               sx={{ marginBottom: '40px' }}
             >
-              <Grid item xs={6}>
+              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
-                  <Grid container className={styles.thumbnail_content}>
-                    <Box className={styles.thumbnail_title_wrapper} >
+                  <Grid container>
+                    <Box >
                       <h2 className={styles.thumbnail_title}>
                         {"Monvīds Bekmanis"}
                       </h2>
@@ -445,7 +464,49 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+                <AnimateIn>
+                  <Grid container>
+                    <Box>
+                      <h2 className={styles.thumbnail_title}>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                    </Box>
+                    <Box
+                      className={styles.profile_image}
+                    />
+                  </Grid>
+                </AnimateIn>
+              </Grid>
+              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+                <AnimateIn>
+                  <Grid container>
+                    <Box>
+                      <h2 className={styles.thumbnail_title}>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                    </Box>
+                    <Box
+                      className={styles.profile_image}
+                    />
+                  </Grid>
+                </AnimateIn>
+              </Grid>
+              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+                <AnimateIn>
+                  <Grid container>
+                    <Box>
+                      <h2 className={styles.thumbnail_title}>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                    </Box>
+                    <Box
+                      className={styles.profile_image}
+                    />
+                  </Grid>
+                </AnimateIn>
+              </Grid>
+              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container className={styles.thumbnail_content}>
                     <Box className={styles.thumbnail_title_wrapper} >
@@ -460,9 +521,12 @@ export default function Home() {
                 </AnimateIn>
               </Grid>
             </Grid>
-
-            <Grid item xs={12}><h1 id="contacts">KONTAKTI</h1></Grid>
-
+            <AnimateIn>
+              <Grid item xs={12} sx={{ marginBottom: '1rem' }}>
+                <h1 className={styles.margin_bottom} id="projects">KONTAKTI</h1>
+                <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)', width: '84vw' }} />
+              </Grid>
+            </AnimateIn>
             <Grid
               container
               sx={{ marginBottom: "40px" }}
