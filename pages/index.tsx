@@ -185,14 +185,19 @@ export default function Home() {
                   <Image
                     src="/logo.svg"
                     alt="MUST BE architecture"
-                    fill
+                    width={325}
+                    height={50}
+                    // fill
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.desktop_logo}
+
                   />
                   <Image
                     src="/mobile_logo.svg"
                     alt="MUST BE architecture"
-                    fill
+                    width={125}
+                    height={50}
+                    // fill
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.mobile_logo}
                   />
@@ -287,10 +292,10 @@ export default function Home() {
                 </Box>
               </Grid>
             </Grid>
-            {/* {openMenu && */}
-            {/* <Grid container spacing={0} className={styles.mobile_wrapper}> */}
-            <CSSTransition nodeRef={nodeRef} in={openMenu} timeout={300} classNames="my-node">
-              <Box ref={nodeRef} sx={{ backgroundColor: 'white', opacity: 0, display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }} >
+            {openMenu &&
+              <Box ref={nodeRef} className={styles.menu_mob}
+              sx={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }}
+              >
                 <Link
                   className={`${styles.nav_link} ${styles.mobile_nav_link}`}
                   href="#projects"
@@ -313,9 +318,7 @@ export default function Home() {
                   Kontakti
                 </Link>
               </Box>
-            </CSSTransition>
-            {/* </Grid> */}
-            {/* } */}
+            }
           </Grid>
         </Grid>
         <Box sx={{ overflow: 'hidden', minHeight: '85vh' }}>
@@ -508,8 +511,8 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
-                  <Grid container className={styles.thumbnail_content}>
-                    <Box className={styles.thumbnail_title_wrapper} >
+                  <Grid container>
+                    <Box>
                       <h2 className={styles.thumbnail_title}>
                         {"Kristiāns Beķeris"}
                       </h2>

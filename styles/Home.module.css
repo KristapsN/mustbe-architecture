@@ -19,8 +19,8 @@
 
 .logo_wrapper{
   position: relative;
-  min-height: 3rem;
-  width: 20rem;
+  /* min-height: 3rem; */
+  height: 3rem;
   margin-left: 8vw;
   margin-top: 10px;
   margin-bottom: 0.5rem;
