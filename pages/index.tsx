@@ -321,7 +321,7 @@ export default function Home() {
             }
           </Grid>
         </Grid>
-        <Box sx={{ overflow: 'hidden', minHeight: '85vh' }}>
+        <Box className={styles.parallax_wrapper}>
           <Parallax speed={-50}>
             <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>
             </Grid>

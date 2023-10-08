@@ -11,9 +11,18 @@
   background-size: cover;
 }
 
+.parallax_wrapper {
+  overflow: hidden;
+  min-height: 85vh;
+}
+
 @media screen and (max-width: 599px) {
   .parallax {
     background-size: 200vw;
+    min-height: 60vh;
+  }
+  .parallax_wrapper {
+    min-height: 60vh;
   }
 }
 
