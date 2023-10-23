@@ -294,7 +294,7 @@ export default function Home() {
             </Grid>
             {openMenu &&
               <Box ref={nodeRef} className={styles.menu_mob}
-              sx={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }}
+                sx={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }}
               >
                 <Link
                   className={`${styles.nav_link} ${styles.mobile_nav_link}`}
@@ -351,14 +351,13 @@ export default function Home() {
             </Grid>
           </Grid>
         </Box>
-        <Box className={styles.go_up_wrapper} >
+        <Box className={styles.go_up_wrapper} id="projects">
+
+          <AnimateIn>
+            <Divider/>
+          </AnimateIn>
+
           <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
-            <AnimateIn>
-              <Grid item xs={12} sx={{ marginBottom: '1rem' }}>
-                <h1 className={styles.margin_bottom} id="projects">PROJEKT</h1>
-                <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)', width: '84vw' }} />
-              </Grid>
-            </AnimateIn>
             <Grid
               container
               justifyContent="space-around"
@@ -384,13 +383,13 @@ export default function Home() {
 
               </>
             </Grid>
-            <AnimateIn>
-              <Grid item xs={12} sx={{ marginBottom: '1rem' }}>
-                <h1 className={styles.margin_bottom} id="projects">PAR MUMS</h1>
-                <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)', width: '84vw' }} />
-              </Grid>
-            </AnimateIn>
+          </Grid>
 
+          <AnimateIn>
+            <Divider/>
+          </AnimateIn>
+
+          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} id="about-us">
             <Grid
               container
               spacing={4}
@@ -524,12 +523,13 @@ export default function Home() {
                 </AnimateIn>
               </Grid>
             </Grid>
-            <AnimateIn>
-              <Grid item xs={12} sx={{ marginBottom: '1rem' }}>
-                <h1 className={styles.margin_bottom} id="projects">KONTAKTI</h1>
-                <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)', width: '84vw' }} />
-              </Grid>
-            </AnimateIn>
+          </Grid>
+
+          <AnimateIn>
+            <Divider/>
+          </AnimateIn>
+
+          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} id="contacts">
             <Grid
               container
               sx={{ marginBottom: "40px" }}
@@ -581,9 +581,10 @@ export default function Home() {
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
                       width="100%" height="452px"
                       style={{ border: 0, filter: 'grayscale(100%)' }}
-                      allowFullScreen={true}
+                      allowFullScreen={false}
                       loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"></iframe>
+                      referrerPolicy="no-referrer-when-downgrade">
+                    </iframe>
                   </Grid>
                 </AnimateIn>
               </Grid>
