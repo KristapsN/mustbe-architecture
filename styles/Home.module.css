@@ -125,14 +125,20 @@
 }
 
 .profile_image {
-  padding-top: 65.61%;
+  padding-top: 148.77%;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   background-blend-mode: multiply;
-  background-image: url("/profile.jpg");
+  /* background-image: url("/profile.jpg"); */
   z-index: 80;
+}
+.contact_subtitle {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #666666;
 }
 
 .hr_style {
@@ -163,7 +169,7 @@
 }
 
 .nav_link {
-  font-size: 14px;
+  font-size: 18px;
   color: rgb(26, 26, 26);
   text-align: right;
   text-decoration: none;
@@ -224,34 +230,14 @@
 
 
 .thumbnail_title {
-  font-size: 1rem;
-  margin-top: -26px;
   text-transform: uppercase;
 }
 
-.thumbnail_title_wrapper {
-  opacity: 0;
-  translate: 0 24px;
-  /* height: 1rem; */
-}
-
-@media screen and (max-width: 599px) {
-  .thumbnail_title_wrapper {
-    opacity: 1;
-    translate: 0;
-  }
-}
 
 .thumbnail_content:hover {
   cursor: pointer;
 }
 
-.thumbnail_content:hover .thumbnail_title_wrapper {
-  translate: none;
-  transition: 400ms;
-  opacity: 1;
-  /* margin-bottom: 10px */
-}
 
 .preloader {
   height: 100vh;
@@ -280,4 +266,17 @@
 .project_description_title{
   font-size: 1rem;
   line-height: 10px;
+}
+
+.contact_image {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* padding: 7rem 6rem;; */
+  padding-top: 66.7%;
+  position: relative;
 }

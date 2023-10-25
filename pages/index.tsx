@@ -13,7 +13,6 @@ import { Parallax } from 'react-scroll-parallax';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { getStaticProps } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
-import { CSSTransition } from 'react-transition-group';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -333,7 +332,7 @@ export default function Home() {
             justifyContent="space-around"
             alignItems="flex-start"
             spacing={4}
-            sx={{ padding: "20px 8vw", backgroundColor: 'white' }}
+            sx={{ padding: "20px 8vw 60px", backgroundColor: 'white' }}
           >
             <Grid item xs={12} md={6}>
               <Grid container>
@@ -354,30 +353,28 @@ export default function Home() {
         <Box className={styles.go_up_wrapper} id="projects">
 
           <AnimateIn>
-            <Divider/>
+            <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} >
+          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw 60px" }} >
             <Grid
               container
-              justifyContent="space-around"
+              justifyContent="space-between"
               alignItems="center"
-              spacing={4}
+              spacing={8}
               sx={{ flexGrow: 1, marginBottom: '40px' }}
             >
               <>
                 {thumbnailImages.map((images, index) =>
                   <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
-                    <Box className={styles.thumbnail_title_wrapper} >
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Box sx={{ overflow: 'hidden', position: 'relative' }}>
+                      <Box className={styles.overlay}></Box>
+                      <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <h2 className={styles.thumbnail_title}>{projectTitles[index]}</h2>
                         <h2 className={styles.thumbnail_title}>{projectYears[index]}</h2>
                       </Box>
-                      <Divider sx={{ backgroundColor: 'rgb(26, 26, 26)' }} />
-                    </Box>
-                    <Box sx={{ overflow: 'hidden' }}>
-                      <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
-                    </Box>
                   </Grid>
                 )}
 
@@ -386,14 +383,14 @@ export default function Home() {
           </Grid>
 
           <AnimateIn>
-            <Divider/>
+            <Divider />
           </AnimateIn>
 
           <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} id="about-us">
             <Grid
               container
               spacing={4}
-              sx={{ marginBottom: "40px" }}
+              sx={{ marginBottom: "60px" }}
             >
 
               <Grid item xs={12} md={6}>
@@ -455,70 +452,80 @@ export default function Home() {
               <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
-                    <Box >
-                      <h2 className={styles.thumbnail_title}>
-                        {"Monvīds Bekmanis"}
-                      </h2>
-                    </Box>
                     <Box
+                      sx={{ backgroundImage: 'url("/01_profile.jpg")', }}
                       className={styles.profile_image}
                     />
+                    <Box sx={{ marginTop: 1 }}>
+                      <h2>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                    </Box>
                   </Grid>
                 </AnimateIn>
               </Grid>
               <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
-                    <Box>
-                      <h2 className={styles.thumbnail_title}>
-                        {"Monvīds Bekmanis"}
-                      </h2>
-                    </Box>
                     <Box
+                      sx={{ backgroundImage: 'url("/02_profile.jpg")', }}
                       className={styles.profile_image}
                     />
+                    <Box sx={{ marginTop: 1 }}>
+                      <h2>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                    </Box>
                   </Grid>
                 </AnimateIn>
               </Grid>
               <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
-                    <Box>
-                      <h2 className={styles.thumbnail_title}>
-                        {"Monvīds Bekmanis"}
-                      </h2>
-                    </Box>
                     <Box
+                      sx={{ backgroundImage: 'url("/03_profile.jpg")', }}
                       className={styles.profile_image}
                     />
+                    <Box sx={{ marginTop: 1 }}>
+                      <h2>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                    </Box>
                   </Grid>
                 </AnimateIn>
               </Grid>
               <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
-                    <Box>
-                      <h2 className={styles.thumbnail_title}>
-                        {"Monvīds Bekmanis"}
-                      </h2>
-                    </Box>
                     <Box
+                      sx={{ backgroundImage: 'url("/04_profile.jpg")', }}
                       className={styles.profile_image}
                     />
+                    <Box sx={{ marginTop: 1 }}>
+                      <h2>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                    </Box>
                   </Grid>
                 </AnimateIn>
               </Grid>
               <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
-                    <Box>
-                      <h2 className={styles.thumbnail_title}>
-                        {"Kristiāns Beķeris"}
-                      </h2>
-                    </Box>
                     <Box
+                      sx={{ backgroundImage: 'url("/05_profile.jpg")', }}
                       className={styles.profile_image}
                     />
+                    <Box sx={{ marginTop: 1 }}>
+                      <h2>
+                        {"Monvīds Bekmanis"}
+                      </h2>
+                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                    </Box>
                   </Grid>
                 </AnimateIn>
               </Grid>
@@ -526,10 +533,10 @@ export default function Home() {
           </Grid>
 
           <AnimateIn>
-            <Divider/>
+            <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} id="contacts">
+          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw 60px" }} id="contacts">
             <Grid
               container
               sx={{ marginBottom: "40px" }}
@@ -539,47 +546,57 @@ export default function Home() {
                 <AnimateIn>
                   <Box sx={{ display: 'flex' }}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                      <Paragraph
-                        text="Saziņa:"
-                      />
-                      <Paragraph
-                        text="A: Torņa iela 4-2c, Vecrīga"
-                      />
-                      <Paragraph
-                        text=" M: info@mustbe-architecture.lv"
-                      />
-                      <Paragraph
-                        text="T: +371 29121613"
-                      />
-                      <Paragraph
-                        text="(starpā ikonas - fb, insta, linkdin)"
-                      />
+                      <h2>
+                        Kontakti:
+                      </h2>
+                      <Box sx={{ marginTop: 1 }}>
+                        <Paragraph
+                          text="A: Torņa iela 4-2c, Vecrīga"
+                        />
+                        <Paragraph
+                          text=" M: info@mustbe-architecture.lv"
+                        />
+                        <Paragraph
+                          text="T: +371 29121613"
+                        />
+                        <Paragraph
+                          text="(starpā ikonas - fb, insta, linkdin)"
+                        />
+                      </Box>
                     </Box>
                     <br />
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem', marginLeft: '1rem' }}>
-                      <Paragraph
-                        text="Rekvizīti:"
-                      />
-                      <Paragraph
-                        text="N: MUST BE architecture SIA"
-                      />
-                      <Paragraph
-                        text="R: 40103354466"
-                      />
-                      <Paragraph
-                        text="PVN: LV40103354466"
-                      />
-                      <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
+                      <h2>
+                        Rekvizīti
+                      </h2>
+                      <Box sx={{ marginTop: 1 }}>
+                        <Paragraph
+                          text="N: MUST BE architecture SIA"
+                        />
+                        <Paragraph
+                          text="R: 40103354466"
+                        />
+                        <Paragraph
+                          text="PVN: LV40103354466"
+                        />
+                        <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
+                      </Box>
                     </Box>
                   </Box>
                 </AnimateIn>
               </Grid>
+            </Grid>
+            <Grid
+              container
+              sx={{ marginBottom: "40px" }}
+              spacing={4}
+            >
               <Grid item xs={12} md={6} >
                 <AnimateIn>
                   <Grid container >
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
-                      width="100%" height="452px"
+                      width="100%" height="460px"
                       style={{ border: 0, filter: 'grayscale(100%)' }}
                       allowFullScreen={false}
                       loading="lazy"
@@ -587,6 +604,10 @@ export default function Home() {
                     </iframe>
                   </Grid>
                 </AnimateIn>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")'}}/>
+
               </Grid>
             </Grid>
             <Grid container sx={{ marginBottom: "20px" }}>
