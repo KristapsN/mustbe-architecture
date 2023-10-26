@@ -372,9 +372,9 @@ export default function Home() {
                       <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <h2 className={styles.thumbnail_title}>{projectTitles[index]}</h2>
-                        <h2 className={styles.thumbnail_title}>{projectYears[index]}</h2>
-                      </Box>
+                      <h2 className={styles.thumbnail_title}>{projectTitles[index]}</h2>
+                      <h2 className={styles.thumbnail_title}>{projectYears[index]}</h2>
+                    </Box>
                   </Grid>
                 )}
 
@@ -413,28 +413,11 @@ export default function Home() {
                         text="Sadarbības partneri:"
                       />
                       <Paragraph
-                        text="Interjera dizainere: Donna Victoria Design"
-                      />
-                      <Paragraph
-                        text="Arhitekti: Aigars Tereško, Mikus Druviņš, Toms Ambrozs "
-                      />
-                      <Paragraph
-                        text="Uldis Jaunsubrēns - tehnisko risinājumu konsultants"
-                      />
-                      <Paragraph
-                        text="BIM speciālists: Rinalds Petjukēvičš"
-                      />
-                      <Paragraph
-                        text="Vizualizāciju speciālists: Reinis Janson"
-                      />
-                      <Paragraph
-                        text="Inženieri: Miķelis Siliņš, Pāvels Stepanovs, Māris Arnavs, Kārlis Mūrnieks, Dāvis Vecbaštiks"
-                      />
-                      <Paragraph
-                        text="Konsultants: Uldis Jaunsubrēns"
-                      />
-                      <Paragraph
-                        text="Uzņēmumi: Būvdizains, AZ Service, Aver Brokarage"
+                        text="Interjera dizainere: Donna Victoria Design
+                        // Arhitekti: Aigars Tereško, Mikus Druviņš, Toms Ambrozs
+                        // BIM speciālists: Rinalds Petjukēvičš // Vizualizāciju speciālists: Reinis Jansons
+                        // Inženieri: Miķelis Siliņš, Pāvels Stepanovs, Māris Arnavs, Kārlis Mūrnieks, Dāvis Vecbaštiks
+                        // Konsultants: Uldis Jaunsubrēns // Uzņēmumi: Būvdizains, AZ Service, Aver Brokarage"
                       />
                     </Box>
                   </Grid>
@@ -536,7 +519,7 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw 60px" }} id="contacts">
+          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw 10px" }} id="contacts">
             <Grid
               container
               sx={{ marginBottom: "40px" }}
@@ -588,7 +571,7 @@ export default function Home() {
             </Grid>
             <Grid
               container
-              sx={{ marginBottom: "40px" }}
+              sx={{ marginBottom: "260px" }}
               spacing={4}
             >
               <Grid item xs={12} md={6} >
@@ -606,55 +589,31 @@ export default function Home() {
                 </AnimateIn>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")'}}/>
-
-              </Grid>
-            </Grid>
-            <Grid container sx={{ marginBottom: "20px" }}>
-              <Grid item xs={12}>
-                <Box className={styles.center_flex}>
-                  <Link
-                    className={styles.social_icon}
-                    href="https://www.facebook.com/"
-                  >
-                    <Image
-                      src="/facebook.svg"
-                      alt="MUST BE architecture"
-                      width={20}
-                      height={20}
-                    />
-                  </Link>
-                  <Link
-                    href="https://www.instagram.com/"
-                    className={styles.social_icon}
-                  >
-                    <Image
-                      src="/instagram.svg"
-                      alt="MUST BE architecture"
-                      width={20}
-                      height={20}
-                    />
-                  </Link>
-                </Box>
-                <Box className={styles.center_flex}>
-                  <p>© MUSTBE architecture </p>
-                </Box>
+                <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
               </Grid>
             </Grid>
           </Grid>
 
-          <button
-            onClick={(e) => handleLinkClick(e, 'top')}
-            className={styles.go_up}
-          >
-            <Image
-              src="/arrow_down.svg"
-              alt="Arrow down"
-              width={30}
-              height={10}
-              className={styles.go_up_image}
-            />
-          </button>
+          <Grid container sx={{ marginBottom: "10px" }}>
+            <Grid item xs={12}>
+              <AnimateIn>
+                <Box sx={{ height: '20px', textAlign: 'center', rotate: '180deg' }}>
+                  <button
+                    onClick={(e) => handleLinkClick(e, 'top')}
+                    className={styles.go_up}
+                  >
+                    <svg width="20" height="8" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
+                    </svg>
+                  </button>
+                </Box>
+                <Divider />
+                <Box className={styles.center_flex}>
+                  <p>© MUSTBE architecture </p>
+                </Box>
+              </AnimateIn>
+            </Grid>
+          </Grid>
         </Box>
       </Box>
     </>

@@ -209,25 +209,10 @@
 }
 
 .go_up {
-  position: sticky;
-  bottom: 1rem;
-  right: 1rem;
-  align-self: flex-end;
-  padding: 10px 5px;
   border: none;
-  border-radius: 5px;
-}
-
-.go_up:hover {
-  background-color: rgb(128, 128, 128);
   cursor: pointer;
-  transition: .5s;
+  background-color: transparent;
 }
-
-.go_up_image {
-  rotate: 180deg;
-}
-
 
 .thumbnail_title {
   text-transform: uppercase;
