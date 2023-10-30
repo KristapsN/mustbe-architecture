@@ -429,10 +429,10 @@ export default function Home() {
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={1}
+              spacing={8}
               sx={{ marginBottom: '40px' }}
             >
-              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -448,7 +448,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -464,7 +464,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -480,7 +480,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -496,7 +496,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={2} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -572,14 +572,14 @@ export default function Home() {
             <Grid
               container
               sx={{ marginBottom: "260px" }}
-              spacing={4}
+              spacing={8}
             >
-              <Grid item xs={12} md={6} >
+              <Grid item xs={12} md={7.2} >
                 <AnimateIn>
                   <Grid container >
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
-                      width="100%" height="460px"
+                      width="100%" height="350.89px"
                       style={{ border: 0, filter: 'grayscale(100%)' }}
                       allowFullScreen={false}
                       loading="lazy"
@@ -588,7 +588,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={4.8}>
                 <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
               </Grid>
             </Grid>
