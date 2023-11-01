@@ -361,7 +361,7 @@ export default function Home() {
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={8}
+              spacing={'4rem'}
               sx={{ flexGrow: 1, marginBottom: '40px' }}
             >
               <>
@@ -429,7 +429,7 @@ export default function Home() {
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={8}
+              spacing={'4rem'}
               sx={{ marginBottom: '40px' }}
             >
               <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
@@ -572,7 +572,7 @@ export default function Home() {
             <Grid
               container
               sx={{ marginBottom: "260px" }}
-              spacing={8}
+              spacing={'4rem'}
             >
               <Grid item xs={12} md={7.2} >
                 <AnimateIn>
