@@ -367,12 +367,10 @@ export default function Home() {
               <>
                 {thumbnailImages.map((images, index) =>
                   <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
-                    <AnimateIn>
                     <Box sx={{ overflow: 'hidden', position: 'relative' }} className={styles.carousel_wrapper}>
                       <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
                     </Box>
-                    </AnimateIn>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center',  marginTop: 1 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1 }}>
                       <h2>{projectTitles[index]}</h2>
                       <h2>{projectYears[index]}</h2>
                     </Box>
@@ -458,7 +456,7 @@ export default function Home() {
                     />
                     <Box sx={{ marginTop: 1 }}>
                       <h2>
-                        {"Monvīds Bekmanis"}
+                        {"Kristiāns Beķeris"}
                       </h2>
                       <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
                     </Box>
@@ -474,9 +472,9 @@ export default function Home() {
                     />
                     <Box sx={{ marginTop: 1 }}>
                       <h2>
-                        {"Monvīds Bekmanis"}
+                        {"Donna Viktorija Bordo"}
                       </h2>
-                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                      <span className={styles.contact_subtitle}>Interjera dizainere</span>
                     </Box>
                   </Grid>
                 </AnimateIn>
@@ -490,9 +488,9 @@ export default function Home() {
                     />
                     <Box sx={{ marginTop: 1 }}>
                       <h2>
-                        {"Monvīds Bekmanis"}
+                        {"Rihards Petjukevičs"}
                       </h2>
-                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                      <span className={styles.contact_subtitle}>3D speciālists</span>
                     </Box>
                   </Grid>
                 </AnimateIn>
@@ -506,9 +504,9 @@ export default function Home() {
                     />
                     <Box sx={{ marginTop: 1 }}>
                       <h2>
-                        {"Monvīds Bekmanis"}
+                        {"Toms Ambrozs"}
                       </h2>
-                      <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
+                      <span className={styles.contact_subtitle}>Arhitekts</span>
                     </Box>
                   </Grid>
                 </AnimateIn>
@@ -593,7 +591,9 @@ export default function Home() {
                 </AnimateIn>
               </Grid>
               <Grid item xs={12} md={4.8}>
-                <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
+                <AnimateIn>
+                  <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
+                </AnimateIn>
               </Grid>
             </Grid>
           </Grid>
