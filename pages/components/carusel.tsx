@@ -6,12 +6,18 @@ import styles from '@/styles/Home.module.css'
 import Box from '@mui/material/Box';
 
 
-const createCarouselItemImage = (image: string, texts: string[] | undefined, descriptionTitles: string[] | undefined, imageIndex: number | undefined) => (
+const createCarouselItemImage = (
+  image: string,
+  texts: string[] | undefined,
+  descriptionTitles: string[] | undefined,
+  imageIndex: number | undefined,
+  lastImageIndex: number | undefined
+  ) => (
   <React.Fragment key={image}>
     <AnimateIn>
       <Box>
       <Box className={styles.project_image} sx={{ backgroundImage:`url(${image})` }}/>
-        {imageIndex === 1 &&
+        {imageIndex === lastImageIndex &&
           <div className={styles.project_description}>
             {texts?.map((text, index) => (
               <Box marginBottom={2} key={index}>
@@ -41,7 +47,13 @@ type CarouselProps = {
 
 const NextJsCarousel = ({ images, text, index, descriptionTitles }: CarouselProps) => {
   const baseChildren = <Box>{images &&
-    images.map((image, imageIndex) => createCarouselItemImage(image, text[index], descriptionTitles[index], imageIndex))
+    images.map((image, imageIndex) => createCarouselItemImage(
+      image,
+      text[index],
+      descriptionTitles[index],
+      imageIndex,
+      images.length - 1
+      ))
   }</Box>;
 
   return (

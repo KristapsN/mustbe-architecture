@@ -367,13 +367,14 @@ export default function Home() {
               <>
                 {thumbnailImages.map((images, index) =>
                   <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
-                    <Box sx={{ overflow: 'hidden', position: 'relative' }}>
-                      <Box className={styles.overlay}></Box>
+                    <AnimateIn>
+                    <Box sx={{ overflow: 'hidden', position: 'relative' }} className={styles.carousel_wrapper}>
                       <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <h2 className={styles.thumbnail_title}>{projectTitles[index]}</h2>
-                      <h2 className={styles.thumbnail_title}>{projectYears[index]}</h2>
+                    </AnimateIn>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center',  marginTop: 1 }}>
+                      <h2>{projectTitles[index]}</h2>
+                      <h2>{projectYears[index]}</h2>
                     </Box>
                   </Grid>
                 )}
@@ -432,7 +433,7 @@ export default function Home() {
               spacing={'4rem'}
               sx={{ marginBottom: '40px' }}
             >
-              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -448,7 +449,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -464,7 +465,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -480,7 +481,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -496,7 +497,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12/5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -523,49 +524,52 @@ export default function Home() {
             <Grid
               container
               sx={{ marginBottom: "40px" }}
-              spacing={4}
+              spacing={'4rem'}
             >
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={12 / 5}>
                 <AnimateIn>
-                  <Box sx={{ display: 'flex' }}>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                      <h2>
-                        Kontakti:
-                      </h2>
-                      <Box sx={{ marginTop: 1 }}>
-                        <Paragraph
-                          text="A: Torņa iela 4-2c, Vecrīga"
-                        />
-                        <Paragraph
-                          text=" M: info@mustbe-architecture.lv"
-                        />
-                        <Paragraph
-                          text="T: +371 29121613"
-                        />
-                        <Paragraph
-                          text="(starpā ikonas - fb, insta, linkdin)"
-                        />
-                      </Box>
-                    </Box>
-                    <br />
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem', marginLeft: '1rem' }}>
-                      <h2>
-                        Rekvizīti
-                      </h2>
-                      <Box sx={{ marginTop: 1 }}>
-                        <Paragraph
-                          text="N: MUST BE architecture SIA"
-                        />
-                        <Paragraph
-                          text="R: 40103354466"
-                        />
-                        <Paragraph
-                          text="PVN: LV40103354466"
-                        />
-                        <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
-                      </Box>
+                  {/* <Box sx={{ display: 'flex' }}> */}
+                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                    <h2>
+                      Kontakti:
+                    </h2>
+                    <Box sx={{ marginTop: 1 }}>
+                      <Paragraph
+                        text="A: Torņa iela 4-2c, Vecrīga"
+                      />
+                      <Paragraph
+                        text=" M: info@mustbe-architecture.lv"
+                      />
+                      <Paragraph
+                        text="T: +371 29121613"
+                      />
+                      <Paragraph
+                        text="(starpā ikonas - fb, insta, linkdin)"
+                      />
                     </Box>
                   </Box>
+                </AnimateIn>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <AnimateIn>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                    <h2>
+                      Rekvizīti
+                    </h2>
+                    <Box sx={{ marginTop: 1 }}>
+                      <Paragraph
+                        text="N: MUST BE architecture SIA"
+                      />
+                      <Paragraph
+                        text="R: 40103354466"
+                      />
+                      <Paragraph
+                        text="PVN: LV40103354466"
+                      />
+                      <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
+                    </Box>
+                  </Box>
+                  {/* </Box> */}
                 </AnimateIn>
               </Grid>
             </Grid>

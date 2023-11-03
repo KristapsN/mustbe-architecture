@@ -109,9 +109,17 @@
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
-  /* padding: 7rem 6rem;; */
   padding-top: 65.6003%;
   position: relative;
+
+}
+
+.carousel_wrapper:hover {
+  opacity: 1;
+}
+.carousel_wrapper{
+  opacity: 0.5;
+  transition: 0.5s;
 }
 
 .address_image {
@@ -213,11 +221,6 @@
   cursor: pointer;
   background-color: transparent;
 }
-
-.thumbnail_title {
-  text-transform: uppercase;
-}
-
 
 .thumbnail_content:hover {
   cursor: pointer;
