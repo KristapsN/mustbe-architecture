@@ -25,8 +25,6 @@ const ContactMap = () => {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={15}
-        // onLoad={onLoad}
-        // onUnmount={onUnmount}
         options={{zoomControl: false, mapTypeControl: false, streetViewControl: false, mapId: '7347b8bb47bd883b'}}
       >
         <Marker position={{ lat: 56.9515693, lng: 24.1074527 }} />
