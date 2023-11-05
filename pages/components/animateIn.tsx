@@ -26,6 +26,7 @@ const AnimateIn: FC<PropsWithChildren> = ({ children }) => {
         opacity: isShown ? 1 : 0,
         translate: isShown ? "none" : "0 2rem",
         transition: "600ms ease-in-out",
+        height: '100%'
       }}
     >
       {children}

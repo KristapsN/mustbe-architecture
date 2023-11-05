@@ -13,6 +13,7 @@ import { Parallax } from 'react-scroll-parallax';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { getStaticProps } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
+import ContactMap from './components/map';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -75,7 +76,7 @@ export default function Home() {
       block: 'start',
     });
     setOpenMenu(false)
-  };
+  }
 
   const [language, setLanguage] = useState('LV');
   const [showLoader, setShowLoader] = useState(true)
@@ -578,16 +579,7 @@ export default function Home() {
             >
               <Grid item xs={12} md={7.2} >
                 <AnimateIn>
-                  <Grid container >
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4628.72510816559!2d24.101442221661383!3d56.95051397128047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfd0eb9c6729%3A0xe79c8c86f527aa2c!2sTor%C5%86a%20iela%204-2c%2C%20Centra%20rajons%2C%20R%C4%ABga%2C%20LV-1050!5e0!3m2!1sen!2slv!4v1677524894449!5m2!1sen!2slv"
-                      width="100%" height="350.89px"
-                      style={{ border: 0, filter: 'grayscale(100%)' }}
-                      allowFullScreen={false}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade">
-                    </iframe>
-                  </Grid>
+                  <ContactMap/>
                 </AnimateIn>
               </Grid>
               <Grid item xs={12} md={4.8}>
