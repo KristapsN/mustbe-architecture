@@ -15,10 +15,8 @@ const ContactMap = () => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyDxq0hhH6IQfnzKMCCjnUUSTc2b0s_uzG8"
+    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY
   })
-
-
 
   return isLoaded ? (
       <GoogleMap
