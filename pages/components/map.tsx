@@ -1,5 +1,4 @@
-import React from 'react'
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader, useLoadScript } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
@@ -15,7 +14,7 @@ const ContactMap = () => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY
+    googleMapsApiKey: process.env.GOOGLE_MAP_API_KEY ?? ''
   })
 
   return isLoaded ? (
@@ -23,11 +22,11 @@ const ContactMap = () => {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={15}
-        options={{zoomControl: false, mapTypeControl: false, streetViewControl: false, mapId: '7347b8bb47bd883b'}}
+        options={{zoomControl: false, mapTypeControl: false, streetViewControl: false, mapId: process.env.MAP_ID}}
       >
         <Marker position={{ lat: 56.9515693, lng: 24.1074527 }} />
       </GoogleMap>
-  ) : <></>
+  ) : <>Loading...</>
 }
 
-export default React.memo(ContactMap)
+export default ContactMap
