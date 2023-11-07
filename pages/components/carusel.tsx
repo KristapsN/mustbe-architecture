@@ -16,7 +16,7 @@ const createCarouselItemImage = (
   <React.Fragment key={image}>
     <AnimateIn>
       <Box>
-      <Box className={styles.project_image} sx={{ backgroundImage:`url(${image})` }}/>
+      <Box className={`${imageIndex === lastImageIndex && styles.project_image_last } ${styles.project_image}`} sx={{ backgroundImage:`url(${image})` }}/>
         {imageIndex === lastImageIndex &&
           <div className={styles.project_description}>
             {texts?.map((text, index) => (

@@ -110,8 +110,12 @@
   background-size: cover;
   background-blend-mode: multiply;
   padding-top: 65.6003%;
-  position: relative;
+}
 
+@media only screen and (max-width: 599px) {
+  .project_image_last {
+    padding-top: 130%;
+  }
 }
 
 .carousel_wrapper:hover {
