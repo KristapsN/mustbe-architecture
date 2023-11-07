@@ -30,7 +30,7 @@
   position: relative;
   /* min-height: 3rem; */
   height: 3rem;
-  margin-left: 8vw;
+  margin-left: 15vw;
   margin-top: 10px;
   margin-bottom: 0.5rem;
 }
@@ -70,7 +70,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  margin-right: 8vw;
+  margin-right: 15vw;
   margin-bottom: 0.5rem;
   line-height: 10px;
   /* transition: top 0.6s; */
@@ -85,7 +85,7 @@
 .mobile_menu_burger {
   position: relative;
   min-height: 1.2rem;
-  margin-right: 8vw;
+  margin-right: 15vw;
   margin-bottom: 0.7rem;
   width: 30px;
 }
@@ -122,7 +122,7 @@
   opacity: 1;
 }
 .carousel_wrapper{
-  opacity: 0.5;
+  opacity: 0.95;
   transition: 0.5s;
 }
 

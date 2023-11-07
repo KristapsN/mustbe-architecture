@@ -203,7 +203,7 @@ export default function Home() {
                   />
                 </Box>
               </Grid>
-              <Grid item xs={2} sm={7} md={5} lg={4}>
+              <Grid item xs={2} sm={7} md={6} lg={5}>
                 <Box className={styles.mobile_menu_burger}>
                   {!openMenu ?
                     <Image
@@ -333,7 +333,7 @@ export default function Home() {
             justifyContent="space-around"
             alignItems="flex-start"
             spacing={4}
-            sx={{ padding: "20px 8vw 60px", backgroundColor: 'white' }}
+            sx={{ padding: "20px 15vw 60px", backgroundColor: 'white' }}
           >
             <Grid item xs={12} md={6}>
               <Grid container>
@@ -357,12 +357,12 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw 60px" }} >
+          <Grid container sx={{ flexGrow: 1, padding: "20px 15vw 60px" }} >
             <Grid
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={'4rem'}
+              spacing={'6rem'}
               sx={{ flexGrow: 1, marginBottom: '40px' }}
             >
               <>
@@ -386,7 +386,7 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw" }} id="about-us">
+          <Grid container sx={{ flexGrow: 1, padding: "20px 15vw" }} id="about-us">
             <Grid
               container
               spacing={4}
@@ -429,7 +429,7 @@ export default function Home() {
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={'4rem'}
+              spacing={'6rem'}
               sx={{ marginBottom: '40px' }}
             >
               <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
@@ -519,11 +519,11 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 8vw 10px" }} id="contacts">
+          <Grid container sx={{ flexGrow: 1, padding: "20px 15vw 10px" }} id="contacts">
             <Grid
               container
               sx={{ marginBottom: "40px" }}
-              spacing={'4rem'}
+              spacing={'6rem'}
             >
               <Grid item xs={12} md={12 / 5}>
                 <AnimateIn>
@@ -575,7 +575,7 @@ export default function Home() {
             <Grid
               container
               sx={{ marginBottom: "260px" }}
-              spacing={'4rem'}
+              spacing={'6rem'}
             >
               <Grid item xs={12} md={7.2} sx={{minHeight: '230px'}}>
                 <AnimateIn>
@@ -605,7 +605,7 @@ export default function Home() {
                 </Box>
                 <Divider />
                 <Box className={styles.center_flex}>
-                  <p>© MUSTBE architecture </p>
+                  <p>© MBA arhitekti</p>
                 </Box>
               </AnimateIn>
             </Grid>
