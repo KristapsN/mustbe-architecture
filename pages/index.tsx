@@ -577,7 +577,7 @@ export default function Home() {
               sx={{ marginBottom: "260px" }}
               spacing={'4rem'}
             >
-              <Grid item xs={12} md={7.2} >
+              <Grid item xs={12} md={7.2} sx={{minHeight: '230px'}}>
                 <AnimateIn>
                   <ContactMap/>
                 </AnimateIn>
