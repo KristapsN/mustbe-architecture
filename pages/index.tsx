@@ -8,12 +8,13 @@ import Link from 'next/link';
 import Paragraph from './components/paragrah';
 import NextJsCarousel from './components/carusel';
 import AnimateIn from './components/animateIn';
-import { styled, Divider, Button, ButtonProps } from '@mui/material';
+import { styled, Divider, Button, ButtonProps, Menu, MenuItem, MenuProps } from '@mui/material';
 import { Parallax } from 'react-scroll-parallax';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { getStaticProps } from '@/sanity/lib/client';
 import { urlForImage } from '@/sanity/lib/image';
 import ContactMap from './components/map';
+import { Turn as Hamburger } from 'hamburger-react'
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -23,6 +24,33 @@ const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
     backgroundColor: 'transparent',
   }
 }))
+
+
+// const MuiMenuItem = styled({
+//   root: {
+//     justifyContent: "flex-end"
+//   }
+// })(MenuItem);
+
+// const StyledMenu = styled((props: MenuProps) => (
+//   <Menu
+//     elevation={0}
+//     anchorOrigin={{
+//       vertical: 'bottom',
+//       horizontal: 'right',
+//     }}
+//     transformOrigin={{
+//       vertical: 'top',
+//       horizontal: 'right',
+//     }}
+//     {...props}
+//   />
+// ))(({ theme }) => ({
+//   '& .MuiMenu-root': {
+//     borderRadius: 2,
+//     width: '100%'
+//   },
+// }));
 
 interface ProjectProps {
   order_number: number
@@ -88,10 +116,12 @@ export default function Home() {
   const [thumbnailImages, setThumbnailImages] = useState<string[][]>([])
   const [projectTitles, setProjectTitles] = useState<string[]>([])
   const [projectYears, setProjectYears] = useState<string[]>([])
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const nodeRef = useRef(null);
 
   useEffect(() => {
+    setAnchorEl(document.getElementById('menu'))
     getStaticProps().then(({ props }) => {
       setIntro({ first: props.intro[0].first, second: props.intro[0].second })
       setMainImage(urlForImage(props.main[0].hero).url())
@@ -133,10 +163,10 @@ export default function Home() {
 
   }, [])
 
-  const handleMenuClick = () => {
+
+  const handleMenuClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setOpenMenu(!openMenu)
   }
-
 
   const handleChange = () => {
     language === 'LV'
@@ -159,7 +189,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <Box sx={{}} className={`${!showLoader && styles.preloader_fade}`}>
+        <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
+          <Grid item xs={12}>
+            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
+              <Grid item xs={8} sm={4} md={4}>
+                <Box className={styles.logo_wrapper}>
+                  {/* <Box sx={{}} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
             justifyContent="center"
@@ -171,23 +206,16 @@ export default function Home() {
               autoplay
               keepLastFrame
               src="/logo_loader/logo_loader.json"
-              style={{ height: '600px' }}
+              style={{ height: '50px' }}
             >
             </Player>
           </Grid>
-        </Box>
-
-        <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
-          <Grid item xs={12}>
-            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
-              <Grid item xs={8} sm={4} md={4}>
-                <Box className={styles.logo_wrapper}>
+        </Box> */}
                   <Image
                     src="/logo.svg"
                     alt="MUST BE architecture"
                     width={325}
                     height={50}
-                    // fill
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.desktop_logo}
 
@@ -197,33 +225,49 @@ export default function Home() {
                     alt="MUST BE architecture"
                     width={125}
                     height={50}
-                    // fill
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.mobile_logo}
                   />
                 </Box>
               </Grid>
               <Grid item xs={2} sm={7} md={6} lg={5}>
-                <Box className={styles.mobile_menu_burger}>
-                  {!openMenu ?
-                    <Image
-                      src="/menu.svg"
-                      alt="menu"
-                      fill
-                      onClick={handleMenuClick}
-                    />
-                    :
-                    <Image
-                      src="/close.svg"
-                      alt="menu"
-                      fill
-                      onClick={handleMenuClick}
-                    />
-                  }
+                <Box className={styles.mobile_menu_burger} id='menu'>
+                  <Hamburger
+                    toggled={openMenu}
+                    toggle={setOpenMenu}
+                    hideOutline={false}
+                  />
+                  <Box>
+                  <Menu
+                    marginThreshold={0}
+                    className={styles.mobile_menu}
+                    id="customized-menu"
+                    PaperProps={{
+                      style: {
+                        width: "100%",
+                        display: 'flex',
+                        justifyContent: "flex-end",
+                        maxWidth: "100%",
+                        boxShadow: 'none',
+                        borderRadius: 0,
+                      }
+                    }}
+                    disableAutoFocus={true}
+                    disableEnforceFocus={true}
+
+                    anchorEl={anchorEl}
+                    open={openMenu}
+                    onClose={handleMenuClick}
+                  >
+                    <MenuItem autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}>Projekti</MenuItem>
+                    <MenuItem onClick={(e) => handleLinkClick(e, 'about-us')}>Par mums</MenuItem>
+                    <MenuItem onClick={(e) => handleLinkClick(e, 'contacts')}>Kontakti</MenuItem>
+                  </Menu>
+                  </Box>
                 </Box>
                 <Box className={styles.menu_wrapper}>
                   <Box className={styles.nav_link_wrapper}>
-                    <Box sx={{ height: '4px', marginBottom: '4px' }}>
+                    <Box sx={{ height: '4px', marginBottom: '8px' }}>
                       <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                       </svg>
@@ -238,7 +282,7 @@ export default function Home() {
                     </Link>
                   </Box>
                   <Box className={styles.nav_link_wrapper}>
-                    <Box sx={{ height: '4px', marginBottom: '4px' }}>
+                    <Box sx={{ height: '4px', marginBottom: '8px' }}>
                       <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                       </svg>
@@ -251,7 +295,7 @@ export default function Home() {
                     </Link>
                   </Box>
                   <Box className={styles.nav_link_wrapper}>
-                    <Box sx={{ height: '4px', marginBottom: '4px' }}>
+                    <Box sx={{ height: '4px', marginBottom: '8px' }}>
                       <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                       </svg>
@@ -287,14 +331,14 @@ export default function Home() {
                         height={12}
                       />
                     </Link>
-                    <LanguageButton disableRipple sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '14px' }} onClick={() => handleChange()}>{language}</LanguageButton>
+                    <LanguageButton disableRipple sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px' }} onClick={() => handleChange()}>{language}</LanguageButton>
                   </Box>
                 </Box>
               </Grid>
             </Grid>
-            {openMenu &&
+            {/* {openMenu &&
               <Box ref={nodeRef} className={styles.menu_mob}
-                sx={{ backgroundColor: 'white', display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'column' }}
+                sx={{ backgroundColor: 'white', display: 'flex', alignItems: 'flex-end', width: '100%', flexDirection: 'column', pr: '2rem' }}
               >
                 <Link
                   className={`${styles.nav_link} ${styles.mobile_nav_link}`}
@@ -318,7 +362,7 @@ export default function Home() {
                   Kontakti
                 </Link>
               </Box>
-            }
+            } */}
           </Grid>
         </Grid>
         <Box className={styles.parallax_wrapper}>
@@ -577,9 +621,9 @@ export default function Home() {
               sx={{ marginBottom: "260px" }}
               spacing={'6rem'}
             >
-              <Grid item xs={12} md={7.2} sx={{minHeight: '230px'}}>
+              <Grid item xs={12} md={7.2} sx={{ minHeight: '230px' }}>
                 <AnimateIn>
-                  <ContactMap/>
+                  <ContactMap />
                 </AnimateIn>
               </Grid>
               <Grid item xs={12} md={4.8}>
