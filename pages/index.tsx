@@ -178,23 +178,18 @@ export default function Home() {
     setShowLoader(false)
   }
 
-  setTimeout(loaderHandler, 3700)
+  setTimeout(loaderHandler, 5000)
 
   return (
     <>
       <Head>
-        <title>MUST BE architecture</title>
-        <meta name="MUST BE architecture" content="architecture" />
+        <title>MBA arhitekti</title>
+        <meta name="MBA arhitekti" content="architecture" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
-          <Grid item xs={12}>
-            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
-              <Grid item xs={8} sm={4} md={4}>
-                <Box className={styles.logo_wrapper}>
-                  {/* <Box sx={{}} className={`${!showLoader && styles.preloader_fade}`}>
+        <Box sx={{}} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
             justifyContent="center"
@@ -206,11 +201,17 @@ export default function Home() {
               autoplay
               keepLastFrame
               src="/logo_loader/logo_loader.json"
-              style={{ height: '50px' }}
+              style={{ height: '520px', width: '960px' }}
+              speed={1.5}
             >
             </Player>
           </Grid>
-        </Box> */}
+        </Box>
+        <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
+          <Grid item xs={12}>
+            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
+              <Grid item xs={8} sm={4} md={4}>
+                <Box className={styles.logo_wrapper}>
                   <Image
                     src="/logo.svg"
                     alt="MUST BE architecture"
@@ -238,31 +239,31 @@ export default function Home() {
                     hideOutline={false}
                   />
                   <Box>
-                  <Menu
-                    marginThreshold={0}
-                    className={styles.mobile_menu}
-                    id="customized-menu"
-                    PaperProps={{
-                      style: {
-                        width: "100%",
-                        display: 'flex',
-                        justifyContent: "flex-end",
-                        maxWidth: "100%",
-                        boxShadow: 'none',
-                        borderRadius: 0,
-                      }
-                    }}
-                    disableAutoFocus={true}
-                    disableEnforceFocus={true}
+                    <Menu
+                      marginThreshold={0}
+                      className={styles.mobile_menu}
+                      id="customized-menu"
+                      PaperProps={{
+                        style: {
+                          width: "100%",
+                          display: 'flex',
+                          justifyContent: "flex-end",
+                          maxWidth: "100%",
+                          boxShadow: 'none',
+                          borderRadius: 0,
+                        }
+                      }}
+                      disableAutoFocus={true}
+                      disableEnforceFocus={true}
 
-                    anchorEl={anchorEl}
-                    open={openMenu}
-                    onClose={handleMenuClick}
-                  >
-                    <MenuItem autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}>Projekti</MenuItem>
-                    <MenuItem onClick={(e) => handleLinkClick(e, 'about-us')}>Par mums</MenuItem>
-                    <MenuItem onClick={(e) => handleLinkClick(e, 'contacts')}>Kontakti</MenuItem>
-                  </Menu>
+                      anchorEl={anchorEl}
+                      open={openMenu}
+                      onClose={handleMenuClick}
+                    >
+                      <MenuItem autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}>Projekti</MenuItem>
+                      <MenuItem onClick={(e) => handleLinkClick(e, 'about-us')}>Par mums</MenuItem>
+                      <MenuItem onClick={(e) => handleLinkClick(e, 'contacts')}>Kontakti</MenuItem>
+                    </Menu>
                   </Box>
                 </Box>
                 <Box className={styles.menu_wrapper}>
@@ -376,8 +377,9 @@ export default function Home() {
             container
             justifyContent="space-around"
             alignItems="flex-start"
-            spacing={4}
-            sx={{ padding: "20px 15vw 60px", backgroundColor: 'white' }}
+            spacing={{ md: '6rem', sx: '2rem'}}
+            className={styles.space_wrapper}
+            sx={{ backgroundColor: 'white' }}
           >
             <Grid item xs={12} md={6}>
               <Grid container>
@@ -401,12 +403,12 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 15vw 60px" }} >
+          <Grid container sx={{ flexGrow: 1 }}  className={styles.space_wrapper} >
             <Grid
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={'6rem'}
+              spacing={{ md: '6rem', sx: '2rem'}}
               sx={{ flexGrow: 1, marginBottom: '40px' }}
             >
               <>
@@ -430,10 +432,10 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 15vw" }} id="about-us">
+          <Grid container sx={{ flexGrow: 1 }}  className={styles.space_wrapper} id="about-us">
             <Grid
               container
-              spacing={4}
+              spacing={{ md: '6rem', sx: '2rem'}}
               sx={{ marginBottom: "60px" }}
             >
 
@@ -449,7 +451,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item xs={12} md={6} >
+              <Grid item xs={12} md={6}>
                 <AnimateIn>
                   <Grid container>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
@@ -473,7 +475,7 @@ export default function Home() {
               container
               justifyContent="space-between"
               alignItems="center"
-              spacing={'6rem'}
+              spacing={{ md: '6rem', sx: '2rem'}}
               sx={{ marginBottom: '40px' }}
             >
               <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
@@ -563,11 +565,11 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1, padding: "20px 15vw 10px" }} id="contacts">
+          <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper} id="contacts">
             <Grid
               container
               sx={{ marginBottom: "40px" }}
-              spacing={'6rem'}
+              spacing={{ md: '6rem', sx: '2rem'}}
             >
               <Grid item xs={12} md={12 / 5}>
                 <AnimateIn>
@@ -619,7 +621,7 @@ export default function Home() {
             <Grid
               container
               sx={{ marginBottom: "260px" }}
-              spacing={'6rem'}
+              spacing={{ md: '6rem', sx: '2rem'}}
             >
               <Grid item xs={12} md={7.2} sx={{ minHeight: '230px' }}>
                 <AnimateIn>
@@ -636,7 +638,6 @@ export default function Home() {
 
           <Grid container sx={{ marginBottom: "10px" }}>
             <Grid item xs={12}>
-              <AnimateIn>
                 <Box sx={{ height: '20px', textAlign: 'center', rotate: '180deg' }}>
                   <button
                     onClick={(e) => handleLinkClick(e, 'top')}
@@ -651,7 +652,6 @@ export default function Home() {
                 <Box className={styles.center_flex}>
                   <p>© MBA arhitekti</p>
                 </Box>
-              </AnimateIn>
             </Grid>
           </Grid>
         </Box>

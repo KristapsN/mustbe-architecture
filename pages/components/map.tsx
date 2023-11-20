@@ -6,8 +6,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 56.9515747475643,
-  lng: 24.10742975013496
+  lat: 56.95149304884532,
+  lng: 24.108021741919345
 };
 
 const ContactMap = () => {
@@ -24,7 +24,7 @@ const ContactMap = () => {
         zoom={15}
         options={{zoomControl: false, mapTypeControl: false, streetViewControl: false, mapId: process.env.MAP_ID}}
       >
-        <Marker position={{ lat: 56.9515747475643, lng: 24.10742975013496 }} />
+        <Marker position={{ lat: 56.95149304884532, lng: 24.108021741919345 }} />
       </GoogleMap>
   ) : <>Loading...</>
 }
