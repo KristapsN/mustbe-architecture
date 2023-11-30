@@ -25,33 +25,6 @@ const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   }
 }))
 
-
-// const MuiMenuItem = styled({
-//   root: {
-//     justifyContent: "flex-end"
-//   }
-// })(MenuItem);
-
-// const StyledMenu = styled((props: MenuProps) => (
-//   <Menu
-//     elevation={0}
-//     anchorOrigin={{
-//       vertical: 'bottom',
-//       horizontal: 'right',
-//     }}
-//     transformOrigin={{
-//       vertical: 'top',
-//       horizontal: 'right',
-//     }}
-//     {...props}
-//   />
-// ))(({ theme }) => ({
-//   '& .MuiMenu-root': {
-//     borderRadius: 2,
-//     width: '100%'
-//   },
-// }));
-
 interface ProjectProps {
   order_number: number
   project_name: string
@@ -189,7 +162,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <Box sx={{}} className={`${!showLoader && styles.preloader_fade}`}>
+        <Box sx={{maxWidth: '100vw'}} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
             justifyContent="center"
@@ -201,21 +174,21 @@ export default function Home() {
               autoplay
               keepLastFrame
               src="/logo_loader/logo_loader.json"
-              style={{ height: '520px', width: '960px' }}
-              speed={1.5}
+              style={{ height: '520px' }}
+              speed={5}
             >
             </Player>
           </Grid>
         </Box>
         <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
           <Grid item xs={12}>
-            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
+            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white', height: '66px' }}>
               <Grid item xs={8} sm={4} md={4}>
                 <Box className={styles.logo_wrapper}>
                   <Image
                     src="/logo.svg"
                     alt="MUST BE architecture"
-                    width={325}
+                    width={160}
                     height={50}
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.desktop_logo}
@@ -247,7 +220,7 @@ export default function Home() {
                         style: {
                           width: "100%",
                           display: 'flex',
-                          justifyContent: "flex-end",
+                          justifyContent: "flex-start",
                           maxWidth: "100%",
                           boxShadow: 'none',
                           borderRadius: 0,
@@ -255,10 +228,17 @@ export default function Home() {
                       }}
                       disableAutoFocus={true}
                       disableEnforceFocus={true}
-
                       anchorEl={anchorEl}
                       open={openMenu}
                       onClose={handleMenuClick}
+                      anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center'
+                      }}
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center'
+                      }}
                     >
                       <MenuItem autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}>Projekti</MenuItem>
                       <MenuItem onClick={(e) => handleLinkClick(e, 'about-us')}>Par mums</MenuItem>
@@ -337,33 +317,6 @@ export default function Home() {
                 </Box>
               </Grid>
             </Grid>
-            {/* {openMenu &&
-              <Box ref={nodeRef} className={styles.menu_mob}
-                sx={{ backgroundColor: 'white', display: 'flex', alignItems: 'flex-end', width: '100%', flexDirection: 'column', pr: '2rem' }}
-              >
-                <Link
-                  className={`${styles.nav_link} ${styles.mobile_nav_link}`}
-                  href="#projects"
-                  onClick={(e) => handleLinkClick(e, 'projects')}
-                >
-                  Projekti
-                </Link>
-                <Link
-                  className={`${styles.nav_link} ${styles.mobile_nav_link}`}
-                  href="#about-us"
-                  onClick={(e) => handleLinkClick(e, 'about-us')}
-                >
-                  Par mums
-                </Link>
-                <Link
-                  className={`${styles.nav_link} ${styles.mobile_nav_link}`}
-                  href="#contacts"
-                  onClick={(e) => handleLinkClick(e, 'contacts')}
-                >
-                  Kontakti
-                </Link>
-              </Box>
-            } */}
           </Grid>
         </Grid>
         <Box className={styles.parallax_wrapper}>
@@ -372,7 +325,7 @@ export default function Home() {
             </Grid>
           </Parallax>
         </Box>
-        <Box sx={{ overflow: 'hidden', minHeight: '15vh' }}>
+        <Box sx={{ overflow: 'hidden', height: '66px' }}>
           <Grid
             container
             justifyContent="space-around"
@@ -478,7 +431,7 @@ export default function Home() {
               spacing={{ md: '6rem', sx: '2rem'}}
               sx={{ marginBottom: '40px' }}
             >
-              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={10} sx={{ marginBottom: '40px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -494,7 +447,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={10} sx={{ marginBottom: '40px'}}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -535,7 +488,7 @@ export default function Home() {
                     />
                     <Box sx={{ marginTop: 1 }}>
                       <h2>
-                        {"Rihards Petjukevičs"}
+                        {"Rinalds Petjukevičs"}
                       </h2>
                       <span className={styles.contact_subtitle}>3D speciālists</span>
                     </Box>
@@ -623,7 +576,7 @@ export default function Home() {
               sx={{ marginBottom: "260px" }}
               spacing={{ md: '6rem', sx: '2rem'}}
             >
-              <Grid item xs={12} md={7.2} sx={{ minHeight: '230px' }}>
+              <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '40px'  }}>
                 <AnimateIn>
                   <ContactMap />
                 </AnimateIn>
