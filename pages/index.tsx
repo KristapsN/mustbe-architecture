@@ -180,6 +180,8 @@ export default function Home() {
             </Player>
           </Grid>
         </Box>
+      {!showLoader &&
+      <>
         <Grid container sx={{ position: 'fixed', zIndex: 100 }} id='menu'>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white', height: '66px' }}>
@@ -205,10 +207,7 @@ export default function Home() {
                 </Box>
               </Grid>
               <Grid item xs={2} sm={7} md={6} lg={5}>
-                <Box
-                  className={styles.mobile_menu_burger}
-                  // id='menu'
-                >
+                <Box className={styles.mobile_menu_burger}>
                   <Hamburger
                     toggled={openMenu}
                     toggle={setOpenMenu}
@@ -610,6 +609,8 @@ export default function Home() {
             </Grid>
           </Grid>
         </Box>
+        </>
+}
       </Box>
     </>
   )
