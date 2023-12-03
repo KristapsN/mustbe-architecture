@@ -180,7 +180,7 @@ export default function Home() {
             </Player>
           </Grid>
         </Box>
-        <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
+        <Grid container sx={{ position: 'fixed', zIndex: 100 }} id='menu'>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white', height: '66px' }}>
               <Grid item xs={8} sm={4} md={4}>
@@ -205,7 +205,10 @@ export default function Home() {
                 </Box>
               </Grid>
               <Grid item xs={2} sm={7} md={6} lg={5}>
-                <Box className={styles.mobile_menu_burger} id='menu'>
+                <Box
+                  className={styles.mobile_menu_burger}
+                  // id='menu'
+                >
                   <Hamburger
                     toggled={openMenu}
                     toggle={setOpenMenu}
@@ -325,7 +328,7 @@ export default function Home() {
             </Grid>
           </Parallax>
         </Box>
-        <Box sx={{ overflow: 'hidden', height: '66px' }}>
+        <Box sx={{ overflow: 'hidden'}} className={styles.space_wrapper_wrapper}>
           <Grid
             container
             justifyContent="space-around"
@@ -334,14 +337,14 @@ export default function Home() {
             className={styles.space_wrapper}
             sx={{ backgroundColor: 'white' }}
           >
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
               <Grid container>
                 <Paragraph
                   text={intro.first}
                 />
               </Grid>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
               <Grid container>
                 <Paragraph
                   text={intro.first}
@@ -389,10 +392,9 @@ export default function Home() {
             <Grid
               container
               spacing={{ md: '6rem', sx: '2rem'}}
-              sx={{ marginBottom: "60px" }}
             >
 
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} sx={{ marginBottom: '60px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Paragraph
@@ -404,7 +406,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} sx={{ marginBottom: '60px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
@@ -426,12 +428,12 @@ export default function Home() {
 
             <Grid
               container
-              justifyContent="space-between"
+              justifyContent="center"
               alignItems="center"
               spacing={{ md: '6rem', sx: '2rem'}}
               sx={{ marginBottom: '40px' }}
             >
-              <Grid item md={12 / 5} xs={10} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -447,11 +449,11 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12 / 5} xs={10} sx={{ marginBottom: '40px'}}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px'}}>
                 <AnimateIn>
                   <Grid container>
                     <Box
-                      sx={{ backgroundImage: 'url("/02_profile.jpg")', }}
+                      sx={{ backgroundImage: 'url("/02_profile.jpg")', maxWidth: '270px'}}
                       className={styles.profile_image}
                     />
                     <Box sx={{ marginTop: 1 }}>
@@ -463,7 +465,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -479,7 +481,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -495,7 +497,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px' }}>
+              <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box
@@ -573,15 +575,15 @@ export default function Home() {
             </Grid>
             <Grid
               container
-              sx={{ marginBottom: "260px" }}
+              sx={{ marginBottom: "200px" }}
               spacing={{ md: '6rem', sx: '2rem'}}
             >
-              <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '40px'  }}>
+              <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px' }}>
                 <AnimateIn>
                   <ContactMap />
                 </AnimateIn>
               </Grid>
-              <Grid item xs={12} md={4.8}>
+              <Grid item xs={12} md={4.8} sx={{ marginBottom: '60px' }}>
                 <AnimateIn>
                   <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
                 </AnimateIn>

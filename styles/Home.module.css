@@ -16,6 +16,14 @@
   min-height: 90vh;
 }
 
+.logo_wrapper{
+  position: relative;
+  height: 3rem;
+  margin-left: 15vw;
+  margin-top: 10px;
+  margin-bottom: 0.5rem;
+}
+
 @media screen and (max-width: 599px) {
   .parallax {
     /* background-size: 200vw; */
@@ -24,14 +32,9 @@
   .parallax_wrapper {
     min-height: 100vh;
   }
-}
-
-.logo_wrapper{
-  position: relative;
-  height: 3rem;
-  margin-left: 15vw;
-  margin-top: 10px;
-  margin-bottom: 0.5rem;
+  .logo_wrapper{
+    margin-left: 2vw;
+  }
 }
 
 .desktop_logo {
@@ -272,11 +275,17 @@
   padding-top: 66.7%;
   position: relative;
 }
+.space_wrapper_wrapper{
+  height: 66px;
+}
 .space_wrapper {
   padding: 20px 15vw 60px
 }
 @media screen and (max-width: 599px) {
   .space_wrapper {
     padding: 20px 2vw 60px
+  }
+  .space_wrapper_wrapper{
+    height: 100%;
   }
 }
