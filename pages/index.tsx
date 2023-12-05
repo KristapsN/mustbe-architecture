@@ -182,7 +182,7 @@ export default function Home() {
         </Box>
       {!showLoader &&
       <>
-        <Grid container sx={{ position: 'fixed', zIndex: 100 }} id='menu'>
+        <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
           <Grid item xs={12}>
             <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white', height: '66px' }}>
               <Grid item xs={8} sm={4} md={4}>
@@ -197,9 +197,9 @@ export default function Home() {
 
                   />
                   <Image
-                    src="/mobile_logo.svg"
+                    src="/logo.svg"
                     alt="MUST BE architecture"
-                    width={125}
+                    width={160}
                     height={50}
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.mobile_logo}
@@ -207,7 +207,7 @@ export default function Home() {
                 </Box>
               </Grid>
               <Grid item xs={2} sm={7} md={6} lg={5}>
-                <Box className={styles.mobile_menu_burger}>
+                <Box className={styles.mobile_menu_burger} id='menu'>
                   <Hamburger
                     toggled={openMenu}
                     toggle={setOpenMenu}
@@ -222,10 +222,11 @@ export default function Home() {
                         style: {
                           width: "100%",
                           display: 'flex',
-                          justifyContent: "flex-start",
+                          justifyContent: "flex-end",
                           maxWidth: "100%",
                           boxShadow: 'none',
                           borderRadius: 0,
+                          marginTop: '66px'
                         }
                       }}
                       disableAutoFocus={true}
@@ -234,7 +235,7 @@ export default function Home() {
                       open={openMenu}
                       onClose={handleMenuClick}
                       anchorOrigin={{
-                        vertical: 'bottom',
+                        vertical: 'top',
                         horizontal: 'center'
                       }}
                       transformOrigin={{
@@ -273,7 +274,8 @@ export default function Home() {
                     <Link
                       className={`${styles.nav_link}`}
                       href="#about-us"
-                      onClick={(e) => handleLinkClick(e, 'about-us')}                    >
+                      onClick={(e) => handleLinkClick(e, 'about-us')}
+                    >
                       Par mums
                     </Link>
                   </Box>
@@ -387,13 +389,13 @@ export default function Home() {
             <Divider />
           </AnimateIn>
 
-          <Grid container sx={{ flexGrow: 1 }}  className={styles.space_wrapper} id="about-us">
+          <Grid container sx={{ flexGrow: 1, marginBottom: '10px'  }} className={styles.space_wrapper} id="about-us">
             <Grid
               container
               spacing={{ md: '6rem', sx: '2rem'}}
             >
 
-              <Grid item xs={12} md={6} sx={{ marginBottom: '60px' }}>
+              <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Paragraph
@@ -405,7 +407,7 @@ export default function Home() {
                   </Grid>
                 </AnimateIn>
               </Grid>
-              <Grid item xs={12} md={6} sx={{ marginBottom: '60px' }}>
+              <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
                 <AnimateIn>
                   <Grid container>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
@@ -439,7 +441,7 @@ export default function Home() {
                       sx={{ backgroundImage: 'url("/01_profile.jpg")', }}
                       className={styles.profile_image}
                     />
-                    <Box sx={{ marginTop: 1 }}>
+                    <Box sx={{ marginTop: 1, height: '70px'  }}>
                       <h2>
                         {"Monvīds Bekmanis"}
                       </h2>
@@ -452,10 +454,10 @@ export default function Home() {
                 <AnimateIn>
                   <Grid container>
                     <Box
-                      sx={{ backgroundImage: 'url("/02_profile.jpg")', maxWidth: '270px'}}
+                      sx={{ backgroundImage: 'url("/02_profile.jpg")' }}
                       className={styles.profile_image}
                     />
-                    <Box sx={{ marginTop: 1 }}>
+                    <Box sx={{ marginTop: 1, height: '70px' }}>
                       <h2>
                         {"Kristiāns Beķeris"}
                       </h2>
@@ -471,7 +473,7 @@ export default function Home() {
                       sx={{ backgroundImage: 'url("/03_profile.jpg")', }}
                       className={styles.profile_image}
                     />
-                    <Box sx={{ marginTop: 1 }}>
+                    <Box sx={{ marginTop: 1, height: '70px'  }}>
                       <h2>
                         {"Donna Viktorija Bordo"}
                       </h2>
@@ -487,7 +489,7 @@ export default function Home() {
                       sx={{ backgroundImage: 'url("/04_profile.jpg")', }}
                       className={styles.profile_image}
                     />
-                    <Box sx={{ marginTop: 1 }}>
+                    <Box sx={{ marginTop: 1, height: '70px'  }}>
                       <h2>
                         {"Rinalds Petjukevičs"}
                       </h2>
@@ -500,10 +502,10 @@ export default function Home() {
                 <AnimateIn>
                   <Grid container>
                     <Box
-                      sx={{ backgroundImage: 'url("/05_profile.jpg")', }}
+                      sx={{ backgroundImage: 'url("/05_profile.jpg")' }}
                       className={styles.profile_image}
                     />
-                    <Box sx={{ marginTop: 1 }}>
+                    <Box sx={{ marginTop: 1, height: '70px' }}>
                       <h2>
                         {"Toms Ambrozs"}
                       </h2>
