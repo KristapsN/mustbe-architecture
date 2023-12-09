@@ -151,7 +151,7 @@ export default function Home() {
     setShowLoader(false)
   }
 
-  setTimeout(loaderHandler, 5000)
+  setTimeout(loaderHandler, 4500)
 
   return (
     <>
@@ -175,7 +175,7 @@ export default function Home() {
               keepLastFrame
               src="/logo_loader/logo_loader.json"
               style={{ height: '520px' }}
-              speed={5}
+              speed={6}
             >
             </Player>
           </Grid>
@@ -184,9 +184,9 @@ export default function Home() {
       <>
         <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
           <Grid item xs={12}>
-            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white', height: '66px' }}>
+            <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
               <Grid item xs={8} sm={4} md={4}>
-                <Box className={styles.logo_wrapper}>
+                <Box className={styles.logo_wrapper} sx={{display: 'flex'}}>
                   <Image
                     src="/logo.svg"
                     alt="MUST BE architecture"
@@ -194,8 +194,10 @@ export default function Home() {
                     height={50}
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.desktop_logo}
-
                   />
+                  <Box sx={{ display: {sm: 'flex', xs: 'none'}, alignItems: 'flex-end', marginLeft: '10px'}}>
+                    <span className={styles.logo_title}>MBA arhitekti</span>
+                  </Box>
                   <Image
                     src="/logo.svg"
                     alt="MUST BE architecture"
@@ -243,13 +245,13 @@ export default function Home() {
                         horizontal: 'center'
                       }}
                     >
-                      <MenuItem autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}>Projekti</MenuItem>
-                      <MenuItem onClick={(e) => handleLinkClick(e, 'about-us')}>Par mums</MenuItem>
-                      <MenuItem onClick={(e) => handleLinkClick(e, 'contacts')}>Kontakti</MenuItem>
+                      <MenuItem sx={{ justifyContent: 'flex-end' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}>Projekti</MenuItem>
+                      <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'about-us')}>Par mums</MenuItem>
+                      <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'contacts')}>Kontakti</MenuItem>
                     </Menu>
                   </Box>
                 </Box>
-                <Box className={styles.menu_wrapper}>
+                <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
                   <Box className={styles.nav_link_wrapper}>
                     <Box sx={{ height: '4px', marginBottom: '8px' }}>
                       <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -316,7 +318,13 @@ export default function Home() {
                         height={12}
                       />
                     </Link>
-                    <LanguageButton disableRipple sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px' }} onClick={() => handleChange()}>{language}</LanguageButton>
+                    <LanguageButton
+                      disableRipple
+                      sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px' }}
+                      onClick={() => handleChange()}
+                    >
+                      {language}
+                    </LanguageButton>
                   </Box>
                 </Box>
               </Grid>
@@ -325,8 +333,9 @@ export default function Home() {
         </Grid>
         <Box className={styles.parallax_wrapper}>
           <Parallax speed={-50}>
-            <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>
-            </Grid>
+            <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>            </Grid>
+            <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/desktop_main.jpg)` }} className={styles.parallax_mobile} id='top'></Grid>
+
           </Parallax>
         </Box>
         <Box sx={{ overflow: 'hidden'}} className={styles.space_wrapper_wrapper}>
@@ -371,13 +380,19 @@ export default function Home() {
               <>
                 {thumbnailImages.map((images, index) =>
                   <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
-                    <Box sx={{ overflow: 'hidden', position: 'relative' }} className={styles.carousel_wrapper}>
-                      <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1 }}>
-                      <h2>{projectTitles[index]}</h2>
-                      <h2>{projectYears[index]}</h2>
-                    </Box>
+                    <AnimateIn>
+                      <Box sx={{ overflow: 'hidden', position: 'relative' }} className={styles.carousel_wrapper}>
+                        <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
+                      </Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1 }}>
+                        <h2>{projectTitles[index]}</h2>
+                        <h2>{projectYears[index]}</h2>
+                      </Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span className={styles.contact_subtitle}>Rīgas iela 47/ Jūrmala</span>
+                        <span className={styles.contact_subtitle}>Arhitekts</span>
+                      </Box>
+                  </AnimateIn>
                   </Grid>
                 )}
 
@@ -398,6 +413,7 @@ export default function Home() {
               <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
                 <AnimateIn>
                   <Grid container>
+                    <h2>Par mums</h2>
                     <Paragraph
                       text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos,
                       darbojoties ar dažāda mēroga ēku koncepciju izstrādi, ēku projektēšanu un projekta vadību.
@@ -411,9 +427,9 @@ export default function Home() {
                 <AnimateIn>
                   <Grid container>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                      <Paragraph
-                        text="Sadarbības partneri:"
-                      />
+                      <h2>
+                        Sadarbības partneri:
+                      </h2>
                       <Paragraph
                         text="Interjera dizainere: Donna Victoria Design
                         // Arhitekti: Aigars Tereško, Mikus Druviņš, Toms Ambrozs
@@ -534,7 +550,7 @@ export default function Home() {
                     <h2>
                       Kontakti:
                     </h2>
-                    <Box sx={{ marginTop: 1 }}>
+                    <Box>
                       <Paragraph
                         text="A: Torņa iela 4-2c, Vecrīga"
                       />
@@ -557,7 +573,7 @@ export default function Home() {
                     <h2>
                       Rekvizīti
                     </h2>
-                    <Box sx={{ marginTop: 1 }}>
+                    <Box>
                       <Paragraph
                         text="N: MUST BE architecture SIA"
                       />
