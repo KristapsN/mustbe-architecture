@@ -31,8 +31,8 @@
     background-attachment: fixed;
     background-position: left;
     background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 200vw;
+    background-size: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
     display: block;
   }
