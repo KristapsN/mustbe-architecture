@@ -151,7 +151,7 @@ export default function Home() {
     setShowLoader(false)
   }
 
-  setTimeout(loaderHandler, 4500)
+  setTimeout(loaderHandler, 4000)
 
   return (
     <>
@@ -174,8 +174,8 @@ export default function Home() {
               autoplay
               keepLastFrame
               src="/logo_loader/logo_loader.json"
-              style={{ height: '520px' }}
-              speed={6}
+              style={{ height: '300px' }}
+              speed={7}
             >
             </Player>
           </Grid>
@@ -196,7 +196,7 @@ export default function Home() {
                         className={styles.desktop_logo}
                       />
                       <Box sx={{ display: { sm: 'flex', xs: 'none' }, alignItems: 'flex-end', marginLeft: '10px' }}>
-                        <span className={styles.logo_title}>MBA arhitekti</span>
+                        <span className={styles.logo_title}>ARHITEKTI</span>
                       </Box>
                       <Image
                         src="/logo.svg"
@@ -395,6 +395,7 @@ export default function Home() {
                           <Box sx={{ overflow: 'hidden', position: 'relative' }} className={styles.carousel_wrapper}>
                             <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
                           </Box>
+                          <Divider sx={{ background: 'black'}}/>
                           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1 }}>
                             <h2>{projectTitles[index]}</h2>
                             <h2>{projectYears[index]}</h2>

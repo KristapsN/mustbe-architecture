@@ -4,6 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import AnimateIn from './animateIn';
 import styles from '@/styles/Home.module.css'
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 
 
 const createCarouselItemImage = (
@@ -12,22 +13,25 @@ const createCarouselItemImage = (
   descriptionTitles: string[] | undefined,
   imageIndex: number | undefined,
   lastImageIndex: number | undefined
-  ) => (
+) => (
   <React.Fragment key={image}>
     <AnimateIn>
       <Box>
-      <Box className={`${imageIndex === lastImageIndex && styles.project_image_last } ${styles.project_image}`} sx={{ backgroundImage:`url(${image})` }}/>
+        <Box className={`${imageIndex === lastImageIndex && styles.project_image_last} ${styles.project_image}`} sx={{ backgroundImage: `url(${image})` }} />
         {imageIndex === lastImageIndex &&
           <div className={styles.project_description}>
             {texts?.map((text, index) => (
-              <Box marginBottom={2} key={index}>
+              <Box marginBottom={2} key={index} sx={{ height: '100%' }}>
                 <>
-                  <p className={styles.project_description_title}>
-                    {descriptionTitles === undefined ? '' : descriptionTitles[index]}
-                  </p>
-                  <p>
-                    {text === undefined ? '' : text.toUpperCase()}
-                  </p>
+                  <Divider sx={{ background: 'black'}}/>
+                  <Box sx={{ marginTop: '10px'}}>
+                    <h2>
+                      {descriptionTitles === undefined ? '' : descriptionTitles[index]}
+                    </h2>
+                    <p className={styles.contact_subtitle}>
+                      {text === undefined ? '' : text.toUpperCase()}
+                    </p>
+                  </Box>
                 </>
               </Box>
             ))}
@@ -53,7 +57,7 @@ const NextJsCarousel = ({ images, text, index, descriptionTitles }: CarouselProp
       descriptionTitles[index],
       imageIndex,
       images.length - 1
-      ))
+    ))
   }</Box>;
 
   return (
