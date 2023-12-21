@@ -395,7 +395,6 @@ export default function Home() {
                           <Box sx={{ overflow: 'hidden', position: 'relative' }} className={styles.carousel_wrapper}>
                             <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
                           </Box>
-                          <Divider sx={{ background: 'black'}}/>
                           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1 }}>
                             <h2>{projectTitles[index]}</h2>
                             <h2>{projectYears[index]}</h2>
