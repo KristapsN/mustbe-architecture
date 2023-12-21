@@ -132,12 +132,6 @@
   border-bottom: 1px solid black
 }
 
-@media only screen and (max-width: 599px) {
-  .project_image_last {
-    padding-top: 130%;
-  }
-}
-
 .carousel_wrapper:hover {
   opacity: 1;
 }
