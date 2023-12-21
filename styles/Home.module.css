@@ -52,12 +52,8 @@
   font-size: 18px;
   color: #666666;
   line-height: 9px;
+  margin-bottom: 2px;
 }
-
-/* .logo_wrapper:hover .logo_title {
-  transition: 0.5s;
-  opacity: 1;
-} */
 
 .mobile_logo{
   display: none;
