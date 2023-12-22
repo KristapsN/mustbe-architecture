@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Paragraph from './components/paragrah';
 import NextJsCarousel from './components/carusel';
 import AnimateIn from './components/animateIn';
-import { styled, Divider, Button, ButtonProps, Menu, MenuItem, MenuProps } from '@mui/material';
+import { styled, Divider, Button, ButtonProps, Menu, MenuItem, MenuProps, Collapse } from '@mui/material';
 import { Parallax } from 'react-scroll-parallax';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { getStaticProps } from '@/sanity/lib/client';
@@ -201,8 +201,8 @@ export default function Home() {
                       <Image
                         src="/logo.svg"
                         alt="MUST BE architecture"
-                        width={160}
-                        height={50}
+                        width={80}
+                        height={25}
                         onClick={(e) => handleLinkClick(e, 'top')}
                         className={styles.mobile_logo}
                       />
@@ -215,41 +215,6 @@ export default function Home() {
                         toggle={setOpenMenu}
                         hideOutline={false}
                       />
-                      <Box>
-                        <Menu
-                          marginThreshold={0}
-                          className={styles.mobile_menu}
-                          id="customized-menu"
-                          PaperProps={{
-                            style: {
-                              width: "100%",
-                              display: 'flex',
-                              justifyContent: "flex-end",
-                              maxWidth: "100%",
-                              boxShadow: 'none',
-                              borderRadius: 0,
-                              marginTop: '66px'
-                            }
-                          }}
-                          disableAutoFocus={true}
-                          disableEnforceFocus={true}
-                          anchorEl={anchorEl}
-                          open={openMenu}
-                          onClose={handleMenuClick}
-                          anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'center'
-                          }}
-                          transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'center'
-                          }}
-                        >
-                          <MenuItem sx={{ justifyContent: 'flex-end' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}>Projekti</MenuItem>
-                          <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'about-us')}>Par mums</MenuItem>
-                          <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'contacts')}>Kontakti</MenuItem>
-                        </Menu>
-                      </Box>
                     </Box>
                     <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
                       <Box className={styles.nav_link_wrapper}>
@@ -328,6 +293,11 @@ export default function Home() {
                       </Box>
                     </Box>
                   </Grid>
+                  <Collapse in={openMenu} sx={{ backgroundColor: 'white', width: '100%' }}>
+                    <MenuItem sx={{ justifyContent: 'flex-end' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><h2>Projekti</h2></MenuItem>
+                    <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'about-us')}><h2>Par mums</h2></MenuItem>
+                    <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'contacts')}><h2>Kontakti</h2></MenuItem>
+                  </Collapse>
                 </Grid>
               </Grid>
             </Grid>
@@ -335,18 +305,17 @@ export default function Home() {
               <Parallax speed={-50}>
                 <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>            </Grid>
                 {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile} id='top'></Grid> */}
-
               </Parallax>
             </Box>
             <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
               {/* <Parallax speed={-50}> */}
-                <Image
-                  src="/mobile_main.jpg"
-                  alt="MUST BE architecture"
-                  width={600}
-                  height={964}
-                />
-                {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile} id='top'></Grid> */}
+              <Image
+                src="/mobile_main.jpg"
+                alt="MUST BE architecture"
+                width={600}
+                height={964}
+              />
+              {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile} id='top'></Grid> */}
               {/* </Parallax> */}
             </Box>
             <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
@@ -461,7 +430,7 @@ export default function Home() {
                   spacing={{ md: '6rem', sx: '2rem' }}
                   sx={{ marginBottom: '40px' }}
                 >
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -477,7 +446,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0}}}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -493,7 +462,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -509,7 +478,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -525,7 +494,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px' }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
                     <AnimateIn>
                       <Grid container>
                         <Box

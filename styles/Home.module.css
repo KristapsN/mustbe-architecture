@@ -37,7 +37,9 @@
     min-height: 100vh;
   }
   .logo_wrapper{
+    margin-top: 0;
     margin-left: 2vw;
+    margin-bottom: 12px;
   }
 }
 
