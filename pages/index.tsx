@@ -151,8 +151,6 @@ export default function Home() {
     setShowLoader(false)
   }
 
-  setTimeout(loaderHandler, 4000)
-
   return (
     <>
       <Head>
@@ -171,6 +169,12 @@ export default function Home() {
             className={`${styles.preloader}`}
           >
             <Player
+              onEvent={event => {
+                if (event === 'play') {
+                  setTimeout(loaderHandler, 3800)
+                }
+              }}
+              id='introLoader'
               autoplay
               keepLastFrame
               src="/logo_loader/logo_loader.json"
