@@ -200,8 +200,8 @@ export default function Home() {
                       <Image
                         src="/logo.svg"
                         alt="MUST BE architecture"
-                        width={80}
-                        height={25}
+                        width={160}
+                        height={50}
                         onClick={(e) => handleLinkClick(e, 'top')}
                         className={styles.mobile_logo}
                       />

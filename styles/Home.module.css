@@ -68,6 +68,8 @@
   }
   .mobile_logo{
     display: block;
+    height: 25px;
+    width: 80px;
   }
 }
 
