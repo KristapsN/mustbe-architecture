@@ -136,11 +136,6 @@ export default function Home() {
 
   }, [])
 
-
-  const handleMenuClick = (event: React.MouseEvent<HTMLImageElement>) => {
-    setOpenMenu(!openMenu)
-  }
-
   const handleChange = () => {
     language === 'LV'
       ? setLanguage('EN')
@@ -217,7 +212,7 @@ export default function Home() {
                       <Hamburger
                         toggled={openMenu}
                         toggle={setOpenMenu}
-                        hideOutline={false}
+                        hideOutline={true}
                       />
                     </Box>
                     <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
@@ -308,19 +303,17 @@ export default function Home() {
             <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }}>
               <Parallax speed={-50}>
                 <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>            </Grid>
-                {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile} id='top'></Grid> */}
               </Parallax>
             </Box>
             <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
-              {/* <Parallax speed={-50}> */}
+              <Parallax speed={-50}>
               <Image
                 src="/mobile_main.jpg"
                 alt="MUST BE architecture"
                 width={600}
                 height={964}
               />
-              {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile} id='top'></Grid> */}
-              {/* </Parallax> */}
+              </Parallax>
             </Box>
             <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
               <Grid
