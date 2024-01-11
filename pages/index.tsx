@@ -301,9 +301,9 @@ export default function Home() {
               </Grid>
             </Grid>
             <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }}>
-              <Parallax speed={-50}>
+              {/* <Parallax speed={-50}> */}
                 <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>            </Grid>
-              </Parallax>
+              {/* </Parallax> */}
             </Box>
             <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
               <Parallax speed={-50}>
