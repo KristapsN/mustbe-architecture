@@ -301,19 +301,24 @@ export default function Home() {
               </Grid>
             </Grid>
             <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }}>
-              {/* <Parallax speed={-50}> */}
-                <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax} id='top'>            </Grid>
-              {/* </Parallax> */}
+              <Parallax speed={-50}>
+              <Grid
+                container
+                sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }}
+                className={styles.parallax}
+                id='top'>
+              </Grid>
+              </Parallax>
             </Box>
             <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
-              <Parallax speed={-50}>
-              <Image
-                src="/mobile_main.jpg"
-                alt="MUST BE architecture"
-                width={600}
-                height={964}
-              />
-              </Parallax>
+              {/* <Parallax speed={-50}> */}
+                <Image
+                  src="/mobile_main.jpg"
+                  alt="MUST BE architecture"
+                  width={600}
+                  height={964}
+                />
+              {/* </Parallax> */}
             </Box>
             <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
               <Grid
@@ -427,7 +432,7 @@ export default function Home() {
                   spacing={{ md: '6rem', sx: '2rem' }}
                   sx={{ marginBottom: '40px' }}
                 >
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0 } }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -443,7 +448,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0}}}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0 } }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -459,7 +464,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0 } }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -475,7 +480,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0 } }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
@@ -491,7 +496,7 @@ export default function Home() {
                       </Grid>
                     </AnimateIn>
                   </Grid>
-                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0} }}>
+                  <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 30px', md: 0 } }}>
                     <AnimateIn>
                       <Grid container>
                         <Box
