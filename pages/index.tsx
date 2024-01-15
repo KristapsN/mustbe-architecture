@@ -197,8 +197,8 @@ export default function Home() {
                       <Box sx={{ display: { sm: 'flex', xs: 'none' }, alignItems: 'flex-end', marginLeft: '10px' }}>
                         <span className={styles.logo_title}>ARHITEKTI</span>
                       </Box>
-                      <img
-                        src="/logo.svg"
+                      <Image
+                        src="/logo.png"
                         alt="MUST BE architecture"
                         width={320}
                         height={100}
