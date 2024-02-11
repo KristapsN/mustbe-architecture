@@ -154,7 +154,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box>
+      <Box className={`${showLoader && styles.preloader}`}>
         <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
@@ -179,7 +179,6 @@ export default function Home() {
             </Player>
           </Grid>
         </Box>
-        {!showLoader &&
           <>
             <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
               <Grid item xs={12}>
@@ -610,7 +609,6 @@ export default function Home() {
               </Grid>
             </Box>
           </>
-        }
       </Box>
     </>
   )

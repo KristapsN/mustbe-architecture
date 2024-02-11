@@ -252,6 +252,7 @@
 
 .preloader {
   height: 100vh;
+  overflow: hidden;
 }
 
 .preloader_fade {
