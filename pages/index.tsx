@@ -350,7 +350,7 @@ export default function Home() {
                 <Divider />
               </AnimateIn>
 
-              <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper} >
+              <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper_projects} >
                 <Grid
                   container
                   justifyContent="space-between"
@@ -426,7 +426,7 @@ export default function Home() {
 
                 <Grid
                   container
-                  justifyContent="center"
+                  justifyContent="flex-start"
                   alignItems="center"
                   spacing={{ md: '6rem', sx: '2rem' }}
                   sx={{ marginBottom: '40px' }}

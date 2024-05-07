@@ -50,7 +50,8 @@
 }
 
 .logo_title {
-  font-family: 'Rajdhani', sans-serif;
+  /* font-family: 'Rajdhani', sans-serif; */
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: #666666;
@@ -114,7 +115,8 @@
   }
 }
 .mobile_menu ul li {
-  font-family: 'Rajdhani', sans-serif;
+  /* font-family: 'Rajdhani', sans-serif; */
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -166,7 +168,8 @@
   z-index: 80;
 }
 .contact_subtitle {
-  font-family: 'Rajdhani', sans-serif;
+  /* font-family: 'Rajdhani', sans-serif; */
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: #666666;
@@ -204,7 +207,8 @@
   color: #666666;
   text-align: right;
   text-decoration: none;
-  font-family: 'Rajdhani', sans-serif;
+  /* font-family: 'Rajdhani', sans-serif; */
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -273,7 +277,8 @@
   top: 0;
   width: 100%;
   text-align: left;
-  font-family: 'Rajdhani', sans-serif;
+  /* font-family: 'Rajdhani', sans-serif; */
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   height: 50%;
 }
@@ -299,6 +304,9 @@
 }
 .space_wrapper {
   padding: 20px 15vw 0px
+}
+.space_wrapper_projects {
+  padding: 20px 15vw 6rem
 }
 @media screen and (max-width: 599px) {
   .space_wrapper {
