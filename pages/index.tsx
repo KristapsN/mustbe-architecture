@@ -365,11 +365,11 @@ export default function Home() {
                           <Box sx={{ overflow: 'hidden', position: 'relative' }} className={styles.carousel_wrapper}>
                             <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} />
                           </Box>
-                          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1 }}>
+                          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1, marginLeft: '4vw', marginRight: '6vw' }}>
                             <h2>{projectTitles[index]}</h2>
                             <h2>{projectYears[index]}</h2>
                           </Box>
-                          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginLeft: '4vw', marginRight: '6vw' }}>
                             <span className={styles.contact_subtitle}>Rīgas iela 47/ Jūrmala</span>
                             <span className={styles.contact_subtitle}>Arhitekts</span>
                           </Box>

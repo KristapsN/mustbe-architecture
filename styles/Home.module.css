@@ -39,7 +39,7 @@
   }
   .logo_wrapper{
     margin-top: 0;
-    margin-left: 2vw;
+    margin-left: 6vw;
     margin-bottom: 12px;
   }
 }
@@ -309,6 +309,9 @@
   padding: 20px 15vw 6rem
 }
 @media screen and (max-width: 599px) {
+  .space_wrapper_projects {
+    padding: 20px 2vw 60px
+  }
   .space_wrapper {
     padding: 20px 2vw 60px
   }
