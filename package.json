@@ -10,10 +10,11 @@
     "export": "npm run build && next export -o _static"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@lottiefiles/react-lottie-player": "^3.5.3",
-    "@mui/material": "^5.11.6",
+    "@mui/icons-material": "^5.15.17",
+    "@mui/material": "^5.15.17",
     "@next/font": "^13.1.5",
     "@react-google-maps/api": "^2.19.2",
     "@sanity/image-url": "^1.0.2",

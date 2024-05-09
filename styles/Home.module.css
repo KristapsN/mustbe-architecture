@@ -140,11 +140,15 @@
 }
 
 .carousel_wrapper:hover {
-  opacity: 1;
+  opacity: 0.85;
 }
 .carousel_wrapper{
-  opacity: 0.95;
+  opacity: 1;
   transition: 0.5s;
+  width: 100%;
+  color: #ffffff;
+  padding: 0;
+  border-radius: 0;
 }
 
 .address_image {
@@ -318,4 +322,47 @@
   .space_wrapper_wrapper{
     height: 100%;
   }
+}
+.project_modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  background: #ffffff;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: scroll; /* Enable scroll if needed */
+  z-index: 100;
+}
+.project_modal_image_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.project_image {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  padding-top: 65.6003%;
+}
+
+.project_modal_image {
+  display: flex;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  padding-top: 32%;
 }
