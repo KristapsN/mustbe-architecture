@@ -373,7 +373,6 @@ export default function Home() {
                             openedImagesIndex.current = index
                           }}
                         >
-                          {console.log('images', images)}
                           {/* <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} /> */}
                           <Box className={styles.project_image} sx={{ backgroundImage: `url(${images[0]})` }} />
                         </Button>
