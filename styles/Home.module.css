@@ -52,8 +52,8 @@
 .logo_title {
   /* font-family: 'Rajdhani', sans-serif; */
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 14px;
   color: #666666;
   line-height: 9px;
   margin-bottom: 2px;
@@ -123,6 +123,9 @@
 .mobile_wrapper {
   background-color: white;
 }
+.profile_image:hover{
+  /* transform: scale(1.1); */
+}
 
 .project_image {
   display: flex;
@@ -140,7 +143,11 @@
 }
 
 .carousel_wrapper:hover {
-  opacity: 0.85;
+  /* opacity: 0.85; */
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
 .carousel_wrapper{
   opacity: 1;
@@ -175,7 +182,8 @@
   /* font-family: 'Rajdhani', sans-serif; */
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: calc((var(--small-text-size-value) - 1) * 1.2vw + 1rem);
+  line-height: 1.3rem;
   color: #666666;
 }
 
@@ -207,13 +215,13 @@
 }
 
 .nav_link {
-  font-size: 18px;
+  font-size: 14px;
   color: #666666;
   text-align: right;
   text-decoration: none;
   /* font-family: 'Rajdhani', sans-serif; */
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
 }
 
@@ -253,9 +261,9 @@
   background-color: transparent;
 }
 
-.thumbnail_content:hover {
+/* .thumbnail_content:hover {
   cursor: pointer;
-}
+} */
 
 
 .preloader {
@@ -330,17 +338,25 @@
   bottom: 0;
   left: 0;
   /* display: flex;
-  align-items: center;
-  justify-content: center; */
+  flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
   background: #ffffff;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: scroll; /* Enable scroll if needed */
   z-index: 100;
 }
+
+.project_close{
+  position: fixed;
+  top: 0;
+  right: 0;
+}
 .project_modal_image_wrapper {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
+  margin-bottom: 3rem;
 }
 
 .project_image {
@@ -364,5 +380,5 @@
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
-  padding-top: 32%;
+  padding-top: 65%;
 }
