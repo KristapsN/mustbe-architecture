@@ -16,6 +16,7 @@ import { urlForImage } from '@/sanity/lib/image';
 import ContactMap from './components/map';
 import { Turn as Hamburger } from 'hamburger-react'
 import CloseIcon from '@mui/icons-material/Close';
+import { AnimatePresence, motion } from "framer-motion";
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -150,6 +151,27 @@ export default function Home() {
   const loaderHandler = () => {
     setShowLoader(false)
   }
+
+  const containerVariant = {
+    initial: { top: "100%", transition: { type: "spring", delay: 1 } },
+    isOpen: { top: "0%" },
+    exit: { top: "100%" }
+  };
+
+  const ModalContainer = styled(motion.div)`
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: scroll;
+    z-index: 100;
+  `
 
   return (
     <>
@@ -397,58 +419,63 @@ export default function Home() {
                       </AnimateIn>
                     </Grid>
                   )}
-
-                  {openProject &&
-                    <Box className={styles.project_modal}>
-                      <Box className={styles.project_close} sx={{ textAlign: 'right' }}>
-                        <IconButton size="large" onClick={() => setOpenProject(false)}>
-                          <CloseIcon fontSize="inherit" />
-                        </IconButton>
-                      </Box>
-                      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <Box className={styles.project_modal_image_wrapper}>
-                          <Box
-                            className={styles.project_modal_image}
-                            sx={{
-                              backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
-                            }} />
+                  <AnimatePresence>
+                    {openProject &&
+                      <ModalContainer
+                        initial={"initial"}
+                        animate={"isOpen"}
+                        exit={"exit"}
+                        variants={containerVariant}
+                      >
+                        <Box className={styles.project_close} sx={{ textAlign: 'right' }}>
+                          <IconButton size="large" onClick={() => setOpenProject(false)}>
+                            <CloseIcon fontSize="inherit" />
+                          </IconButton>
                         </Box>
-                        <Box sx={{ width: '50vw', marginBottom: '3rem'}}>
-                        {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                          <Box marginBottom={2} key={index} >
-                            <>
-                              {/* <Divider sx={{ background: 'black' }} /> */}
-                              <Box sx={{ marginTop: '10px' }}>
-                                <h2>
-                                  {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
-                                </h2>
-                                <p className={styles.contact_subtitle}>
-                                  {item === undefined ? '' : item.toUpperCase()}
-                                </p>
-                              </Box>
-                            </>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <Box className={styles.project_modal_image_wrapper}>
+                            <Box
+                              className={styles.project_modal_image}
+                              sx={{
+                                backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
+                              }} />
                           </Box>
-                        )}
-                        </Box>
-                        {thumbnailImages[openedImagesIndex.current].map((item, index) => {
-                          if (index !== 0) {
-                            return (
-                              <Box className={styles.project_modal_image_wrapper} key={index}>
-                                <Box
-                                  className={styles.project_modal_image}
-                                  sx={{
-                                    backgroundImage: `url(${item})`
-                                  }} />
+                          <Box sx={{ width: '50vw', marginBottom: '3rem' }}>
+                            {thumbnailText[openedImagesIndex.current].map((item, index) =>
+                              <Box marginBottom={2} key={index} >
+                                <>
+                                  {/* <Divider sx={{ background: 'black' }} /> */}
+                                  <Box sx={{ marginTop: '10px' }}>
+                                    <h2>
+                                      {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                    </h2>
+                                    <p className={styles.contact_subtitle}>
+                                      {item === undefined ? '' : item.toUpperCase()}
+                                    </p>
+                                  </Box>
+                                </>
                               </Box>
-                            )
+                            )}
+                          </Box>
+                          {thumbnailImages[openedImagesIndex.current].map((item, index) => {
+                            if (index !== 0) {
+                              return (
+                                <Box className={styles.project_modal_image_wrapper} key={index}>
+                                  <Box
+                                    className={styles.project_modal_image}
+                                    sx={{
+                                      backgroundImage: `url(${item})`
+                                    }} />
+                                </Box>
+                              )
+                            }
                           }
-                        }
 
-                        )}
-                      </Box>
-                    </Box>
-                  }
-
+                          )}
+                        </Box>
+                      </ModalContainer>
+                    }
+                  </AnimatePresence>
                 </>
               </Grid>
             </Grid>
