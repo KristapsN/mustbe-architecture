@@ -233,7 +233,7 @@ export default function Home() {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={2} sm={7} md={6} lg={5}>
+                <Grid item xs={3} sm={7} md={6} lg={5}>
                   <Box className={styles.mobile_menu_burger} id='menu'>
                     <Hamburger
                       toggled={openMenu}
@@ -319,9 +319,9 @@ export default function Home() {
                   </Box>
                 </Grid>
                 <Collapse in={openMenu} sx={{ backgroundColor: 'white', width: '100%' }}>
-                  <MenuItem sx={{ justifyContent: 'flex-end' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><h2>Projekti</h2></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'about-us')}><h2>Par mums</h2></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end' }} onClick={(e) => handleLinkClick(e, 'contacts')}><h2>Kontakti</h2></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', padding: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><h2>Projekti</h2></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', padding: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><h2>Par mums</h2></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', padding: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><h2>Kontakti</h2></MenuItem>
                 </Collapse>
               </Grid>
             </Grid>

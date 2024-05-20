@@ -108,6 +108,11 @@
 .mobile_menu_burger div div {
   height: 1px !important;
 }
+.mobile_menu_burger {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 6vw;
+}
 
 @media screen and (min-width: 599px) {
   .mobile_menu_burger {
@@ -365,4 +370,10 @@
   background-size: cover;
   background-blend-mode: multiply;
   padding-top: 65%;
+}
+
+@media screen and (max-width: 599px) {
+  .project_modal_image {
+    width: 100vw;
+  }
 }
