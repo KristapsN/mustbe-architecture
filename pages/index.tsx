@@ -319,9 +319,9 @@ export default function Home() {
                   </Box>
                 </Grid>
                 <Collapse in={openMenu} sx={{ backgroundColor: 'white', width: '100%' }}>
-                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', padding: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><h2>Projekti</h2></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', padding: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><h2>Par mums</h2></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', padding: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><h2>Kontakti</h2></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>Projekti</span></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>Par mums</span></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>Kontakti</span></MenuItem>
                 </Collapse>
               </Grid>
             </Grid>
