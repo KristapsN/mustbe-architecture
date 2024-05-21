@@ -17,6 +17,7 @@ import ContactMap from './components/map';
 import { Turn as Hamburger } from 'hamburger-react'
 import CloseIcon from '@mui/icons-material/Close';
 import { AnimatePresence, motion } from "framer-motion";
+import { scrollIntoView } from "seamless-scroll-polyfill";
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -74,10 +75,11 @@ export default function Home() {
   const handleLinkClick = (event: { preventDefault: () => void; }, value: string) => {
     event.preventDefault();
     const element = document.getElementById(value);
-    element && element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+    // element && element.scrollIntoView({
+    //   behavior: 'smooth',
+    //   block: 'start',
+    // });
+    element && scrollIntoView(element, { behavior: "smooth", block: "start" });
     setOpenMenu(false)
   }
 
@@ -94,6 +96,7 @@ export default function Home() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [openProject, setOpenProject] = useState(false)
   const openedImagesIndex = useRef(0)
+  const [windowSize, setWindowSize] = useState(0)
 
   const nodeRef = useRef(null);
 
@@ -139,6 +142,8 @@ export default function Home() {
     })
 
     window.addEventListener('keydown', (event) => event.key === 'Escape' && setOpenProject(false))
+    
+    setWindowSize(window.innerWidth)
 
   }, [])
 
@@ -152,9 +157,14 @@ export default function Home() {
     setShowLoader(false)
   }
 
+  useEffect(() => {
+    openProject ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'scroll')
+
+  }, [openProject])
+
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: "0%" },
+    isOpen: { top: windowSize > 599 ? "68px" : "48px" },
     exit: { top: "100%" }
   };
 
@@ -250,7 +260,7 @@ export default function Home() {
                       </Box>
 
                       <Link
-                        className={`${styles.nav_link}`}
+                        className={`${styles.nav_link} scroll`}
                         href="#projects"
                         onClick={(e) => handleLinkClick(e, 'projects')}
                       >
@@ -320,19 +330,15 @@ export default function Home() {
                 </Grid>
                 <Collapse in={openMenu} sx={{ backgroundColor: 'white', width: '100%' }}>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>Projekti</span></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>Par mums</span></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end',  marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>Kontakti</span></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>Par mums</span></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>Kontakti</span></MenuItem>
                 </Collapse>
               </Grid>
             </Grid>
           </Grid>
-          <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }}>
+          <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }} id='top'>
             <Parallax speed={-50}>
-              <Grid
-                container
-                sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }}
-                className={styles.parallax}
-                id='top'>
+              <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
               </Grid>
             </Parallax>
           </Box>
@@ -390,8 +396,8 @@ export default function Home() {
                     <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
                       <AnimateIn>
                         <Box sx={{ overflow: 'hidden' }}>
-                          <Button
-                            sx={{ overflow: 'hidden', position: 'relative' }}
+                          <button
+                            // sx={{ overflow: 'hidden', position: 'relative' }}
                             className={styles.carousel_wrapper}
                             onClick={() => {
                               setOpenProject(true)
@@ -400,7 +406,7 @@ export default function Home() {
                           >
                             {/* <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} /> */}
                             <Box className={styles.project_image} sx={{ backgroundImage: `url(${images[0]})` }} />
-                          </Button>
+                          </button>
                         </Box>
                         <Box sx={{
                           display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1,
@@ -666,10 +672,12 @@ export default function Home() {
                         <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
                       </Box>
                     </Box>
-                    {/* </Box> */}
                   </AnimateIn>
                 </Grid>
               </Grid>
+            </Grid>
+
+            <Grid container sx={{ flexGrow: 1 }} className={styles.space_map_wrapper}>
               <Grid
                 container
                 sx={{ marginBottom: "200px" }}
