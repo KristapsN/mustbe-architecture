@@ -142,7 +142,7 @@ export default function Home() {
     })
 
     window.addEventListener('keydown', (event) => event.key === 'Escape' && setOpenProject(false))
-    
+
     setWindowSize(window.innerWidth)
 
   }, [])
@@ -164,7 +164,7 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "68px" : "48px" },
+    isOpen: { top: windowSize > 599 ? "74px" : "48px" },
     exit: { top: "100%" }
   };
 
@@ -434,8 +434,13 @@ export default function Home() {
                         variants={containerVariant}
                       >
                         <Box className={styles.project_close} sx={{ textAlign: 'right' }}>
-                          <IconButton size="large" onClick={() => setOpenProject(false)}>
-                            <CloseIcon fontSize="inherit" />
+                          <IconButton
+                            size="large"
+                            onClick={() => setOpenProject(false)}
+                            sx={{
+                              "&:hover": { backgroundColor: 'transparent' }
+                            }}>
+                            <Image src='/close.svg' alt='close' width={30} height={30} />
                           </IconButton>
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -446,7 +451,7 @@ export default function Home() {
                                 backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
                               }} />
                           </Box>
-                          <Box sx={{ width: '50vw', marginBottom: '3rem' }}>
+                          <Box sx={{ width: '70vw', marginBottom: '3rem' }}>
                             {thumbnailText[openedImagesIndex.current].map((item, index) =>
                               <Box marginBottom={2} key={index} >
                                 <>
@@ -476,7 +481,6 @@ export default function Home() {
                               )
                             }
                           }
-
                           )}
                         </Box>
                       </ModalContainer>
@@ -536,7 +540,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
                 sx={{ marginBottom: '40px' }}
               >
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 4vw', md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -552,7 +556,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 4vw', md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -568,7 +572,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 4vw', md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -584,7 +588,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 4vw', md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -600,7 +604,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: '0 4vw', md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box

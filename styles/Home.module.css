@@ -18,8 +18,8 @@
   position: relative;
   /* height: 3rem; */
   margin-left: 15vw;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 @media screen and (max-width: 599px) {
@@ -348,8 +348,8 @@
 
 .project_close{
   position: fixed;
-  top: 40;
   right: 0;
+  margin-right: 2rem;
 }
 .project_modal_image_wrapper {
   /* display: flex;
@@ -371,7 +371,7 @@
 
 .project_modal_image {
   display: flex;
-  width: 50vw;
+  width: 70vw;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
