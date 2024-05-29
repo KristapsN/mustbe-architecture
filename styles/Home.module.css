@@ -336,7 +336,7 @@
     padding: 20px 2vw 60px
   }
   .space_wrapper {
-    padding: 20px 2vw 60px 6vw
+    padding: 20px calc(6vw + 10px) 60px 6vw;
   }
   .space_map_wrapper {
     padding: 20px 2vw 60px

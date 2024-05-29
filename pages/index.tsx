@@ -230,9 +230,6 @@ export default function Home() {
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.desktop_logo}
                     />
-                    <Box sx={{ display: { sm: 'flex', xs: 'none' }, alignItems: 'flex-end', marginLeft: '10px' }}>
-                      <span className={styles.logo_title}>ARHITEKTI</span>
-                    </Box>
                     <Image
                       src="/logo.png"
                       alt="MUST BE architecture"
@@ -241,6 +238,9 @@ export default function Home() {
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.mobile_logo}
                     />
+                    <Box sx={{ display: 'flex', alignItems: 'flex-end', marginLeft: '10px' }}>
+                      <span className={styles.logo_title}>ARHITEKTI</span>
+                    </Box>
                   </Box>
                 </Grid>
                 <Grid item xs={3} sm={7} md={6} lg={5}>
@@ -451,7 +451,8 @@ export default function Home() {
                                 backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
                               }} />
                           </Box>
-                          <Box sx={{ width: '70vw', marginBottom: '3rem' }}>
+                          <Box sx={{ width: '70vw', marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
+                            <Box sx={{borderRight: 'solid 1px rgba(0, 0, 0, 0.12)', width: '50%' }}>
                             {thumbnailText[openedImagesIndex.current].map((item, index) =>
                               <Box marginBottom={2} key={index} >
                                 <>
@@ -467,6 +468,8 @@ export default function Home() {
                                 </>
                               </Box>
                             )}
+                            </Box>
+                            <Box sx={{ width: '50%' }}></Box>
                           </Box>
                           {thumbnailImages[openedImagesIndex.current].map((item, index) => {
                             if (index !== 0) {
