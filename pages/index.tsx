@@ -245,88 +245,92 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={3} sm={7} md={6} lg={5}>
                   <Box className={styles.mobile_menu_burger} id='menu'>
-                    <Hamburger
-                      toggled={openMenu}
-                      toggle={setOpenMenu}
-                      hideOutline={true}
-                    />
+                    {!openProject &&
+                      <Hamburger
+                        toggled={openMenu}
+                        toggle={setOpenMenu}
+                        hideOutline={true}
+                      />
+                    }
                   </Box>
-                  <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
-                    <Box className={styles.nav_link_wrapper}>
-                      <Box sx={{ height: '4px', marginBottom: '8px' }}>
-                        <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                        </svg>
-                      </Box>
+                  {!openProject &&
+                    <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
+                      <Box className={styles.nav_link_wrapper}>
+                        <Box sx={{ height: '4px', marginBottom: '8px' }}>
+                          <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
+                          </svg>
+                        </Box>
 
-                      <Link
-                        className={`${styles.nav_link} scroll`}
-                        href="#projects"
-                        onClick={(e) => handleLinkClick(e, 'projects')}
-                      >
-                        Projekti
-                      </Link>
-                    </Box>
-                    <Box className={styles.nav_link_wrapper}>
-                      <Box sx={{ height: '4px', marginBottom: '8px' }}>
-                        <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                        </svg>
+                        <Link
+                          className={`${styles.nav_link} scroll`}
+                          href="#projects"
+                          onClick={(e) => handleLinkClick(e, 'projects')}
+                        >
+                          Projekti
+                        </Link>
                       </Box>
-                      <Link
-                        className={`${styles.nav_link}`}
-                        href="#about-us"
-                        onClick={(e) => handleLinkClick(e, 'about-us')}
-                      >
-                        Par mums
-                      </Link>
-                    </Box>
-                    <Box className={styles.nav_link_wrapper}>
-                      <Box sx={{ height: '4px', marginBottom: '8px' }}>
-                        <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                        </svg>
+                      <Box className={styles.nav_link_wrapper}>
+                        <Box sx={{ height: '4px', marginBottom: '8px' }}>
+                          <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
+                          </svg>
+                        </Box>
+                        <Link
+                          className={`${styles.nav_link}`}
+                          href="#about-us"
+                          onClick={(e) => handleLinkClick(e, 'about-us')}
+                        >
+                          Par mums
+                        </Link>
                       </Box>
-                      <Link
-                        className={`${styles.nav_link}`}
-                        href="#contacts"
-                        onClick={(e) => handleLinkClick(e, 'contacts')}
-                      >
-                        Kontakti
-                      </Link>
+                      <Box className={styles.nav_link_wrapper}>
+                        <Box sx={{ height: '4px', marginBottom: '8px' }}>
+                          <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
+                          </svg>
+                        </Box>
+                        <Link
+                          className={`${styles.nav_link}`}
+                          href="#contacts"
+                          onClick={(e) => handleLinkClick(e, 'contacts')}
+                        >
+                          Kontakti
+                        </Link>
+                      </Box>
+                      <Box className={styles.center_flex}>
+                        <Link
+                          className={styles.social_icon}
+                          href="https://www.facebook.com/"
+                        >
+                          <Image
+                            src="/facebook.svg"
+                            alt="MUST BE architecture"
+                            width={20}
+                            height={12}
+                          />
+                        </Link>
+                        <Link
+                          href="https://www.instagram.com/"
+                          className={styles.social_icon}
+                        >
+                          <Image
+                            src="/instagram.svg"
+                            alt="MUST BE architecture"
+                            width={20}
+                            height={12}
+                          />
+                        </Link>
+                        <LanguageButton
+                          disableRipple
+                          sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px' }}
+                          onClick={() => handleChange()}
+                        >
+                          {language}
+                        </LanguageButton>
+                      </Box>
                     </Box>
-                    <Box className={styles.center_flex}>
-                      <Link
-                        className={styles.social_icon}
-                        href="https://www.facebook.com/"
-                      >
-                        <Image
-                          src="/facebook.svg"
-                          alt="MUST BE architecture"
-                          width={20}
-                          height={12}
-                        />
-                      </Link>
-                      <Link
-                        href="https://www.instagram.com/"
-                        className={styles.social_icon}
-                      >
-                        <Image
-                          src="/instagram.svg"
-                          alt="MUST BE architecture"
-                          width={20}
-                          height={12}
-                        />
-                      </Link>
-                      <LanguageButton
-                        disableRipple
-                        sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px' }}
-                        onClick={() => handleChange()}
-                      >
-                        {language}
-                      </LanguageButton>
-                    </Box>
-                  </Box>
+                  }
                 </Grid>
                 <Collapse in={openMenu} sx={{ backgroundColor: 'white', width: '100%' }}>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>Projekti</span></MenuItem>
@@ -434,14 +438,11 @@ export default function Home() {
                         variants={containerVariant}
                       >
                         <Box className={styles.project_close} sx={{ textAlign: 'right' }}>
-                          <IconButton
-                            size="large"
-                            onClick={() => setOpenProject(false)}
-                            sx={{
-                              "&:hover": { backgroundColor: 'transparent' }
-                            }}>
-                            <Image src='/close.svg' alt='close' width={30} height={30} />
-                          </IconButton>
+                          <Hamburger
+                            toggled={true}
+                            toggle={() => setOpenProject(false)}
+                            hideOutline={true}
+                          />
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                           <Box className={styles.project_modal_image_wrapper}>
@@ -451,23 +452,23 @@ export default function Home() {
                                 backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
                               }} />
                           </Box>
-                          <Box sx={{ width: '70vw', marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
-                            <Box sx={{borderRight: 'solid 1px rgba(0, 0, 0, 0.12)', width: '50%' }}>
-                            {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                              <Box marginBottom={2} key={index} >
-                                <>
-                                  {/* <Divider sx={{ background: 'black' }} /> */}
-                                  <Box sx={{ marginTop: '10px' }}>
-                                    <h2>
-                                      {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
-                                    </h2>
-                                    <p className={styles.contact_subtitle}>
-                                      {item === undefined ? '' : item.toUpperCase()}
-                                    </p>
-                                  </Box>
-                                </>
-                              </Box>
-                            )}
+                          <Box sx={{ width: { md: '70vw', xs: '88vw'}, marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
+                            <Box sx={{ borderRight: { md: 'solid 1px rgba(0, 0, 0, 0.12)', sx: 'none'}, width: {md: '50%', xs: '100%'} }}>
+                              {thumbnailText[openedImagesIndex.current].map((item, index) =>
+                                <Box marginBottom={2} key={index} >
+                                  <>
+                                    {/* <Divider sx={{ background: 'black' }} /> */}
+                                    <Box sx={{ marginTop: '10px' }}>
+                                      <h2>
+                                        {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                      </h2>
+                                      <p className={styles.contact_subtitle}>
+                                        {item === undefined ? '' : item.toUpperCase()}
+                                      </p>
+                                    </Box>
+                                  </>
+                                </Box>
+                              )}
                             </Box>
                             <Box sx={{ width: '50%' }}></Box>
                           </Box>
