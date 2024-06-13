@@ -30,7 +30,7 @@ p {
   font-weight: 400;
   font-size: 14px;
   color: #666666;
-  line-height: 1.7rem;
+  line-height: 1.2rem;
 }
 h1 {
   /* font-family: 'Rajdhani', sans-serif; */
@@ -45,7 +45,7 @@ h2 {
   /* calc((var(--small-text-size-value) - 1) * 1.2vw + 1rem); */
   letter-spacing: 0.02rem;
   font-weight: 600;
-  line-height: 1.7rem;
+  line-height: 1.2rem;
 }
 .control-next{
   width: 100%;

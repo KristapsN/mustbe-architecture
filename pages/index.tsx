@@ -169,7 +169,7 @@ export default function Home() {
   };
 
   const ModalContainer = styled(motion.div)`
-    width: 100%;
+    width: 100vw;
     height: 100%;
     justify-content: center;
     background-color: white;
@@ -211,7 +211,7 @@ export default function Home() {
               keepLastFrame
               src="/logo_loader/logo_loader.json"
               style={{ height: '300px' }}
-              speed={7}
+              speed={8}
             >
             </Player>
           </Grid>
@@ -347,14 +347,16 @@ export default function Home() {
             </Parallax>
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
-            {/* <Parallax speed={-50}> */}
-            <Image
+            <Parallax speed={-50}>
+            {/* <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
               width={600}
               height={964}
-            />
-            {/* </Parallax> */}
+            /> */}
+                          <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
+                          </Grid>
+            </Parallax>
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
             <Grid
@@ -452,7 +454,7 @@ export default function Home() {
                                 backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
                               }} />
                           </Box>
-                          <Box sx={{ width: { md: '70vw', xs: '88vw'}, marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
+                          <Box sx={{ width: { md: '69vw', xs: '88vw'}, marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
                             <Box sx={{ borderRight: { md: 'solid 1px rgba(0, 0, 0, 0.12)', sx: 'none'}, width: {md: '50%', xs: '100%'} }}>
                               {thumbnailText[openedImagesIndex.current].map((item, index) =>
                                 <Box marginBottom={2} key={index} >
