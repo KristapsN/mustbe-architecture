@@ -383,7 +383,7 @@
 .project_modal_image_wrapper {
   /* display: flex;
   align-items: center; */
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .project_image {
@@ -400,7 +400,7 @@
 
 .project_modal_image {
   display: flex;
-  width: 69vw;
+  /* width: 70vw; */
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;

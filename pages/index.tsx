@@ -348,14 +348,14 @@ export default function Home() {
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
             <Parallax speed={-50}>
-            {/* <Image
+              {/* <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
               width={600}
               height={964}
             /> */}
-                          <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
-                          </Grid>
+              <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
+              </Grid>
             </Parallax>
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
@@ -446,18 +446,22 @@ export default function Home() {
                             hideOutline={true}
                           />
                         </Box>
-                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                          <Box className={styles.project_modal_image_wrapper}>
-                            <Box
-                              className={styles.project_modal_image}
-                              sx={{
-                                backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
-                              }} />
-                          </Box>
-                          <Box sx={{ width: { md: '69vw', xs: '88vw'}, marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
-                            <Box sx={{ borderRight: { md: 'solid 1px rgba(0, 0, 0, 0.12)', sx: 'none'}, width: {md: '50%', xs: '100%'} }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                          <Grid container justifyContent='center' width={{md: '70vw', xs: '88vw'}}>
+                            <Grid item md={8}>
+                              {/* <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}> */}
+                              <Box className={styles.project_modal_image_wrapper}>
+                              <Box
+                                className={styles.project_modal_image}
+                                sx={{
+                                  backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
+                                }} />
+
+                              </Box>
+                            </Grid>
+                            <Grid item md={4} xs={12}>
                               {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                <Box marginBottom={2} key={index} >
+                                <Box marginBottom={2} marginLeft={{md: 2, xs: 0}} key={index} >
                                   <>
                                     {/* <Divider sx={{ background: 'black' }} /> */}
                                     <Box sx={{ marginTop: '10px' }}>
@@ -465,29 +469,31 @@ export default function Home() {
                                         {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
                                       </h2>
                                       <p className={styles.contact_subtitle}>
-                                        {item === undefined ? '' : item.toUpperCase()}
+                                        {item === undefined ? '' : item}
                                       </p>
                                     </Box>
                                   </>
                                 </Box>
                               )}
-                            </Box>
-                            <Box sx={{ width: '50%' }}></Box>
-                          </Box>
-                          {thumbnailImages[openedImagesIndex.current].map((item, index) => {
-                            if (index !== 0) {
-                              return (
-                                <Box className={styles.project_modal_image_wrapper} key={index}>
-                                  <Box
-                                    className={styles.project_modal_image}
-                                    sx={{
-                                      backgroundImage: `url(${item})`
-                                    }} />
-                                </Box>
-                              )
-                            }
-                          }
-                          )}
+                            </Grid>
+                            <Grid item md={8} justifyContent='flex-start'>
+                              {thumbnailImages[openedImagesIndex.current].map((item, index) => {
+                                if (index !== 0) {
+                                  return (
+                                    <Box className={styles.project_modal_image_wrapper} key={index}>
+                                      <Box
+                                        className={styles.project_modal_image}
+                                        sx={{
+                                          backgroundImage: `url(${item})`
+                                        }} />
+                                    </Box>
+                                  )
+                                }
+                              }
+                              )}
+                            </Grid>
+                            <Grid item md={4} />
+                          </Grid>
                         </Box>
                       </ModalContainer>
                     }
