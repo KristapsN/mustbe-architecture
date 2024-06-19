@@ -221,7 +221,7 @@ export default function Home() {
             <Grid item xs={12}>
               <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
                 <Grid item xs={8} sm={4} md={4}>
-                  <Box className={styles.logo_wrapper} sx={{ display: 'flex' }}>
+                  <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '5vw', xs: '6vw'} }}>
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
@@ -447,9 +447,8 @@ export default function Home() {
                           />
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                          <Grid container justifyContent='center' width={{md: '70vw', xs: '88vw'}}>
+                          <Grid container justifyContent='center' width={{md: '70vw', sm: '90vw', xs: '88vw'}}>
                             <Grid item md={8}>
-                              {/* <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}> */}
                               <Box className={styles.project_modal_image_wrapper}>
                               <Box
                                 className={styles.project_modal_image}

@@ -18,7 +18,7 @@
 .logo_wrapper {
   position: relative;
   /* height: 3rem; */
-  margin-left: 15vw;
+  /* margin-left: 15vw; */
   margin-top: 16px;
   margin-bottom: 8px;
 }
@@ -42,7 +42,7 @@
 
   .logo_wrapper {
     margin-top: 0;
-    margin-left: 6vw;
+    /* margin-left: 6vw; */
     margin-bottom: 12px;
   }
 }
