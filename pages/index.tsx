@@ -164,7 +164,7 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "74px" : "48px" },
+    isOpen: { top: windowSize > 599 ? "66px" : "48px" },
     exit: { top: "100%" }
   };
 
@@ -191,8 +191,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box className={`${showLoader && styles.preloader}`}>
-        <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
+      <Box>
+       {/* className={`${showLoader && styles.preloader}`} */}
+        {/* <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
             justifyContent="center"
@@ -215,11 +216,11 @@ export default function Home() {
             >
             </Player>
           </Grid>
-        </Box>
+        </Box> */}
         <>
           <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
             <Grid item xs={12}>
-              <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
+              <Grid container spacing={0} justifyContent="center" direction="row" alignItems="center" sx={{ backgroundColor: 'white' }}>
                 <Grid item xs={8} sm={4} md={4}>
                   <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '5vw', xs: '6vw'} }}>
                     <Image
@@ -231,16 +232,16 @@ export default function Home() {
                       className={styles.desktop_logo}
                     />
                     <Image
-                      src="/logo.png"
+                      src="/logo.svg"
                       alt="MUST BE architecture"
                       width={320}
                       height={100}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.mobile_logo}
                     />
-                    <Box sx={{ display: 'flex', alignItems: 'flex-end', marginLeft: '10px' }}>
+                    {/* <Box sx={{ display: 'flex', alignItems: 'flex-end', marginLeft: '10px' }}>
                       <span className={styles.logo_title}>ARHITEKTI</span>
-                    </Box>
+                    </Box> */}
                   </Box>
                 </Grid>
                 <Grid item xs={3} sm={7} md={6} lg={5}>
@@ -549,9 +550,9 @@ export default function Home() {
                 justifyContent="flex-start"
                 alignItems="center"
                 spacing={{ md: '6rem', sx: '2rem' }}
-                sx={{ marginBottom: '40px' }}
+                // sx={{ marginBottom: '6rem' }}
               >
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -567,7 +568,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -583,7 +584,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -599,7 +600,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -615,7 +616,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ marginBottom: '40px', maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
