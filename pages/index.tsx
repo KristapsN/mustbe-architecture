@@ -220,7 +220,7 @@ export default function Home() {
         <>
           <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
             <Grid item xs={12}>
-              <Grid container spacing={0} justifyContent="center" direction="row" alignItems="center" sx={{ backgroundColor: 'white' }}>
+              <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="center" sx={{ backgroundColor: 'white' }}>
                 <Grid item xs={8} sm={4} md={4}>
                   <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '5vw', xs: '6vw'} }}>
                     <Image
