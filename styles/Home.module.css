@@ -19,8 +19,8 @@
   position: relative;
   /* height: 3rem; */
   /* margin-left: 15vw; */
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 @media screen and (max-width: 599px) {
@@ -111,7 +111,7 @@
 }
 
 .mobile_menu_burger div div {
-  height: 1px !important;
+  height: 0.5px !important;
 }
 
 .project_close div div {
@@ -119,7 +119,7 @@
 }
 
 /* .mobile_menu_burger div {
-  width: 36px !important; 
+  width: 36px !important;
   margin-right: 6vw;
 } */
 .mobile_menu_burger {
@@ -203,21 +203,28 @@
   z-index: 80;
 }
 
-@media screen and (min-width: 599px) {
-  .profile_image {
-    /* width: 85%;
-    padding-top: 126.77%; */
-  }
-} 
 
 .contact_subtitle {
   /* font-family: 'Rajdhani', sans-serif; */
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  font-size: calc((var(--small-text-size-value) - 1) * 1.2vw + 1rem);
+  /* font-size: calc((var(--small-text-size-value) - 1) * 1.2vw + 1rem); */
+  font-size: 14px;
   line-height: 1.2rem;
   color: #666666;
 }
+
+@media screen and (max-width: 599px) {
+  .profile_image {
+    width: 85%;
+    padding-top: 126.77%;
+  }
+
+  .contact_title {
+    margin-bottom: 8px;
+  }
+} 
+
 
 .hr_style {
   border-top: 0px solid white;
@@ -254,7 +261,7 @@
   /* font-family: 'Rajdhani', sans-serif; */
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .mobile_nav_link {

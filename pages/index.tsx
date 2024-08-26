@@ -257,11 +257,11 @@ export default function Home() {
                   {!openProject &&
                     <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
                       <Box className={styles.nav_link_wrapper}>
-                        <Box sx={{ height: '4px', marginBottom: '8px' }}>
+                        {/* <Box sx={{ height: '4px', marginBottom: '8px' }}>
                           <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                           </svg>
-                        </Box>
+                        </Box> */}
 
                         <Link
                           className={`${styles.nav_link} scroll`}
@@ -272,11 +272,11 @@ export default function Home() {
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
-                        <Box sx={{ height: '4px', marginBottom: '8px' }}>
+                        {/* <Box sx={{ height: '4px', marginBottom: '8px' }}>
                           <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                           </svg>
-                        </Box>
+                        </Box> */}
                         <Link
                           className={`${styles.nav_link}`}
                           href="#about-us"
@@ -286,11 +286,11 @@ export default function Home() {
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
-                        <Box sx={{ height: '4px', marginBottom: '8px' }}>
+                        {/* <Box sx={{ height: '4px', marginBottom: '8px' }}>
                           <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                           </svg>
-                        </Box>
+                        </Box> */}
                         <Link
                           className={`${styles.nav_link}`}
                           href="#contacts"
@@ -512,7 +512,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
 
-                <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '6rem' }}>
                   <AnimateIn>
                     <Grid container>
                       <h2>Par mums</h2>
@@ -525,7 +525,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '8rem ' }}>
                   <AnimateIn>
                     <Grid container>
                       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
@@ -560,7 +560,7 @@ export default function Home() {
                         className={styles.profile_image}
                       />
                       <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2>
+                        <h2 className={styles.contact_title}>
                           {"Monvīds Bekmanis"}
                         </h2>
                         <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
@@ -576,7 +576,7 @@ export default function Home() {
                         className={styles.profile_image}
                       />
                       <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2>
+                        <h2 className={styles.contact_title}>
                           {"Kristiāns Beķeris"}
                         </h2>
                         <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
@@ -592,7 +592,7 @@ export default function Home() {
                         className={styles.profile_image}
                       />
                       <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2>
+                        <h2 className={styles.contact_title}>
                           {"Donna Viktorija Bordo"}
                         </h2>
                         <span className={styles.contact_subtitle}>Interjera dizainere</span>
@@ -608,7 +608,7 @@ export default function Home() {
                         className={styles.profile_image}
                       />
                       <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2>
+                        <h2 className={styles.contact_title}>
                           {"Rinalds Petjukevičs"}
                         </h2>
                         <span className={styles.contact_subtitle}>3D speciālists</span>
@@ -624,7 +624,7 @@ export default function Home() {
                         className={styles.profile_image}
                       />
                       <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2>
+                        <h2 className={styles.contact_title}>
                           {"Toms Ambrozs"}
                         </h2>
                         <span className={styles.contact_subtitle}>Arhitekts</span>
@@ -696,7 +696,7 @@ export default function Home() {
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_map_wrapper}>
               <Grid
                 container
-                sx={{ marginBottom: "200px" }}
+                sx={{ marginBottom: "250px" }}
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
                 <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px' }}>
@@ -719,12 +719,12 @@ export default function Home() {
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.go_up}
                   >
-                    <svg width="20" height="8" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* <svg width="20" height="8" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                    </svg>
+                    </svg> */}
                   </button>
                 </Box>
-                <Divider />
+                {/* <Divider /> */}
                 <Box className={styles.center_flex}>
                   <p>© MBA arhitekti</p>
                 </Box>

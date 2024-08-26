@@ -44,7 +44,7 @@ h2 {
   font-size: 14px;
   /* calc((var(--small-text-size-value) - 1) * 1.2vw + 1rem); */
   letter-spacing: 0.02rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2rem;
 }
 .control-next{
