@@ -19,8 +19,8 @@
   position: relative;
   /* height: 3rem; */
   /* margin-left: 15vw; */
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 @media screen and (max-width: 599px) {
@@ -73,8 +73,8 @@
 
   .mobile_logo {
     display: block;
-    height: 25px;
-    width: 80px;
+    height: 45px;
+    width: 100px;
   }
 }
 
@@ -357,7 +357,7 @@
 }
 
 .space_map_wrapper {
-  padding: 20px 15vw 0px
+  padding: 0px 15vw 0px
 }
 
 .space_wrapper_projects {

@@ -164,7 +164,7 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "66px" : "48px" },
+    isOpen: { top: windowSize > 599 ? "86px" : "48px" },
     exit: { top: "100%" }
   };
 
@@ -226,8 +226,8 @@ export default function Home() {
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={160}
-                      height={50}
+                      width={180}
+                      height={70}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.desktop_logo}
                     />
@@ -512,7 +512,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
 
-                <Grid item xs={12} md={6} sx={{ marginBottom: '6rem' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
                   <AnimateIn>
                     <Grid container>
                       <h2>Par mums</h2>
@@ -525,7 +525,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={6} sx={{ marginBottom: '8rem ' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
                   <AnimateIn>
                     <Grid container>
                       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
@@ -639,10 +639,10 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper} id="contacts">
+            <Grid container sx={{ flexGrow: 1, padding: '20px 15vw 50px'}} id="contacts">
               <Grid
                 container
-                sx={{ marginBottom: "40px" }}
+                // sx={{ marginBottom: "40px" }}
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
                 <Grid item xs={12} md={12 / 5}>
@@ -696,7 +696,7 @@ export default function Home() {
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_map_wrapper}>
               <Grid
                 container
-                sx={{ marginBottom: "250px" }}
+                sx={{ marginBottom: "350px" }}
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
                 <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px' }}>
