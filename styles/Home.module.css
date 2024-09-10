@@ -239,19 +239,24 @@
   padding-top: 0px;
 }
 
-.nav_link_wrapper {
+/* .nav_link_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+} */
+
+.nav_link_wrapper {
+  width: 70px;
 }
 
 .nav_arrow {
   display: none;
 }
 
-.nav_link_wrapper:hover .nav_arrow {
+/* .nav_link_wrapper:hover .nav_arrow {
   display: block;
-}
+} */
 
 .nav_link {
   font-size: 14px;
@@ -269,8 +274,8 @@
 }
 
 .nav_link:hover {
-  /* font-weight: 700; */
-  transition: 0.5s;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
 .under_construction {
