@@ -191,7 +191,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box className={'scroll-container'}>
+      <div className={'scroll-container'}>
        {/* className={`${showLoader && styles.preloader}`} */}
         {/* <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
@@ -732,7 +732,7 @@ export default function Home() {
             </Grid>
           </Box>
         </>
-      </Box >
+      </div >
     </>
   )
 }
