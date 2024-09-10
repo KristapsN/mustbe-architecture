@@ -178,6 +178,7 @@ export default function Home() {
     right: 0;
     bottom: 0;
     left: 0;
+    scrollbar-width: none;
 
     overflow: scroll;
     z-index: 100;
