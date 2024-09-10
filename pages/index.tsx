@@ -193,7 +193,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={'scroll-container'}>
-       {/* className={`${showLoader && styles.preloader}`} */}
+        {/* className={`${showLoader && styles.preloader}`} */}
         {/* <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
@@ -201,8 +201,8 @@ export default function Home() {
             alignItems="center"
             sx={{ flexGrow: 1 }}
             className={`${styles.preloader}`}
-          >
-            <Player
+          > */}
+        {/* <Player
               onEvent={event => {
                 if (event === 'play') {
                   setTimeout(loaderHandler, 3800)
@@ -214,28 +214,28 @@ export default function Home() {
               src="/logo_loader/logo_loader.json"
               style={{ height: '300px' }}
               speed={8}
-            >
-            </Player>
-          </Grid>
-        </Box> */}
+            > */}
+        {/* </Player> */}
+        {/* </Grid> */}
+        {/* </Box> */}
         <>
           <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
             <Grid item xs={12}>
               <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
                 <Grid item xs={8} sm={4} md={4}>
-                  <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '5vw', xs: '6vw'} }}>
+                  <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '5vw', xs: '6vw' } }}>
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={180}
-                      height={70}
+                      width={50}
+                      height={50}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.desktop_logo}
                     />
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={320}
+                      width={100}
                       height={100}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.mobile_logo}
@@ -401,7 +401,7 @@ export default function Home() {
               >
                 <>
                   {thumbnailImages.map((images, index) =>
-                    <Grid item xs={12} md={6} key={index} sx={{ marginTop: 3 }} className={styles.thumbnail_content}>
+                    <Grid item xs={12} md={6} key={index} className={styles.thumbnail_content}>
                       <AnimateIn>
                         <Box sx={{ overflow: 'hidden' }}>
                           <button
@@ -416,19 +416,19 @@ export default function Home() {
                             <Box className={styles.project_image} sx={{ backgroundImage: `url(${images[0]})` }} />
                           </button>
                         </Box>
-                        <Box sx={{
-                          display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1,
-                          // marginLeft: '4vw', marginRight: '6vw' 
-                        }}>
-                          <h2>{projectTitles[index]}</h2>
-                          <h2>{projectYears[index]}</h2>
-                        </Box>
-                        <Box sx={{
-                          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                          // marginLeft: '4vw', marginRight: '6vw' 
-                        }}>
-                          <span className={styles.contact_subtitle}>Rīgas iela 47/ Jūrmala</span>
-                          <span className={styles.contact_subtitle}>Arhitekts</span>
+                        <Box sx={{ height: '70px' }}>
+                          <Box sx={{
+                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1,
+                          }}>
+                            <h2>{projectTitles[index]}</h2>
+                            <h2>{projectYears[index]}</h2>
+                          </Box>
+                          <Box sx={{
+                            display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                          }}>
+                            <span className={styles.contact_subtitle}>Rīgas iela 47/ Jūrmala</span>
+                            <span className={styles.contact_subtitle}>Arhitekts</span>
+                          </Box>
                         </Box>
                       </AnimateIn>
                     </Grid>
@@ -449,20 +449,20 @@ export default function Home() {
                           />
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                          <Grid container justifyContent='center' width={{md: '70vw', sm: '90vw', xs: '88vw'}}>
+                          <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw', xs: '88vw' }}>
                             <Grid item md={8}>
                               <Box className={styles.project_modal_image_wrapper}>
-                              <Box
-                                className={styles.project_modal_image}
-                                sx={{
-                                  backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
-                                }} />
+                                <Box
+                                  className={styles.project_modal_image}
+                                  sx={{
+                                    backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
+                                  }} />
 
                               </Box>
                             </Grid>
                             <Grid item md={4} xs={12}>
                               {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                <Box marginBottom={2} marginLeft={{md: 2, xs: 0}} key={index} >
+                                <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
                                   <>
                                     {/* <Divider sx={{ background: 'black' }} /> */}
                                     <Box sx={{ marginTop: '10px' }}>
@@ -551,7 +551,7 @@ export default function Home() {
                 justifyContent="flex-start"
                 alignItems="center"
                 spacing={{ md: '6rem', sx: '2rem' }}
-                // sx={{ marginBottom: '6rem' }}
+              // sx={{ marginBottom: '6rem' }}
               >
                 <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
@@ -640,7 +640,7 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1, padding: '20px 15vw 50px'}} id="contacts">
+            <Grid container sx={{ flexGrow: 1, padding: '20px 15vw 50px' }} id="contacts">
               <Grid
                 container
                 // sx={{ marginBottom: "40px" }}
