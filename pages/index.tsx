@@ -164,7 +164,7 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "86px" : "48px" },
+    isOpen: { top: windowSize > 599 ? "56px" : "63px" },
     exit: { top: "100%" }
   };
 
@@ -179,6 +179,7 @@ export default function Home() {
     bottom: 0;
     left: 0;
     scrollbar-width: none;
+    padding-bottom: 2rem;
 
     overflow: scroll;
     z-index: 100;
@@ -227,16 +228,16 @@ export default function Home() {
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={50}
-                      height={50}
+                      width={80}
+                      height={40}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.desktop_logo}
                     />
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={100}
-                      height={100}
+                      width={90}
+                      height={50}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.mobile_logo}
                     />
@@ -386,6 +387,9 @@ export default function Home() {
             </Grid>
           </Box>
           <Box className={styles.go_up_wrapper} id="projects">
+            <Box sx={{ padding: '0 15vw 10px' }}>
+              <h2>Projekti</h2>
+            </Box>
 
             <AnimateIn>
               <Divider />
@@ -450,17 +454,7 @@ export default function Home() {
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw', xs: '88vw' }}>
-                            <Grid item md={8}>
-                              <Box className={styles.project_modal_image_wrapper}>
-                                <Box
-                                  className={styles.project_modal_image}
-                                  sx={{
-                                    backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
-                                  }} />
-
-                              </Box>
-                            </Grid>
-                            <Grid item md={4} xs={12}>
+                          <Grid item md={4} xs={12}>
                               {thumbnailText[openedImagesIndex.current].map((item, index) =>
                                 <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
                                   <>
@@ -476,6 +470,16 @@ export default function Home() {
                                   </>
                                 </Box>
                               )}
+                            </Grid>
+                            <Grid item md={8}>
+                              <Box className={styles.project_modal_image_wrapper}>
+                                <Box
+                                  className={styles.project_modal_image}
+                                  sx={{
+                                    backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
+                                  }} />
+
+                              </Box>
                             </Grid>
                             <Grid item md={8} justifyContent='flex-start'>
                               {thumbnailImages[openedImagesIndex.current].map((item, index) => {
@@ -697,7 +701,7 @@ export default function Home() {
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_map_wrapper}>
               <Grid
                 container
-                sx={{ marginBottom: "350px" }}
+                sx={{ marginBottom: "70vh" }}
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
                 <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px' }}>
@@ -726,7 +730,13 @@ export default function Home() {
                   </button>
                 </Box>
                 {/* <Divider /> */}
-                <Box className={styles.center_flex}>
+                <Box className={styles.footer_flex}>
+                <button
+                    onClick={(e) => handleLinkClick(e, 'top')}
+                    className={styles.go_up}
+                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z"/></svg>                  
+                  </button>
                   <p>© MBA arhitekti</p>
                 </Box>
               </Grid>
