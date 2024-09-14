@@ -454,49 +454,83 @@ export default function Home() {
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw', xs: '88vw' }}>
-                          <Grid item md={4} xs={12}>
-                              {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
-                                  <>
-                                    {/* <Divider sx={{ background: 'black' }} /> */}
-                                    <Box sx={{ marginTop: '10px' }}>
-                                      <h2>
-                                        {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
-                                      </h2>
-                                      <p className={styles.contact_subtitle}>
-                                        {item === undefined ? '' : item}
-                                      </p>
-                                    </Box>
-                                  </>
-                                </Box>
-                              )}
-                            </Grid>
-                            <Grid item md={8}>
-                              <Box className={styles.project_modal_image_wrapper}>
-                                <Box
-                                  className={styles.project_modal_image}
-                                  sx={{
-                                    backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
-                                  }} />
-
-                              </Box>
-                            </Grid>
-                            <Grid item md={8} justifyContent='flex-start'>
-                              {thumbnailImages[openedImagesIndex.current].map((item, index) => {
-                                if (index !== 0) {
-                                  return (
-                                    <Box className={styles.project_modal_image_wrapper} key={index}>
+                             { openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
+                                <>
+                                  <Grid item md={4} xs={12}>
+                                    {thumbnailText[openedImagesIndex.current].map((item, index) =>
+                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
+                                        <>
+                                          <Box sx={{ marginTop: '10px' }}>
+                                            <h2>
+                                              {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                            </h2>
+                                            <p className={styles.contact_subtitle}>
+                                              {item === undefined ? '' : item}
+                                            </p>
+                                          </Box>
+                                        </>
+                                      </Box>
+                                    )}
+                                  </Grid>
+                                  <Grid item md={8} xs={12} justifyContent='flex-start'>
+                                    {thumbnailImages[openedImagesIndex.current].map((item, index) => {
+                                      return (
+                                        <Box className={styles.project_modal_image_wrapper} key={index}>
+                                          <Box
+                                            className={styles.project_modal_image}
+                                            sx={{
+                                              backgroundImage: `url(${item})`
+                                            }} />
+                                        </Box>
+                                      )
+                                    }
+                                    )}
+                                  </Grid>
+                                </>
+                                : <>
+                                  <Grid item md={8} xs={12}>
+                                    <Box className={styles.project_modal_image_wrapper}>
                                       <Box
                                         className={styles.project_modal_image}
                                         sx={{
-                                          backgroundImage: `url(${item})`
+                                          backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
                                         }} />
+
                                     </Box>
-                                  )
-                                }
-                              }
-                              )}
-                            </Grid>
+                                  </Grid>
+                                  <Grid item md={4} xs={12}>
+                                    {thumbnailText[openedImagesIndex.current].map((item, index) =>
+                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
+                                        <>
+                                          <Box sx={{ marginTop: '10px' }}>
+                                            <h2>
+                                              {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                            </h2>
+                                            <p className={styles.contact_subtitle}>
+                                              {item === undefined ? '' : item}
+                                            </p>
+                                          </Box>
+                                        </>
+                                      </Box>
+                                    )}
+                                  </Grid>
+                                  <Grid item md={8} xs={12} justifyContent='flex-start'>
+                                    {thumbnailImages[openedImagesIndex.current].map((item, index) => {
+                                      if (index !== 0) {
+                                        return (
+                                          <Box className={styles.project_modal_image_wrapper} key={index}>
+                                            <Box
+                                              className={styles.project_modal_image}
+                                              sx={{
+                                                backgroundImage: `url(${item})`
+                                              }} />
+                                          </Box>
+                                        )
+                                      }
+                                    }
+                                    )}
+                                  </Grid></>
+                            }
                             <Grid item md={4} />
                           </Grid>
                         </Box>
@@ -731,11 +765,11 @@ export default function Home() {
                 </Box>
                 {/* <Divider /> */}
                 <Box className={styles.footer_flex}>
-                <button
+                  <button
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.go_up}
                   >
-                  <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z"/></svg>                  
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
                   </button>
                   <p>© MBA arhitekti</p>
                 </Box>
