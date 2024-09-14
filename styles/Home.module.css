@@ -365,20 +365,28 @@
 }
 
 .space_wrapper {
-  padding: 20px 15vw 6rem
+  padding: 20px 15vw 6rem;
 }
 
 .space_map_wrapper {
-  padding: 0px 15vw 0px
+  padding: 0px 15vw 0px;
 }
 
 .space_wrapper_projects {
-  padding: 20px 15vw 6rem
+  padding: 20px 15vw 6rem;
+}
+
+.project_section_title_wrapper {
+  padding: 0 15vw 10px;
 }
 
 @media screen and (max-width: 599px) {
   .space_wrapper_projects {
     padding: 20px 2vw 60px
+  }
+
+  .project_section_title_wrapper {
+    padding: 0 2vw 10px;
   }
 
   .space_wrapper {

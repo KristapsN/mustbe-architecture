@@ -387,7 +387,7 @@ export default function Home() {
             </Grid>
           </Box>
           <Box className={styles.go_up_wrapper} id="projects">
-            <Box sx={{ padding: '0 15vw 10px' }}>
+            <Box className={styles.project_section_title_wrapper}>
               <h2>Projekti</h2>
             </Box>
 
