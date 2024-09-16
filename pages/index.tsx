@@ -164,7 +164,7 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "56px" : "63px" },
+    isOpen: { top: windowSize > 599 ? "78px" : "63px" },
     exit: { top: "100%" }
   };
 
@@ -222,13 +222,13 @@ export default function Home() {
         <>
           <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
             <Grid item xs={12}>
-              <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems="flex-end" sx={{ backgroundColor: 'white' }}>
+              <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems={{ md: "flex-end", sm: "center", xs: "center" }} sx={{ backgroundColor: 'white' }}>
                 <Grid item xs={8} sm={4} md={4}>
-                  <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '5vw', xs: '6vw' } }}>
+                  <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '15vw', xs: '6vw' } }}>
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={80}
+                      width={70}
                       height={40}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.desktop_logo}
@@ -236,8 +236,8 @@ export default function Home() {
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={90}
-                      height={50}
+                      width={70}
+                      height={40}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.mobile_logo}
                     />
@@ -357,7 +357,7 @@ export default function Home() {
               width={600}
               height={964}
             /> */}
-              <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
+              <Grid container sx={{ flexGrow: 1, width: '100%', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
               </Grid>
             </Parallax>
           </Box>
@@ -422,7 +422,7 @@ export default function Home() {
                         </Box>
                         <Box sx={{ height: '70px' }}>
                           <Box sx={{
-                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 1,
+                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', marginBottom: '8px'
                           }}>
                             <h2>{projectTitles[index]}</h2>
                             <h2>{projectYears[index]}</h2>
@@ -554,7 +554,7 @@ export default function Home() {
                 <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
                   <AnimateIn>
                     <Grid container>
-                      <h2>Par mums</h2>
+                      <h2 className={styles.title_space}>Par mums</h2>
                       <Paragraph
                         text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos,
                       darbojoties ar dažāda mēroga ēku koncepciju izstrādi, ēku projektēšanu un projekta vadību.
@@ -568,7 +568,7 @@ export default function Home() {
                   <AnimateIn>
                     <Grid container>
                       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                        <h2>
+                        <h2 className={styles.title_space}>
                           Sadarbības partneri:
                         </h2>
                         <Paragraph
@@ -678,7 +678,7 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1, padding: '20px 15vw 50px' }} id="contacts">
+            <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper} id="contacts">
               <Grid
                 container
                 // sx={{ marginBottom: "40px" }}
@@ -688,7 +688,7 @@ export default function Home() {
                   <AnimateIn>
                     {/* <Box sx={{ display: 'flex' }}> */}
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                      <h2>
+                      <h2 className={styles.title_space}>
                         Kontakti:
                       </h2>
                       <Box>
@@ -711,7 +711,7 @@ export default function Home() {
                 <Grid item xs={12} md={3}>
                   <AnimateIn>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
-                      <h2>
+                      <h2 className={styles.title_space}>
                         Rekvizīti
                       </h2>
                       <Box>
