@@ -75,11 +75,13 @@ export default function Home() {
   const handleLinkClick = (event: { preventDefault: () => void; }, value: string) => {
     event.preventDefault();
     const element = document.getElementById(value);
+    console.log('work?', element)
     // element && element.scrollIntoView({
     //   behavior: 'smooth',
     //   block: 'start',
     // });
     element && scrollIntoView(element, { behavior: "smooth", block: "start" });
+
     setOpenMenu(false)
   }
 
@@ -343,7 +345,8 @@ export default function Home() {
               </Grid>
             </Grid>
           </Grid>
-          <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }} id='top'>
+          <Box id='top'/>
+          <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }}>
             <Parallax speed={-50}>
               <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
               </Grid>
@@ -753,23 +756,23 @@ export default function Home() {
 
             <Grid container sx={{ marginBottom: "10px" }}>
               <Grid item xs={12}>
-                <Box sx={{ height: '20px', textAlign: 'center', rotate: '180deg' }}>
+                {/* <Box sx={{ height: '20px', textAlign: 'center', rotate: '180deg' }}>
                   <button
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.go_up}
-                  >
+                  > */}
                     {/* <svg width="20" height="8" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                     </svg> */}
-                  </button>
-                </Box>
+                  {/* </button>
+                </Box> */}
                 {/* <Divider /> */}
                 <Box className={styles.footer_flex}>
                   <button
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.go_up}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z"/></svg>
                   </button>
                   <p>© MBA arhitekti</p>
                 </Box>
