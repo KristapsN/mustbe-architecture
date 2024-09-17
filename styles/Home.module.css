@@ -7,12 +7,13 @@
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 .parallax_wrapper {
   overflow: hidden;
   min-height: 85vh;
+  width: 100vw;
 }
 
 .logo_wrapper {

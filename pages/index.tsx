@@ -360,7 +360,7 @@ export default function Home() {
               width={600}
               height={964}
             /> */}
-              <Grid container sx={{ flexGrow: 1, width: '100%', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
+              <Grid container sx={{ flexGrow: 1, width: '500px', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
               </Grid>
             </Parallax>
           </Box>
