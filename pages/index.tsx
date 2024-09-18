@@ -166,7 +166,7 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "78px" : "63px" },
+    isOpen: { top: windowSize > 599 ? "78px" : "60px" },
     exit: { top: "100%" }
   };
 
@@ -354,14 +354,14 @@ export default function Home() {
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
             <Parallax speed={-50}>
-              {/* <Image
+              <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
               width={600}
               height={964}
-            /> */}
-              <Grid container sx={{ flexGrow: 1, width: '500px', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
-              </Grid>
+            />
+              {/* <Grid container sx={{ flexGrow: 1, width: '500px', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}> */}
+              {/* </Grid> */}
             </Parallax>
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
@@ -456,15 +456,15 @@ export default function Home() {
                           />
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                          <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw', xs: '88vw' }}>
+                          <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
                              { openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                                 <>
                                   <Grid item md={4} xs={12}>
                                     {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
+                                      <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} key={index} >
                                         <>
                                           <Box sx={{ marginTop: '10px' }}>
-                                            <h2>
+                                            <h2 className={styles.title_space}>
                                               {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
                                             </h2>
                                             <p className={styles.contact_subtitle}>
@@ -506,7 +506,7 @@ export default function Home() {
                                       <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
                                         <>
                                           <Box sx={{ marginTop: '10px' }}>
-                                            <h2>
+                                            <h2 className={styles.title_space}>
                                               {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
                                             </h2>
                                             <p className={styles.contact_subtitle}>
@@ -698,9 +698,9 @@ export default function Home() {
                         <Paragraph
                           text="A: Torņa iela 4-2c, Vecrīga"
                         />
-                        <Paragraph
-                          text=" M: info@mustbe-architecture.lv"
-                        />
+                        <p style={{fontWeight: 300, display: 'inline'}}>M: </p>
+                        <a style={{fontWeight: 300}} href='href="mailto:info@mustbe-architecture.lv'>info@mustbe-architecture.lv</a>
+
                         <Paragraph
                           text="T: +371 29121613"
                         />
