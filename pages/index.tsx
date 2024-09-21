@@ -158,6 +158,7 @@ export default function Home() {
   const loaderHandler = () => {
     setShowLoader(false)
   }
+  setTimeout(loaderHandler, 500)
 
   useEffect(() => {
     openProject ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'scroll')
@@ -197,14 +198,14 @@ export default function Home() {
       </Head>
       <div className={'scroll-container'}>
         {/* className={`${showLoader && styles.preloader}`} */}
-        {/* <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
+        <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
             justifyContent="center"
             alignItems="center"
             sx={{ flexGrow: 1 }}
             className={`${styles.preloader}`}
-          > */}
+          >
         {/* <Player
               onEvent={event => {
                 if (event === 'play') {
@@ -217,14 +218,14 @@ export default function Home() {
               src="/logo_loader/logo_loader.json"
               style={{ height: '300px' }}
               speed={8}
-            > */}
+            /> */}
         {/* </Player> */}
-        {/* </Grid> */}
-        {/* </Box> */}
+        </Grid>
+        </Box>
         <>
           <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
             <Grid item xs={12}>
-              <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems={{ md: "flex-end", sm: "center", xs: "center" }} sx={{ backgroundColor: 'white' }}>
+              <Grid container spacing={0} justifyContent="space-between" direction="row" alignItems={{ md: "flex-end", sm: "center", xs: "center" }} sx={{ backgroundColor: 'white' }} className={styles.fade_in}>
                 <Grid item xs={8} sm={4} md={4}>
                   <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '15vw', xs: '6vw' } }}>
                     <Image
@@ -346,7 +347,7 @@ export default function Home() {
             </Grid>
           </Grid>
           <Box id='top'/>
-          <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'none', md: 'inherit' } }}>
+          <Box className={`${styles.parallax_wrapper} ${styles.fade_in_image}`} sx={{ display: { xs: 'none', md: 'inherit' } }}>
             <Parallax speed={-50}>
               <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
               </Grid>
@@ -354,14 +355,14 @@ export default function Home() {
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
             {/* <Parallax speed={-50}> */}
-              <Image
+              {/* <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
               width={500}
               height={864}
-            />
-              {/* <Grid container sx={{ flexGrow: 1, width: '500px', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
-              </Grid> */}
+            /> */}
+              <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}/>
+              {/* </Box> */}
             {/* </Parallax> */}
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>

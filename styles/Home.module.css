@@ -2,12 +2,12 @@
 
 .parallax {
   background-blend-mode: multiply;
-  min-height: 90vh;
+  height: 90vh;
   background-attachment: fixed;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  /* width: 100vw; */
+  width: 100vw;
 }
 
 .parallax_wrapper {
@@ -455,4 +455,34 @@
   letter-spacing: 0.02rem;
   font-weight: 300;
   text-transform: uppercase;
+}
+
+.fade_in {
+  animation: fade-in 1s;
+  position: relative;
+}
+
+@keyframes fade-in {
+  from {
+    top: -20px;
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+    top: 0px;
+  }
+}
+
+.fade_in_image {
+  animation: fade-in-image 3s;
+  position: relative;
+}
+
+@keyframes fade-in-image {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
