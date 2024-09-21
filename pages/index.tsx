@@ -238,8 +238,8 @@ export default function Home() {
                     <Image
                       src="/logo.svg"
                       alt="MUST BE architecture"
-                      width={70}
-                      height={40}
+                      width={55}
+                      height={30}
                       onClick={(e) => handleLinkClick(e, 'top')}
                       className={styles.mobile_logo}
                     />
@@ -353,16 +353,16 @@ export default function Home() {
             </Parallax>
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
-            <Parallax speed={-50}>
+            {/* <Parallax speed={-50}> */}
               <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
-              width={600}
-              height={964}
+              width={500}
+              height={864}
             />
-              {/* <Grid container sx={{ flexGrow: 1, width: '500px', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}> */}
-              {/* </Grid> */}
-            </Parallax>
+              {/* <Grid container sx={{ flexGrow: 1, width: '500px', backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}>
+              </Grid> */}
+            {/* </Parallax> */}
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
             <Grid
@@ -425,7 +425,7 @@ export default function Home() {
                         </Box>
                         <Box sx={{ height: '70px' }}>
                           <Box sx={{
-                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', marginBottom: '8px'
+                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', marginBottom: '4px'
                           }}>
                             <h2>{projectTitles[index]}</h2>
                             <h2>{projectYears[index]}</h2>
@@ -681,10 +681,10 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper} id="contacts">
+            <Grid container sx={{ flexGrow: 1, padding: '20px 15vw 50px' }} id="contacts">
               <Grid
                 container
-                // sx={{ marginBottom: "40px" }}
+                // sx={{ marginTop: "40px" }}
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
                 <Grid item xs={12} md={12 / 5}>
@@ -698,9 +698,9 @@ export default function Home() {
                         <Paragraph
                           text="A: Torņa iela 4-2c, Vecrīga"
                         />
-                        <p style={{fontWeight: 300, display: 'inline'}}>M: </p>
-                        <a style={{fontWeight: 300}} href='href="mailto:info@mustbe-architecture.lv'>info@mustbe-architecture.lv</a>
-
+                        <Paragraph
+                          text="M: info@mustbe-architecture.lv"
+                        />
                         <Paragraph
                           text="T: +371 29121613"
                         />
@@ -739,9 +739,9 @@ export default function Home() {
               <Grid
                 container
                 sx={{ marginBottom: "70vh" }}
-                spacing={{ md: '6rem', sx: '2rem' }}
+                // spacing={{ md: '6rem', sx: '2rem' }}
               >
-                <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px' }}>
+                <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px', paddingRight: { md: '6rem' } }}>
                   <AnimateIn>
                     <ContactMap />
                   </AnimateIn>
