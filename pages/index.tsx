@@ -361,7 +361,7 @@ export default function Home() {
               width={500}
               height={864}
             /> */}
-              <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax}/>
+              <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/>
               {/* </Box> */}
             {/* </Parallax> */}
           </Box>
