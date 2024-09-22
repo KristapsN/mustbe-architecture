@@ -35,11 +35,11 @@
     background-size: cover;
     width: 100vw;
     min-height: 90vh;
-    -webkit-background-size: 425px 874px;
+    /* -webkit-background-size: 425px 874px; */
   }
 
   .parallax_wrapper {
-    max-height: 100vh;
+    max-height: 90vh;
   }
 
   .logo_wrapper {

@@ -355,13 +355,13 @@ export default function Home() {
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
             {/* <Parallax speed={-50}> */}
-              {/* <Image
+              <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
-              width={500}
-              height={864}
-            /> */}
-              <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/>
+              width={425}
+              height={874}
+            />
+              {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
               {/* </Box> */}
             {/* </Parallax> */}
           </Box>
