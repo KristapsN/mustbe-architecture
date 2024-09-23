@@ -358,8 +358,8 @@ export default function Home() {
               <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
-              width={425}
-              height={874}
+              width={375.8}
+              height={694}
             />
               {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
               {/* </Box> */}
@@ -383,9 +383,11 @@ export default function Home() {
               </Grid>
               <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
                 <Grid container>
+                  <Box>
                   <Paragraph
-                    text={intro.first}
+                    text={intro.second}
                   />
+                  </Box>
                 </Grid>
               </Grid>
             </Grid>
@@ -434,8 +436,9 @@ export default function Home() {
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                           }}>
-                            <span className={styles.contact_subtitle}>Rīgas iela 47/ Jūrmala</span>
-                            <span className={styles.contact_subtitle}>Arhitekts</span>
+                            <span className={styles.contact_subtitle}>Mazā Nometņu iela 80, Rīga</span>
+                            <span className={styles.contact_subtitle}>Koncepcija</span>
+                            {/* {console.log(allDescriptionTitles, allDescriptionTitles[index])} */}
                           </Box>
                         </Box>
                       </AnimateIn>
@@ -560,10 +563,10 @@ export default function Home() {
                     <Grid container>
                       <h2 className={styles.title_space}>Par mums</h2>
                       <Paragraph
-                        text="Arhitekta profesionālā pieredze uzkrāta Latvijā vadošos arhitektu birojos,
-                      darbojoties ar dažāda mēroga ēku koncepciju izstrādi, ēku projektēšanu un projekta vadību.
-                      MUST BE architecture darbība aizsākusies 2019. gadā un veidojot sadarbību ar dažādu profesiju
-                      speciālistiem mēs palīdzam transformēt klienta velmes no idejām līdz objekta realizēšanai."
+                        text="A+B arhitekti ir Rīgā bāzēts uzņēmums, kura darbība ir aizsākusies 2019. gadā un kopš tā 
+                        laika strādājam ar dažādu funkciju un mēroga projektiem. Mūsu filozofija ir bāzēta uz dažādu 
+                        elementu, ideju un profesionāļu apvienošanu, palīdzot transformēt klienta vēlmes no idejas līdz objekta realizēšanai. Kopā ar 
+                        ilggadējiem sadarbības partneriem nodrošinām visu sadaļu būvprojektu izstrādi, teritoriju labiekārtojuma izveidi un interjera dizaina risinājumus. Mūsu profesionālā pieeja ir vērsta uz funkcionālo un estētisko vienkāršību, domājot par ilgtspējīgu un videi piemērotu arhitektūru."
                       />
                     </Grid>
                   </AnimateIn>
@@ -576,11 +579,11 @@ export default function Home() {
                           Sadarbības partneri:
                         </h2>
                         <Paragraph
-                          text="Interjera dizainere: Donna Victoria Design
-                        // Arhitekti: Aigars Tereško, Mikus Druviņš, Toms Ambrozs
-                        // BIM speciālists: Rinalds Petjukēvičš // Vizualizāciju speciālists: Reinis Jansons
-                        // Inženieri: Miķelis Siliņš, Pāvels Stepanovs, Māris Arnavs, Kārlis Mūrnieks, Dāvis Vecbaštiks
-                        // Konsultants: Uldis Jaunsubrēns // Uzņēmumi: Būvdizains, AZ Service, Aver Brokarage"
+                          text="Arhitekti: Aigars Tereško, Mikus Druviņš / Interjere dizainere: Donna Victoria Design 
+                          / Inženieri: Miķelis Siliņš, Pāvels Stepanovs, Māris Arnavs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, 
+                          Mārtiņš Pocis, Kristaps Jakimovs, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis, Jekaterina Apse, 
+                          / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, Māŗtiņš Ziemanis 
+                          / Uzņēmumi: Būvdizains, AZ Service, Aver Brokarage"
                         />
                       </Box>
                     </Grid>
@@ -697,16 +700,13 @@ export default function Home() {
                       </h2>
                       <Box>
                         <Paragraph
-                          text="A: Torņa iela 4-2c, Vecrīga"
+                          text="Torņa iela 4-2c, Vecrīga"
                         />
                         <Paragraph
-                          text="M: info@mustbe-architecture.lv"
+                          text="info@aplusb.lv"
                         />
                         <Paragraph
-                          text="T: +371 29121613"
-                        />
-                        <Paragraph
-                          text="(starpā ikonas - fb, insta, linkdin)"
+                          text="+371 29121613"
                         />
                       </Box>
                     </Box>
@@ -720,15 +720,12 @@ export default function Home() {
                       </h2>
                       <Box>
                         <Paragraph
-                          text="N: MUST BE architecture SIA"
+                          text="MUST BE architecture SIA"
                         />
                         <Paragraph
-                          text="R: 40103354466"
+                          text="LV40103354466"
                         />
-                        <Paragraph
-                          text="PVN: LV40103354466"
-                        />
-                        <Paragraph text="A: Rubeņu iela 19, Jūrmala, LV-2008" />
+                        <Paragraph text="Rubeņu iela 19, Jūrmala, LV-2008" />
                       </Box>
                     </Box>
                   </AnimateIn>
@@ -775,7 +772,7 @@ export default function Home() {
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z"/></svg>
                   </button>
-                  <p>© MBA arhitekti</p>
+                  <p>© A+B arhitekti</p>
                 </Box>
               </Grid>
             </Grid>
