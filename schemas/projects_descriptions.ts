@@ -14,6 +14,16 @@ export default {
       type: 'string',
     },
     {
+      name: 'address',
+      title: 'Address',
+      type: 'string',
+    },
+    {
+      name: 'status',
+      title: 'Status',
+      type: 'string',
+    },
+    {
       name: 'order_number',
       title: 'Order number',
       type: 'number',
