@@ -39,6 +39,8 @@ interface ContentProps {
 interface DescriptionsProps {
   project_name: string
   year: string
+  address: string
+  status: string
   descriptions: ContentProps[]
 }
 
@@ -93,8 +95,8 @@ export default function Home() {
   const [mainImage, setMainImage] = useState('')
   const [openMenu, setOpenMenu] = useState(false)
   const [thumbnailImages, setThumbnailImages] = useState<string[][]>([])
-  const [projectTitles, setProjectTitles] = useState<string[]>([])
-  const [projectYears, setProjectYears] = useState<string[]>([])
+  const [projectPreviewTitles, setProjectPreviewTitles] = useState<DescriptionsProps[]>([])
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [openProject, setOpenProject] = useState(false)
   const openedImagesIndex = useRef(0)
@@ -108,17 +110,23 @@ export default function Home() {
       setIntro({ first: props.intro[0].first, second: props.intro[0].second })
       setMainImage(urlForImage(props.main[0].hero).url())
 
-      const projectTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
-        a.order_number - b.order_number).map(({ project_name }: DescriptionsProps) =>
-          project_name)
+      // const projectTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+      //   a.order_number - b.order_number).map(({ project_name }: DescriptionsProps) =>
+      //     project_name)
 
-      setProjectTitles(projectTitles)
+      // setProjectTitles(projectTitles)
 
-      const projectYears = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
-        a.order_number - b.order_number).map(({ year }: DescriptionsProps) =>
-          year)
+      // const projectYears = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+      //   a.order_number - b.order_number).map(({ year }: DescriptionsProps) =>
+      //     year)
 
-      setProjectYears(projectYears)
+      // setProjectYears(projectYears)
+
+      const projectPreviewTitles= props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+        a.order_number - b.order_number).map(({ project_name, year, address, status }: DescriptionsProps) => {
+          return {project_name, year, address, status}})
+
+      setProjectPreviewTitles(projectPreviewTitles)
 
 
       const projectDescriptionTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
@@ -386,6 +394,7 @@ export default function Home() {
                   <Box>
                   <Paragraph
                     text={intro.second}
+                    bold={true}
                   />
                   </Box>
                 </Grid>
@@ -430,15 +439,14 @@ export default function Home() {
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', marginBottom: '4px'
                           }}>
-                            <h2>{projectTitles[index]}</h2>
-                            <h2>{projectYears[index]}</h2>
+                            <h2>{projectPreviewTitles[index].project_name}</h2>
+                            <h2>{projectPreviewTitles[index].year}</h2>
                           </Box>
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                           }}>
-                            <span className={styles.contact_subtitle}>Mazā Nometņu iela 80, Rīga</span>
-                            <span className={styles.contact_subtitle}>Koncepcija</span>
-                            {/* {console.log(allDescriptionTitles, allDescriptionTitles[index])} */}
+                            <span className={styles.contact_subtitle}>{projectPreviewTitles[index].address}</span>
+                            <span className={styles.contact_subtitle}>{projectPreviewTitles[index].status}</span>
                           </Box>
                         </Box>
                       </AnimateIn>
@@ -463,9 +471,9 @@ export default function Home() {
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
                              { openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                                 <>
-                                  <Grid item md={4} xs={12}>
+                                  <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none'}}}>
                                     {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                      <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} key={index} >
+                                      <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} marginRight={{ md: '2rem', xs: '0' }} key={index} >
                                         <>
                                           <Box sx={{ marginTop: '10px' }}>
                                             <h2 className={styles.title_space}>
@@ -505,9 +513,9 @@ export default function Home() {
 
                                     </Box>
                                   </Grid>
-                                  <Grid item md={4} xs={12}>
+                                  <Grid item md={4} xs={12} sx={{ maxHeight: '520px' }}>
                                     {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index} >
+                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index}  >
                                         <>
                                           <Box sx={{ marginTop: '10px' }}>
                                             <h2 className={styles.title_space}>
