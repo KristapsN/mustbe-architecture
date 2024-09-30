@@ -473,15 +473,13 @@ export default function Home() {
                                 <>
                                   <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none'}}}>
                                     {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                      <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} marginRight={{ md: '2rem', xs: '0' }} key={index} >
+                                      <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} marginRight={{ md: '2rem', xs: 'calc(2vw + 20px)' }} key={index} >
                                         <>
                                           <Box sx={{ marginTop: '10px' }}>
                                             <h2 className={styles.title_space}>
                                               {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
                                             </h2>
-                                            <p className={styles.contact_subtitle}>
-                                              {item === undefined ? '' : item}
-                                            </p>
+                                            <Paragraph text={item === undefined ? '' : item}/>
                                           </Box>
                                         </>
                                       </Box>
@@ -515,15 +513,13 @@ export default function Home() {
                                   </Grid>
                                   <Grid item md={4} xs={12} sx={{ maxHeight: '520px' }}>
                                     {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index}  >
+                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index}>
                                         <>
                                           <Box sx={{ marginTop: '10px' }}>
                                             <h2 className={styles.title_space}>
                                               {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
                                             </h2>
-                                            <p className={styles.contact_subtitle}>
-                                              {item === undefined ? '' : item}
-                                            </p>
+                                            <Paragraph text={item === undefined ? '' : item} />
                                           </Box>
                                         </>
                                       </Box>
@@ -566,7 +562,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
 
-                <Grid item xs={12} md={6} sx={{ marginBottom: '50px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '70px' }}>
                   <AnimateIn>
                     <Grid container>
                       <h2 className={styles.title_space}>Par mums</h2>
@@ -693,7 +689,7 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1, padding: '20px 15vw 50px' }} id="contacts">
+            <Grid container sx={{ flexGrow: 1, padding: { md: '20px 15vw 0px', xs: '20px calc(6vw + 10px) 60px 6vw' }}} id="contacts">
               <Grid
                 container
                 // sx={{ marginTop: "40px" }}
@@ -702,7 +698,7 @@ export default function Home() {
                 <Grid item xs={12} md={12 / 5}>
                   <AnimateIn>
                     {/* <Box sx={{ display: 'flex' }}> */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: {md:'70px', xs: '1rem'} }}>
                       <h2 className={styles.title_space}>
                         Kontakti:
                       </h2>
