@@ -271,11 +271,9 @@ export default function Home() {
                   {!openProject &&
                     <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
                       <Box className={styles.nav_link_wrapper}>
-                        {/* <Box sx={{ height: '4px', marginBottom: '8px' }}>
-                          <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                          </svg>
-                        </Box> */}
+                        <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
+                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z"/></svg>
+                        </Box>
 
                         <Link
                           className={`${styles.nav_link} scroll`}
@@ -286,11 +284,10 @@ export default function Home() {
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
-                        {/* <Box sx={{ height: '4px', marginBottom: '8px' }}>
-                          <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                          </svg>
-                        </Box> */}
+                        <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
+                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z"/></svg>
+                        </Box>
+
                         <Link
                           className={`${styles.nav_link}`}
                           href="#about-us"
@@ -300,11 +297,10 @@ export default function Home() {
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
-                        {/* <Box sx={{ height: '4px', marginBottom: '8px' }}>
-                          <svg className={styles.nav_arrow} width="10" height="4" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                          </svg>
-                        </Box> */}
+                      <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
+                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z"/></svg>
+                        </Box>
+
                         <Link
                           className={`${styles.nav_link}`}
                           href="#contacts"
