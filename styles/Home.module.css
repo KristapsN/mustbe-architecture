@@ -168,6 +168,14 @@
   background-size: cover;
   background-blend-mode: multiply;
   padding-top: 65.6003%;
+  transition: 0.5s;
+}
+
+.project_image:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .project_image_last {
@@ -176,10 +184,12 @@
 
 .carousel_wrapper:hover {
   /* opacity: 0.85; */
-  transform: scale(1.02);
+  /* transform: scale(1.02);
   transition: transform 0.2s ease;
   overflow: hidden;
-  cursor: pointer;
+  cursor: pointer; */
+  /* position: relative;
+  height: auto; */
 }
 
 .carousel_wrapper {

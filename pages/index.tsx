@@ -358,21 +358,37 @@ export default function Home() {
           <Box id='top' />
           <Box className={`${styles.parallax_wrapper} ${styles.fade_in_image}`} sx={{ display: { xs: 'none', md: 'inherit' } }}>
             <Parallax speed={-50}>
-              <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
-              </Grid>
+              {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
+              </Grid> */}
+              <Image
+                src={mainImage}
+                alt='project'
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
             </Parallax>
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
-            {/* <Parallax speed={-50}> */}
-            <Image
+            <Parallax speed={-50}>
+            {/* <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
               width={375.8}
               height={694}
-            />
+            /> */}
+              <Image
+                src="/mobile_main.jpg"
+                alt='project'
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
             {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
             {/* </Box> */}
-            {/* </Parallax> */}
+            </Parallax>
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
             <Grid
@@ -446,7 +462,7 @@ export default function Home() {
                         </Box>
                         <Box sx={{ height: '70px' }}>
                           <Box sx={{
-                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px', marginBottom: '4px'
+                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '5px', marginBottom: '4px'
                           }}>
                             <h2>{projectPreviewTitles[index].project_name}</h2>
                             <h2>{projectPreviewTitles[index].year}</h2>
