@@ -419,6 +419,8 @@
   /* display: flex;
   align-items: center; */
   margin-bottom: 2rem;
+  position: relative;
+  height: auto;
 }
 
 .project_image {
@@ -442,7 +444,7 @@
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
-  padding-top: 65%;
+  padding-top: 65.6003%;
 }
 
 /* @media screen and (max-width: 599px) {

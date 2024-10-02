@@ -122,9 +122,10 @@ export default function Home() {
 
       // setProjectYears(projectYears)
 
-      const projectPreviewTitles= props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
+      const projectPreviewTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ project_name, year, address, status }: DescriptionsProps) => {
-          return {project_name, year, address, status}})
+          return { project_name, year, address, status }
+        })
 
       setProjectPreviewTitles(projectPreviewTitles)
 
@@ -214,7 +215,7 @@ export default function Home() {
             sx={{ flexGrow: 1 }}
             className={`${styles.preloader}`}
           >
-        {/* <Player
+            {/* <Player
               onEvent={event => {
                 if (event === 'play') {
                   setTimeout(loaderHandler, 3800)
@@ -227,8 +228,8 @@ export default function Home() {
               style={{ height: '300px' }}
               speed={8}
             /> */}
-        {/* </Player> */}
-        </Grid>
+            {/* </Player> */}
+          </Grid>
         </Box>
         <>
           <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
@@ -354,7 +355,7 @@ export default function Home() {
               </Grid>
             </Grid>
           </Grid>
-          <Box id='top'/>
+          <Box id='top' />
           <Box className={`${styles.parallax_wrapper} ${styles.fade_in_image}`} sx={{ display: { xs: 'none', md: 'inherit' } }}>
             <Parallax speed={-50}>
               <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
@@ -363,14 +364,14 @@ export default function Home() {
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
             {/* <Parallax speed={-50}> */}
-              <Image
+            <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
               width={375.8}
               height={694}
             />
-              {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
-              {/* </Box> */}
+            {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
+            {/* </Box> */}
             {/* </Parallax> */}
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
@@ -392,10 +393,10 @@ export default function Home() {
               <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
                 <Grid container>
                   <Box>
-                  <Paragraph
-                    text={intro.second}
-                    bold={true}
-                  />
+                    <Paragraph
+                      text={intro.second}
+                      bold={true}
+                    />
                   </Box>
                 </Grid>
               </Grid>
@@ -433,6 +434,14 @@ export default function Home() {
                           >
                             {/* <NextJsCarousel images={images} text={thumbnailText} descriptionTitles={allDescriptionTitles} index={index} /> */}
                             <Box className={styles.project_image} sx={{ backgroundImage: `url(${images[0]})` }} />
+                            {/* <Image 
+                              src={images[0]} 
+                              alt='project' 
+                              width={0}
+                              height={0}
+                              sizes="100vw"
+                              style={{ width: '100%', height: 'auto'}}
+                            /> */}
                           </button>
                         </Box>
                         <Box sx={{ height: '70px' }}>
@@ -469,78 +478,102 @@ export default function Home() {
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
-                             { openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
-                                <>
-                                  <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none'}}}>
-                                    {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                      <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} marginRight={{ md: '2rem', xs: 'calc(2vw + 20px)' }} key={index} >
-                                        <>
-                                          <Box sx={{ marginTop: '10px' }}>
-                                            <h2 className={styles.title_space}>
-                                              {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
-                                            </h2>
-                                            <Paragraph text={item === undefined ? '' : item}/>
-                                          </Box>
-                                        </>
-                                      </Box>
-                                    )}
-                                  </Grid>
-                                  <Grid item md={8} xs={12} justifyContent='flex-start'>
-                                    {thumbnailImages[openedImagesIndex.current].map((item, index) => {
-                                      return (
-                                        <Box className={styles.project_modal_image_wrapper} key={index}>
-                                          <Box
+                            {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
+                              <>
+                                <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none' } }}>
+                                  {thumbnailText[openedImagesIndex.current].map((item, index) =>
+                                    <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} marginRight={{ md: '2rem', xs: 'calc(2vw + 20px)' }} key={index} >
+                                      <>
+                                        <Box sx={{ marginTop: '10px' }}>
+                                          <h2 className={styles.title_space}>
+                                            {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                          </h2>
+                                          <Paragraph text={item === undefined ? '' : item} />
+                                        </Box>
+                                      </>
+                                    </Box>
+                                  )}
+                                </Grid>
+                                <Grid item md={8} xs={12} justifyContent='flex-start'>
+                                  {thumbnailImages[openedImagesIndex.current].map((item, index) => {
+                                    return (
+                                      <Box className={styles.project_modal_image_wrapper} key={index}>
+                                        {/* <Box
                                             className={styles.project_modal_image}
                                             sx={{
                                               backgroundImage: `url(${item})`
-                                            }} />
+                                            }} /> */}
+                                        <Image
+                                          src={item}
+                                          alt='project'
+                                          width={0}
+                                          height={0}
+                                          sizes="100vw"
+                                          style={{ width: '100%', height: 'auto' }}
+                                        />
+                                      </Box>
+                                    )
+                                  }
+                                  )}
+                                </Grid>
+                              </>
+                              : <>
+                                <Grid item md={8} xs={12}>
+                                  <Box className={styles.project_modal_image_wrapper}>
+                                    {/* <Box
+                                      className={styles.project_modal_image}
+                                      sx={{
+                                        backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
+                                      }} /> */}
+                                    <Image
+                                      src={thumbnailImages[openedImagesIndex.current][0]}
+                                      alt='project'
+                                      width={0}
+                                      height={0}
+                                      sizes="100vw"
+                                      style={{ width: '100%', height: 'auto' }}
+                                    />
+
+                                  </Box>
+                                </Grid>
+                                <Grid item md={4} xs={12} sx={{ maxHeight: '520px' }}>
+                                  {thumbnailText[openedImagesIndex.current].map((item, index) =>
+                                    <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index}>
+                                      <>
+                                        <Box sx={{ marginTop: '10px' }}>
+                                          <h2 className={styles.title_space}>
+                                            {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                          </h2>
+                                          <Paragraph text={item === undefined ? '' : item} />
+                                        </Box>
+                                      </>
+                                    </Box>
+                                  )}
+                                </Grid>
+                                <Grid item md={8} xs={12} justifyContent='flex-start'>
+                                  {thumbnailImages[openedImagesIndex.current].map((item, index) => {
+                                    if (index !== 0) {
+                                      return (
+                                        <Box className={styles.project_modal_image_wrapper} key={index}>
+                                          {/* <Box
+                                            className={styles.project_modal_image}
+                                            sx={{
+                                              backgroundImage: `url(${item})`
+                                            }} /> */}
+                                          <Image
+                                            src={item}
+                                            alt='project'
+                                            width={0}
+                                            height={0}
+                                            sizes="100vw"
+                                            style={{ width: '100%', height: 'auto' }}
+                                          />
                                         </Box>
                                       )
                                     }
-                                    )}
-                                  </Grid>
-                                </>
-                                : <>
-                                  <Grid item md={8} xs={12}>
-                                    <Box className={styles.project_modal_image_wrapper}>
-                                      <Box
-                                        className={styles.project_modal_image}
-                                        sx={{
-                                          backgroundImage: `url(${thumbnailImages[openedImagesIndex.current][0]})`
-                                        }} />
-
-                                    </Box>
-                                  </Grid>
-                                  <Grid item md={4} xs={12} sx={{ maxHeight: '520px' }}>
-                                    {thumbnailText[openedImagesIndex.current].map((item, index) =>
-                                      <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index}>
-                                        <>
-                                          <Box sx={{ marginTop: '10px' }}>
-                                            <h2 className={styles.title_space}>
-                                              {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
-                                            </h2>
-                                            <Paragraph text={item === undefined ? '' : item} />
-                                          </Box>
-                                        </>
-                                      </Box>
-                                    )}
-                                  </Grid>
-                                  <Grid item md={8} xs={12} justifyContent='flex-start'>
-                                    {thumbnailImages[openedImagesIndex.current].map((item, index) => {
-                                      if (index !== 0) {
-                                        return (
-                                          <Box className={styles.project_modal_image_wrapper} key={index}>
-                                            <Box
-                                              className={styles.project_modal_image}
-                                              sx={{
-                                                backgroundImage: `url(${item})`
-                                              }} />
-                                          </Box>
-                                        )
-                                      }
-                                    }
-                                    )}
-                                  </Grid></>
+                                  }
+                                  )}
+                                </Grid></>
                             }
                             <Grid item md={4} />
                           </Grid>
@@ -689,7 +722,7 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1, padding: { md: '20px 15vw 0px', xs: '20px calc(6vw + 10px) 60px 6vw' }}} id="contacts">
+            <Grid container sx={{ flexGrow: 1, padding: { md: '20px 15vw 0px', xs: '20px calc(6vw + 10px) 60px 6vw' } }} id="contacts">
               <Grid
                 container
                 // sx={{ marginTop: "40px" }}
@@ -698,7 +731,7 @@ export default function Home() {
                 <Grid item xs={12} md={12 / 5}>
                   <AnimateIn>
                     {/* <Box sx={{ display: 'flex' }}> */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: {md:'70px', xs: '1rem'} }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: { md: '70px', xs: '1rem' } }}>
                       <h2 className={styles.title_space}>
                         Kontakti:
                       </h2>
@@ -741,7 +774,7 @@ export default function Home() {
               <Grid
                 container
                 sx={{ marginBottom: "70vh" }}
-                // spacing={{ md: '6rem', sx: '2rem' }}
+              // spacing={{ md: '6rem', sx: '2rem' }}
               >
                 <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px', paddingRight: { md: '6rem' } }}>
                   <AnimateIn>
@@ -763,10 +796,10 @@ export default function Home() {
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.go_up}
                   > */}
-                    {/* <svg width="20" height="8" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* <svg width="20" height="8" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
                     </svg> */}
-                  {/* </button>
+                {/* </button>
                 </Box> */}
                 {/* <Divider /> */}
                 <Box className={styles.footer_flex}>
@@ -774,7 +807,7 @@ export default function Home() {
                     onClick={(e) => handleLinkClick(e, 'top')}
                     className={styles.go_up}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
                   </button>
                   <p>© A+B arhitekti</p>
                 </Box>
