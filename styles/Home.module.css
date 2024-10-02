@@ -423,6 +423,7 @@
   position: fixed;
   right: 0;
   margin-right: calc(2vw + 10px);
+  z-index: 100;
 }
 
 .project_modal_image_wrapper {
