@@ -371,7 +371,7 @@ export default function Home() {
             </Parallax>
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
-            <Parallax speed={-50}>
+            {/* <Parallax speed={-50}> */}
             {/* <Image
               src="/mobile_main.jpg"
               alt="MUST BE architecture"
@@ -388,7 +388,7 @@ export default function Home() {
               />
             {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
             {/* </Box> */}
-            </Parallax>
+            {/* </Parallax> */}
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
             <Grid
