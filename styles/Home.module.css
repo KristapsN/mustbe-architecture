@@ -229,12 +229,12 @@
 
 .contact_subtitle {
   /* font-family: 'Rajdhani', sans-serif; */
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
+  /* font-family: "Helvetica Neue", Arial, sans-serif; */
+  font-weight: 300;
   /* font-size: calc((var(--small-text-size-value) - 1) * 1.2vw + 1rem); */
   font-size: 14px;
-  line-height: 1.2rem;
-  color: #666666;
+  line-height: 14px;
+  /* color: #666666; */
 }
 
 .contact_title {
@@ -270,7 +270,7 @@
 } */
 
 .nav_link_wrapper {
-  width: 75px;
+  width: 90px;
   display: flex;
   align-items: center;
 }
@@ -407,7 +407,7 @@
   }
 
   .project_section_title_wrapper {
-    padding: 0 2vw 10px;
+    padding: 20px calc(6vw + 10px) 10px 6vw;
   }
 
   .space_wrapper {

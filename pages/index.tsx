@@ -200,8 +200,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>MBA arhitekti</title>
-        <meta name="MBA arhitekti" content="architecture" />
+        <title>A+B arhitekti</title>
+        <meta name="A+B arhitekti" content="architecture" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -769,12 +769,12 @@ export default function Home() {
                       </h2>
                       <Box>
                         <Paragraph
-                          text="MUST BE architecture SIA"
+                          text="SIA A+B arhitekti"
                         />
                         <Paragraph
-                          text="LV40103354466"
+                          text="LV40203580630"
                         />
-                        <Paragraph text="Rubeņu iela 19, Jūrmala, LV-2008" />
+                        <Paragraph text="Upesciema iela 26-2, Rīga, LV-1024" />
                       </Box>
                     </Box>
                   </AnimateIn>
