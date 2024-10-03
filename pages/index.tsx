@@ -163,7 +163,7 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "78px" : "50px" },
+    isOpen: { top: windowSize > 599 ? "78px" : "60px" },
     exit: { top: "100%" }
   };
 
