@@ -77,7 +77,6 @@ export default function Home() {
   const handleLinkClick = (event: { preventDefault: () => void; }, value: string) => {
     event.preventDefault();
     const element = document.getElementById(value);
-    console.log('work?', element)
     // element && element.scrollIntoView({
     //   behavior: 'smooth',
     //   block: 'start',
@@ -109,18 +108,6 @@ export default function Home() {
     getStaticProps().then(({ props }) => {
       setIntro({ first: props.intro[0].first, second: props.intro[0].second })
       setMainImage(urlForImage(props.main[0].hero).url())
-
-      // const projectTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
-      //   a.order_number - b.order_number).map(({ project_name }: DescriptionsProps) =>
-      //     project_name)
-
-      // setProjectTitles(projectTitles)
-
-      // const projectYears = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
-      //   a.order_number - b.order_number).map(({ year }: DescriptionsProps) =>
-      //     year)
-
-      // setProjectYears(projectYears)
 
       const projectPreviewTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ project_name, year, address, status }: DescriptionsProps) => {
@@ -272,7 +259,7 @@ export default function Home() {
                     <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
                       <Box className={styles.nav_link_wrapper}>
                         <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
-                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z"/></svg>
+                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z" /></svg>
                         </Box>
 
                         <Link
@@ -285,7 +272,7 @@ export default function Home() {
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
                         <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
-                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z"/></svg>
+                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z" /></svg>
                         </Box>
 
                         <Link
@@ -297,8 +284,8 @@ export default function Home() {
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
-                      <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
-                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z"/></svg>
+                        <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
+                          <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z" /></svg>
                         </Box>
 
                         <Link
@@ -356,14 +343,18 @@ export default function Home() {
             <Parallax speed={-50}>
               {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
               </Grid> */}
-              <Image
-                src={mainImage}
-                alt='project'
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
+
+              {mainImage.length > 0 &&
+                <Image
+                  src={mainImage}
+                  alt='project'
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                  className={`${styles.fade_in_image}`}
+                />
+              }
             </Parallax>
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
@@ -374,14 +365,14 @@ export default function Home() {
               width={375.8}
               height={694}
             /> */}
-              <Image
-                src="/mobile_main.jpg"
-                alt='project'
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
+            <Image
+              src="/mobile_main.jpg"
+              alt='project'
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: 'auto' }}
+            />
             {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
             {/* </Box> */}
             {/* </Parallax> */}
