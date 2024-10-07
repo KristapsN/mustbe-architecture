@@ -15,6 +15,7 @@
   overflow: hidden;
   min-height: 85vh;
   width: 100vw;
+  height: 90vh;
 }
 
 .logo_wrapper {
@@ -477,14 +478,16 @@
 }
 
 .fade_in {
-  animation: fade-in 3s;
+  animation: fade-in 0.8s;
   position: relative;
+  animation-timing-function: ease-in;
 }
 
 @keyframes fade-in {
   from {
     top: -20px;
     opacity: 0;
+    transition: opacity 1s ease;
   }
   to {
     opacity: 100;
@@ -493,8 +496,9 @@
 }
 
 .fade_in_image {
-  animation: fade-in-image 3s;
+  animation: fade-in-image 1s;
   position: relative;
+  animation-timing-function: ease-in;
 }
 
 @keyframes fade-in-image {
