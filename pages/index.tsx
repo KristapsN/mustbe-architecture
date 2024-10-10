@@ -341,10 +341,10 @@ export default function Home() {
           <Box id='top' />
           <Box className={`${styles.parallax_wrapper} ${styles.fade_in_image}`} sx={{ display: { xs: 'none', md: 'inherit' } }}>
             <Parallax speed={-50}>
-              {/* <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
-              </Grid> */}
+              <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
+              </Grid>
 
-              {mainImage.length > 0 &&
+              {/* {mainImage.length > 0 &&
                 <Image
                   src={mainImage}
                   alt='project'
@@ -354,7 +354,8 @@ export default function Home() {
                   style={{ width: '100%', height: 'auto' }}
                   className={`${styles.fade_in_image}`}
                 />
-              }
+              } */}
+
             </Parallax>
           </Box>
           <Box className={styles.parallax_wrapper} sx={{ display: { xs: 'inherit', md: 'none' } }}>
