@@ -4,8 +4,16 @@ export default {
 	title: 'Main',
   fields: [
     {
-      name: 'hero',
-      title: 'Hero',
+      name: 'desktop',
+      title: 'Desktop',
+      type: 'image',
+      options: {
+        hotspot: true,
+      }
+    },
+    {
+      name: 'mobile',
+      title: 'Mobile',
       type: 'image',
       options: {
         hotspot: true,
