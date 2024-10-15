@@ -92,6 +92,7 @@ export default function Home() {
   const [allDescriptionTitles, setAllDescriptionTitles] = useState<string[][]>([[]])
   const [thumbnailText, setThumbnailText] = useState<string[][]>([[]])
   const [mainImage, setMainImage] = useState('')
+  const [mainMobileImage, setMainMobileImage] = useState('')
   const [openMenu, setOpenMenu] = useState(false)
   const [thumbnailImages, setThumbnailImages] = useState<string[][]>([])
   const [projectPreviewTitles, setProjectPreviewTitles] = useState<DescriptionsProps[]>([])
@@ -107,7 +108,8 @@ export default function Home() {
     setAnchorEl(document.getElementById('menu'))
     getStaticProps().then(({ props }) => {
       setIntro({ first: props.intro[0].first, second: props.intro[0].second })
-      setMainImage(urlForImage(props.main[0].hero).url())
+      setMainImage(urlForImage(props.main[0].desktop).url())
+      setMainMobileImage(urlForImage(props.main[0].mobile).url())
 
       const projectPreviewTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ project_name, year, address, status }: DescriptionsProps) => {
@@ -366,14 +368,15 @@ export default function Home() {
               width={375.8}
               height={694}
             /> */}
+            {mainMobileImage &&
             <Image
-              src="/mobile_main.jpg"
+              src={mainMobileImage}
               alt='project'
               width={0}
               height={0}
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
-            />
+            />}
             {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
             {/* </Box> */}
             {/* </Parallax> */}
