@@ -343,7 +343,7 @@ export default function Home() {
           <Box id='top' />
           <Box className={`${styles.parallax_wrapper} ${styles.fade_in_image}`} sx={{ display: { xs: 'none', md: 'inherit' } }}>
             {/* <Parallax speed={-50}> */}
-              <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
+              <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/main.jpg)` }} className={styles.parallax}>
               </Grid>
 
               {/* {mainImage.length > 0 &&
@@ -368,7 +368,7 @@ export default function Home() {
               width={375.8}
               height={694}
             /> */}
-            {mainMobileImage &&
+            {/* {mainMobileImage &&
             <Image
               src={mainMobileImage}
               alt='project'
@@ -376,8 +376,8 @@ export default function Home() {
               height={0}
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
-            />}
-            {/* <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/> */}
+            />} */}
+            <Box sx={{ flexGrow: 1, backgroundImage: `url(/mobile_main.jpg)` }} className={styles.parallax_mobile}/>
             {/* </Box> */}
             {/* </Parallax> */}
           </Box>
