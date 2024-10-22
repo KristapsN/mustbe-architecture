@@ -29,13 +29,15 @@
 @media screen and (max-width: 599px) {
 
   .parallax_mobile {
-    background-blend-mode: multiply;
+    /* background-blend-mode: multiply;
     background-attachment: fixed;
     background-position: left;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    z-index: -10;
     width: 100vw;
     min-height: 90vh;
+    position: fixed;
     /* -webkit-background-size: 425px 874px; */
   }
 
@@ -326,6 +328,7 @@
 .go_up_wrapper {
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .go_up {
