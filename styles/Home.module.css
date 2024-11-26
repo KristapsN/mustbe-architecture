@@ -241,7 +241,7 @@
 }
 
 .contact_title {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 @media screen and (max-width: 599px) {
@@ -273,7 +273,7 @@
 } */
 
 .nav_link_wrapper {
-  width: 90px;
+  /* width: 90px; */
   display: flex;
   align-items: center;
 }

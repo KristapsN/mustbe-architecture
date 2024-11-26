@@ -192,6 +192,8 @@ export default function Home() {
         <title>A+B arhitekti</title>
         <meta name="A+B arhitekti" content="architecture" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="A+B arhitekti ir bāzēti filozofijā par dažādu elementu, ideju un profesionāļu apvienošanu, palīdzot transformēt klienta vēlmes no idejas līdz objekta realizēšanai." />
+        <meta name="keywords" content="A+B arhitekti, A+B, A+B studija, A+B arhitektu studija, Arhitektu birojs A+B, A+B arhitektu birojs, A+B arhitektūra, A+B birojs, A+B architects, A+B architecture, A+B architecture studio, A+B architects office, A+B office, Monvīds Bekmanis"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={'scroll-container'}>
@@ -419,9 +421,9 @@ export default function Home() {
             </Grid>
           </Box>
           <Box className={styles.go_up_wrapper} id="projects">
-            <Box className={styles.project_section_title_wrapper}>
-              <h2>Projekti</h2>
-            </Box>
+            {/* <Box className={styles.project_section_title_wrapper}> */}
+              {/* <h2>Projekti</h2> */}
+            {/* </Box> */}
 
             <AnimateIn>
               <Divider />
@@ -433,7 +435,7 @@ export default function Home() {
                 justifyContent="space-between"
                 alignItems="center"
                 spacing={{ md: '6rem', sx: '2rem' }}
-                sx={{ flexGrow: 1, marginBottom: '40px' }}
+                sx={{ flexGrow: 1}}
               >
                 <>
                   {thumbnailImages.map((images, index) =>
@@ -462,7 +464,7 @@ export default function Home() {
                         </Box>
                         <Box sx={{ height: '70px' }}>
                           <Box sx={{
-                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '5px', marginBottom: '4px'
+                            display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '7px', marginBottom: '8px'
                           }}>
                             <h2>{projectPreviewTitles[index].project_name}</h2>
                             <h2>{projectPreviewTitles[index].year}</h2>
@@ -605,7 +607,7 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1, marginBottom: '10px' }} className={styles.space_wrapper} id="about-us">
+            <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper} id="about-us">
               <Grid
                 container
                 spacing={{ md: '6rem', sx: '2rem' }}
@@ -790,14 +792,14 @@ export default function Home() {
               <Grid
                 container
                 sx={{ marginBottom: "70vh" }}
-              // spacing={{ md: '6rem', sx: '2rem' }}
+              // spacing={{ md: '2rem', sx: '2rem' }}
               >
-                <Grid item xs={12} md={7.2} sx={{ minHeight: '230px', marginBottom: '60px', paddingRight: { md: '6rem' } }}>
+                <Grid item xs={12} md={12 / 5 * 3.2 } sx={{ minHeight: '230px', marginBottom: '60px', paddingRight: { md: '6rem' } }}>
                   <AnimateIn>
                     <ContactMap />
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={4.8} sx={{ marginBottom: '60px' }}>
+                <Grid item xs={12} md={12 / 5 * 1.8} sx={{ marginBottom: '60px' }}>
                   <AnimateIn>
                     <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
                   </AnimateIn>
