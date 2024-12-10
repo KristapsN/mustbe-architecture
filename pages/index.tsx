@@ -408,7 +408,7 @@ export default function Home() {
                   />
                 </Grid>
               </Grid>
-              <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
+              <Grid item xs={12} md={6} sx={{ marginBottom: '27px' }}>
                 <Grid container>
                   <Box>
                     <Paragraph
