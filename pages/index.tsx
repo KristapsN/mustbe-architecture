@@ -421,12 +421,12 @@ export default function Home() {
             </Grid>
           </Box>
           <Box className={styles.go_up_wrapper} id="projects">
-            {/* <Box className={styles.project_section_title_wrapper}> */}
-              {/* <h2>Projekti</h2> */}
-            {/* </Box> */}
+            {/* <Box className={styles.project_section_title_wrapper}>
+              <h2>Projekti</h2>
+            </Box> */}
 
             <AnimateIn>
-              <Divider />
+              <Divider sx={{ marginBottom: '24px'}}/>
             </AnimateIn>
 
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper_projects} >
@@ -607,13 +607,13 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper} id="about-us">
+            <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper_about_us} id="about-us">
               <Grid
                 container
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
 
-                <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '70px' }}>
                   <AnimateIn>
                     <Grid container>
                       <h2 className={styles.title_space}>Par mums</h2>
@@ -626,7 +626,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '70px' }}>
                   <AnimateIn>
                     <Grid container>
                       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>

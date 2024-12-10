@@ -389,6 +389,10 @@
   position: relative;
 }
 
+.space_wrapper_about_us {
+  padding: 20px 15vw 9rem;
+}
+
 .space_wrapper {
   padding: 20px 15vw 6rem;
 }
@@ -398,7 +402,7 @@
 }
 
 .space_wrapper_projects {
-  padding: 20px 15vw 6rem;
+  padding: 20px 15vw 9rem;
 }
 
 .project_section_title_wrapper {
@@ -417,6 +421,10 @@
   .space_wrapper {
     padding: 20px calc(6vw + 10px) 60px 6vw;
     /* padding: 20px 2vw 60px */
+  }
+
+  .space_wrapper_about_us {
+    padding: 20px calc(6vw + 10px) 60px 6vw;
   }
 
   .space_map_wrapper {

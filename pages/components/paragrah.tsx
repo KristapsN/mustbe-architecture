@@ -12,7 +12,7 @@ type ParagraphProps = {
 const Paragraph: FC<ParagraphProps> = ({text, bold = false}) => {
   if (bold) return (
     <>
-  <span style={{fontWeight: 700, color: 'black'}}>A+B arhitekti</span>
+  <span style={{fontWeight: 500, color: 'black'}}>A+B arhitekti</span>
   <span style={{fontWeight: 300 }}>{text}</span>
   </>
 )
