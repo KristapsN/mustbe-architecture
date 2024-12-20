@@ -613,7 +613,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
 
-                <Grid item xs={12} md={6} sx={{ marginBottom: '70px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
                   <AnimateIn>
                     <Grid container>
                       <h2 className={styles.title_space}>Par mums</h2>
@@ -626,10 +626,10 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={6} sx={{ marginBottom: '70px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
                   <AnimateIn>
                     <Grid container>
-                      <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                      <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         <h2 className={styles.title_space}>
                           Sadarbības partneri:
                         </h2>
@@ -740,7 +740,7 @@ export default function Home() {
               <Divider />
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1, padding: { md: '20px 15vw 0px', xs: '20px calc(6vw + 10px) 60px 6vw' } }} id="contacts">
+            <Grid container sx={{ flexGrow: 1, padding: { md: '20px 15vw 0px', xs: '20px calc(6vw + 10px) 40px 6vw' } }} id="contacts">
               <Grid
                 container
                 // sx={{ marginTop: "40px" }}
@@ -749,7 +749,7 @@ export default function Home() {
                 <Grid item xs={12} md={12 / 5}>
                   <AnimateIn>
                     {/* <Box sx={{ display: 'flex' }}> */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: { md: '70px', xs: '1rem' } }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: { md: '70px', xs: '40px' } }}>
                       <h2 className={styles.title_space}>
                         Kontakti:
                       </h2>
@@ -769,7 +769,7 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12} md={3}>
                   <AnimateIn>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '1rem' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                       <h2 className={styles.title_space}>
                         Rekvizīti
                       </h2>
@@ -794,12 +794,12 @@ export default function Home() {
                 sx={{ marginBottom: "70vh" }}
               spacing={{ md: '6rem', sx: '2rem' }}
               >
-                <Grid item xs={12} md={12 / 5 * 3 } sx={{ minHeight: '230px', marginBottom: '60px' }}>
+                <Grid item xs={12} md={12 / 5 * 3 } sx={{ minHeight: '230px', marginBottom: '40px' }}>
                   <AnimateIn>
                     <ContactMap />
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={12 / 5 * 2} sx={{ marginBottom: '60px' }}>
+                <Grid item xs={12} md={12 / 5 * 2} sx={{ marginBottom: '40px' }}>
                   <AnimateIn>
                     <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
                   </AnimateIn>
