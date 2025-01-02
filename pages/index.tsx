@@ -18,6 +18,7 @@ import { Turn as Hamburger } from 'hamburger-react'
 import CloseIcon from '@mui/icons-material/Close';
 import { AnimatePresence, motion } from "framer-motion";
 import { scrollIntoView } from "seamless-scroll-polyfill";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -196,6 +197,7 @@ export default function Home() {
         <meta name="keywords" content="A+B arhitekti, A+B, A+B studija, A+B arhitektu studija, Arhitektu birojs A+B, A+B arhitektu birojs, A+B arhitektūra, A+B birojs, A+B architects, A+B architecture, A+B architecture studio, A+B architects office, A+B office, Monvīds Bekmanis"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <GoogleAnalytics gaId="G-ZCXYF5RPBN" />
       <div className={'scroll-container'}>
         {/* className={`${showLoader && styles.preloader}`} */}
         <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
