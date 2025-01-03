@@ -383,16 +383,16 @@ export default function Home() {
               style={{ width: '100%', height: 'auto' }}
             />} */}
             <AnimateOut>
-            <Box sx={{ flexGrow: 1 }} className={styles.parallax_mobile}>
-              <Image
-                src="/mobile_main.jpg"
-                alt='project'
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </Box>
+              <Box sx={{ flexGrow: 1 }} className={styles.parallax_mobile}>
+                <Image
+                  src="/mobile_main.jpg"
+                  alt='project'
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Box>
             </AnimateOut>
             {/* </Box> */}
             {/* </Parallax> */}

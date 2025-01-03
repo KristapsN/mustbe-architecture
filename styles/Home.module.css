@@ -483,7 +483,7 @@
 
 .mobile_menu_pink {
   font-size: calc((var(--small-text-size-value) - 1) * 1.2vw + 1rem);
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.35px;
   font-weight: 300;
   text-transform: uppercase;
 }
