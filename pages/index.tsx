@@ -19,6 +19,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { AnimatePresence, motion } from "framer-motion";
 import { scrollIntoView } from "seamless-scroll-polyfill";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import AnimateOut from './components/animateOut';
 
 const LanguageButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: 'black',
@@ -194,7 +195,7 @@ export default function Home() {
         <meta name="A+B arhitekti" content="architecture" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="A+B arhitekti ir bāzēti filozofijā par dažādu elementu, ideju un profesionāļu apvienošanu, palīdzot transformēt klienta vēlmes no idejas līdz objekta realizēšanai." />
-        <meta name="keywords" content="A+B arhitekti, A+B, A+B studija, A+B arhitektu studija, Arhitektu birojs A+B, A+B arhitektu birojs, A+B arhitektūra, A+B birojs, A+B architects, A+B architecture, A+B architecture studio, A+B architects office, A+B office, Monvīds Bekmanis"/>
+        <meta name="keywords" content="A+B arhitekti, A+B, A+B studija, A+B arhitektu studija, Arhitektu birojs A+B, A+B arhitektu birojs, A+B arhitektūra, A+B birojs, A+B architects, A+B architecture, A+B architecture studio, A+B architects office, A+B office, Monvīds Bekmanis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GoogleAnalytics gaId="G-ZCXYF5RPBN" />
@@ -381,6 +382,7 @@ export default function Home() {
               sizes="100vw"
               style={{ width: '100%', height: 'auto' }}
             />} */}
+            <AnimateOut>
             <Box sx={{ flexGrow: 1 }} className={styles.parallax_mobile}>
               <Image
                 src="/mobile_main.jpg"
@@ -391,8 +393,10 @@ export default function Home() {
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
+            </AnimateOut>
             {/* </Box> */}
             {/* </Parallax> */}
+
           </Box>
           <Box sx={{ overflow: 'hidden' }} className={styles.space_wrapper_wrapper}>
             <Grid
@@ -428,7 +432,7 @@ export default function Home() {
             </Box> */}
 
             <AnimateIn>
-              <Divider sx={{ marginBottom: '24px'}}/>
+              <Divider sx={{ marginBottom: '24px' }} />
             </AnimateIn>
 
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper_projects} >
@@ -437,7 +441,7 @@ export default function Home() {
                 justifyContent="space-between"
                 alignItems="center"
                 spacing={{ md: '6rem', sx: '2rem' }}
-                sx={{ flexGrow: 1}}
+                sx={{ flexGrow: 1 }}
               >
                 <>
                   {thumbnailImages.map((images, index) =>
@@ -794,9 +798,9 @@ export default function Home() {
               <Grid
                 container
                 sx={{ marginBottom: "70vh" }}
-              spacing={{ md: '6rem', sx: '2rem' }}
+                spacing={{ md: '6rem', sx: '2rem' }}
               >
-                <Grid item xs={12} md={12 / 5 * 3 } sx={{ minHeight: '230px', marginBottom: '40px' }}>
+                <Grid item xs={12} md={12 / 5 * 3} sx={{ minHeight: '230px', marginBottom: '40px' }}>
                   <AnimateIn>
                     <ContactMap />
                   </AnimateIn>
