@@ -22,6 +22,7 @@ const AnimateOut: FC<PropsWithChildren> = ({ children }) => {
       ref={ref}
       style={{
         opacity: isShown ? 1 : 0,
+        translate: isShown ? "none" : "0 2rem",
         height: '100%'
       }}
     >
