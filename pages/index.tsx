@@ -504,7 +504,7 @@ export default function Home() {
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
                             {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                               <>
-                                <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none' } }}>
+                                <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none' }, marginBottom: { xs: '8px'} }}>
                                   {thumbnailText[openedImagesIndex.current].map((item, index) =>
                                     <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} marginRight={{ md: '2rem', xs: 'calc(2vw + 20px)' }} key={index} >
                                       <>
