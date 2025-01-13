@@ -201,7 +201,7 @@ export default function Home() {
       <GoogleAnalytics gaId="G-ZCXYF5RPBN" />
       <div className={'scroll-container'}>
         {/* className={`${showLoader && styles.preloader}`} */}
-        <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
+        {/* <Box sx={{ maxWidth: '100vw' }} className={`${!showLoader && styles.preloader_fade}`}>
           <Grid
             container
             justifyContent="center"
@@ -209,7 +209,7 @@ export default function Home() {
             sx={{ flexGrow: 1 }}
             className={`${styles.preloader}`}
           >
-            {/* <Player
+            <Player
               onEvent={event => {
                 if (event === 'play') {
                   setTimeout(loaderHandler, 3800)
@@ -221,10 +221,10 @@ export default function Home() {
               src="/logo_loader/logo_loader.json"
               style={{ height: '300px' }}
               speed={8}
-            /> */}
-            {/* </Player> */}
+            />
+            </Player>
           </Grid>
-        </Box>
+        </Box> */}
         <>
           <Grid container sx={{ position: 'fixed', zIndex: 100 }}>
             <Grid item xs={12}>
@@ -640,10 +640,10 @@ export default function Home() {
                           Sadarbības partneri:
                         </h2>
                         <Paragraph
-                          text="Arhitekti: Aigars Tereško, Mikus Druviņš / Interjere dizainere: Donna Victoria Design 
+                          text="Arhitekti: Aigars Tereško, Mikus Druviņš / Interjera dizainere: Donna Victoria Design 
                           / Inženieri: Miķelis Siliņš, Pāvels Stepanovs, Māris Arnavs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, 
                           Mārtiņš Pocis, Kristaps Jakimovs, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis, Jekaterina Apse, 
-                          / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, Māŗtiņš Ziemanis 
+                          / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, Mārtiņš Ziemanis 
                           / Uzņēmumi: Būvdizains, AZ Service, Aver Brokarage"
                         />
                       </Box>
