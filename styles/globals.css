@@ -13,14 +13,22 @@
 }
 
 html,
+
 body {
   /* max-width: 100vw; */
   /* overflow-x: hidden; */
   /* height: 100%; */
+  cursor: none;
   font-size: 12px;
   font-family: 'Noto Sans', sans-serif;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="%23000" stroke-linecap="round" stroke-width="0.25" d="M12 3v18M3 12h18"></path></svg>') 4 12, auto;  
+}
+a {
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="%23000" stroke-linecap="round" stroke-width="0.25" d="M12 3v18M3 12h18"></path></svg>') 4 12, pointer;  
 
 }
+
+
 
 @media only screen and (min-width: 1920px) {
   html {
@@ -33,14 +41,14 @@ p {
   font-weight: 400;
   font-size: 14px;
   color: #666666;
-  line-height: 20px;
+  line-height: 22px;
 }
 span {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
   color: #666666;
-  line-height: 20px;
+  line-height: 22px;
 }
 h1 {
   /* font-family: 'Rajdhani', sans-serif; */
@@ -115,4 +123,23 @@ a {
 }
 #contacts {
   scroll-margin: 80px;
+}
+
+.modal-address {
+  padding: 10px;
+}
+.modal-address-last {
+  padding: 10px;
+}
+
+@media screen and (max-width: 599px) {
+  .modal-address-last {
+    padding: 10px 10px 20px 10px;
+    display: block;
+  }
+  .modal-address {
+    padding: 10px;
+    display: block;
+  }
+
 }

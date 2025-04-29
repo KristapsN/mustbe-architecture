@@ -75,6 +75,14 @@ export const useElementOnScreen = (
   return isIntersecting;
 }
 
+function scrollToAnchor() {
+  document.getElementById('modal').scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+}
+
 export default function Home() {
   const handleLinkClick = (event: { preventDefault: () => void; }, value: string) => {
     event.preventDefault();
@@ -83,6 +91,7 @@ export default function Home() {
     //   behavior: 'smooth',
     //   block: 'start',
     // });
+    console.log('element', element)
     element && scrollIntoView(element, { behavior: "smooth", block: "start" });
 
     setOpenMenu(false)
@@ -166,9 +175,9 @@ export default function Home() {
   }, [openProject])
 
   const containerVariant = {
-    initial: { top: "100%", transition: { type: "spring", delay: 1 } },
-    isOpen: { top: windowSize > 599 ? "78px" : "60px" },
-    exit: { top: "100%" }
+    initial: { top: "100%" },
+    isOpen: { top: windowSize > 599 ? "78px" : "60px", transition:  {duration: 0.5} },
+    exit: { top: "100%", transition:  {duration: 0.5}  }
   };
 
   const ModalContainer = styled(motion.div)`
@@ -265,9 +274,9 @@ export default function Home() {
                   {!openProject &&
                     <Box className={`${styles.menu_wrapper} ${!showLoader && styles.preloader_fade_menu_wrapper}`}>
                       <Box className={styles.nav_link_wrapper}>
-                        <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
+                        {/* <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
                           <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z" /></svg>
-                        </Box>
+                        </Box> */}
 
                         <Link
                           className={`${styles.nav_link} scroll`}
@@ -278,9 +287,9 @@ export default function Home() {
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
-                        <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
+                        {/* <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
                           <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z" /></svg>
-                        </Box>
+                        </Box> */}
 
                         <Link
                           className={`${styles.nav_link}`}
@@ -291,9 +300,9 @@ export default function Home() {
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
-                        <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
+                        {/* <Box sx={{ height: '14px', width: '14px', display: 'inline' }}>
                           <svg className={styles.nav_arrow} xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -900 900 900" width="14px" fill="#000000"><path d="M469-469H252v-22h217v-217h22v217h217v22H491v217h-22v-217Z" /></svg>
-                        </Box>
+                        </Box> */}
 
                         <Link
                           className={`${styles.nav_link}`}
@@ -328,7 +337,7 @@ export default function Home() {
                         </Link>
                         <LanguageButton
                           disableRipple
-                          sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px' }}
+                          sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px', margin: '0px 10px' }}
                           onClick={() => handleChange()}
                         >
                           {language}
@@ -341,6 +350,37 @@ export default function Home() {
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>Projekti</span></MenuItem>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>Par mums</span></MenuItem>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>Kontakti</span></MenuItem>
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px', mb: '20px', mt: '20px' }} >
+                    <Link
+                      className={styles.social_icon}
+                      href="https://www.facebook.com/"
+                    >
+                      <Image
+                        src="/facebook.svg"
+                        alt="MUST BE architecture"
+                        width={25}
+                        height={17}
+                      />
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/"
+                      className={styles.social_icon}
+                    >
+                      <Image
+                        src="/instagram.svg"
+                        alt="MUST BE architecture"
+                        width={25}
+                        height={17}
+                      />
+                    </Link>
+                    <LanguageButton
+                      disableRipple
+                      sx={{ width: 25, height: 17, fontWeight: 300, fontSize: '21px', margin: '0px 10px' }}
+                      onClick={() => handleChange()}
+                    >
+                      {language}
+                    </LanguageButton>
+                  </Box>
                 </Collapse>
               </Grid>
             </Grid>
@@ -468,7 +508,7 @@ export default function Home() {
                             /> */}
                           </button>
                         </Box>
-                        <Box sx={{ height: '70px' }}>
+                        <Box sx={{ height: '70px', paddingLeft: {xs: '4vw', md: 0} , paddingRight: {xs: '4vw', md: 0} }}>
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '7px', marginBottom: '8px'
                           }}>
@@ -492,6 +532,7 @@ export default function Home() {
                         animate={"isOpen"}
                         exit={"exit"}
                         variants={containerVariant}
+                        id='modal'
                       >
                         <Box className={styles.project_close} sx={{ textAlign: 'right' }}>
                           <Hamburger
@@ -500,15 +541,24 @@ export default function Home() {
                             hideOutline={true}
                           />
                         </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                        {/* <Box className={styles.project_close} sx={{ textAlign: 'right', position: 'fixed', bottom: 0 }}>
+                          <button
+                            onClick={(e) =>
+                              scrollToAnchor()}
+                            className={styles.go_up}
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
+                          </button>
+                        </Box> */}
+                        <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
                             {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                               <>
-                                <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none' }, marginBottom: { xs: '8px'} }}>
+                                <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none' }, marginBottom: { xs: '8px' } }}>
                                   {thumbnailText[openedImagesIndex.current].map((item, index) =>
                                     <Box marginBottom={2} marginLeft={{ md: 0, xs: '6vw' }} marginRight={{ md: '2rem', xs: 'calc(2vw + 20px)' }} key={index} >
                                       <>
-                                        <Box sx={{ marginTop: '10px' }}>
+                                        <Box sx={{ marginTop: '0px' }}>
                                           <h2 className={styles.title_space}>
                                             {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
                                           </h2>
@@ -564,7 +614,7 @@ export default function Home() {
                                   {thumbnailText[openedImagesIndex.current].map((item, index) =>
                                     <Box marginBottom={2} marginLeft={{ md: '2rem', xs: 0 }} key={index}>
                                       <>
-                                        <Box sx={{ marginTop: '10px' }}>
+                                        <Box sx={{ marginTop: '0px' }}>
                                           <h2 className={styles.title_space}>
                                             {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
                                           </h2>
@@ -597,10 +647,52 @@ export default function Home() {
                                     }
                                   }
                                   )}
-                                </Grid></>
+                                </Grid>
+                              </>
                             }
                             <Grid item md={4} />
+
                           </Grid>
+                        </Box>
+                        <Box sx={{ height: '300px' }}>
+                          <Divider />
+                          <Box sx={{ marginTop: { md: '200px', xs: '50px' }, textAlign: 'center' }}>
+                            <span className={'modal-address'}>Kontakti:</span>
+                            <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
+                            <span className={'modal-address'}>info@aplusb.lv</span>
+                            <span className={'modal-address-last'}>+371 29121613</span>
+                            <Link
+                              className={styles.social_icon}
+                              href="https://www.facebook.com/"
+                            >
+                              <Image
+                                src="/facebook.svg"
+                                alt="MUST BE architecture"
+                                width={20}
+                                height={12}
+                              />
+                            </Link>
+                            <Link
+                              href="https://www.instagram.com/"
+                              className={styles.social_icon}
+                            >
+                              <Image
+                                src="/instagram.svg"
+                                alt="MUST BE architecture"
+                                width={20}
+                                height={12}
+                              />
+                            </Link>
+                          </Box>
+                          <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0 }}>
+                            <button
+                              onClick={(e) =>
+                                scrollToAnchor()}
+                              className={styles.go_up}
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
+                            </button>
+                          </Box>
                         </Box>
                       </ModalContainer>
                     }
@@ -619,7 +711,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
 
-                <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '72px' }}>
                   <AnimateIn>
                     <Grid container>
                       <h2 className={styles.title_space}>Par mums</h2>
@@ -807,7 +899,7 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12} md={12 / 5 * 2} sx={{ marginBottom: '40px' }}>
                   <AnimateIn>
-                    <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/contact.jpg")' }} />
+                    <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/Skursteni_2_Samazināts izmērs.jpg")' }} />
                   </AnimateIn>
                 </Grid>
               </Grid>
