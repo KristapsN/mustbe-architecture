@@ -76,7 +76,7 @@ export const useElementOnScreen = (
 }
 
 function scrollToAnchor() {
-  document.getElementById('modal').scrollTo({
+  document.getElementById('modal')?.scrollTo({
     top: 0,
     behavior: 'smooth'
   });
