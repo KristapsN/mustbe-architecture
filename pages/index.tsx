@@ -350,7 +350,7 @@ export default function Home() {
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>Projekti</span></MenuItem>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>Par mums</span></MenuItem>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>Kontakti</span></MenuItem>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px', mb: '20px', mt: '20px' }} >
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px', mb: '26px', mt: '20px' }} >
                     <Link
                       className={styles.social_icon}
                       href="https://www.facebook.com/"
@@ -550,7 +550,7 @@ export default function Home() {
                             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
                           </button>
                         </Box> */}
-                        <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', paddingTop: '22px' }}>
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
                             {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                               <>
@@ -890,14 +890,14 @@ export default function Home() {
               <Grid
                 container
                 sx={{ marginBottom: "70vh" }}
-                spacing={{ md: '6rem', sx: '2rem' }}
+                // spacing={{ md: '6rem', sx: '2rem' }}
               >
-                <Grid item xs={12} md={12 / 5 * 3} sx={{ minHeight: '230px', marginBottom: '40px' }}>
+                <Grid item xs={12} md={12 / 5 * 3} sx={{ minHeight: '230px', marginBottom: '40px', pr: { md: '2.6rem', xs: 0 } }}>
                   <AnimateIn>
                     <ContactMap />
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={12 / 5 * 2} sx={{ marginBottom: '40px' }}>
+                <Grid item xs={12} md={12 / 5 * 2} sx={{ marginBottom: '40px', pl: { md: '3.4rem', xs: 0 } }}>
                   <AnimateIn>
                     <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/Skursteni_2_Samazināts izmērs.jpg")' }} />
                   </AnimateIn>
