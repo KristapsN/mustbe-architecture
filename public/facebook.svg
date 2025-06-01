@@ -1,4 +1,4 @@
-<svg width="296" height="541" viewBox="0 0 296 541" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg width="296" height="541" viewBox="0 0 296 541" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_602_7)">
 <path d="M292 0.0969136L211.989 0C134.399 0 84.277 51.4587 84.277 131.191V191.638H4V301.024H84.277L84.1802 533H196.5L196.597 301.024H288.709L288.636 191.662H196.597V140.373C196.597 115.709 202.43 103.232 234.497 103.232L291.758 103.208L292 0.0969136Z" fill="black"/>
 </g>
@@ -14,4 +14,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_602_7" result="shape"/>
 </filter>
 </defs>
-</svg>
+</svg> -->
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
