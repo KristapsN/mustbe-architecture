@@ -176,8 +176,8 @@ export default function Home() {
 
   const containerVariant = {
     initial: { top: "100%" },
-    isOpen: { top: windowSize > 599 ? "78px" : "60px", transition:  {duration: 0.5} },
-    exit: { top: "100%", transition:  {duration: 0.5}  }
+    isOpen: { top: windowSize > 599 ? "78px" : "60px", transition: { duration: 0.5 } },
+    exit: { top: "100%", transition: { duration: 0.5 } }
   };
 
   const ModalContainer = styled(motion.div)`
@@ -508,7 +508,7 @@ export default function Home() {
                             /> */}
                           </button>
                         </Box>
-                        <Box sx={{ height: '70px', paddingLeft: {xs: '4vw', md: 0} , paddingRight: {xs: '4vw', md: 0} }}>
+                        <Box sx={{ height: '70px', paddingLeft: { xs: '4vw', md: 0 }, paddingRight: { xs: '4vw', md: 0 } }}>
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '7px', marginBottom: '8px'
                           }}>
@@ -648,108 +648,129 @@ export default function Home() {
                                   }
                                   )}
                                 </Grid>
-                                <Box sx={{ height: '286px' }}>
-                          <Divider />
-                          <Grid item md={8} xs={12}></Grid>
-                          <Grid item md={4} xs={12}>
-                          <Box sx={{ marginTop: { md: '200px', xs: 'calc(4rem - 10px)' }, textAlign: 'center' }}>
-                            <span className={'modal-address'}>Kontakti:</span>
-                            <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
-                            <span className={'modal-address'}>info@aplusb.lv</span>
-                            <span className={'modal-address'}>+371 29121613</span>
-                            <Box sx={{ pt: '14px', pb: '14px', display: {md:'inline', xs: 'box'}}}>
-                            <Link
-                              className={styles.social_icon}
-                              href="https://www.facebook.com/"
-                            >
-                              <Image
-                                src="/facebook.svg"
-                                alt="MUST BE architecture"
-                                width={20}
-                                height={12}
-                              />
-                            </Link>
-                            <Link
-                              href="https://www.instagram.com/"
-                              className={styles.social_icon}
-                            >
-                              <Image
-                                src="/instagram.svg"
-                                alt="MUST BE architecture"
-                                width={20}
-                                height={12}
-                              />
-                            </Link>
-                            </Box>
-                          </Box>
-                          <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0 }}>
-                            <button
-                              onClick={(e) =>
-                                scrollToAnchor()}
-                              className={styles.go_up}
-                            >
-                              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
-                            </button>
-                          </Box>
-                          </Grid>
-                        </Box>
                               </>
                             }
                             <Grid item md={4} />
-
                           </Grid>
                         </Box>
-                        {/* {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
-                        <>
-                        <Grid item md={8} xs={12}></Grid>
-                        <Grid item md={4} xs={12}> */}
-                        <Box sx={{ height: '286px' }}>
+                        <Box>
                           <Divider />
-                          <Box sx={{ marginTop: { md: '200px', xs: 'calc(4rem - 10px)' }, textAlign: 'center' }}>
-                            <span className={'modal-address'}>Kontakti:</span>
-                            <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
-                            <span className={'modal-address'}>info@aplusb.lv</span>
-                            <span className={'modal-address'}>+371 29121613</span>
-                            <Box sx={{ pt: '14px', pb: '14px', display: {md:'inline', xs: 'box'}}}>
-                            <Link
-                              className={styles.social_icon}
-                              href="https://www.facebook.com/"
-                            >
-                              <Image
-                                src="/facebook.svg"
-                                alt="MUST BE architecture"
-                                width={20}
-                                height={12}
-                              />
-                            </Link>
-                            <Link
-                              href="https://www.instagram.com/"
-                              className={styles.social_icon}
-                            >
-                              <Image
-                                src="/instagram.svg"
-                                alt="MUST BE architecture"
-                                width={20}
-                                height={12}
-                              />
-                            </Link>
-                            </Box>
-                          </Box>
-                          <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0 }}>
-                            <button
-                              onClick={(e) =>
-                                scrollToAnchor()}
-                              className={styles.go_up}
-                            >
-                              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
-                            </button>
-                          </Box>
                         </Box>
-                        {/* </Grid> */}
-                        {/* </>
-                        :
-                        <></>
-                              } */}
+                        <Box sx={{
+                          display: 'flex',
+                          justifyContent: 'center',
+                          paddingBottom: '2rem',
+                          paddingTop: '22px',
+                          paddingLeft: { md: '15vw' },
+                          paddingRight: { md: '15vw' }
+                        }}>
+                          {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
+                            <>
+                              <Grid item md={4} />
+                              <Grid item md={8} xs={12}>
+                                <Box sx={{ height: {md: '110px', xs: '235px'} }}>
+                                  <Box sx={{
+                                    marginTop: { md: '200px', xs: 'calc(4rem - 10px)' },
+                                    display: {md: 'flex', xs: 'block'},
+                                    textAlign: 'center',
+                                    justifyContent: 'space-between'
+                                  }}>
+                                    <span className={'modal-address'}>Kontakti:</span>
+                                    <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
+                                    <span className={'modal-address'}>info@aplusb.lv</span>
+                                    <span className={'modal-address'}>+371 29121613</span>
+                                    <Box sx={{ pt: '14px', pb: '14px', display: { md: 'inline', xs: 'box' } }}>
+                                      <Link
+                                        className={styles.social_icon}
+                                        href="https://www.facebook.com/"
+                                      >
+                                        <Image
+                                          src="/facebook.svg"
+                                          alt="MUST BE architecture"
+                                          width={20}
+                                          height={12}
+                                        />
+                                      </Link>
+                                      <Link
+                                        href="https://www.instagram.com/"
+                                        className={styles.social_icon}
+                                      >
+                                        <Image
+                                          src="/instagram.svg"
+                                          alt="MUST BE architecture"
+                                          width={20}
+                                          height={12}
+                                        />
+                                      </Link>
+                                    </Box>
+                                  </Box>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0 }}>
+                                    <button
+                                      onClick={(e) =>
+                                        scrollToAnchor()}
+                                      className={styles.go_up}
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
+                                    </button>
+                                  </Box>
+                                </Box>
+                              </Grid>
+
+                            </>
+                            :
+                            <>
+                              <Grid item md={8} xs={12}>
+                                <Box sx={{ height: '110px', xs: '235px' }}>
+                                  <Box sx={{
+                                    marginTop: { md: '200px', xs: 'calc(4rem - 10px)' },
+                                    display: {md: 'flex', xs: 'block'},
+                                    textAlign: 'center',
+                                    justifyContent: 'space-between'
+                                  }}>
+                                    <span className={'modal-address'}>Kontakti:</span>
+                                    <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
+                                    <span className={'modal-address'}>info@aplusb.lv</span>
+                                    <span className={'modal-address'}>+371 29121613</span>
+                                    <Box sx={{ pt: '14px', pb: '14px', display: { md: 'inline', xs: 'box' } }}>
+                                      <Link
+                                        className={styles.social_icon}
+                                        href="https://www.facebook.com/"
+                                      >
+                                        <Image
+                                          src="/facebook.svg"
+                                          alt="MUST BE architecture"
+                                          width={20}
+                                          height={12}
+                                        />
+                                      </Link>
+                                      <Link
+                                        href="https://www.instagram.com/"
+                                        className={styles.social_icon}
+                                      >
+                                        <Image
+                                          src="/instagram.svg"
+                                          alt="MUST BE architecture"
+                                          width={20}
+                                          height={12}
+                                        />
+                                      </Link>
+                                    </Box>
+                                  </Box>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0 }}>
+                                    <button
+                                      onClick={(e) =>
+                                        scrollToAnchor()}
+                                      className={styles.go_up}
+                                    >
+                                      <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
+                                    </button>
+                                  </Box>
+                                </Box>
+                              </Grid>
+                              <Grid item md={4} />
+                            </>
+                          }
+                        </Box>
                       </ModalContainer>
                     }
                   </AnimatePresence>
@@ -946,7 +967,7 @@ export default function Home() {
               <Grid
                 container
                 sx={{ marginBottom: "70vh" }}
-                // spacing={{ md: '6rem', sx: '2rem' }}
+              // spacing={{ md: '6rem', sx: '2rem' }}
               >
                 <Grid item xs={12} md={12 / 5 * 3} sx={{ minHeight: '230px', marginBottom: '40px', pr: { md: '2.6rem', xs: 0 } }}>
                   <AnimateIn>
