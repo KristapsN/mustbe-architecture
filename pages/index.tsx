@@ -315,7 +315,7 @@ export default function Home() {
                       <Box className={styles.center_flex}>
                         <Link
                           className={styles.social_icon}
-                          href="https://www.facebook.com/"
+                          href="https://www.facebook.com/profile.php?id=61577014455013/"
                         >
                           <Image
                             src="/facebook.svg"
@@ -325,7 +325,7 @@ export default function Home() {
                           />
                         </Link>
                         <Link
-                          href="https://www.instagram.com/"
+                          href="https://www.instagram.com/aplusb.arhitekti/"
                           className={styles.social_icon}
                         >
                           <Image
@@ -353,7 +353,7 @@ export default function Home() {
                   <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px', mb: '26px', mt: '20px' }} >
                     <Link
                       className={styles.social_icon}
-                      href="https://www.facebook.com/"
+                      href="https://www.facebook.com/profile.php?id=61577014455013"
                     >
                       <Image
                         src="/facebook.svg"
@@ -363,7 +363,7 @@ export default function Home() {
                       />
                     </Link>
                     <Link
-                      href="https://www.instagram.com/"
+                      href="https://www.instagram.com/aplusb.arhitekti/"
                       className={styles.social_icon}
                     >
                       <Image
@@ -682,7 +682,7 @@ export default function Home() {
                                     <Box sx={{ pt: '14px', pb: '14px', display: { md: 'inline', xs: 'box' } }}>
                                       <Link
                                         className={styles.social_icon}
-                                        href="https://www.facebook.com/"
+                                        href="https://www.facebook.com/profile.php?id=61577014455013"
                                       >
                                         <Image
                                           src="/facebook.svg"
@@ -692,7 +692,7 @@ export default function Home() {
                                         />
                                       </Link>
                                       <Link
-                                        href="https://www.instagram.com/"
+                                        href="https://www.instagram.com/aplusb.arhitekti/"
                                         className={styles.social_icon}
                                       >
                                         <Image
@@ -734,7 +734,7 @@ export default function Home() {
                                     <Box sx={{ pt: '14px', pb: '14px', display: { md: 'inline', xs: 'box' } }}>
                                       <Link
                                         className={styles.social_icon}
-                                        href="https://www.facebook.com/"
+                                        href="https://www.facebook.com/profile.php?id=61577014455013"
                                       >
                                         <Image
                                           src="/facebook.svg"
@@ -744,7 +744,7 @@ export default function Home() {
                                         />
                                       </Link>
                                       <Link
-                                        href="https://www.instagram.com/"
+                                        href="https://www.instagram.com/aplusb.arhitekti/"
                                         className={styles.social_icon}
                                       >
                                         <Image
