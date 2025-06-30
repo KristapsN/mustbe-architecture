@@ -508,7 +508,7 @@ export default function Home() {
                             /> */}
                           </button>
                         </Box>
-                        <Box sx={{ height: '70px', paddingLeft: { xs: '4vw', md: 0 }, paddingRight: { xs: '4vw', md: 0 } }}>
+                        <Box sx={{ height: '70px', paddingLeft: { xs: '4vw', md: 0 }, paddingRight: { xs: '6vw', md: 0 } }}>
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '7px', marginBottom: '8px'
                           }}>
@@ -550,7 +550,9 @@ export default function Home() {
                             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
                           </button>
                         </Box> */}
-                        <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '2rem', paddingTop: '22px' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', 
+                          // paddingTop: '22px' 
+                          }}>
                           <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
                             {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                               <>
@@ -659,8 +661,8 @@ export default function Home() {
                         <Box sx={{
                           display: 'flex',
                           justifyContent: 'center',
-                          paddingBottom: '2rem',
-                          paddingTop: '22px',
+                          // paddingBottom: '2rem',
+                          // paddingTop: '22px',
                           paddingLeft: { md: '15vw' },
                           paddingRight: { md: '15vw' }
                         }}>
@@ -668,9 +670,9 @@ export default function Home() {
                             <>
                               <Grid item md={4} />
                               <Grid item md={8} xs={12}>
-                                <Box sx={{ height: {md: '110px', xs: '235px'} }}>
+                                <Box sx={{ height: {md: '110px', xs: '260px'} }}>
                                   <Box sx={{
-                                    marginTop: { md: '200px', xs: 'calc(4rem - 10px)' },
+                                    marginTop: { md: '10rem', xs: '6rem' },
                                     display: {md: 'flex', xs: 'block'},
                                     textAlign: 'center',
                                     justifyContent: 'space-between'
@@ -679,7 +681,7 @@ export default function Home() {
                                     <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
-                                    <Box sx={{ pt: '14px', pb: '14px', display: { md: 'inline', xs: 'box' } }}>
+                                    <Box sx={{ pt: '0', pb: '2rem', display: { md: 'inline', xs: 'box' } }}>
                                       <Link
                                         className={styles.social_icon}
                                         href="https://www.facebook.com/profile.php?id=61577014455013"
@@ -720,9 +722,9 @@ export default function Home() {
                             :
                             <>
                               <Grid item md={8} xs={12}>
-                                <Box sx={{ height: '110px', xs: '235px' }}>
+                                <Box sx={{ height: '110px', xs: '260px' }}>
                                   <Box sx={{
-                                    marginTop: { md: '200px', xs: 'calc(4rem - 10px)' },
+                                    marginTop: { md: '10rem', xs: '6rem' },
                                     display: {md: 'flex', xs: 'block'},
                                     textAlign: 'center',
                                     justifyContent: 'space-between'
@@ -731,7 +733,7 @@ export default function Home() {
                                     <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
-                                    <Box sx={{ pt: '14px', pb: '14px', display: { md: 'inline', xs: 'box' } }}>
+                                    <Box sx={{ pt: '0', pb: '2rem', display: { md: 'inline', xs: 'box' } }}>
                                       <Link
                                         className={styles.social_icon}
                                         href="https://www.facebook.com/profile.php?id=61577014455013"

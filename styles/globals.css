@@ -41,14 +41,14 @@ p {
   font-weight: 400;
   font-size: 14px;
   color: #666666;
-  line-height: 22px;
+  line-height: 26px;
 }
 span {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
   color: #666666;
-  line-height: 22px;
+  line-height: 26px;
 }
 h1 {
   /* font-family: 'Rajdhani', sans-serif; */
@@ -126,7 +126,8 @@ a {
 }
 
 .modal-address {
-  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 2rem;
 }
 .modal-address-last {
   padding: 14px;
@@ -138,7 +139,8 @@ a {
     display: block;
   }
   .modal-address {
-    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 2rem;
     display: block;
   }
 
