@@ -670,7 +670,7 @@ export default function Home() {
                             <>
                               <Grid item md={4} />
                               <Grid item md={8} xs={12}>
-                                <Box sx={{ height: {md: '110px', xs: '260px'} }}>
+                                <Box sx={{ height: {md: '110px', xs: '275px'} }}>
                                   <Box sx={{
                                     marginTop: { md: '10rem', xs: '6rem' },
                                     display: {md: 'flex', xs: 'block'},
@@ -722,7 +722,7 @@ export default function Home() {
                             :
                             <>
                               <Grid item md={8} xs={12}>
-                                <Box sx={{ height: '110px', xs: '260px' }}>
+                                <Box sx={{ height: '110px', xs: '275px' }}>
                                   <Box sx={{
                                     marginTop: { md: '10rem', xs: '6rem' },
                                     display: {md: 'flex', xs: 'block'},
