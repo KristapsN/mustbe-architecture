@@ -550,10 +550,11 @@ export default function Home() {
                             <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
                           </button>
                         </Box> */}
-                        <Box sx={{ display: 'flex', justifyContent: 'center', 
-                          // paddingTop: '22px' 
-                          }}>
-                          <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }}>
+                        <Box sx={{
+                          display: 'flex', justifyContent: 'center',
+                          // paddingTop: '22px'
+                        }}>
+                          <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }} sx={{ marginTop: '12px'}}>
                             {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                               <>
                                 <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none' }, marginBottom: { xs: '8px' } }}>
@@ -670,10 +671,10 @@ export default function Home() {
                             <>
                               <Grid item md={4} />
                               <Grid item md={8} xs={12}>
-                                <Box sx={{ height: {md: '110px', xs: '275px'} }}>
+                                <Box sx={{ height: { md: '110px', xs: '275px' } }}>
                                   <Box sx={{
                                     marginTop: { md: '10rem', xs: '6rem' },
-                                    display: {md: 'flex', xs: 'block'},
+                                    display: { md: 'flex', xs: 'block' },
                                     textAlign: 'center',
                                     justifyContent: 'space-between'
                                   }}>
@@ -681,7 +682,7 @@ export default function Home() {
                                     <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
-                                    <Box sx={{ pt: '0', pb: '2rem', display: { md: 'inline', xs: 'box' } }}>
+                                    <Box sx={{ pt: '0', pb: '2rem', alignItems: {md: 'center'}, display: { md: 'flex', xs: 'box' } }}>
                                       <Link
                                         className={styles.social_icon}
                                         href="https://www.facebook.com/profile.php?id=61577014455013"
@@ -706,7 +707,7 @@ export default function Home() {
                                       </Link>
                                     </Box>
                                   </Box>
-                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0 }}>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '24px' }}>
                                     <button
                                       onClick={(e) =>
                                         scrollToAnchor()}
@@ -725,7 +726,7 @@ export default function Home() {
                                 <Box sx={{ height: '110px', xs: '275px' }}>
                                   <Box sx={{
                                     marginTop: { md: '10rem', xs: '6rem' },
-                                    display: {md: 'flex', xs: 'block'},
+                                    display: { md: 'flex', xs: 'block' },
                                     textAlign: 'center',
                                     justifyContent: 'space-between'
                                   }}>
