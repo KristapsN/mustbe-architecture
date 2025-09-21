@@ -813,10 +813,16 @@ export default function Home() {
                         </h2>
                         <Paragraph
                           text="Arhitekti: Aigars Tereško, Mikus Druviņš / Interjera dizainere: Donna Victoria Design 
-                          / Inženieri: Miķelis Siliņš, Pāvels Stepanovs, Māris Arnavs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, 
+                          / Inženieri: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs, Jānis Pitkevičs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, 
                           Mārtiņš Pocis, Kristaps Jakimovs, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis, Jekaterina Apse, 
-                          / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, Mārtiņš Ziemanis 
-                          / Uzņēmumi: Būvdizains, AZ Service, Aver Brokarage"
+                          Māris Arnavs  / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, Mārtiņš Ziemanis 
+                          / Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera biroja, VAULTEX, JP Būvinženieru birojs, 
+                          Jaundubults, Ruby Project, Aver BrokarageArhitekti: Aigars Tereško, Mikus Druviņš 
+                          / Interjera dizainere: Donna Victoria Design / Inženieri: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs, Jānis Pitkevičs, 
+                          Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, Mārtiņš Pocis, Kristaps Jakimovs, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, 
+                          Jānis Bērziņš, Vilnis Puļķis, Jekaterina Apse, Māris Arnavs  / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, 
+                          Mārtiņš Ziemanis / Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera biroja, VAULTEX, JP Būvinženieru birojs, 
+                          Jaundubults, Ruby Project, Aver Brokarage"
                         />
                       </Box>
                     </Grid>
