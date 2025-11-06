@@ -375,7 +375,7 @@ export default function Home() {
                     </Link>
                     <LanguageButton
                       disableRipple
-                      sx={{ width: 25, height: 17, fontWeight: 300, fontSize: '21px', margin: '0px 10px' }}
+                      sx={{ width: 25, height: 17, fontWeight: 300, fontSize: '21px', margin: '0px 0px 0px 10px' }}
                       onClick={() => handleChange()}
                     >
                       {language}
@@ -554,7 +554,7 @@ export default function Home() {
                           display: 'flex', justifyContent: 'center',
                           // paddingTop: '22px'
                         }}>
-                          <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }} sx={{ marginTop: '12px'}}>
+                          <Grid container justifyContent='center' width={{ md: '70vw', sm: '90vw' }} sx={{ marginTop: '12px' }}>
                             {openedImagesIndex.current % 2 !== 0 || windowSize < 900 ?
                               <>
                                 <Grid item md={4} xs={12} sx={{ maxHeight: { md: '520px', xs: 'none' }, marginBottom: { xs: '8px' } }}>
@@ -682,7 +682,7 @@ export default function Home() {
                                     <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
-                                    <Box sx={{ pt: '0', pb: '2rem', alignItems: {md: 'center'}, display: { md: 'flex', xs: 'box' } }}>
+                                    <Box sx={{ pt: '0', pb: '2rem', alignItems: { md: 'center' }, display: { md: 'flex', xs: 'box' } }}>
                                       <Link
                                         className={styles.social_icon}
                                         href="https://www.facebook.com/profile.php?id=61577014455013"
@@ -812,17 +812,31 @@ export default function Home() {
                           Sadarbības partneri:
                         </h2>
                         <Paragraph
-                          text="Arhitekti: Aigars Tereško, Mikus Druviņš / Interjera dizainere: Donna Victoria Design 
-                          / Inženieri: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs, Jānis Pitkevičs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, 
-                          Mārtiņš Pocis, Kristaps Jakimovs, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis, Jekaterina Apse, 
-                          Māris Arnavs  / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, Mārtiņš Ziemanis 
-                          / Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera biroja, VAULTEX, JP Būvinženieru birojs, 
-                          Jaundubults, Ruby Project, Aver BrokarageArhitekti: Aigars Tereško, Mikus Druviņš 
-                          / Interjera dizainere: Donna Victoria Design / Inženieri: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs, Jānis Pitkevičs, 
-                          Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, Mārtiņš Pocis, Kristaps Jakimovs, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, 
-                          Jānis Bērziņš, Vilnis Puļķis, Jekaterina Apse, Māris Arnavs  / Konsultants: Uldis Jaunsubrēns / Vizualizācijas: Reinis Jansons, 
-                          Mārtiņš Ziemanis / Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera biroja, VAULTEX, JP Būvinženieru birojs, 
-                          Jaundubults, Ruby Project, Aver Brokarage"
+                          text="Arhitekti: Aigars Tereško, Mikus Druviņš"
+                        />
+                        <Paragraph
+                          text="Interjera dizainere: Donna Victoria Design"
+                        />
+                        <Paragraph
+                          text="Būvkonstruktori: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs"
+                        />
+                        <Paragraph
+                          text="Inženieri un citi speciālisti: Jānis Pitkevičs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde,"
+                        />
+                        <Paragraph
+                          text="Mārtiņš Pocis, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis,"
+                        />
+                        <Paragraph
+                          text="Vilnis Puļķis, Jekaterina Apse, Māris Arnavs, Uldis Jaunsubrēns"
+                        />
+                        <Paragraph
+                          text="3D vizualizāciju speciālisti: Reinis Jansons, Mārtiņš Ziemanis"
+                        />
+                        <Paragraph
+                          text="Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera birojs,"
+                        />
+                        <Paragraph
+                          text="JP Būvinženieru birojs, Jaundubults, Ruby Project, Aver Brokarage"
                         />
                       </Box>
                     </Grid>
