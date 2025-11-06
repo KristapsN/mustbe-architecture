@@ -71,7 +71,7 @@ export const useElementOnScreen = (
         observer.unobserve(ref.current);
       }
     };
-  }, []);
+  }, [ref, rootMargin]);
   return isIntersecting;
 }
 
