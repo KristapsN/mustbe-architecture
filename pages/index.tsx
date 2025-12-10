@@ -315,7 +315,7 @@ export default function Home() {
                       <Box className={styles.center_flex}>
                         <Link
                           className={styles.social_icon}
-                          href="https://www.facebook.com/profile.php?id=61577014455013/"
+                          href="https://www.facebook.com/profile.php?id=61577014455013"
                         >
                           <Image
                             src="/facebook.svg"
