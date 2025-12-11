@@ -1,4 +1,5 @@
-import { GoogleMap, Marker, useJsApiLoader, useLoadScript } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import mapStyles from './mapStyles';
 
 const containerStyle = {
   width: '100%',
@@ -22,7 +23,14 @@ const ContactMap = () => {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={15}
-        options={{zoomControl: false, mapTypeControl: false, streetViewControl: false, mapId: process.env.MAP_ID}}
+        options={{
+          zoomControl: false,
+          mapTypeControl: false, 
+          streetViewControl: false, 
+          // to use custom styles mapId should be disabled
+          // mapId: process.env.MAP_ID,
+          styles: mapStyles
+        }}
       >
         <Marker position={{ lat: 56.95149304884532, lng: 24.108021741919345 }} />
       </GoogleMap>
