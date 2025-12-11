@@ -809,7 +809,7 @@ export default function Home() {
                     <Grid container>
                       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         <h2 className={styles.title_space}>
-                          Sadarbības partneri:
+                          Sadarbības partneri
                         </h2>
                         <Paragraph
                           text='Arhitekti: Aigars Tereško, Mikus Druviņš / 
