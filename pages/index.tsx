@@ -954,12 +954,12 @@ export default function Home() {
 
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_map_wrapper}>
               <Grid container spacing={{ md: '6rem', sx: '2rem' }}>
-                <Grid item xs={12} md={12 / 5 * 3} sx={{ minHeight: '230px', marginBottom: '40px', pr: { md: '2.6rem', xs: 0 } }}>
+                <Grid item xs={12} md={6} sx={{ minHeight: '230px', marginBottom: '40px' }}>
                   <AnimateIn>
                     <ContactMap />
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={12 / 5 * 2} sx={{ marginBottom: '40px', pl: { md: '3.4rem', xs: 0 } }}>
+                <Grid item xs={12} md={6} sx={{ marginBottom: '40px', pl: { md: '1.7rem', xs: 0 } }}>
                   <AnimateIn>
                     <Box className={styles.contact_image} sx={{ backgroundImage: 'url("/Skursteni_2_Samazināts izmērs.jpg")' }} />
                   </AnimateIn>
