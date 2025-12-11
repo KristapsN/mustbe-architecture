@@ -987,11 +987,7 @@ export default function Home() {
             </Grid>
 
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_map_wrapper}>
-              <Grid
-                container
-                sx={{ marginBottom: "70vh" }}
-              // spacing={{ md: '6rem', sx: '2rem' }}
-              >
+              <Grid container spacing={{ md: '6rem', sx: '2rem' }}>
                 <Grid item xs={12} md={12 / 5 * 3} sx={{ minHeight: '230px', marginBottom: '40px', pr: { md: '2.6rem', xs: 0 } }}>
                   <AnimateIn>
                     <ContactMap />
