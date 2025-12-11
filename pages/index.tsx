@@ -812,31 +812,13 @@ export default function Home() {
                           Sadarbības partneri:
                         </h2>
                         <Paragraph
-                          text="Arhitekti: Aigars Tereško, Mikus Druviņš"
-                        />
-                        <Paragraph
-                          text="Interjera dizainere: Donna Victoria Design"
-                        />
-                        <Paragraph
-                          text="Būvkonstruktori: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs"
-                        />
-                        <Paragraph
-                          text="Inženieri un citi speciālisti: Jānis Pitkevičs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde,"
-                        />
-                        <Paragraph
-                          text="Mārtiņš Pocis, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis,"
-                        />
-                        <Paragraph
-                          text="Vilnis Puļķis, Jekaterina Apse, Māris Arnavs, Uldis Jaunsubrēns"
-                        />
-                        <Paragraph
-                          text="3D vizualizāciju speciālisti: Reinis Jansons, Mārtiņš Ziemanis"
-                        />
-                        <Paragraph
-                          text="Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera birojs,"
-                        />
-                        <Paragraph
-                          text="JP Būvinženieru birojs, Jaundubults, Ruby Project, Aver Brokarage"
+                          text='Arhitekti: Aigars Tereško, Mikus Druviņš / 
+                            Interjera dizainere: Donna Victoria Design / 
+                            Būvkonstruktori: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs / 
+                            Inženieri un citi speciālisti: Jānis Pitkevičs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, Mārtiņš Pocis, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis, Vilnis Puļķis, Jekaterina Apse, Māris Arnavs, Uldis Jaunsubrēns / 
+                            3D vizualizāciju speciālisti: Reinis Jansons, Mārtiņš Ziemanis / 
+                            Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera birojs, JP Būvinženieru birojs, Jaundubults, Ruby Project, Aver Brokarage'
+                          boldSlash={true}
                         />
                       </Box>
                     </Grid>
