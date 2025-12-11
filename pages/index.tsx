@@ -350,7 +350,7 @@ export default function Home() {
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>Projekti</span></MenuItem>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>Par mums</span></MenuItem>
                   <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>Kontakti</span></MenuItem>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px', mb: '26px', mt: '20px' }} >
+                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginRight: '7vw', paddingRight: '10px', mb: '26px', mt: '20px' }} >
                     <Link
                       className={styles.social_icon}
                       href="https://www.facebook.com/profile.php?id=61577014455013"
