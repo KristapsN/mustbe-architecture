@@ -833,7 +833,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               // sx={{ marginBottom: '6rem' }}
               >
-                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -849,7 +849,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -865,7 +865,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -881,7 +881,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
                   <AnimateIn>
                     <Grid container>
                       <Box
@@ -893,22 +893,6 @@ export default function Home() {
                           {"Rinalds Petjukevičs"}
                         </h2>
                         <span className={styles.contact_subtitle}>3D speciālists</span>
-                      </Box>
-                    </Grid>
-                  </AnimateIn>
-                </Grid>
-                <Grid item md={12 / 5} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
-                  <AnimateIn>
-                    <Grid container>
-                      <Box
-                        sx={{ backgroundImage: 'url("/05_profile.jpg")' }}
-                        className={styles.profile_image}
-                      />
-                      <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2 className={styles.contact_title}>
-                          {"Toms Ambrozs"}
-                        </h2>
-                        <span className={styles.contact_subtitle}>Arhitekts</span>
                       </Box>
                     </Grid>
                   </AnimateIn>
