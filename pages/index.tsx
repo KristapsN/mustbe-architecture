@@ -513,13 +513,13 @@ export default function Home() {
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '7px', marginBottom: '8px'
                           }}>
                             <h2>{projectPreviewTitles[index].project_name}</h2>
-                            <h2>{projectPreviewTitles[index].year}</h2>
+                            {/* <h2>{projectPreviewTitles[index].year}</h2> */}
                           </Box>
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                           }}>
                             <span className={styles.contact_subtitle}>{projectPreviewTitles[index].address}</span>
-                            <span className={styles.contact_subtitle}>{projectPreviewTitles[index].status}</span>
+                            {/* <span className={styles.contact_subtitle}>{projectPreviewTitles[index].status}</span> */}
                           </Box>
                         </Box>
                       </AnimateIn>
