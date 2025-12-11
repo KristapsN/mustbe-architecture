@@ -472,7 +472,7 @@ export default function Home() {
             </Box> */}
 
             <AnimateIn>
-              <Divider sx={{ marginBottom: '24px' }} />
+              <Divider sx={{ marginBottom: '24px', borderColor: 'black', borderBottomWidth: '0.9px' }} />
             </AnimateIn>
 
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper_projects} >
@@ -657,7 +657,7 @@ export default function Home() {
                           </Grid>
                         </Box>
                         <Box>
-                          <Divider />
+                          <Divider sx={{ borderColor: 'black', borderBottomWidth: '0.9px' }}/>
                         </Box>
                         <Box sx={{
                           display: 'flex',
@@ -782,7 +782,7 @@ export default function Home() {
             </Grid>
 
             <AnimateIn>
-              <Divider />
+              <Divider sx={{ borderColor: 'black', borderBottomWidth: '0.9px' }}/>
             </AnimateIn>
 
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper_about_us} id="about-us">
@@ -901,7 +901,7 @@ export default function Home() {
             </Grid>
 
             <AnimateIn>
-              <Divider />
+              <Divider sx={{ borderColor: 'black', borderBottomWidth: '0.9px' }}/>
             </AnimateIn>
 
             <Grid container sx={{ flexGrow: 1, padding: { md: '20px 15vw 0px', xs: '20px calc(6vw + 10px) 40px 6vw' } }} id="contacts">
