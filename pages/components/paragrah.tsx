@@ -9,16 +9,17 @@ type ParagraphProps = {
   bold?: boolean
 }
 
-const Paragraph: FC<ParagraphProps> = ({text, bold = false}) => {
+const Paragraph: FC<ParagraphProps> = ({ text, bold = false }) => {
+
   if (bold) return (
-    <>
-  <span style={{fontWeight: 'bold', color: 'black'}}>A+B arhitekti</span>
-  <span style={{fontWeight: 300 }}>{text}</span>
-  </>
-)
+    <p style={{ textAlign: 'justify' }}>
+      <span style={{ fontWeight: 'bold', color: 'black' }}>A+B arhitekti</span>
+      <span style={{ fontWeight: 300 }}>{text}</span>
+    </p>
+  )
 
   return (
-      <p style={{fontWeight: 300}}>{text}</p>
+    <p style={{ fontWeight: 300, textAlign: 'justify' }}>{text}</p>
   )
 }
 
