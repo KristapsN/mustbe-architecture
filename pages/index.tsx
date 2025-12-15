@@ -242,7 +242,7 @@ export default function Home() {
                   <Box className={styles.logo_wrapper} sx={{ display: 'flex', marginLeft: { md: '15vw', sm: '15vw', xs: '6vw' } }}>
                     <Image
                       src="/logo.svg"
-                      alt="MUST BE architecture"
+                      alt="A+B arhitekti"
                       width={70}
                       height={40}
                       onClick={(e) => handleLinkClick(e, 'top')}
@@ -250,7 +250,7 @@ export default function Home() {
                     />
                     <Image
                       src="/logo.svg"
-                      alt="MUST BE architecture"
+                      alt="A+B arhitekti"
                       width={55}
                       height={30}
                       onClick={(e) => handleLinkClick(e, 'top')}
@@ -319,7 +319,7 @@ export default function Home() {
                         >
                           <Image
                             src="/facebook.svg"
-                            alt="MUST BE architecture"
+                            alt="A+B arhitekti"
                             width={20}
                             height={12}
                           />
@@ -330,7 +330,7 @@ export default function Home() {
                         >
                           <Image
                             src="/instagram.svg"
-                            alt="MUST BE architecture"
+                            alt="A+B arhitekti"
                             width={20}
                             height={12}
                           />
@@ -357,7 +357,7 @@ export default function Home() {
                     >
                       <Image
                         src="/facebook.svg"
-                        alt="MUST BE architecture"
+                        alt="A+B arhitekti"
                         width={25}
                         height={17}
                       />
@@ -368,7 +368,7 @@ export default function Home() {
                     >
                       <Image
                         src="/instagram.svg"
-                        alt="MUST BE architecture"
+                        alt="A+B arhitekti"
                         width={25}
                         height={17}
                       />
@@ -409,7 +409,7 @@ export default function Home() {
             {/* <Parallax speed={-50}> */}
             {/* <Image
               src="/mobile_main.jpg"
-              alt="MUST BE architecture"
+              alt="A+B arhitekti"
               width={375.8}
               height={694}
             /> */}
@@ -689,7 +689,7 @@ export default function Home() {
                                       >
                                         <Image
                                           src="/facebook.svg"
-                                          alt="MUST BE architecture"
+                                          alt="A+B arhitekti"
                                           width={20}
                                           height={12}
                                         />
@@ -700,7 +700,7 @@ export default function Home() {
                                       >
                                         <Image
                                           src="/instagram.svg"
-                                          alt="MUST BE architecture"
+                                          alt="A+B arhitekti"
                                           width={20}
                                           height={12}
                                         />
@@ -741,7 +741,7 @@ export default function Home() {
                                       >
                                         <Image
                                           src="/facebook.svg"
-                                          alt="MUST BE architecture"
+                                          alt="A+B arhitekti"
                                           width={20}
                                           height={12}
                                         />
@@ -752,7 +752,7 @@ export default function Home() {
                                       >
                                         <Image
                                           src="/instagram.svg"
-                                          alt="MUST BE architecture"
+                                          alt="A+B arhitekti"
                                           width={20}
                                           height={12}
                                         />
