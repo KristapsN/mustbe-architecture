@@ -679,7 +679,7 @@ export default function Home() {
                                     justifyContent: 'space-between'
                                   }}>
                                     <span className={'modal-address'}>Kontakti:</span>
-                                    <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
+                                    <span className={'modal-address'}>Torņa iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
                                     <Box sx={{ pt: '0', pb: '2rem', alignItems: { md: 'center' }, display: { md: 'flex', xs: 'box' } }}>
@@ -731,7 +731,7 @@ export default function Home() {
                                     justifyContent: 'space-between'
                                   }}>
                                     <span className={'modal-address'}>Kontakti:</span>
-                                    <span className={'modal-address'}>Torņā iela 4, 2c, Rīga</span>
+                                    <span className={'modal-address'}>Torņa iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
                                     <Box sx={{ pt: '0', pb: '2rem', display: { md: 'inline', xs: 'box' } }}>
