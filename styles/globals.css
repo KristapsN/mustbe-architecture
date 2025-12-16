@@ -7,6 +7,13 @@
   -webkit-tap-highlight-color: transparent;
   scrollbar-width: none;
 }
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body { 
+  text-rendering: optimizeLegibility; 
+}
 
 *::-webkit-scrollbar {
   display: none;
