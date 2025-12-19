@@ -684,30 +684,30 @@ export default function Home() {
                                     <span className={'modal-address'}>+371 29121613</span>
                                     <Box sx={{ pt: '0', pb: '2rem', alignItems: { md: 'center' }, display: { md: 'flex', xs: 'box' } }}>
                                       <Link
-                                        className={styles.social_icon}
+                                        className={styles.projects_social_icon}
                                         href="https://www.facebook.com/profile.php?id=61577014455013"
                                       >
                                         <Image
                                           src="/facebook.svg"
                                           alt="A+B arhitekti"
                                           width={20}
-                                          height={12}
+                                          height={24}
                                         />
                                       </Link>
                                       <Link
                                         href="https://www.instagram.com/aplusb.arhitekti/"
-                                        className={styles.social_icon}
+                                        className={styles.projects_social_icon}
                                       >
                                         <Image
                                           src="/instagram.svg"
                                           alt="A+B arhitekti"
                                           width={20}
-                                          height={12}
+                                          height={24}
                                         />
                                       </Link>
                                     </Box>
                                   </Box>
-                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '24px' }}>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '18px' }}>
                                     <button
                                       onClick={(e) =>
                                         scrollToAnchor()}
@@ -736,30 +736,30 @@ export default function Home() {
                                     <span className={'modal-address'}>+371 29121613</span>
                                     <Box sx={{ pt: '0', pb: '2rem', display: { md: 'inline', xs: 'box' } }}>
                                       <Link
-                                        className={styles.social_icon}
+                                        className={styles.projects_social_icon}
                                         href="https://www.facebook.com/profile.php?id=61577014455013"
                                       >
                                         <Image
                                           src="/facebook.svg"
                                           alt="A+B arhitekti"
                                           width={20}
-                                          height={12}
+                                          height={24}
                                         />
                                       </Link>
                                       <Link
                                         href="https://www.instagram.com/aplusb.arhitekti/"
-                                        className={styles.social_icon}
+                                        className={styles.projects_social_icon}
                                       >
                                         <Image
                                           src="/instagram.svg"
                                           alt="A+B arhitekti"
                                           width={20}
-                                          height={12}
+                                          height={24}
                                         />
                                       </Link>
                                     </Box>
                                   </Box>
-                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0 }}>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '18px' }}>
                                     <button
                                       onClick={(e) =>
                                         scrollToAnchor()}

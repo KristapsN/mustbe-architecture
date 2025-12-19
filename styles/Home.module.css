@@ -343,6 +343,11 @@
   padding: 0px 10px;
 }
 
+.projects_social_icon {
+  padding: 0px 10px;
+  line-height: 30px;
+}
+
 .go_up_wrapper {
   display: flex;
   flex-direction: column;
