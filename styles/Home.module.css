@@ -408,7 +408,7 @@
 }
 
 .space_wrapper_about_us {
-  padding: 20px 15vw 9rem;
+  padding: 70px 15vw 9rem;
 }
 
 .space_wrapper {
@@ -416,20 +416,28 @@
 }
 
 .space_map_wrapper {
-  padding: 0px 15vw 0px;
+  padding: 0px 15vw 6rem;
 }
 
 .space_wrapper_projects {
-  padding: 20px 15vw 9rem;
+  padding: 70px 15vw 9rem;
 }
 
 .project_section_title_wrapper {
   padding: 0 15vw 10px;
 }
 
+.about_us_container {
+  margin-bottom: 72px !important;
+}
+
+.partners_container {
+  margin-bottom: 40px !important;
+}
+
 @media screen and (max-width: 599px) {
   .space_wrapper_projects {
-    padding: 20px 2vw 60px
+    padding: 50px 2vw 60px
   }
 
   .project_section_title_wrapper {
@@ -442,7 +450,7 @@
   }
 
   .space_wrapper_about_us {
-    padding: 20px calc(6vw + 10px) 60px 6vw;
+    padding: 50px calc(6vw + 10px) 60px 6vw;
   }
 
   .space_map_wrapper {
@@ -451,6 +459,14 @@
 
   .space_wrapper_wrapper {
     height: 100%;
+  }
+
+  .about_us_container {
+    margin-bottom: 45px !important;
+  }
+
+  .partners_container {
+    margin-bottom: 45px !important;
   }
 }
 

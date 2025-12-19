@@ -472,7 +472,7 @@ export default function Home() {
             </Box> */}
 
             <AnimateIn>
-              <Divider sx={{ marginBottom: '24px', borderColor: 'black', borderBottomWidth: '0.9px' }} />
+              <Divider sx={{ borderColor: 'black', borderBottomWidth: '0.9px' }} />
             </AnimateIn>
 
             <Grid container sx={{ flexGrow: 1 }} className={styles.space_wrapper_projects} >
@@ -791,7 +791,7 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               >
 
-                <Grid item xs={12} md={6} sx={{ marginBottom: '72px' }}>
+                <Grid item xs={12} md={6} className={styles.about_us_container}>
                   <AnimateIn>
                     <Grid container>
                       <h2 className={styles.title_space}>Par mums</h2>
@@ -804,7 +804,7 @@ export default function Home() {
                     </Grid>
                   </AnimateIn>
                 </Grid>
-                <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
+                <Grid item xs={12} md={6} className={styles.partners_container}>
                   <AnimateIn>
                     <Grid container>
                       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
@@ -904,7 +904,7 @@ export default function Home() {
               <Divider sx={{ borderColor: 'black', borderBottomWidth: '0.9px' }}/>
             </AnimateIn>
 
-            <Grid container sx={{ flexGrow: 1, padding: { md: '20px 15vw 0px', xs: '20px calc(6vw + 10px) 40px 6vw' } }} id="contacts">
+            <Grid container sx={{ flexGrow: 1, padding: { md: '70px 15vw 0px', xs: '50px calc(6vw + 10px) 40px 6vw' } }} id="contacts">
               <Grid
                 container
                 // sx={{ marginTop: "40px" }}
@@ -915,7 +915,7 @@ export default function Home() {
                     {/* <Box sx={{ display: 'flex' }}> */}
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: { md: '70px', xs: '40px' } }}>
                       <h2 className={styles.title_space}>
-                        Kontakti:
+                        Kontakti
                       </h2>
                       <Box>
                         <Paragraph
@@ -967,26 +967,20 @@ export default function Home() {
               </Grid>
             </Grid>
 
+            <Box className={styles.footer_flex}>
+                <button
+                  onClick={(e) => handleLinkClick(e, 'top')}
+                  className={styles.go_up}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
+                </button>
+            </Box>
+
+
             <Grid container sx={{ marginBottom: "10px" }}>
               <Grid item xs={12}>
-                {/* <Box sx={{ height: '20px', textAlign: 'center', rotate: '180deg' }}>
-                  <button
-                    onClick={(e) => handleLinkClick(e, 'top')}
-                    className={styles.go_up}
-                  > */}
-                {/* <svg width="20" height="8" viewBox="0 0 521 216" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M260.5 216L0.259418 0.749951L520.741 0.749996L260.5 216Z" fill="black" />
-                    </svg> */}
-                {/* </button>
-                </Box> */}
-                {/* <Divider /> */}
-                <Box className={styles.footer_flex}>
-                  <button
-                    onClick={(e) => handleLinkClick(e, 'top')}
-                    className={styles.go_up}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M469-212v-494L228-465l-16-15 268-268 268 268-16 15-241-241v494h-22Z" /></svg>
-                  </button>
+                <Divider sx={{ md: 0, borderColor: 'black', borderBottomWidth: '0.9px' }}/>
+                <Box className={styles.footer_flex} sx={{ marginTop: '10px', marginBottom: { md: 0, xs: 0 } }}>
                   <p>© A+B arhitekti</p>
                 </Box>
               </Grid>
