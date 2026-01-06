@@ -93,7 +93,7 @@ export default function Home() {
     //   behavior: 'smooth',
     //   block: 'start',
     // });
-    console.log('element', element)
+    // console.log('element', element)
     element && scrollIntoView(element, { behavior: "smooth", block: "start" });
 
     setOpenMenu(false)
@@ -285,7 +285,7 @@ export default function Home() {
                           href="#projects"
                           onClick={(e) => handleLinkClick(e, 'projects')}
                         >
-                          Projekti
+                          {language === 'lv' ? 'Projekti' : 'Projects'}
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
@@ -298,7 +298,7 @@ export default function Home() {
                           href="#about-us"
                           onClick={(e) => handleLinkClick(e, 'about-us')}
                         >
-                          Par mums
+                          {language === 'lv' ? 'Par mums' : 'About us'}
                         </Link>
                       </Box>
                       <Box className={styles.nav_link_wrapper}>
@@ -311,7 +311,7 @@ export default function Home() {
                           href="#contacts"
                           onClick={(e) => handleLinkClick(e, 'contacts')}
                         >
-                          Kontakti
+                          {language === 'lv' ? 'Kontakti' : 'Contacts'}
                         </Link>
                       </Box>
                       <Box className={styles.center_flex}>
@@ -349,9 +349,9 @@ export default function Home() {
                   }
                 </Grid>
                 <Collapse in={openMenu} sx={{ backgroundColor: 'white', width: '100%' }}>
-                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>Projekti</span></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>Par mums</span></MenuItem>
-                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>Kontakti</span></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} autoFocus={false} onClick={(e) => handleLinkClick(e, 'projects')}><span className={styles.mobile_menu_pink}>{language === 'lv' ? 'Projekti' : 'Projects'}</span></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'about-us')}><span className={styles.mobile_menu_pink}>{language === 'lv' ? 'Par mums' : 'About us'}</span></MenuItem>
+                  <MenuItem sx={{ justifyContent: 'flex-end', marginRight: '6vw', paddingRight: '10px' }} onClick={(e) => handleLinkClick(e, 'contacts')}><span className={styles.mobile_menu_pink}>{language === 'lv' ? 'Kontakti' : 'Contacts'}</span></MenuItem>
                   <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginRight: '7vw', paddingRight: '10px', mb: '26px', mt: '20px' }} >
                     <Link
                       className={styles.social_icon}
@@ -680,7 +680,7 @@ export default function Home() {
                                     textAlign: 'center',
                                     justifyContent: 'space-between'
                                   }}>
-                                    <span className={'modal-address'}>Kontakti:</span>
+                                    <span className={'modal-address'}>{language === 'lv' ? 'Kontakti:' : 'Contacts:'}</span>
                                     <span className={'modal-address'}>Torņa iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
@@ -732,7 +732,7 @@ export default function Home() {
                                     textAlign: 'center',
                                     justifyContent: 'space-between'
                                   }}>
-                                    <span className={'modal-address'}>Kontakti:</span>
+                                    <span className={'modal-address'}>{language === 'lv' ? 'Kontakti:' : 'Contacts:'}</span>
                                     <span className={'modal-address'}>Torņa iela 4, 2c, Rīga</span>
                                     <span className={'modal-address'}>info@aplusb.lv</span>
                                     <span className={'modal-address'}>+371 29121613</span>
@@ -796,7 +796,7 @@ export default function Home() {
                 <Grid item xs={12} md={6} className={styles.about_us_container}>
                   <AnimateIn>
                     <Grid container>
-                      <h2 className={styles.title_space}>Par mums</h2>
+                      <h2 className={styles.title_space}>{language === 'lv' ? 'Par mums' : 'About us'}</h2>
                       <Paragraph
                         text="A+B arhitekti ir Rīgā bāzēts uzņēmums, kura darbība ir aizsākusies 2019. gadā un kopš tā 
                         laika strādājam ar dažādu funkciju un mēroga projektiem. Mūsu filozofija ir bāzēta uz dažādu 
@@ -917,7 +917,7 @@ export default function Home() {
                     {/* <Box sx={{ display: 'flex' }}> */}
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: { md: '70px', xs: '40px' } }}>
                       <h2 className={styles.title_space}>
-                        Kontakti
+                        {language === 'lv' ? 'Kontakti' : 'Contacts'}
                       </h2>
                       <Box>
                         <Paragraph
@@ -937,7 +937,7 @@ export default function Home() {
                   <AnimateIn>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                       <h2 className={styles.title_space}>
-                        Sekojiet mums
+                        {language === 'lv' ? 'Sekojiet mums' : 'Follow us'}
                       </h2>
                       <Box sx={{ display: 'flex', alignItems: 'center', height: '78px'}}>
                         <Link
