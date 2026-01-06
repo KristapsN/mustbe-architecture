@@ -100,7 +100,7 @@ export default function Home() {
   }
 
   const [language, setLanguage] = useState<Language>('lv');
-  const languageLabel = language.toUpperCase() as 'LV' | 'EN';
+  const languageLabel = language === 'lv' ? 'EN' : 'LV';
 
   const [showLoader, setShowLoader] = useState(true)
   const [intro, setIntro] = useState({ lv: { first: '', second: '' }, en: { first: '', second: '' } })
