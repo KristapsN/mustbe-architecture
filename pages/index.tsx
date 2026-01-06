@@ -109,6 +109,7 @@ export default function Home() {
 
   const [showLoader, setShowLoader] = useState(true)
   const [intro, setIntro] = useState({ lv: { first: '', second: '' }, en: { first: '', second: '' } })
+  const [aboutUs, setAboutUs] = useState({ lv: { title: '', content: '', partners_title: '', partners_content: '' }, en: { title: '', content: '', partners_title: '', partners_content: '' } })
   const [allDescriptionTitles, setAllDescriptionTitles] = useState<ContentProps[][]>([[]])
   const [thumbnailText, setThumbnailText] = useState<ContentProps[][]>([[]])
   const [mainImage, setMainImage] = useState('')
@@ -128,6 +129,7 @@ export default function Home() {
     setAnchorEl(document.getElementById('menu'))
     getStaticProps().then(({ props }) => {
       setIntro({ lv: { first: props.intro[0].first, second: props.intro[0].second }, en: { first: props.intro[0].first_en, second: props.intro[0].second_en } })
+      setAboutUs({ lv: { title: props.about_us[0].title_lv, content: props.about_us[0].content_lv, partners_title: props.about_us[0].partners_title_lv, partners_content: props.about_us[0].partners_content_lv }, en: { title: props.about_us[0].title_en, content: props.about_us[0].content_en, partners_title: props.about_us[0].partners_title_en, partners_content: props.about_us[0].partners_content_en } })
       setMainImage(urlForImage(props.main[0].desktop).url())
       setMainMobileImage(urlForImage(props.main[0].mobile).url())
 
@@ -801,12 +803,9 @@ export default function Home() {
                 <Grid item xs={12} md={6} className={styles.about_us_container}>
                   <AnimateIn>
                     <Grid container>
-                      <h2 className={styles.title_space}>{language === 'lv' ? 'Par mums' : 'About us'}</h2>
+                      <h2 className={styles.title_space}>{aboutUs[language].title || 'Par mums'}</h2>
                       <Paragraph
-                        text="A+B arhitekti ir Rīgā bāzēts uzņēmums, kura darbība ir aizsākusies 2019. gadā un kopš tā 
-                        laika strādājam ar dažādu funkciju un mēroga projektiem. Mūsu filozofija ir bāzēta uz dažādu 
-                        elementu, ideju un profesionāļu apvienošanu, palīdzot transformēt klienta vēlmes no idejas līdz objekta realizēšanai. Kopā ar 
-                        ilggadējiem sadarbības partneriem nodrošinām visu sadaļu būvprojektu izstrādi, teritoriju labiekārtojuma izveidi un interjera dizaina risinājumus. Mūsu profesionālā pieeja ir vērsta uz funkcionālo un estētisko vienkāršību, domājot par ilgtspējīgu un videi piemērotu arhitektūru."
+                        text={aboutUs[language].content || "A+B arhitekti ir Rīgā bāzēts uzņēmums, kura darbība ir aizsākusies 2019. gadā un kopš tā laika strādājam ar dažādu funkciju un mēroga projektiem. Mūsu filozofija ir bāzēta uz dažādu elementu, ideju un profesionāļu apvienošanu, palīdzot transformēt klienta vēlmes no idejas līdz objekta realizēšanai. Kopā ar ilggadējiem sadarbības partneriem nodrošinām visu sadaļu būvprojektu izstrādi, teritoriju labiekārtojuma izveidi un interjera dizaina risinājumus. Mūsu profesionālā pieeja ir vērsta uz funkcionālo un estētisko vienkāršību, domājot par ilgtspējīgu un videi piemērotu arhitektūru."}
                       />
                     </Grid>
                   </AnimateIn>
@@ -816,15 +815,10 @@ export default function Home() {
                     <Grid container>
                       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         <h2 className={styles.title_space}>
-                          Sadarbības partneri
+                          {aboutUs[language].partners_title || 'Sadarbības partneri'}
                         </h2>
                         <Paragraph
-                          text='Arhitekti: Aigars Tereško, Mikus Druviņš / 
-                            Interjera dizainere: Donna Victoria Design / 
-                            Būvkonstruktori: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs / 
-                            Inženieri un citi speciālisti: Jānis Pitkevičs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, Mārtiņš Pocis, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis, Vilnis Puļķis, Jekaterina Apse, Māris Arnavs, Uldis Jaunsubrēns / 
-                            3D vizualizāciju speciālisti: Reinis Jansons, Mārtiņš Ziemanis / 
-                            Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera birojs, JP Būvinženieru birojs, Jaundubults, Ruby Project, Aver Brokarage'
+                          text={aboutUs[language].partners_content || 'Arhitekti: Aigars Tereško, Mikus Druviņš / Interjera dizainere: Donna Victoria Design / Būvkonstruktori: Miķelis Siliņš, Rolands Vidauskis, Pāvels Stepanovs / Inženieri un citi speciālisti: Jānis Pitkevičs, Kārlis Mūrnieks, Dāvis Vecbaštiks, Indra Junde, Mārtiņš Pocis, Jānis Cimbulis, Nauris Gailišs, Raitis Beitāns, Jānis Bērziņš, Vilnis Puļķis, Vilnis Puļķis, Jekaterina Apse, Māris Arnavs, Uldis Jaunsubrēns / 3D vizualizāciju speciālisti: Reinis Jansons, Mārtiņš Ziemanis / Uzņēmumi: AZ Service, BŪVDIZAINS, VAULTEX, Rolanda Vidauska inženiera birojs, JP Būvinženieru birojs, Jaundubults, Ruby Project, Aver Brokarage'}
                           boldSlash={true}
                         />
                       </Box>
