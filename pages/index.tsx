@@ -36,13 +36,18 @@ interface ProjectProps {
 }
 interface ContentProps {
   title: string
+  title_en?: string
   content: string
+  content_en?: string
 }
 interface DescriptionsProps {
   project_name: string
+  project_name_en?: string
   year: string
   address: string
+  address_en?: string
   status: string
+  status_en?: string
   descriptions: ContentProps[]
 }
 
@@ -104,8 +109,8 @@ export default function Home() {
 
   const [showLoader, setShowLoader] = useState(true)
   const [intro, setIntro] = useState({ lv: { first: '', second: '' }, en: { first: '', second: '' } })
-  const [allDescriptionTitles, setAllDescriptionTitles] = useState<string[][]>([[]])
-  const [thumbnailText, setThumbnailText] = useState<string[][]>([[]])
+  const [allDescriptionTitles, setAllDescriptionTitles] = useState<ContentProps[][]>([[]])
+  const [thumbnailText, setThumbnailText] = useState<ContentProps[][]>([[]])
   const [mainImage, setMainImage] = useState('')
   const [mainMobileImage, setMainMobileImage] = useState('')
   const [openMenu, setOpenMenu] = useState(false)
@@ -127,8 +132,8 @@ export default function Home() {
       setMainMobileImage(urlForImage(props.main[0].mobile).url())
 
       const projectPreviewTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
-        a.order_number - b.order_number).map(({ project_name, year, address, status }: DescriptionsProps) => {
-          return { project_name, year, address, status }
+        a.order_number - b.order_number).map(({ project_name, project_name_en, year, address, address_en, status, status_en }: DescriptionsProps) => {
+          return { project_name, project_name_en, year, address, address_en, status, status_en }
         })
 
       setProjectPreviewTitles(projectPreviewTitles)
@@ -136,14 +141,14 @@ export default function Home() {
 
       const projectDescriptionTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ descriptions }: DescriptionsProps) =>
-          descriptions.map(({ title }) => title)
+          descriptions.map(({ title, title_en }) => ({ title, title_en }))
         )
 
       setAllDescriptionTitles(projectDescriptionTitles)
 
       const projectContent = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ descriptions }: DescriptionsProps) =>
-          descriptions.map(({ content }) => content)
+          descriptions.map(({ content, content_en }) => ({ content, content_en }))
         )
       setThumbnailText(projectContent)
 
@@ -514,13 +519,13 @@ export default function Home() {
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '7px', marginBottom: '8px'
                           }}>
-                            <h2 className={styles.project_title}>{projectPreviewTitles[index].project_name}</h2>
+                            <h2 className={styles.project_title}>{language === 'en' ? projectPreviewTitles[index].project_name_en || projectPreviewTitles[index].project_name : projectPreviewTitles[index].project_name}</h2>
                             {/* <h2>{projectPreviewTitles[index].year}</h2> */}
                           </Box>
                           <Box sx={{
                             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                           }}>
-                            <span className={styles.project_subtitle}>{projectPreviewTitles[index].address}</span>
+                            <span className={styles.project_subtitle}>{language === 'en' ? projectPreviewTitles[index].address_en || projectPreviewTitles[index].address : projectPreviewTitles[index].address}</span>
                             {/* <span className={styles.contact_subtitle}>{projectPreviewTitles[index].status}</span> */}
                           </Box>
                         </Box>
@@ -565,9 +570,9 @@ export default function Home() {
                                       <>
                                         <Box sx={{ marginTop: '0px' }}>
                                           <h2 className={styles.title_space}>
-                                            {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                            {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : (language === 'en' ? allDescriptionTitles[openedImagesIndex.current][index]?.title_en || allDescriptionTitles[openedImagesIndex.current][index]?.title : allDescriptionTitles[openedImagesIndex.current][index]?.title)}
                                           </h2>
-                                          <Paragraph text={item === undefined ? '' : item} />
+                                          <Paragraph text={item === undefined ? '' : (language === 'en' ? item?.content_en || item?.content : item?.content)} />
                                         </Box>
                                       </>
                                     </Box>
@@ -621,9 +626,9 @@ export default function Home() {
                                       <>
                                         <Box sx={{ marginTop: '0px' }}>
                                           <h2 className={styles.title_space}>
-                                            {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : allDescriptionTitles[openedImagesIndex.current][index]}
+                                            {allDescriptionTitles[openedImagesIndex.current][index] === undefined ? '' : (language === 'en' ? allDescriptionTitles[openedImagesIndex.current][index]?.title_en || allDescriptionTitles[openedImagesIndex.current][index]?.title : allDescriptionTitles[openedImagesIndex.current][index]?.title)}
                                           </h2>
-                                          <Paragraph text={item === undefined ? '' : item} />
+                                          <Paragraph text={item === undefined ? '' : (language === 'en' ? item?.content_en || item?.content : item?.content)} />
                                         </Box>
                                       </>
                                     </Box>
