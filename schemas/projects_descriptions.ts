@@ -5,7 +5,12 @@ export default {
   fields: [
     {
       name: 'project_name',
-      title: 'Project name',
+      title: 'Project name (lv)',
+      type: 'string',
+    },
+    {
+      name: 'project_name_en',
+      title: 'Project name (en)',
       type: 'string',
     },
     {
@@ -15,12 +20,22 @@ export default {
     },
     {
       name: 'address',
-      title: 'Address',
+      title: 'Address (lv)',
+      type: 'string',
+    },
+    {
+      name: 'address_en',
+      title: 'Address (en)',
       type: 'string',
     },
     {
       name: 'status',
-      title: 'Status',
+      title: 'Status (lv)',
+      type: 'string',
+    },
+    {
+      name: 'status_en',
+      title: 'Status (en)',
       type: 'string',
     },
     {
@@ -39,12 +54,22 @@ export default {
           fields: [
             {
               name: 'title',
-              title: 'Title',
+              title: 'Title (lv)',
+              type: 'string',
+            },
+            {
+              name: 'title_en',
+              title: 'Title (en)',
               type: 'string',
             },
             {
               name: 'content',
-              title: 'Content',
+              title: 'Content (lv)',
+              type: 'string',
+            },
+            {
+              name: 'content_en',
+              title: 'Content (en)',
               type: 'string',
             },
           ],
