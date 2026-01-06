@@ -664,7 +664,7 @@ export default function Home() {
                         <Box sx={{
                           display: 'flex',
                           justifyContent: 'center',
-                          // paddingBottom: '2rem',
+                          paddingBottom: '1rem',
                           // paddingTop: '22px',
                           paddingLeft: { md: '15vw' },
                           paddingRight: { md: '15vw' }
@@ -937,16 +937,32 @@ export default function Home() {
                   <AnimateIn>
                     <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                       <h2 className={styles.title_space}>
-                        Rekvizīti
+                        Sekojiet mums
                       </h2>
-                      <Box>
-                        <Paragraph
-                          text="SIA A+B arhitekti"
-                        />
-                        <Paragraph
-                          text="LV40203580630"
-                        />
-                        <Paragraph text="Upesciema iela 26-2, Rīga, LV-1024" />
+                      <Box sx={{ display: 'flex', alignItems: 'center', height: '78px'}}>
+                        <Link
+                          className={styles.contacts_social_icon}
+                          href="https://www.facebook.com/profile.php?id=61577014455013"
+                        >
+                          <Image
+                            src="/facebook.svg"
+                            alt="A+B arhitekti"
+                            width={50}
+                            height={47}
+                            style={{ marginRight: '20px' }}
+                          />
+                        </Link>
+                        <Link
+                          href="https://www.instagram.com/aplusb.arhitekti/"
+                          className={styles.contacts_social_icon}
+                        >
+                          <Image
+                            src="/instagram.svg"
+                            alt="A+B arhitekti"
+                            width={50}
+                            height={47}
+                          />
+                        </Link>
                       </Box>
                     </Box>
                   </AnimateIn>

@@ -343,6 +343,11 @@
   padding: 0px 10px;
 }
 
+.contacts_social_icon { 
+  padding: 0;
+  margin-top: 4px;
+}
+
 .projects_social_icon {
   padding: 0px 10px;
   line-height: 30px;
