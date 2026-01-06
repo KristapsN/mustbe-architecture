@@ -50,6 +50,8 @@ interface ImagesProps {
   images: string[]
 }
 
+type Language = 'lv' | 'en';
+
 export const useElementOnScreen = (
   ref: RefObject<Element>,
   rootMargin = "-50px",
@@ -97,9 +99,11 @@ export default function Home() {
     setOpenMenu(false)
   }
 
-  const [language, setLanguage] = useState('LV');
+  const [language, setLanguage] = useState<Language>('lv');
+  const languageLabel = language.toUpperCase() as 'LV' | 'EN';
+
   const [showLoader, setShowLoader] = useState(true)
-  const [intro, setIntro] = useState({ first: '', second: '' })
+  const [intro, setIntro] = useState({ lv: { first: '', second: '' }, en: { first: '', second: '' } })
   const [allDescriptionTitles, setAllDescriptionTitles] = useState<string[][]>([[]])
   const [thumbnailText, setThumbnailText] = useState<string[][]>([[]])
   const [mainImage, setMainImage] = useState('')
@@ -118,7 +122,7 @@ export default function Home() {
   useEffect(() => {
     setAnchorEl(document.getElementById('menu'))
     getStaticProps().then(({ props }) => {
-      setIntro({ first: props.intro[0].first, second: props.intro[0].second })
+      setIntro({ lv: { first: props.intro[0].first, second: props.intro[0].second }, en: { first: props.intro[0].first_en, second: props.intro[0].second_en } })
       setMainImage(urlForImage(props.main[0].desktop).url())
       setMainMobileImage(urlForImage(props.main[0].mobile).url())
 
@@ -159,9 +163,7 @@ export default function Home() {
   }, [])
 
   const handleChange = () => {
-    language === 'LV'
-      ? setLanguage('EN')
-      : setLanguage('LV')
+    setLanguage(prev => prev === 'lv' ? 'en' : 'lv');
   };
 
   const loaderHandler = () => {
@@ -340,7 +342,7 @@ export default function Home() {
                           sx={{ width: 20, height: 12, fontWeight: 300, fontSize: '16px', margin: '0px 10px' }}
                           onClick={() => handleChange()}
                         >
-                          {language}
+                          {languageLabel}
                         </LanguageButton>
                       </Box>
                     </Box>
@@ -378,7 +380,7 @@ export default function Home() {
                       sx={{ width: 25, height: 17, fontWeight: 300, fontSize: '21px', margin: '0px 0px 0px 10px' }}
                       onClick={() => handleChange()}
                     >
-                      {language}
+                      {languageLabel}
                     </LanguageButton>
                   </Box>
                 </Collapse>
@@ -450,7 +452,7 @@ export default function Home() {
               <Grid item xs={12} md={6} sx={{ marginBottom: '40px' }}>
                 <Grid container>
                   <Paragraph
-                    text={intro.first}
+                    text={intro[language].first || intro.lv.first}
                   />
                 </Grid>
               </Grid>
@@ -458,7 +460,7 @@ export default function Home() {
                 <Grid container>
                   <Box>
                     <Paragraph
-                      text={intro.second}
+                      text={intro[language].second || intro.lv.second}
                       bold={true}
                     />
                   </Box>
