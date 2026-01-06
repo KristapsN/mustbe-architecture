@@ -709,7 +709,7 @@ export default function Home() {
                                       </Link>
                                     </Box>
                                   </Box>
-                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '18px' }}>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '2.5rem' }}>
                                     <button
                                       onClick={(e) =>
                                         scrollToAnchor()}
@@ -761,7 +761,7 @@ export default function Home() {
                                       </Link>
                                     </Box>
                                   </Box>
-                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '18px' }}>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '2.5rem' }}>
                                     <button
                                       onClick={(e) =>
                                         scrollToAnchor()}
