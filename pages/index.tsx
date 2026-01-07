@@ -805,7 +805,7 @@ export default function Home() {
                     <Grid container>
                       <h2 className={styles.title_space}>{aboutUs[language].title || 'Par mums'}</h2>
                       <Paragraph
-                        text={aboutUs[language].content || "A+B arhitekti ir Rīgā bāzēts uzņēmums, kura darbība ir aizsākusies 2019. gadā un kopš tā laika strādājam ar dažādu funkciju un mēroga projektiem. Mūsu filozofija ir bāzēta uz dažādu elementu, ideju un profesionāļu apvienošanu, palīdzot transformēt klienta vēlmes no idejas līdz objekta realizēšanai. Kopā ar ilggadējiem sadarbības partneriem nodrošinām visu sadaļu būvprojektu izstrādi, teritoriju labiekārtojuma izveidi un interjera dizaina risinājumus. Mūsu profesionālā pieeja ir vērsta uz funkcionālo un estētisko vienkāršību, domājot par ilgtspējīgu un videi piemērotu arhitektūru."}
+                        text={aboutUs[language].content || "A+B arhitekti ir Rīgā bāzēts uzņēmums, kura darbība  ir aizsākusies 2019. gadā un kopš tā laika strādājam ar dažādu funkciju un mēroga projektiem. Mūsu filozofija ir bāzēta uz dažādu elementu, ideju un profesionāļu apvienošanu, palīdzot transformēt klienta vēlmes no idejas līdz objekta realizēšanai. Kopā ar ilggadējiem sadarbības partneriem nodrošinām visu sadaļu būvprojektu izstrādi, teritoriju labiekārtojuma izveidi un interjera dizaina risinājumus. Mūsu profesionālā pieeja ir vērsta uz funkcionālo un estētisko vienkāršību, domājot par ilgtspējīgu un videi piemērotu arhitektūru."}
                       />
                     </Grid>
                   </AnimateIn>
