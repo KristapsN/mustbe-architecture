@@ -397,7 +397,7 @@ export default function Home() {
           <Box id='top' />
           <Box className={`${styles.parallax_wrapper} ${styles.fade_in_image}`} sx={{ display: { xs: 'none', md: 'inherit' } }}>
             {/* <Parallax speed={-50}> */}
-            <Grid container sx={{ flexGrow: 1, backgroundImage: `url(${mainImage})` }} className={styles.parallax}>
+            <Grid container sx={{ flexGrow: 1, backgroundImage: `url(/main.jpg)` }} className={styles.parallax}>
             </Grid>
 
             {/* {mainImage.length > 0 &&
@@ -434,7 +434,7 @@ export default function Home() {
             <AnimateOut>
               <Box sx={{ flexGrow: 1 }} className={styles.parallax_mobile}>
                 <Image
-                  src={mainMobileImage}
+                  src="/mobile_main.jpg"
                   alt='project'
                   width={0}
                   height={0}
