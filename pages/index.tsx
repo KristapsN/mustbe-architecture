@@ -716,7 +716,7 @@ export default function Home() {
                                       </Link>
                                     </Box>
                                   </Box>
-                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '2.5rem' }}>
+                                  <Box className={styles.project_close} sx={{ textAlign: 'right', bottom: 0, marginBottom: '1rem' }}>
                                     <button
                                       onClick={(e) =>
                                         scrollToAnchor()}
@@ -914,7 +914,7 @@ export default function Home() {
                 <Grid item xs={12} md={12 / 5}>
                   <AnimateIn>
                     {/* <Box sx={{ display: 'flex' }}> */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: { md: '70px', xs: '40px' } }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', marginBottom: { md: '70px', xs: '40px' }, position: 'relative', zIndex: 50 }}>
                       <h2 className={styles.title_space}>
                         {language === 'lv' ? 'Kontakti' : 'Contacts'}
                       </h2>
@@ -934,7 +934,7 @@ export default function Home() {
                 </Grid>
                 <Grid item xs={12} md={3}>
                   <AnimateIn>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', position: 'relative', zIndex: 50 }}>
                       <h2 className={styles.title_space}>
                         {language === 'lv' ? 'Sekojiet mums' : 'Follow us'}
                       </h2>
@@ -946,7 +946,7 @@ export default function Home() {
                           <Image
                             src="/facebook.svg"
                             alt="A+B arhitekti"
-                            width={50}
+                            width={41}
                             height={47}
                             style={{ marginRight: '20px' }}
                           />
@@ -958,7 +958,7 @@ export default function Home() {
                           <Image
                             src="/instagram.svg"
                             alt="A+B arhitekti"
-                            width={50}
+                            width={41}
                             height={47}
                           />
                         </Link>
