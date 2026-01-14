@@ -117,6 +117,7 @@ export default function Home() {
   const [openMenu, setOpenMenu] = useState(false)
   const [thumbnailImages, setThumbnailImages] = useState<string[][]>([])
   const [projectPreviewTitles, setProjectPreviewTitles] = useState<DescriptionsProps[]>([])
+  const [team, setTeam] = useState<any[]>([])
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [openProject, setOpenProject] = useState(false)
@@ -132,6 +133,7 @@ export default function Home() {
       setAboutUs({ lv: { title: props.about_us[0].title_lv, content: props.about_us[0].content_lv, partners_title: props.about_us[0].partners_title_lv, partners_content: props.about_us[0].partners_content_lv }, en: { title: props.about_us[0].title_en, content: props.about_us[0].content_en, partners_title: props.about_us[0].partners_title_en, partners_content: props.about_us[0].partners_content_en } })
       setMainImage(urlForImage(props.main[0].desktop).url())
       setMainMobileImage(urlForImage(props.main[0].mobile).url())
+      setTeam(props.team)
 
       const projectPreviewTitles = props.projects_descriptions.sort((a: ProjectProps, b: ProjectProps) =>
         a.order_number - b.order_number).map(({ project_name, project_name_en, year, address, address_en, status, status_en }: DescriptionsProps) => {
@@ -834,70 +836,26 @@ export default function Home() {
                 spacing={{ md: '6rem', sx: '2rem' }}
               // sx={{ marginBottom: '6rem' }}
               >
-                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
-                  <AnimateIn>
-                    <Grid container>
-                      <Box
-                        sx={{ backgroundImage: 'url("/01_profile.jpg")', }}
-                        className={styles.profile_image}
-                      />
-                      <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2 className={styles.contact_title}>
-                          {"Monvīds Bekmanis"}
-                        </h2>
-                        <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
-                      </Box>
-                    </Grid>
-                  </AnimateIn>
-                </Grid>
-                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
-                  <AnimateIn>
-                    <Grid container>
-                      <Box
-                        sx={{ backgroundImage: 'url("/02_profile.jpg")' }}
-                        className={styles.profile_image}
-                      />
-                      <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2 className={styles.contact_title}>
-                          {"Kristiāns Beķeris"}
-                        </h2>
-                        <span className={styles.contact_subtitle}>Arhitekts / valdes loceklis </span>
-                      </Box>
-                    </Grid>
-                  </AnimateIn>
-                </Grid>
-                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
-                  <AnimateIn>
-                    <Grid container>
-                      <Box
-                        sx={{ backgroundImage: 'url("/03_profile.jpg")', }}
-                        className={styles.profile_image}
-                      />
-                      <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2 className={styles.contact_title}>
-                          {"Donna Viktorija Bordo"}
-                        </h2>
-                        <span className={styles.contact_subtitle}>Interjera dizainere</span>
-                      </Box>
-                    </Grid>
-                  </AnimateIn>
-                </Grid>
-                <Grid item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
-                  <AnimateIn>
-                    <Grid container>
-                      <Box
-                        sx={{ backgroundImage: 'url("/04_profile.jpg")', }}
-                        className={styles.profile_image}
-                      />
-                      <Box sx={{ marginTop: 1, height: '70px' }}>
-                        <h2 className={styles.contact_title}>
-                          {"Rinalds Petjukevičs"}
-                        </h2>
-                        <span className={styles.contact_subtitle}>3D speciālists</span>
-                      </Box>
-                    </Grid>
-                  </AnimateIn>
-                </Grid>
+                {team.slice(0, 4).map((member, index) => (
+                  <Grid key={index} item md={12 / 4} xs={12} sx={{ maxWidth: '270px', padding: { xs: 0, md: 0 } }}>
+                    <AnimateIn>
+                      <Grid container>
+                        <Box
+                          sx={{ backgroundImage: `url(${urlForImage(member.image).url()})`, }}
+                          className={styles.profile_image}
+                        />
+                        <Box sx={{ marginTop: 1, height: '70px' }}>
+                          <h2 className={styles.contact_title}>
+                            {language === 'en' ? member.contact_title_en || member.contact_title_lv : member.contact_title_lv}
+                          </h2>
+                          <span className={styles.contact_subtitle}>
+                            {language === 'en' ? member.contact_subtitle_en || member.contact_subtitle_lv : member.contact_subtitle_lv}
+                          </span>
+                        </Box>
+                      </Grid>
+                    </AnimateIn>
+                  </Grid>
+                ))}
               </Grid>
             </Grid>
 
