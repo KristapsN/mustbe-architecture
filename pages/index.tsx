@@ -127,6 +127,22 @@ export default function Home() {
   const nodeRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const browserLang = navigator.language || navigator.languages[0];
+      console.log("lang set:", browserLang);
+      const savedLanguage = localStorage.getItem('language') as Language;
+      if (savedLanguage) {
+        setLanguage(savedLanguage);
+        return;
+      }
+
+      const detectedLanguage: Language = browserLang.startsWith('lv') ? 'lv' : 'en';
+      setLanguage(detectedLanguage);
+      localStorage.setItem('language', detectedLanguage);
+    }
+  }, []);
+
+  useEffect(() => {
     setAnchorEl(document.getElementById('menu'))
     getStaticProps().then(({ props }) => {
       setIntro({ lv: { first: props.intro[0].first, second: props.intro[0].second }, en: { first: props.intro[0].first_en, second: props.intro[0].second_en } })
@@ -172,7 +188,14 @@ export default function Home() {
   }, [])
 
   const handleChange = () => {
-    setLanguage(prev => prev === 'lv' ? 'en' : 'lv');
+    setLanguage(prev => {
+      const newLang = prev === 'lv' ? 'en' : 'lv';
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('language', newLang);
+      }
+
+      return newLang;
+    });
   };
 
   const loaderHandler = () => {
